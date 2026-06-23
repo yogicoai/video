@@ -69,6 +69,8 @@ export async function renderShot({
     durationSeconds: duration,
   };
   if (negativePrompt) config.negativePrompt = negativePrompt;
+  // personGeneration은 모델/리전별로 허용값이 달라 기본은 미전송. 필요시 env로만 지정.
+  if (process.env.GEMINI_VEO_PERSON) config.personGeneration = process.env.GEMINI_VEO_PERSON;
 
   const req = { model: MODEL, prompt, config };
 
@@ -91,7 +93,19 @@ export async function renderShot({
   }
 
   const video = operation.response?.generatedVideos?.[0]?.video;
-  if (!video) throw new Error('Veo 응답에 영상이 없습니다.');
+  if (!video) {
+    // 안전필터(RAI) 정보가 있으면 이유를 표면화
+    const resp = operation.response || {};
+    const filtered = resp.raiMediaFilteredCount;
+    const reasons = resp.raiMediaFilteredReasons;
+    console.error('[veo] 영상 없음 — response:', JSON.stringify(resp).slice(0, 1500));
+    if (filtered || reasons) {
+      throw new Error(
+        `안전필터에 의해 영상이 차단됐습니다${reasons ? ': ' + (Array.isArray(reasons) ? reasons.join(' / ') : reasons) : ''}. 프롬프트에서 사람·민감 표현을 줄여보세요.`
+      );
+    }
+    throw new Error('Veo 응답에 영상이 없습니다 (필터링되었거나 생성 실패).');
+  }
 
   onProgress('영상 다운로드 중…');
   await client.files.download({ file: video, downloadPath: outPath });
