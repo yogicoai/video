@@ -84,14 +84,16 @@ export default function HomePage() {
         <div className="grid">
           {projects.map((p) => (
             <div className="card" key={p._id}>
-              <div className="card-title">{p.title}</div>
-              <div className="card-meta">
-                {p.scenario ? p.scenario.slice(0, 70) : '시나리오 미입력'}
-                {p.scenario && p.scenario.length > 70 ? '…' : ''}
-                <br />
-                {p.durationSec}초 · {p.aspectRatio}
-                {p.tone ? ` · ${p.tone}` : ''}
-              </div>
+              <a href={`/project/${p._id}`} style={{ display: 'block' }}>
+                <div className="card-title">{p.title}</div>
+                <div className="card-meta">
+                  {p.scenario ? p.scenario.slice(0, 70) : '시나리오 미입력'}
+                  {p.scenario && p.scenario.length > 70 ? '…' : ''}
+                  <br />
+                  {p.durationSec}초 · {p.aspectRatio}
+                  {p.tone ? ` · ${p.tone}` : ''}
+                </div>
+              </a>
               <div className="card-foot">
                 <span className={`badge badge-${p.status}`}>
                   {STATUS_LABEL[p.status] || p.status}
