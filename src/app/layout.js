@@ -18,6 +18,7 @@ export default function RootLayout({ children }) {
             <nav className="topnav">
               <a href="/">프로젝트</a>
               <a href="/brand">브랜드</a>
+              <a href="/guide">가이드</a>
             </nav>
           </header>
           <main className="content">{children}</main>
