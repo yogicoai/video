@@ -463,3 +463,117 @@ a {
   font-size: 13px;
   color: var(--accent);
 }
+
+/* 샷 보드 */
+.shot {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+  background: var(--bg);
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px;
+}
+.shot.approved {
+  border-color: #2e7d5b;
+}
+.shot-thumb {
+  width: 96px;
+  height: 96px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+}
+.shot-thumb.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-size: 11px;
+  text-align: center;
+}
+.shot-main {
+  min-width: 0;
+}
+.shot-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.shot-no {
+  background: var(--bg-elev);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+.shot-title {
+  font-weight: 700;
+  font-size: 15px;
+}
+.shot-tag {
+  font-size: 11px;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2px 7px;
+}
+.shot-desc {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.prompt-box {
+  margin-bottom: 8px;
+}
+.prompt-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+.prompt-box textarea {
+  width: 100%;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 9px 11px;
+  font-size: 13px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  line-height: 1.5;
+  resize: vertical;
+}
+.copy-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 11px;
+  cursor: pointer;
+}
+.copy-btn:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+.shot-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+.btn-approve {
+  border-color: #2e7d5b;
+  color: #4ade80;
+}

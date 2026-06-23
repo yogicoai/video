@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, use } from 'react';
+import ShotBoard from '@/components/ShotBoard';
 
 const ASPECT_LABEL = { '16:9': '16:9 가로', '9:16': '9:16 세로', '1:1': '1:1 정방형' };
 
@@ -220,10 +221,8 @@ export default function ProjectDetailPage({ params }) {
         <button className="btn btn-ghost" onClick={addCut} style={{ marginTop: 4 }}>+ 컷 추가</button>
       </div>
 
-      {/* Phase 2 예고 */}
-      <div className="section" style={{ textAlign: 'center', color: 'var(--text-dim)' }}>
-        다음 단계: 이미지 + 스토리보드를 바탕으로 <strong style={{ color: 'var(--text)' }}>Veo 3 프롬프트 자동 생성</strong> (Phase 2)
-      </div>
+      {/* 샷 보드 — Veo 3 프롬프트 생성/관리 */}
+      <ShotBoard projectId={id} assets={assets} />
     </>
   );
 }
