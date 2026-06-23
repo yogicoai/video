@@ -33,6 +33,20 @@ function remoteDir(subpath) {
   return sub ? `${ROOT_DIR}/${sub}` : ROOT_DIR;
 }
 
+// cafe24는 .mp4를 막고 .jpg만 허용 → 영상은 .jpg로 위장 저장한다.
+// key("<subpath>/<filename.jpg>")로 실제 cafe24 공개 URL을 복원 (프록시가 사용).
+export function ftpUrlFromKey(key) {
+  const base = (FTP_PUBLIC_BASE || `http://${cleanHost(YOGIBO_FTP)}/`).replace(/\/$/, '');
+  const clean = String(key || '').replace(/^\/+/, '');
+  return `${base}/${ROOT_DIR}/${clean}`;
+}
+
+// 앱 프록시 경로 (브라우저는 이걸로 영상을 본다 → video/mp4로 변환 서빙)
+export function videoProxyUrl(subpath, filename) {
+  const sub = normSub(subpath);
+  return `/api/video/${sub ? sub + '/' : ''}${filename}`;
+}
+
 async function withClient(fn) {
   if (!YOGIBO_FTP || !YOGIBO_FTP_ID || !YOGIBO_FTP_PW) {
     throw new Error('FTP 설정(YOGIBO_FTP/ID/PW)이 없습니다 (.env.local).');

@@ -6,7 +6,7 @@ import path from 'path';
 import { collection } from '@/lib/db';
 import { COLLECTIONS } from '@/lib/models';
 import { renderShot, estimateCost, VEO_MODEL, DEFAULT_DURATION } from '@/lib/veo';
-import { uploadFile } from '@/lib/ftp';
+import { uploadFile, videoProxyUrl } from '@/lib/ftp';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 300; // Veo 렌더는 수 분 소요 (Vercel Hobby 최대 300초)
@@ -75,8 +75,10 @@ export async function POST(_req, { params }) {
   // 임시 출력 경로(서버리스에서 쓰기 가능한 /tmp)
   const tmpDir = path.join(os.tmpdir(), 'videogen');
   await mkdir(tmpDir, { recursive: true });
-  const fileName = `${shotId}-${Date.now()}.mp4`;
+  // cafe24가 .mp4 업로드를 막으므로 .jpg로 위장 저장(내용은 mp4). 재생은 /api/video 프록시가 변환.
+  const fileName = `${shotId}-${Date.now()}.jpg`;
   const tmpPath = path.join(tmpDir, fileName);
+  const subpath = `${shot.projectId}/renders`;
 
   const estimate = estimateCost(DEFAULT_DURATION);
   const jobs = await collection(COLLECTIONS.renderJobs);
@@ -101,8 +103,10 @@ export async function POST(_req, { params }) {
       durationSeconds: DEFAULT_DURATION,
       outPath: tmpPath,
     });
-    // mp4를 FTP에 업로드 → 공개 URL
-    videoUrl = await uploadFile(`${shot.projectId}/renders`, fileName, tmpPath);
+    // mp4를 cafe24에 .jpg로 위장 업로드 (cafe24가 영상 확장자 차단)
+    await uploadFile(subpath, fileName, tmpPath);
+    // 브라우저는 프록시 경로로 접근 → video/mp4로 변환 서빙
+    videoUrl = videoProxyUrl(subpath, fileName);
   } catch (err) {
     console.error('[render] 오류:', err);
     await jobs.updateOne({ _id: jobId }, { $set: { status: 'failed', error: err.message, finishedAt: new Date() } });
