@@ -1,10 +1,9 @@
-import { writeFile, mkdir, unlink } from 'fs/promises';
-import path from 'path';
 import { randomUUID } from 'crypto';
+import path from 'path';
+import { uploadBuffer, deleteRemote } from '@/lib/ftp';
 
-// 업로드 루트: public/uploads/<projectId>/<uuid.ext>
-// public 아래에 두면 /uploads/... 정적 경로로 바로 서빙된다.
-const UPLOAD_ROOT = path.join(process.cwd(), 'public', 'uploads');
+// 이미지·영상은 로컬 디스크가 아니라 Cafe24 FTP(/web/img/ai/<projectId>)에 저장한다.
+// → 서버리스(Vercel)·지속형 서버 어디서든 동작.
 
 const EXT_BY_MIME = {
   'image/jpeg': '.jpg',
@@ -14,35 +13,26 @@ const EXT_BY_MIME = {
 };
 
 /**
- * File(웹 표준) 객체를 디스크에 저장하고 메타데이터를 반환한다.
+ * File(웹 표준) 객체를 FTP에 저장하고 메타데이터를 반환한다.
  * @returns { filename, url, size, mimeType, originalName }
  */
 export async function saveImageFile(projectId, file) {
-  const dir = path.join(UPLOAD_ROOT, projectId);
-  await mkdir(dir, { recursive: true });
-
   const ext = EXT_BY_MIME[file.type] || path.extname(file.name) || '.bin';
   const filename = `${randomUUID()}${ext}`;
   const buffer = Buffer.from(await file.arrayBuffer());
-  await writeFile(path.join(dir, filename), buffer);
+
+  const url = await uploadBuffer(projectId, filename, buffer);
 
   return {
     filename,
-    url: `/uploads/${projectId}/${filename}`,
+    url, // FTP 공개 URL (절대경로)
     size: buffer.length,
     mimeType: file.type,
     originalName: file.name,
   };
 }
 
-/** 저장된 파일을 삭제한다. url 또는 projectId+filename으로. */
+/** FTP에 저장된 이미지 삭제 */
 export async function deleteImageFile(projectId, filename) {
-  if (!projectId || !filename) return;
-  // 경로 탈출 방지
-  const safe = path.basename(filename);
-  try {
-    await unlink(path.join(UPLOAD_ROOT, projectId, safe));
-  } catch {
-    // 이미 없으면 무시
-  }
+  await deleteRemote(projectId, path.basename(filename || ''));
 }

@@ -1,10 +1,12 @@
 import { NextResponse } from 'next/server';
 import { ObjectId } from 'mongodb';
-import { mkdir } from 'fs/promises';
+import { mkdir, unlink } from 'fs/promises';
+import os from 'os';
 import path from 'path';
 import { collection } from '@/lib/db';
 import { COLLECTIONS } from '@/lib/models';
 import { renderShot, estimateCost, VEO_MODEL, DEFAULT_DURATION } from '@/lib/veo';
+import { uploadFile } from '@/lib/ftp';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 300; // Veo 렌더는 수 분 소요 (Vercel Hobby 최대 300초)
@@ -33,7 +35,7 @@ export async function GET(_req, { params }) {
   });
 }
 
-// POST — 이 샷을 Veo로 렌더링
+// POST — 이 샷을 Veo로 렌더링 → mp4를 FTP(/web/img/ai/<projectId>/renders)에 저장
 export async function POST(_req, { params }) {
   const { shotId } = await params;
   const _id = toId(shotId);
@@ -52,23 +54,29 @@ export async function POST(_req, { params }) {
   const project = await projects.findOne({ _id: new ObjectId(shot.projectId) });
   const aspectRatio = project?.aspectRatio === '9:16' ? '9:16' : '16:9';
 
-  // 참조 이미지 경로(있으면 image-to-video)
-  let imageAbsPath, imageMime;
+  // 참조 이미지(있으면 image-to-video) — FTP 공개 URL에서 바이트를 받아온다
+  let imageBuffer, imageMime;
   if (shot.referenceImageId) {
     const assets = await collection(COLLECTIONS.assets);
     const asset = await assets.findOne({ _id: new ObjectId(shot.referenceImageId) }).catch(() => null);
-    if (asset) {
-      imageAbsPath = path.join(process.cwd(), 'public', 'uploads', shot.projectId, asset.filename);
-      imageMime = asset.mimeType;
+    if (asset?.url) {
+      try {
+        const r = await fetch(asset.url);
+        if (r.ok) {
+          imageBuffer = Buffer.from(await r.arrayBuffer());
+          imageMime = asset.mimeType || 'image/jpeg';
+        }
+      } catch {
+        // 이미지 못 받으면 text-to-video로 진행
+      }
     }
   }
 
-  // 출력 경로
-  const renderDir = path.join(process.cwd(), 'public', 'uploads', shot.projectId, 'renders');
-  await mkdir(renderDir, { recursive: true });
+  // 임시 출력 경로(서버리스에서 쓰기 가능한 /tmp)
+  const tmpDir = path.join(os.tmpdir(), 'videogen');
+  await mkdir(tmpDir, { recursive: true });
   const fileName = `${shotId}-${Date.now()}.mp4`;
-  const outPath = path.join(renderDir, fileName);
-  const videoUrl = `/uploads/${shot.projectId}/renders/${fileName}`;
+  const tmpPath = path.join(tmpDir, fileName);
 
   const estimate = estimateCost(DEFAULT_DURATION);
   const jobs = await collection(COLLECTIONS.renderJobs);
@@ -82,22 +90,27 @@ export async function POST(_req, { params }) {
     createdAt: now,
   });
 
+  let videoUrl;
   try {
     await renderShot({
       prompt: shot.veoPrompt,
       negativePrompt: shot.negativePrompt,
-      imageAbsPath,
+      imageBuffer,
       imageMime,
       aspectRatio,
       durationSeconds: DEFAULT_DURATION,
-      outPath,
+      outPath: tmpPath,
     });
+    // mp4를 FTP에 업로드 → 공개 URL
+    videoUrl = await uploadFile(`${shot.projectId}/renders`, fileName, tmpPath);
   } catch (err) {
-    console.error('[render] Veo 오류:', err);
+    console.error('[render] 오류:', err);
     await jobs.updateOne({ _id: jobId }, { $set: { status: 'failed', error: err.message, finishedAt: new Date() } });
+    await unlink(tmpPath).catch(() => {});
     return NextResponse.json({ error: `렌더 실패: ${err.message}` }, { status: 502 });
   }
 
+  await unlink(tmpPath).catch(() => {}); // 임시파일 정리
   await jobs.updateOne({ _id: jobId }, { $set: { status: 'done', videoUrl, finishedAt: new Date() } });
   await shots.updateOne({ _id }, { $set: { videoUrl, renderedAt: new Date() } });
 

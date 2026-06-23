@@ -1,6 +1,4 @@
 import { GoogleGenAI } from '@google/genai';
-import { readFile } from 'fs/promises';
-import path from 'path';
 
 // 모델: Veo 3.0은 2026-06-30 종료 예정 → 기본 3.1 Fast(최소 비용, image-to-video 지원).
 // .env.local의 GEMINI_VEO_MODEL로 교체 가능 (예: veo-3.1-lite-generate-preview = 더 저렴).
@@ -45,17 +43,17 @@ function snapDuration(sec) {
  * @param {object} p
  * @param {string} p.prompt
  * @param {string} [p.negativePrompt]
- * @param {string} [p.imageAbsPath] 참조 이미지 절대경로(image-to-video). 없으면 text-to-video.
+ * @param {Buffer} [p.imageBuffer] 참조 이미지 바이트(image-to-video). 없으면 text-to-video.
  * @param {string} [p.imageMime]
  * @param {string} [p.aspectRatio] '16:9' | '9:16'
  * @param {number} [p.durationSeconds]
- * @param {string} p.outPath 저장할 mp4 절대경로
+ * @param {string} p.outPath 임시로 저장할 mp4 경로(이후 FTP 업로드)
  * @param {(msg:string)=>void} [p.onProgress]
  */
 export async function renderShot({
   prompt,
   negativePrompt,
-  imageAbsPath,
+  imageBuffer,
   imageMime,
   aspectRatio = '16:9',
   durationSeconds = DEFAULT_DURATION,
@@ -74,10 +72,9 @@ export async function renderShot({
 
   const req = { model: MODEL, prompt, config };
 
-  // image-to-video: 참조 이미지가 있으면 base64로 첨부
-  if (imageAbsPath) {
-    const bytes = await readFile(imageAbsPath);
-    req.image = { imageBytes: bytes.toString('base64'), mimeType: imageMime || 'image/jpeg' };
+  // image-to-video: 참조 이미지 바이트가 있으면 base64로 첨부
+  if (imageBuffer) {
+    req.image = { imageBytes: imageBuffer.toString('base64'), mimeType: imageMime || 'image/jpeg' };
   }
 
   onProgress('Veo에 생성 요청 전송…');
