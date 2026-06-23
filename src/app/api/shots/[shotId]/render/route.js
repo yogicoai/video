@@ -7,7 +7,7 @@ import { COLLECTIONS } from '@/lib/models';
 import { renderShot, estimateCost, VEO_MODEL, DEFAULT_DURATION } from '@/lib/veo';
 
 export const dynamic = 'force-dynamic';
-export const maxDuration = 600; // Veo 렌더는 수 분 소요
+export const maxDuration = 300; // Veo 렌더는 수 분 소요 (Vercel Hobby 최대 300초)
 
 function toId(id) {
   try {

@@ -90,7 +90,7 @@ export async function renderShot({
     waited += 10;
     onProgress(`생성 중… (${waited}s 경과)`);
     operation = await client.operations.getVideosOperation({ operation });
-    if (waited > 360) throw new Error('렌더 시간이 너무 오래 걸립니다(6분 초과). 나중에 다시 시도하세요.');
+    if (waited > 270) throw new Error('렌더 시간이 너무 오래 걸립니다(4.5분 초과). 나중에 다시 시도하세요.');
   }
 
   const video = operation.response?.generatedVideos?.[0]?.video;
