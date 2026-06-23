@@ -8,6 +8,7 @@ export default function ShotBoard({ projectId, assets }) {
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState('');
   const [toast, setToast] = useState('');
+  const [renderingId, setRenderingId] = useState(null);
 
   const imgById = Object.fromEntries(assets.map((a) => [String(a._id), a]));
 
@@ -82,6 +83,27 @@ export default function ShotBoard({ projectId, assets }) {
   function copy(text) {
     navigator.clipboard?.writeText(text);
     flash('복사됨');
+  }
+
+  async function renderShot(i) {
+    const s = shots[i];
+    const ok = confirm(
+      `이 샷을 Veo 3.1로 렌더링합니다.\n\n예상 비용: 약 $0.40 (Veo 3.1 Fast · 720p · 4초)\n생성에 1~3분 걸립니다.\n\n진행할까요?`
+    );
+    if (!ok) return;
+    setRenderingId(s._id);
+    setError('');
+    try {
+      const res = await fetch(`/api/shots/${s._id}/render`, { method: 'POST' });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || '렌더 실패');
+      setShots((ss) => ss.map((x, idx) => (idx === i ? { ...x, videoUrl: data.videoUrl } : x)));
+      flash(`렌더 완료 (약 $${data.estimate?.usd})`);
+    } catch (e) {
+      setError(`렌더 실패: ${e.message}`);
+    } finally {
+      setRenderingId(null);
+    }
   }
 
   const approvedCount = shots.filter((s) => s.approved).length;
@@ -168,7 +190,31 @@ export default function ShotBoard({ projectId, assets }) {
                   >
                     {s.approved ? '승인 취소' : '✓ 승인'}
                   </button>
+                  {s.approved && (
+                    <button
+                      className="btn btn-sm btn-primary"
+                      onClick={() => renderShot(i)}
+                      disabled={renderingId === s._id}
+                      title="Veo 3.1로 실제 영상 생성 (유료)"
+                    >
+                      {renderingId === s._id ? '🎬 렌더 중… (1~3분)' : s.videoUrl ? '↻ 다시 렌더 (~$0.40)' : '🎬 렌더 (~$0.40)'}
+                    </button>
+                  )}
                 </div>
+
+                {s.videoUrl && (
+                  <div style={{ marginTop: 12 }}>
+                    {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+                    <video
+                      src={s.videoUrl}
+                      controls
+                      style={{ width: '100%', maxWidth: 360, borderRadius: 10, border: '1px solid var(--border)' }}
+                    />
+                    <div style={{ marginTop: 4 }}>
+                      <a className="copy-btn" href={s.videoUrl} download>영상 다운로드</a>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           );
