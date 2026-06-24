@@ -24,16 +24,23 @@ export const BRAND_FIELDS = [
   { key: 'keywords', label: '자주 쓰는 키워드', hint: '프롬프트에 즐겨 넣을 단어(선택)', multiline: true },
 ];
 
-// 요기보 초안 — 사용자가 저장한 게 없으면 이 값이 화면에 미리 채워진다.
+// 요기보 공식 브랜드 정보(yogibo.jp 기준) — 저장된 프로필이 없으면 이 값이 채워진다.
 export const DEFAULT_BRAND = {
-  oneLiner: '몸을 감싸 안는 푹신한 빈백 소파, 집에서 누리는 완벽한 휴식.',
-  coreValues: '편안함 · 휴식 · 자유로운 라이프스타일 · 일상의 여유',
-  videoTone: '따뜻한, 감성적, 편안한, 포근한 (자극적·차가운·과한 역동성은 지양)',
-  visualStyle: '밝은 자연광, 아늑한 실내, 부드러운 색감, 미니멀하고 깔끔한 공간',
-  target: '20~30대 1인가구, 집에서의 휴식을 중시하는 사람',
-  productFeatures: '몸에 맞게 변형되는 푹신함, 다양한 컬러, 소파·쿠션·바디필로우 라인',
-  avoid: '딱딱한 느낌, 사무적인 분위기, 과도하게 화려하거나 시끄러운 연출',
-  keywords: 'cozy, relaxation, soft, warm light, home, comfort, lounging',
+  oneLiner: '몸에 완벽하게 맞는 마법의 비즈소파 — 집에서 누리는 최상의 휴식, Yogibo.',
+  coreValues:
+    '최상의 편안함과 웰니스 · 몸에 맞춰지는 맞춤형 안락함 · 가족과 함께하는 일상의 휴식 · 오래 쓰는 지속가능함 · 누구에게나 편안한 라이프스타일',
+  videoTone:
+    '따뜻하고 포근한, 편안하고 감성적인, 가족적이고 행복한 일상의 분위기. 몸을 감싸 안기는 안락함이 느껴지게. (차갑거나 사무적이거나 과하게 자극적인 톤은 지양)',
+  visualStyle:
+    '밝은 자연광이 드는 아늑한 집·거실, 부드럽고 따뜻한 색감, 다채로운 컬러의 비즈소파가 공간의 주인공. 편안하게 몸을 맡긴 자세, 미니멀하고 깔끔하면서 생활감 있는 공간.',
+  target:
+    '편안함을 중시하는 가족과 1인가구, 직장인. 집에서의 휴식·수면·일·여가를 더 안락하게 즐기고 싶은 사람.',
+  productFeatures:
+    "미국 특허 신축 커버로 어느 방향에서 앉아도 몸에 완벽히 피팅되는 '마법의 비즈소파'. 분리·세탁 가능한 커버, 풍부한 컬러·패턴. Max·Mini·Lite·Pyramid 등 다양한 사이즈, 세워서 보관 가능한 유일한 비즈소파. 소파에 바디필로우(롤·문필로우 등) 모듈 조합, Zoola 방수 라인. 리필 비즈·커버 교체·수선 서비스로 오래 사용.",
+  avoid:
+    '일반 빈백처럼 보이게 하는 연출, 딱딱하고 사무적인 느낌, 차가운 색감, 과도하게 화려하거나 시끄러운 연출, 인물·제품이 불편해 보이는 자세.',
+  keywords:
+    'cozy, body-fitting, ultimate relaxation, magic bean sofa, soft, warm home, family comfort, colorful, lounging, snug, hug-like comfort',
 };
 
 /** 클라이언트 입력을 브랜드 프로필 문서로 정규화 (허용 필드만, 문자열 trim). */
