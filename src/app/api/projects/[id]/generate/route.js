@@ -3,6 +3,7 @@ import { ObjectId } from 'mongodb';
 import { collection } from '@/lib/db';
 import { COLLECTIONS, BRAND_DOC_ID, DEFAULT_BRAND, PROJECT_STATUS } from '@/lib/models';
 import { generateShots } from '@/lib/anthropic';
+import { getMotions } from '@/lib/higgsfield';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 120; // Claude 생성에 시간이 걸릴 수 있음
@@ -35,10 +36,18 @@ export async function POST(_req, { params }) {
 
   const storyboard = project.storyboard || [];
 
+  // Higgsfield 모션 프리셋 목록 (있으면 Claude가 샷별 추천 모션을 골라줌). 실패해도 진행.
+  let motions = [];
+  try {
+    motions = await getMotions();
+  } catch {
+    motions = [];
+  }
+
   // 2. Claude 호출
   let shots;
   try {
-    shots = await generateShots({ project, brand, assets, storyboard });
+    shots = await generateShots({ project, brand, assets, storyboard, motions });
   } catch (err) {
     console.error('[generate] Claude 오류:', err);
     return NextResponse.json(

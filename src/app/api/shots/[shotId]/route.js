@@ -17,7 +17,7 @@ export async function PATCH(req, { params }) {
 
   const body = await req.json().catch(() => ({}));
   const patch = {};
-  for (const f of ['title', 'description', 'cameraMovement', 'veoPrompt', 'negativePrompt', 'referenceImageId']) {
+  for (const f of ['title', 'description', 'cameraMovement', 'veoPrompt', 'higgsfieldPrompt', 'negativePrompt', 'referenceImageId']) {
     if (typeof body[f] === 'string') patch[f] = body[f];
   }
   if (body.durationSec !== undefined) patch.durationSec = Number(body.durationSec) || 5;

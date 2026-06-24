@@ -76,6 +76,7 @@ export default function ShotBoard({ projectId, assets }) {
         title: s.title,
         description: s.description,
         veoPrompt: s.veoPrompt,
+        higgsfieldPrompt: s.higgsfieldPrompt,
         negativePrompt: s.negativePrompt,
       }),
     });
@@ -101,7 +102,7 @@ export default function ShotBoard({ projectId, assets }) {
   async function renderShot(i) {
     const s = shots[i];
     const engine = engineOf(s);
-    const motionId = motionByShot[s._id];
+    const motionId = motionByShot[s._id] ?? s.recommendedMotionId ?? '';
 
     const msg =
       engine === 'higgsfield'
@@ -180,17 +181,45 @@ export default function ShotBoard({ projectId, assets }) {
                 </div>
                 <div className="shot-desc">{s.description}</div>
 
-                <div className="prompt-box">
+                {/* Higgsfield 웹 생성용 — 장면 프롬프트 + 추천 모션 + 이미지 (가장 중요) */}
+                <div className="prompt-box" style={{ border: '1px solid var(--accent)', borderRadius: 10, padding: 12 }}>
                   <div className="prompt-label">
-                    <span>Veo 3 프롬프트 (영어)</span>
-                    <button className="copy-btn" onClick={() => copy(s.veoPrompt)}>복사</button>
+                    <span style={{ color: 'var(--accent)', fontWeight: 700 }}>🎬 Higgsfield 장면 프롬프트</span>
+                    <button className="copy-btn" onClick={() => copy(s.higgsfieldPrompt || s.veoPrompt)}>복사</button>
                   </div>
                   <textarea
-                    rows={4}
-                    value={s.veoPrompt}
-                    onChange={(e) => setField(i, 'veoPrompt', e.target.value)}
+                    rows={3}
+                    value={s.higgsfieldPrompt || ''}
+                    onChange={(e) => setField(i, 'higgsfieldPrompt', e.target.value)}
+                    placeholder="(장면 프롬프트 — 카메라 무빙은 아래 추천 모션으로)"
                   />
+                  <div style={{ display: 'flex', gap: 14, alignItems: 'center', marginTop: 8, flexWrap: 'wrap', fontSize: 13 }}>
+                    {s.recommendedMotion && (
+                      <span>🎥 추천 모션: <strong style={{ color: 'var(--accent)' }}>{s.recommendedMotion}</strong></span>
+                    )}
+                    {img && (
+                      <a className="copy-btn" href={img.url} target="_blank" rel="noreferrer">🖼 이미지 열기/저장</a>
+                    )}
+                    {!img && <span style={{ color: 'var(--text-dim)' }}>이미지 연결 안 됨</span>}
+                  </div>
                 </div>
+
+                <details>
+                  <summary style={{ cursor: 'pointer', color: 'var(--text-dim)', fontSize: 13, margin: '4px 0' }}>
+                    Veo / 기타 엔진용 프롬프트 (참고)
+                  </summary>
+                  <div className="prompt-box" style={{ marginTop: 8 }}>
+                    <div className="prompt-label">
+                      <span>Veo 프롬프트 (카메라 묘사 포함, 영어)</span>
+                      <button className="copy-btn" onClick={() => copy(s.veoPrompt)}>복사</button>
+                    </div>
+                    <textarea
+                      rows={3}
+                      value={s.veoPrompt}
+                      onChange={(e) => setField(i, 'veoPrompt', e.target.value)}
+                    />
+                  </div>
+                </details>
 
                 <div className="prompt-box">
                   <div className="prompt-label">
@@ -231,7 +260,7 @@ export default function ShotBoard({ projectId, assets }) {
                         <select
                           className="cut-body"
                           style={{ padding: '6px 9px', fontSize: 13, width: 'auto', maxWidth: 180 }}
-                          value={motionByShot[s._id] || ''}
+                          value={motionByShot[s._id] ?? s.recommendedMotionId ?? ''}
                           onChange={(e) => setMotionByShot((m) => ({ ...m, [s._id]: e.target.value }))}
                         >
                           <option value="">모션 선택(선택사항)</option>
