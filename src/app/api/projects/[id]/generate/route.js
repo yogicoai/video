@@ -16,11 +16,41 @@ function toId(id) {
   }
 }
 
-// POST /api/projects/:id/generate — 브랜드+시나리오+이미지+스토리보드 → 샷별 Veo3 프롬프트 생성
-export async function POST(_req, { params }) {
+// 수동 입력 샷 정규화 (Claude 없이 직접 저장할 때). 모션 이름→id 매핑 + 이미지 검증.
+function normalizeManualShots(rawShots, assets, motions) {
+  const validIds = new Set(assets.map((a) => String(a._id)));
+  const motionIdByName = Object.fromEntries(motions.map((m) => [m.name, m.id]));
+  return rawShots
+    .map((s, i) => {
+      const recName = String(s.recommendedMotion || '');
+      return {
+        order: Number(s.order ?? i + 1),
+        title: String(s.title || `샷 ${i + 1}`),
+        description: String(s.description || ''),
+        cameraMovement: String(s.cameraMovement || ''),
+        veoPrompt: String(s.veoPrompt || ''),
+        higgsfieldPrompt: String(s.higgsfieldPrompt || ''),
+        recommendedMotion: recName,
+        recommendedMotionId: s.recommendedMotionId || motionIdByName[recName] || null,
+        negativePrompt: String(s.negativePrompt || ''),
+        durationSec: Number(s.durationSec) || 5,
+        referenceImageId: validIds.has(String(s.referenceImageId)) ? String(s.referenceImageId) : null,
+      };
+    })
+    .sort((a, b) => a.order - b.order)
+    .map((s, i) => ({ ...s, order: i + 1 }));
+}
+
+// POST /api/projects/:id/generate
+//  - body.shots 배열이 있으면: Claude 없이 그 샷을 그대로 저장(수동 입력)
+//  - 없으면: 브랜드+시나리오+이미지+스토리보드 → Claude로 생성
+export async function POST(req, { params }) {
   const { id } = await params;
   const _id = toId(id);
   if (!_id) return NextResponse.json({ error: '잘못된 ID' }, { status: 400 });
+
+  const body = await req.json().catch(() => ({}));
+  const manualShots = Array.isArray(body.shots) && body.shots.length ? body.shots : null;
 
   // 1. 데이터 모으기
   const projects = await collection(COLLECTIONS.projects);
@@ -36,7 +66,7 @@ export async function POST(_req, { params }) {
 
   const storyboard = project.storyboard || [];
 
-  // Higgsfield 모션 프리셋 목록 (있으면 Claude가 샷별 추천 모션을 골라줌). 실패해도 진행.
+  // Higgsfield 모션 프리셋 목록 (모션 이름→id 매핑용). 실패해도 진행.
   let motions = [];
   try {
     motions = await getMotions();
@@ -44,16 +74,17 @@ export async function POST(_req, { params }) {
     motions = [];
   }
 
-  // 2. Claude 호출
+  // 2. 샷 확보 — 수동 입력 우선, 없으면 Claude
   let shots;
-  try {
-    shots = await generateShots({ project, brand, assets, storyboard, motions });
-  } catch (err) {
-    console.error('[generate] Claude 오류:', err);
-    return NextResponse.json(
-      { error: `프롬프트 생성 실패: ${err.message}` },
-      { status: 502 }
-    );
+  if (manualShots) {
+    shots = normalizeManualShots(manualShots, assets, motions);
+  } else {
+    try {
+      shots = await generateShots({ project, brand, assets, storyboard, motions });
+    } catch (err) {
+      console.error('[generate] Claude 오류:', err);
+      return NextResponse.json({ error: `프롬프트 생성 실패: ${err.message}` }, { status: 502 });
+    }
   }
 
   if (!shots.length) {
