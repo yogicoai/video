@@ -9,8 +9,21 @@ export default function ShotBoard({ projectId, assets }) {
   const [error, setError] = useState('');
   const [toast, setToast] = useState('');
   const [renderingId, setRenderingId] = useState(null);
+  const [motions, setMotions] = useState([]);
+  const [engineByShot, setEngineByShot] = useState({}); // shotId → 'veo' | 'higgsfield'
+  const [motionByShot, setMotionByShot] = useState({}); // shotId → motionId
 
   const imgById = Object.fromEntries(assets.map((a) => [String(a._id), a]));
+
+  // Higgsfield 모션 프리셋 목록 (역동적 카메라 무빙)
+  useEffect(() => {
+    fetch('/api/motions')
+      .then((r) => r.json())
+      .then((d) => setMotions(d.motions || []))
+      .catch(() => setMotions([]));
+  }, []);
+
+  const engineOf = (s) => engineByShot[s._id] || s.engine || 'veo';
 
   async function loadShots() {
     setLoading(true);
@@ -87,18 +100,27 @@ export default function ShotBoard({ projectId, assets }) {
 
   async function renderShot(i) {
     const s = shots[i];
-    const ok = confirm(
-      `이 샷을 Veo 3.1로 렌더링합니다.\n\n예상 비용: 약 $0.40 (Veo 3.1 Fast · 720p · 4초)\n생성에 1~3분 걸립니다.\n\n진행할까요?`
-    );
-    if (!ok) return;
+    const engine = engineOf(s);
+    const motionId = motionByShot[s._id];
+
+    const msg =
+      engine === 'higgsfield'
+        ? `이 샷을 Higgsfield로 렌더링합니다.\n\n· 역동적 카메라 모션 적용\n· Higgsfield 크레딧 사용\n· 이미지 연결 필수\n생성에 1~3분 걸립니다.\n\n진행할까요?`
+        : `이 샷을 Veo 3.1로 렌더링합니다.\n\n예상 비용: 약 $0.40 (Veo 3.1 Fast · 720p · 4초)\n생성에 1~3분 걸립니다.\n\n진행할까요?`;
+    if (!confirm(msg)) return;
+
     setRenderingId(s._id);
     setError('');
     try {
-      const res = await fetch(`/api/shots/${s._id}/render`, { method: 'POST' });
+      const res = await fetch(`/api/shots/${s._id}/render`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ engine, motionId, strength: 0.8 }),
+      });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || '렌더 실패');
-      setShots((ss) => ss.map((x, idx) => (idx === i ? { ...x, videoUrl: data.videoUrl } : x)));
-      flash(`렌더 완료 (약 $${data.estimate?.usd})`);
+      setShots((ss) => ss.map((x, idx) => (idx === i ? { ...x, videoUrl: data.videoUrl, engine } : x)));
+      flash('렌더 완료');
     } catch (e) {
       setError(`렌더 실패: ${e.message}`);
     } finally {
@@ -112,7 +134,7 @@ export default function ShotBoard({ projectId, assets }) {
     <div className="section">
       <div className="section-head">
         <div>
-          <h2 className="section-title">Veo 3 프롬프트 (샷 보드)</h2>
+          <h2 className="section-title">샷 보드 — 프롬프트 & 영상 렌더</h2>
           <p className="section-hint">
             브랜드 프로필 + 시나리오 + 이미지 + 스토리보드를 바탕으로 Claude가 생성합니다.
             {shots.length > 0 && ` · 승인 ${approvedCount}/${shots.length}`}
@@ -182,7 +204,7 @@ export default function ShotBoard({ projectId, assets }) {
                   />
                 </div>
 
-                <div className="shot-actions">
+                <div className="shot-actions" style={{ flexWrap: 'wrap' }}>
                   <button className="btn btn-sm" onClick={() => saveShot(i)}>저장</button>
                   <button
                     className={`btn btn-sm${s.approved ? '' : ' btn-approve'}`}
@@ -190,15 +212,44 @@ export default function ShotBoard({ projectId, assets }) {
                   >
                     {s.approved ? '승인 취소' : '✓ 승인'}
                   </button>
+
                   {s.approved && (
-                    <button
-                      className="btn btn-sm btn-primary"
-                      onClick={() => renderShot(i)}
-                      disabled={renderingId === s._id}
-                      title="Veo 3.1로 실제 영상 생성 (유료)"
-                    >
-                      {renderingId === s._id ? '🎬 렌더 중… (1~3분)' : s.videoUrl ? '↻ 다시 렌더 (~$0.40)' : '🎬 렌더 (~$0.40)'}
-                    </button>
+                    <>
+                      {/* 엔진 선택 */}
+                      <select
+                        className="cut-body"
+                        style={{ padding: '6px 9px', fontSize: 13, width: 'auto' }}
+                        value={engineOf(s)}
+                        onChange={(e) => setEngineByShot((m) => ({ ...m, [s._id]: e.target.value }))}
+                      >
+                        <option value="veo">Veo 3.1 (~$0.40)</option>
+                        <option value="higgsfield">Higgsfield (역동적 모션)</option>
+                      </select>
+
+                      {/* Higgsfield 모션 프리셋 */}
+                      {engineOf(s) === 'higgsfield' && (
+                        <select
+                          className="cut-body"
+                          style={{ padding: '6px 9px', fontSize: 13, width: 'auto', maxWidth: 180 }}
+                          value={motionByShot[s._id] || ''}
+                          onChange={(e) => setMotionByShot((m) => ({ ...m, [s._id]: e.target.value }))}
+                        >
+                          <option value="">모션 선택(선택사항)</option>
+                          {motions.map((mo) => (
+                            <option key={mo.id} value={mo.id}>{mo.name}</option>
+                          ))}
+                        </select>
+                      )}
+
+                      <button
+                        className="btn btn-sm btn-primary"
+                        onClick={() => renderShot(i)}
+                        disabled={renderingId === s._id}
+                        title="실제 영상 생성 (유료)"
+                      >
+                        {renderingId === s._id ? '🎬 렌더 중… (1~3분)' : s.videoUrl ? '↻ 다시 렌더' : '🎬 렌더'}
+                      </button>
+                    </>
                   )}
                 </div>
 
