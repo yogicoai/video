@@ -41,14 +41,15 @@ export async function renderHiggsfield({ prompt, imageUrl, motionId, strength = 
   if (!imageUrl) throw new Error('Higgsfield는 참조 이미지(image-to-video)가 필요합니다.');
   const client = getClient();
 
-  const input = {
+  const params = {
     model: HF_MODEL,
     prompt: prompt || 'cinematic product video',
     input_images: [{ type: 'image_url', image_url: imageUrl }],
   };
-  if (motionId) input.motions = [{ id: motionId, strength: Number(strength) || 0.8 }];
+  if (motionId) params.motions = [{ id: motionId, strength: Number(strength) || 0.8 }];
 
-  const res = await client.subscribe('/v1/image2video/dop', { input, withPolling: true });
+  // 현재 API는 본문을 { params: {...} }로 감싸야 함 (SDK 0.2.1은 미반영)
+  const res = await client.subscribe('/v1/image2video/dop', { input: { params }, withPolling: true });
 
   if (res.status === 'nsfw') throw new Error('콘텐츠가 안전필터(NSFW)로 차단됐습니다.');
   if (res.status !== 'completed') throw new Error(`Higgsfield 생성 실패 (status: ${res.status}).`);
