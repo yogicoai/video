@@ -59,4 +59,14 @@ export async function renderHiggsfield({ prompt, imageUrl, motionId, strength = 
   return { videoUrl: url, model: HF_MODEL };
 }
 
+// 모션 이름 → id 해석 (대소문자 무시 + 부분일치). Claude가 약간 다른 표기로 골라도 매칭.
+export function resolveMotionId(name, motions = []) {
+  if (!name) return null;
+  const n = String(name).trim().toLowerCase();
+  if (!n) return null;
+  let m = motions.find((x) => x.name.toLowerCase() === n); // 정확(대소문자 무시)
+  if (!m) m = motions.find((x) => x.name.toLowerCase().includes(n) || n.includes(x.name.toLowerCase())); // 부분
+  return m?.id || null;
+}
+
 export { HF_MODEL };

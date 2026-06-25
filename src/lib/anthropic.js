@@ -1,4 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
+import { resolveMotionId } from '@/lib/higgsfield';
 
 // 모델: 기본 최고 품질(Opus 4.8). 비용 절감이 필요하면 .env.local의 ANTHROPIC_MODEL로 교체
 // (예: claude-sonnet-4-6). 다운그레이드는 사용자의 선택이므로 기본값은 건드리지 않는다.
@@ -127,7 +128,6 @@ ${motionBlock}
 export async function generateShots({ project, brand, assets, storyboard, motions = [] }) {
   const anthropic = getClient();
   const motionNames = motions.map((m) => m.name).filter(Boolean);
-  const motionIdByName = Object.fromEntries(motions.map((m) => [m.name, m.id]));
 
   const response = await anthropic.messages.create({
     model: MODEL,
@@ -154,7 +154,7 @@ export async function generateShots({ project, brand, assets, storyboard, motion
         veoPrompt: String(s.veoPrompt || ''),
         higgsfieldPrompt: String(s.higgsfieldPrompt || ''),
         recommendedMotion: recName,
-        recommendedMotionId: motionIdByName[recName] || null, // UI 자동 선택용
+        recommendedMotionId: resolveMotionId(recName, motions), // UI 자동 선택용(유연 매칭)
         negativePrompt: String(s.negativePrompt || ''),
         durationSec: Number(s.durationSec) || 5,
         referenceImageId: validIds.has(String(s.referenceImageId)) ? String(s.referenceImageId) : null,

@@ -3,7 +3,7 @@ import { ObjectId } from 'mongodb';
 import { collection } from '@/lib/db';
 import { COLLECTIONS, BRAND_DOC_ID, DEFAULT_BRAND, PROJECT_STATUS } from '@/lib/models';
 import { generateShots } from '@/lib/anthropic';
-import { getMotions } from '@/lib/higgsfield';
+import { getMotions, resolveMotionId } from '@/lib/higgsfield';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 120; // Claude 생성에 시간이 걸릴 수 있음
@@ -19,7 +19,6 @@ function toId(id) {
 // 수동 입력 샷 정규화 (Claude 없이 직접 저장할 때). 모션 이름→id 매핑 + 이미지 검증.
 function normalizeManualShots(rawShots, assets, motions) {
   const validIds = new Set(assets.map((a) => String(a._id)));
-  const motionIdByName = Object.fromEntries(motions.map((m) => [m.name, m.id]));
   return rawShots
     .map((s, i) => {
       const recName = String(s.recommendedMotion || '');
@@ -31,7 +30,7 @@ function normalizeManualShots(rawShots, assets, motions) {
         veoPrompt: String(s.veoPrompt || ''),
         higgsfieldPrompt: String(s.higgsfieldPrompt || ''),
         recommendedMotion: recName,
-        recommendedMotionId: s.recommendedMotionId || motionIdByName[recName] || null,
+        recommendedMotionId: s.recommendedMotionId || resolveMotionId(recName, motions),
         negativePrompt: String(s.negativePrompt || ''),
         durationSec: Number(s.durationSec) || 5,
         referenceImageId: validIds.has(String(s.referenceImageId)) ? String(s.referenceImageId) : null,
