@@ -72,6 +72,24 @@ export default function HomePage() {
         </button>
       </div>
 
+      {/* 고정 — 완성 스토리보드 프로젝트 */}
+      <a
+        href="/storyboard"
+        className="card"
+        style={{ display: 'block', borderColor: 'var(--accent)', marginBottom: 20 }}
+      >
+        <div className="card-title">🎬 요기보 15초 단편 CF</div>
+        <div className="card-meta">
+          지친 직장인 → 요기보 휴식 · 6컷 컷분할 스토리보드 · 9:16 · 모델 A · 아보카도 Max
+          <br />
+          클릭하면 <strong>이렇게 짜여진 스토리보드</strong>를 볼 수 있어요.
+        </div>
+        <div className="card-foot">
+          <span className="badge badge-review">스토리보드 완료</span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
       {loading ? (
         <div className="empty">불러오는 중…</div>
       ) : projects.length === 0 ? (

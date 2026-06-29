@@ -30,3 +30,10 @@ yarn-error.log*
 # editor
 .vscode/
 .idea/
+
+# 로컬 CF 자산 (레포 업로드 제외 — 용량 크거나 참고/로컬 전용)
+/sectionImg/
+/img/
+*.mp4
+/storyboard_*.png
+/yogibo_max.jpg

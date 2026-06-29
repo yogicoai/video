@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 
 const CDN = 'https://d8j0ntlcm91z4.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0';
 // 컷분할 스토리보드 시트 (서버 FTP 업로드본)
-const SHEET_URL = 'https://yogibo.openhost.cafe24.com/web/img/ai/storyboard/storyboard_sheet_v2.png';
+const SHEET_URL = 'https://yogibo.openhost.cafe24.com/web/img/ai/storyboard/storyboard_final2.png';
 
 // ── STEP 1: 대표 모델(탤런트) 후보 — 선택한 인물로 전 컷을 동일하게 제작한다.
 const MODELS = [
@@ -13,49 +13,43 @@ const MODELS = [
   { key: 'C', label: '모델 C', img: `${CDN}/hf_20260629_034700_78b17fa7-2697-4aac-a0b0-850728f4258a.png`, note: '또렷 · 자신감' },
 ];
 
-// ── STEP 2: 컷 스토리보드 — "지친 일상 → 요기보 휴식" 15초 광고 (눕힌 아보카도 Max · 밝은 톤).
+// ── STEP 2: 컷 스토리보드 — "지친 직장인 → 요기보 휴식" 15초 CF (모델 A · 아보카도 Max · 낮→밤 톤).
 const CUTS = [
   {
-    n: 1, title: '훅 — 파묻힘', durationSec: 2,
-    img: `${CDN}/hf_20260629_031637_7a4d1269-ff37-4ddc-bfe4-2bea6cbeee56.png`,
-    desc: '지친 얼굴이 아보카도 Max에 푹 파묻히며 눈을 감는다. 휴식의 결과를 먼저 보여주는 훅.',
-    camera: '얼굴 클로즈업 · 얕은 심도', caption: '하루의 끝에…',
+    n: 1, title: '깨어남', durationSec: 3,
+    img: `${CDN}/hf_20260629_064258_6b13fb09-a8ac-4b48-9d63-62b988d51ad0.png`,
+    desc: '햇살 속, 아보카도 빈백에서 잠을 깬다.',
+    camera: '하이앵글 클로즈업', caption: '음… 잘 잤다',
   },
   {
-    n: 2, title: '핸드폰 보다 깜짝', durationSec: 2,
-    img: `${CDN}/hf_20260629_034426_a7734439-e476-4787-aa47-937257b47323.png`,
-    desc: '요기보에 누워 핸드폰을 보다 갑자기 깜짝 놀란다. 이야기의 시작.',
-    camera: '미디엄 · 정면', caption: '어, 벌써?',
+    n: 2, title: '깜짝 — 폰 확인', durationSec: 3,
+    img: `${CDN}/hf_20260629_064756_f03540f7-f080-4f4d-8cec-ca4f3e6531dc.png`,
+    desc: '폰을 집어 시간을 확인하다 깜짝 놀란다. (놀란 얼굴 ECU로 연결)',
+    camera: '와이드 → 타이트 CU', caption: '헉, 지각!',
   },
   {
-    n: 3, title: '출근 — 만원 지하철', durationSec: 2.5,
-    img: `${CDN}/hf_20260629_032044_6fb06d15-7efd-4f04-abc1-35b6fb3df959.png`,
-    desc: '사람 꽉 찬 지하철, 손잡이를 잡고 지친 표정. 밝지만 분주한 톤.',
-    camera: '미디엄 · 핸드헬드', caption: '버티는 하루',
+    n: 3, title: '출근 준비 → 출근', durationSec: 3,
+    img: `${CDN}/hf_20260629_075102_477c33a5-eda2-4f76-b2f8-c354d3161174.png`,
+    desc: '머리·가방·신발 빠른 동작(옷 갈아입기 ❌) → 묶은 머리로 개운하게 출근.',
+    camera: '디테일컷 → 측면 트래킹', caption: '근데 몸은 개운해',
   },
   {
-    n: 4, title: '귀가 — 집 도착', durationSec: 2,
-    img: `${CDN}/hf_20260629_032046_fc88c9e2-f596-434d-bd5b-fa821b63bef4.png`,
-    desc: '밝고 따뜻한 한국 아파트 현관에 들어선다. 가방을 툭.',
-    camera: '와이드 · 정면', caption: '드디어, 집',
+    n: 4, title: '바쁜 회사', durationSec: 3,
+    img: `${CDN}/hf_20260629_075248_7e39b30d-8259-4ebb-9f45-6bd7121512c2.png`,
+    desc: '서류 들고 분주한 하루. 인물 중심 + 배경 보케 (묶은 머리 유지).',
+    camera: '인물중심 미디엄 · 보케', caption: '—',
   },
   {
-    n: 5, title: '다가감', durationSec: 2,
-    img: `${CDN}/hf_20260629_033242_22fdaedb-9916-4521-8178-f2e676157b8d.png`,
-    desc: '카디건 차림으로 거실에 눕혀진 요기보 Max로 향한다.',
-    camera: '와이드 3/4 · 방 넓게', caption: '(무자막)',
+    n: 5, title: '편안한 휴식', durationSec: 2,
+    img: `${CDN}/hf_20260629_071705_ee0668e3-1f94-473a-8c01-e6e2399cdfd1.png`,
+    desc: '귀가, 아보카도 빈백에 편하게 안겨 쉰다. (어두운 저녁 톤)',
+    camera: '미디엄 · 저녁', caption: '역시 집이 최고',
   },
   {
-    n: 6, title: '휴식 — 페이오프', durationSec: 3,
-    img: `${CDN}/hf_20260629_033244_1d157a06-03b5-40bc-85ba-f7139aceb620.png`,
-    desc: '눕혀진 요기보에 포근히 누워 몸이 감싸진다. 편안한 미소. 핵심 컷.',
-    camera: '미디엄 → 푸시인', caption: '내 몸에 딱, 요기보',
-  },
-  {
-    n: 7, title: '브랜드', durationSec: 1.5,
-    img: `${CDN}/hf_20260629_033251_bd353d71-7a30-4a6b-95b4-33a703f6258c.png`,
-    desc: '눕혀진 제품 단독 컷 + 로고·캠페인 문구.',
-    camera: '정적 와이드', caption: 'Yogibo · 신학기 캠페인',
+    n: 6, title: '잠들며 마무리', durationSec: 1,
+    img: `${CDN}/hf_20260629_072008_85830b7b-185d-4645-a640-3261697df87a.png`,
+    desc: '빈백 위에서 얼굴 클로즈업으로 평온하게 잠들며 마무리. (엔딩 + 로고)',
+    camera: '얼굴 클로즈업', caption: '내 하루의 끝, 요기보',
   },
 ];
 
@@ -67,7 +61,7 @@ const WORKFLOW = [
 ];
 
 export default function StoryboardPage() {
-  const [model, setModel] = useState(null); // 선택된 대표 모델 key
+  const [model] = useState('A'); // 선정된 대표 모델 (이 CF는 모델 A 확정)
   const [approved, setApproved] = useState(() => Object.fromEntries(CUTS.map((c) => [c.n, false])));
   const [toast, setToast] = useState('');
 
@@ -88,11 +82,12 @@ export default function StoryboardPage() {
 
   return (
     <>
+      <a href="/" className="back-link">← 프로젝트</a>
       <div className="page-head">
         <div>
-          <h1 className="page-title">스토리보드 스튜디오</h1>
+          <h1 className="page-title">요기보 15초 단편 CF</h1>
           <p className="page-desc">
-            <strong>대표 모델을 먼저 정하고</strong>, 그 인물로 광고를 <strong>컷(cut)으로 분할</strong>해 그려본 뒤, 컷을 확정하면 영상을 만듭니다.
+            <strong>대표 모델 → 컷분할 스토리보드</strong> 순서로 이렇게 짜였습니다. (지친 직장인 → 요기보 휴식 · 9:16)
           </p>
         </div>
         {toast && <span className="toast">{toast}</span>}
@@ -121,40 +116,36 @@ export default function StoryboardPage() {
         {model ? ` · 모델 ${model} · 승인 ${approvedCount}/${CUTS.length}컷` : ' · 모델 미선정'}
       </p>
 
-      {/* STEP 1 — 대표 모델 선정 */}
+      {/* STEP 1 — 대표 모델(확정) + 톤 */}
       <div className="section">
         <div className="section-head">
-          <h2 className="section-title">STEP 1 · 대표 모델 선정</h2>
-          <p className="section-hint">{model ? `선택됨: 모델 ${model} — 전 컷에 동일 인물로 적용됩니다.` : '한 명을 선택하면 모든 컷이 그 인물로 만들어집니다.'}</p>
+          <h2 className="section-title">STEP 1 · 대표 모델 &amp; 톤</h2>
+          <p className="section-hint">이 CF의 확정 모델과 화면 톤(LOOK) 기준입니다.</p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 12 }}>
-          {MODELS.map((m) => {
-            const sel = model === m.key;
-            return (
-              <button
-                key={m.key}
-                onClick={() => { setModel(m.key); flash(`대표 모델 ${m.key} 선정됨`); }}
-                style={{
-                  textAlign: 'left', padding: 0, cursor: 'pointer', background: 'var(--bg)',
-                  border: `2px solid ${sel ? 'var(--accent)' : 'var(--border)'}`, borderRadius: 12, overflow: 'hidden',
-                }}
-              >
-                <div style={{ position: 'relative', aspectRatio: '3 / 4', background: 'var(--bg-elev)' }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={m.img} alt={m.label} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                  {sel && (
-                    <span style={{ position: 'absolute', top: 6, right: 6, background: 'var(--accent)', color: '#08130d', fontSize: 11, fontWeight: 800, padding: '3px 8px', borderRadius: 999 }}>
-                      ✓ 선택
-                    </span>
-                  )}
-                </div>
-                <div style={{ padding: '8px 10px' }}>
-                  <div style={{ fontWeight: 700, fontSize: 14, color: sel ? 'var(--accent)' : 'var(--text)' }}>{m.label}</div>
-                  <div className="card-meta" style={{ fontSize: 12 }}>{m.note}</div>
-                </div>
-              </button>
-            );
-          })}
+        <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap', alignItems: 'flex-start' }}>
+          {/* 확정 모델 */}
+          <div style={{ width: 150 }}>
+            <div style={{ position: 'relative', aspectRatio: '3 / 4', borderRadius: 12, overflow: 'hidden', border: '2px solid var(--accent)' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={MODELS[0].img} alt="대표 모델" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <span style={{ position: 'absolute', top: 6, right: 6, background: 'var(--accent)', color: '#08130d', fontSize: 11, fontWeight: 800, padding: '3px 8px', borderRadius: 999 }}>✓ 확정</span>
+            </div>
+            <div style={{ padding: '8px 2px' }}>
+              <div style={{ fontWeight: 700, fontSize: 14, color: 'var(--accent)' }}>대표 모델</div>
+              <div className="card-meta" style={{ fontSize: 12 }}>20대 초반 한국 여성 · 전 컷 동일 인물 고정 (Higgsfield Element)</div>
+            </div>
+          </div>
+          {/* 톤·룩 설명 */}
+          <div style={{ flex: 1, minWidth: 280 }}>
+            <div style={{ fontWeight: 700, marginBottom: 8 }}>🎨 톤·룩(LOOK) — 이렇게 잡았어요</div>
+            <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.9, fontSize: 13.5, color: 'var(--text)' }}>
+              <li><strong>필름 질감</strong>: 부드러운 헤이즈 + 미세 그레인 + 소프트 포커스 (과하게 쨍하지 않게)</li>
+              <li><strong>색감</strong>: 따뜻한 파스텔 톤, 낮은 대비</li>
+              <li><strong>밝기 아크</strong>: 낮(아침·출근·회사)은 밝게 → 밤(귀가·휴식)은 어둡게. 단 <strong>필름 프레임 톤은 일정</strong>하게 유지</li>
+              <li><strong>제품</strong>: 아보카도 그린 Yogibo Max (눕힌 라운저)</li>
+              <li><strong>의상</strong>: 줄무늬 잠옷 → 네이비 정장 → 줄무늬+차콜 운동복 (장면별 일관)</li>
+            </ul>
+          </div>
         </div>
       </div>
 
