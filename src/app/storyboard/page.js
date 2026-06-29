@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 
 const CDN = 'https://d8j0ntlcm91z4.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0';
 // 컷분할 스토리보드 시트 (서버 FTP 업로드본)
-const SHEET_URL = 'https://yogibo.openhost.cafe24.com/web/img/ai/storyboard/storyboard_final2.png';
+const SHEET_URL = 'https://yogibo.openhost.cafe24.com/web/img/ai/storyboard/storyboard_final3.png';
 
 // ── STEP 1: 대표 모델(탤런트) 후보 — 선택한 인물로 전 컷을 동일하게 제작한다.
 const MODELS = [
@@ -40,10 +40,10 @@ const CUTS = [
     camera: '인물중심 미디엄 · 보케', caption: '—',
   },
   {
-    n: 5, title: '편안한 휴식', durationSec: 2,
-    img: `${CDN}/hf_20260629_071705_ee0668e3-1f94-473a-8c01-e6e2399cdfd1.png`,
-    desc: '귀가, 아보카도 빈백에 편하게 안겨 쉰다. (어두운 저녁 톤)',
-    camera: '미디엄 · 저녁', caption: '역시 집이 최고',
+    n: 5, title: '쓰러지듯 잠듦', durationSec: 2,
+    img: `${CDN}/hf_20260629_080533_a25b42c7-687f-475d-8aa7-2bc3b2b03fa0.png`,
+    desc: '원룸(S2와 같은 공간)에서 아보카도 빈백에 쓰러지듯 잠든다. 인물 중심·저녁 톤.',
+    camera: '인물중심 · 저녁', caption: '역시 집이 최고',
   },
   {
     n: 6, title: '잠들며 마무리', durationSec: 1,
