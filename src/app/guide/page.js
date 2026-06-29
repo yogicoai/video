@@ -1,51 +1,46 @@
-export const metadata = { title: '가이드 — VideoGen Studio' };
+export const metadata = { title: '사용설명서 — VideoGen Studio' };
 
 export default function GuidePage() {
   return (
     <>
       <div className="page-head">
         <div>
-          <h1 className="page-title">사용 가이드</h1>
+          <h1 className="page-title">사용설명서</h1>
           <p className="page-desc">
-            이 프로그램은 <strong>제품 이미지와 스토리보드를 넣으면 → AI가 영상 제작용 프롬프트를 만들고 → 실제 영상까지</strong> 뽑아주는 도구예요.
+            <strong>이 앱에서 영상 프롬프트를 만들고 → Higgsfield 웹에서 영상을 제작</strong>하는 전체 방법이에요. 영상이 처음이어도 따라할 수 있게 정리했어요.
           </p>
         </div>
       </div>
 
       {/* 전체 흐름 */}
-      <h2 className="section-title" style={{ marginBottom: 10 }}>한눈에 보는 전체 흐름</h2>
+      <h2 className="section-title" style={{ marginBottom: 10 }}>한눈에 보는 흐름</h2>
       <div className="flow">
-        <span className="flow-step">① 브랜드 설정</span>
+        <span className="flow-step">💡 아이디어</span>
         <span className="flow-arrow">→</span>
-        <span className="flow-step">② 프로젝트 생성</span>
+        <span className="flow-step">📁 프로젝트</span>
         <span className="flow-arrow">→</span>
-        <span className="flow-step">③ 이미지 업로드</span>
+        <span className="flow-step">🖼 이미지·스토리보드</span>
         <span className="flow-arrow">→</span>
-        <span className="flow-step">④ 스토리보드</span>
+        <span className="flow-step">✨ AI 프롬프트 생성</span>
         <span className="flow-arrow">→</span>
-        <span className="flow-step">⑤ AI 프롬프트 생성</span>
-        <span className="flow-arrow">→</span>
-        <span className="flow-step">⑥ 승인</span>
-        <span className="flow-arrow">→</span>
-        <span className="flow-step">⑦ 영상 렌더</span>
+        <span className="flow-step">🎬 Higgsfield에서 영상</span>
       </div>
 
       <div className="note" style={{ marginBottom: 28 }}>
-        💡 <strong>핵심 개념</strong> — ①~⑥(프롬프트 만들기·검수)까지는 <strong>거의 무료</strong>예요(AI 글쓰기 비용만).
-        실제 돈이 드는 건 <strong>⑦ 영상 렌더(Veo 3.1, 유료)</strong> 뿐입니다. 그래서 <strong>승인한 샷만</strong> 렌더하도록 막아뒀어요.
+        💡 <strong>핵심</strong> — 이 앱은 <strong>"무엇을·어떻게 찍을지(아이디어 + 프롬프트)"</strong>를 만들어줘요. <strong>실제 영상은 Higgsfield 웹앱</strong>에서 만듭니다(이미 결제한 Ultra 크레딧 사용). 두 가지를 오가며 작업해요.
       </div>
 
-      {/* 단계별 */}
-      <h2 className="section-title" style={{ marginBottom: 12 }}>단계별 사용법</h2>
+      {/* PART A */}
+      <h2 className="section-title" style={{ marginBottom: 12 }}>PART A. 이 앱에서 — 프롬프트 만들기</h2>
 
       <div className="step">
         <div className="step-num">1</div>
         <div>
-          <span className="where">상단 메뉴 · 브랜드</span>
-          <h3>브랜드 프로필을 먼저 확정</h3>
+          <span className="where">상단 메뉴 · 아이디어 (선택)</span>
+          <h3>뭘 찍을지 모르겠다면 → 아이디어 받기</h3>
           <p>
-            요기보의 톤·분위기·피해야 할 연출을 한 번 적어 저장합니다. 여기 적은 내용이 <strong>모든 영상 프롬프트에 자동으로 반영</strong>돼요.
-            (요기보 초안이 미리 채워져 있으니 확인·수정 후 <strong>저장</strong>만 누르면 됩니다.)
+            <strong>아이디어</strong> 메뉴에서 시즌·분위기를 넣고 <strong>✨ 아이디어 생성</strong>을 누르면, 트렌드+요기보 브랜드에 맞는 쇼츠 아이디어가 나와요.
+            마음에 드는 카드의 <strong>"이 아이디어로 프로젝트 만들기"</strong>를 누르면 ②번이 자동으로 됩니다.
           </p>
         </div>
       </div>
@@ -54,20 +49,18 @@ export default function GuidePage() {
         <div className="step-num">2</div>
         <div>
           <span className="where">상단 메뉴 · 프로젝트 → + 새 프로젝트</span>
-          <h3>캠페인(프로젝트) 만들기</h3>
-          <p>
-            영상 한 편 = 프로젝트 하나예요. 제목·시나리오(상황)·톤·타깃·목표 길이(예 30초)·화면 비율(쇼츠는 9:16)을 입력합니다.
-          </p>
+          <h3>프로젝트(영상 한 편) 만들기</h3>
+          <p>제목·시나리오·길이·화면 비율(쇼츠는 <strong>9:16</strong>)을 입력합니다. 아이디어에서 만들었다면 이미 채워져 있어요.</p>
         </div>
       </div>
 
       <div className="step">
         <div className="step-num">3</div>
         <div>
-          <span className="where">프로젝트 카드 클릭 → 제품 이미지</span>
-          <h3>제품 이미지 업로드</h3>
+          <span className="where">프로젝트 카드 클릭 → 상세</span>
+          <h3>제품 이미지 올리고, 스토리보드 적기</h3>
           <p>
-            영상에 쓸 제품·연출 사진을 드래그&드롭으로 올립니다. 이 이미지가 <strong>영상의 시작 장면</strong>이 됩니다 (image-to-video).
+            영상에 쓸 <strong>제품 사진</strong>을 올리고(드래그&드롭), 컷별 장면을 적은 뒤 각 컷에 이미지를 연결합니다. 비워두면 AI가 알아서 구성해요.
           </p>
         </div>
       </div>
@@ -75,11 +68,11 @@ export default function GuidePage() {
       <div className="step">
         <div className="step-num">4</div>
         <div>
-          <span className="where">프로젝트 상세 · 스토리보드</span>
-          <h3>스토리보드(컷별 장면) 작성</h3>
+          <span className="where">샷 보드 · ✨ AI 프롬프트 생성</span>
+          <h3>AI가 샷별 프롬프트 + 추천 모션 생성</h3>
           <p>
-            컷별로 "어떤 장면인지" 한 줄씩 적고, 각 컷에 위에서 올린 <strong>이미지를 연결</strong>합니다. 순서도 바꿀 수 있어요.
-            작성 후 <strong>스토리보드 저장</strong>. (비워두면 AI가 시나리오만 보고 알아서 구성합니다.)
+            버튼 한 번이면 샷마다 <strong>① 장면 프롬프트(영어)</strong> + <strong>② 추천 모션</strong>(예: 360 Orbit)이 만들어져요.
+            이 두 가지를 Higgsfield에 넣을 거예요. (프롬프트엔 카메라 묘사가 없어요 — 카메라는 "모션"이 담당하니까요.)
           </p>
         </div>
       </div>
@@ -87,11 +80,61 @@ export default function GuidePage() {
       <div className="step">
         <div className="step-num">5</div>
         <div>
-          <span className="where">프로젝트 상세 · 샷 보드 · ✨ AI 프롬프트 생성</span>
-          <h3>AI 프롬프트 생성</h3>
+          <span className="where">각 샷 카드</span>
+          <h3>재료 챙기기 — 3가지</h3>
           <p>
-            버튼 한 번이면 Claude가 <strong>브랜드 + 시나리오 + 이미지 + 스토리보드</strong>를 종합해 샷별 Veo 3 프롬프트(영어)를 만들어줍니다.
-            각 프롬프트는 직접 <strong>편집</strong>하거나 <strong>복사</strong>해서 다른 영상툴(클링 등)에 붙여 쓸 수도 있어요.
+            각 샷에서 Higgsfield로 가져갈 3가지: <strong>① 🖼 이미지(열기/저장)</strong> · <strong>② 🎬 장면 프롬프트(복사)</strong> · <strong>③ 🎥 추천 모션 이름</strong>.
+          </p>
+        </div>
+      </div>
+
+      {/* PART B */}
+      <h2 className="section-title" style={{ margin: '28px 0 12px' }}>PART B. Higgsfield 웹에서 — 영상 만들기</h2>
+
+      <div className="note" style={{ marginBottom: 16 }}>
+        🌐 <strong>higgsfield.ai</strong> 에 로그인하세요 (요기보 님 Ultra 구독 계정). 영상은 여기서 <strong>이미 낸 크레딧</strong>으로 만듭니다 — 추가 결제 없음.
+      </div>
+
+      <div className="step">
+        <div className="step-num">1</div>
+        <div>
+          <h3>Image to Video (DoP) 도구 열기</h3>
+          <p>Higgsfield 메뉴에서 <strong>이미지 → 영상(Image to Video / DoP)</strong> 모드를 선택합니다. (텍스트→영상이 아니라 <strong>이미지→영상</strong>이어야 우리 제품 사진이 들어가요.)</p>
+        </div>
+      </div>
+
+      <div className="step">
+        <div className="step-num">2</div>
+        <div>
+          <h3>시작 이미지 업로드</h3>
+          <p>앱에서 저장한 <strong>제품 이미지</strong>를 업로드합니다. 이 사진이 영상의 출발점이 돼요.</p>
+        </div>
+      </div>
+
+      <div className="step">
+        <div className="step-num">3</div>
+        <div>
+          <h3>장면 프롬프트 붙여넣기</h3>
+          <p>프롬프트 입력칸에 앱에서 <strong>복사한 장면 프롬프트(영어)</strong>를 그대로 붙여넣습니다.</p>
+        </div>
+      </div>
+
+      <div className="step">
+        <div className="step-num">4</div>
+        <div>
+          <h3>모션(Motion) 선택</h3>
+          <p>
+            모션 목록에서 앱이 <strong>추천한 모션</strong>(예: 360 Orbit, Zoom In)을 찾아 선택합니다. 이게 <strong>카메라 움직임</strong>이에요 — 역동성은 여기서 결정돼요.
+          </p>
+        </div>
+      </div>
+
+      <div className="step">
+        <div className="step-num">5</div>
+        <div>
+          <h3>설정 확인 후 생성</h3>
+          <p>
+            화면 비율(쇼츠면 <strong>9:16</strong>) 확인 → <strong>생성(Generate)</strong>. 1~3분 뒤 영상이 나오면 <strong>다운로드</strong>하세요. 생성 버튼 옆 <strong>크레딧 수</strong>를 미리 확인하면 비용을 알 수 있어요.
           </p>
         </div>
       </div>
@@ -99,50 +142,36 @@ export default function GuidePage() {
       <div className="step">
         <div className="step-num">6</div>
         <div>
-          <span className="where">각 샷 카드 · ✓ 승인</span>
-          <h3>쓸 샷만 승인</h3>
+          <h3>샷마다 반복 → 편집툴에서 이어붙이기</h3>
           <p>
-            마음에 드는 샷에 <strong>✓ 승인</strong>을 누릅니다. <strong>승인한 샷만 영상으로 렌더</strong>할 수 있어요 — 돈이 새는 걸 막는 안전장치입니다.
-          </p>
-        </div>
-      </div>
-
-      <div className="step">
-        <div className="step-num">7</div>
-        <div>
-          <span className="where">승인된 샷 카드 · 🎬 렌더</span>
-          <h3>실제 영상 렌더 (유료)</h3>
-          <p>
-            🎬 렌더 버튼 → <strong>예상 비용 확인창</strong>이 뜨고, 확인을 누르면 Veo 3.1이 1~3분 안에 영상을 만들어 카드 안에 보여줍니다. 다운로드도 가능.
-            기본은 <strong>최소 비용(약 $0.40, 4초)</strong>으로 설정돼 있어요.
+            샷(클립)별로 ①~⑤를 반복해 여러 클립을 만든 뒤, <strong>캡컷(CapCut)</strong> 같은 편집툴에서 순서대로 이어붙이고 음악·자막을 더하면 한 편이 완성돼요.
           </p>
         </div>
       </div>
 
       {/* 비용 */}
-      <h2 className="section-title" style={{ margin: '28px 0 12px' }}>비용은 얼마나?</h2>
+      <h2 className="section-title" style={{ margin: '28px 0 12px' }}>비용 — 어디에 돈이 드나</h2>
       <div className="note" style={{ marginBottom: 28 }}>
-        영상 렌더만 유료예요 (Veo 3.1, 초당 과금 · 최소 4초 · 오디오 포함).<br />
-        • <strong>최소 설정(Fast·720p·4초) ≈ $0.40(약 550원)/개</strong> → $10이면 약 25번 테스트<br />
-        • 더 저렴(Lite ≈ $0.20/개)·더 길게(6·8초)도 설정 가능<br />
-        프롬프트 만들기·검수는 거의 무료이니, <strong>충분히 다듬은 다음 승인 샷만 렌더</strong>하는 게 비용 절약의 핵심입니다.
+        • <strong>아이디어·프롬프트 생성</strong> = Claude(앱) — 아주 저렴 (1회 수백 원).<br />
+        • <strong>영상 생성</strong> = Higgsfield 웹 — <strong>이미 낸 Ultra 구독 크레딧</strong> 사용(추가 0원). 생성 화면의 크레딧 표시로 확인.<br />
+        ⚠️ <strong>Claude 충전과 Higgsfield 크레딧은 완전 별개</strong>예요 — 서로 호환되지 않습니다 (다른 회사·다른 계정).
       </div>
 
-      {/* 용어집 */}
+      {/* 용어 */}
       <h2 className="section-title" style={{ marginBottom: 12 }}>용어 정리</h2>
       <div className="glossary">
-        <div className="term"><b>프로젝트</b><span>영상 한 편 단위. 캠페인 하나 = 프로젝트 하나.</span></div>
-        <div className="term"><b>브랜드 프로필</b><span>모든 프롬프트에 자동 반영되는 요기보 톤·규칙. 한 번만 설정.</span></div>
-        <div className="term"><b>스토리보드</b><span>컷별 장면 설명. 사람이 작성하는 영상의 뼈대.</span></div>
-        <div className="term"><b>샷(Shot)</b><span>AI가 스토리보드를 쪼갠 영상 한 토막(보통 4~8초).</span></div>
-        <div className="term"><b>Veo 프롬프트</b><span>영상 엔진이 알아듣는 영어 지시문. 카메라·조명·동작 포함.</span></div>
-        <div className="term"><b>image-to-video</b><span>제품 이미지를 출발점으로 영상을 만드는 방식.</span></div>
-        <div className="term"><b>렌더(Render)</b><span>프롬프트를 실제 영상 파일로 뽑는 단계. 유료.</span></div>
-        <div className="term"><b>Veo 3.1</b><span>Google의 영상 생성 AI. 우리 앱이 API로 자동 호출.</span></div>
+        <div className="term"><b>아이디어</b><span>트렌드 기반 쇼츠 소재 제안. 원클릭으로 프로젝트화.</span></div>
+        <div className="term"><b>프로젝트</b><span>영상 한 편 단위(캠페인).</span></div>
+        <div className="term"><b>스토리보드</b><span>컷별 장면 설명. 영상의 뼈대.</span></div>
+        <div className="term"><b>샷(Shot)</b><span>영상 한 토막(클립). 보통 6~10초.</span></div>
+        <div className="term"><b>장면 프롬프트</b><span>Higgsfield에 넣을 영어 장면 설명(카메라 묘사 없음).</span></div>
+        <div className="term"><b>모션(Motion)</b><span>Higgsfield의 카메라 움직임 프리셋(360 Orbit 등). 역동성 담당.</span></div>
+        <div className="term"><b>image-to-video</b><span>제품 사진을 출발점으로 영상을 만드는 방식.</span></div>
+        <div className="term"><b>Higgsfield</b><span>실제 영상을 만드는 웹앱. Ultra 구독 크레딧 사용.</span></div>
       </div>
 
       <div className="note" style={{ marginTop: 28, textAlign: 'center' }}>
-        준비됐다면 <a href="/" style={{ color: 'var(--accent)' }}>프로젝트로 가서</a> ②번부터 시작해보세요 🎬
+        준비됐다면 <a href="/ideas" style={{ color: 'var(--accent)' }}>아이디어</a>에서 소재를 받거나, <a href="/" style={{ color: 'var(--accent)' }}>프로젝트</a>부터 시작해보세요 🎬
       </div>
     </>
   );

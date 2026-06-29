@@ -17,8 +17,11 @@ export default function RootLayout({ children }) {
             </div>
             <nav className="topnav">
               <a href="/">프로젝트</a>
+              <a href="/ideas">아이디어</a>
+              <a href="/storyboard">스토리보드</a>
               <a href="/brand">브랜드</a>
               <a href="/guide">가이드</a>
+              <a href="/higgsfield">힉스필드</a>
             </nav>
           </header>
           <main className="content">{children}</main>

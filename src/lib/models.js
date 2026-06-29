@@ -6,10 +6,14 @@ export const COLLECTIONS = {
   prompts: 'prompts', // 샷에 속한 Veo3 프롬프트 (버전)
   renderJobs: 'render_jobs', // (선택) 렌더 요청·결과
   settings: 'settings', // 브랜드 프로필 등 싱글톤 설정
+  ideas: 'ideas', // 쇼츠 아이디어 추천 (트렌드 기반)
 };
 
 // 브랜드 프로필 문서는 settings 컬렉션에 고정 _id로 1개만 둔다.
 export const BRAND_DOC_ID = 'brand';
+
+// 라이브 브랜드 인사이트(yogibo.jp/.kr 웹검색 요약) 캐시 문서 — settings 컬렉션, 고정 _id.
+export const BRAND_INSIGHTS_DOC_ID = 'brand_insights';
 
 // 브랜드 프로필 필드 정의 (화면 폼 + 정규화 공용).
 // 각 필드: key, label(화면 라벨), hint(도움말), multiline 여부

@@ -4,6 +4,7 @@ import { collection } from '@/lib/db';
 import { COLLECTIONS, BRAND_DOC_ID, DEFAULT_BRAND, PROJECT_STATUS } from '@/lib/models';
 import { generateShots } from '@/lib/anthropic';
 import { getMotions, resolveMotionId } from '@/lib/higgsfield';
+import { getBrandInsights } from '@/lib/brandInsights';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 120; // Claude 생성에 시간이 걸릴 수 있음
@@ -78,8 +79,10 @@ export async function POST(req, { params }) {
   if (manualShots) {
     shots = normalizeManualShots(manualShots, assets, motions);
   } else {
+    // yogibo.kr/.jp 라이브 브랜드 인사이트 (캐시). 수동 입력일 땐 불필요하므로 Claude 분기에서만.
+    const insights = await getBrandInsights().catch(() => null);
     try {
-      shots = await generateShots({ project, brand, assets, storyboard, motions });
+      shots = await generateShots({ project, brand, assets, storyboard, motions, insights });
     } catch (err) {
       console.error('[generate] Claude 오류:', err);
       return NextResponse.json({ error: `프롬프트 생성 실패: ${err.message}` }, { status: 502 });
