@@ -6,7 +6,7 @@ const CDN = 'https://d8j0ntlcm91z4.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOY
 // 시작프레임(미디어 인풋) 버킷 — 영상 포스터용
 const UP = 'https://d2ol7oe51mr4n9.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0';
 // 컷분할 스토리보드 시트 (서버 FTP 업로드본)
-const SHEET_URL = 'https://yogibo.openhost.cafe24.com/web/img/ai/storyboard/storyboard_final6.png';
+const SHEET_URL = 'https://yogibo.openhost.cafe24.com/web/img/ai/storyboard/storyboard_final7.png';
 
 // ── STEP 1: 대표 모델(탤런트) 후보 — 선택한 인물로 전 컷을 동일하게 제작한다.
 const MODELS = [
@@ -19,46 +19,74 @@ const MODELS = [
 //    각 컷은 Kling 3.0(std·720p·무음·9:16)로 생성한 3초 소스 영상. (durationSec = 최종 편집 목표 길이)
 const CUTS = [
   {
-    n: 1, title: '깨어남', durationSec: 3,
+    n: 1, title: '깨어남', durationSec: 2,
     poster: `${CDN}/hf_20260630_031345_1531ca85-2c8f-4d39-9e85-b33b4a8eef21.png`,
     video: `${CDN}/hf_20260630_031541_b0c7761e-ebba-49fe-a6a8-5737d3ab1e3d.mp4`,
     desc: 'video.mp4 0~1초 구도 — 빈백이 화면을 채우는 친밀한 측면 클로즈업. 눈을 감고 자다가 → 고개를 살짝 들며 깨어난다(CUT2 폰 확인으로 자연 연결). 줄무늬 소매가 화면 하단을 가로지른다. 색상은 CUT2 톤에 맞춰 그레이딩(밝기·웜톤 매칭) · 아보카도 그린 Pod · 모델A 얼굴·복장 유지. (러프컷엔 색보정 적용본 사용)',
     camera: '인물 클로즈업 · 측면 3/4 · 아이레벨(빈백이 화면을 채움)', caption: '음… 잘 잤다',
   },
   {
-    n: 2, title: '깜짝 — 폰 확인', durationSec: 3,
-    poster: `${UP}/f4fa76be-9722-4ca6-b3e3-f2742902b02f.png`,
-    video: `${CDN}/hf_20260629_090928_3382b175-3278-43a8-a8b2-04069c1edab0.mp4`,
-    desc: '시간을 확인하다 깜짝 놀란다. 얼굴 ECU로 급격히 푸시인, 눈이 번쩍. (대표 얼굴 보정본)',
+    n: 2, title: '깜짝 — 폰 확인', durationSec: 2,
+    poster: `${CDN}/hf_20260630_061834_ab8bc77f-f543-445a-8a89-0097b38e36c4.png`,
+    video: `${CDN}/hf_20260630_062121_7bf59e08-3b0b-45ff-b8e0-0e54872c1774.mp4`,
+    desc: '기존 구도(빈백에 기대 폰 확인) 유지 — 흐름 끊기지 않게 두고, 어색하게 올라가 있던 다리만 자연스럽게 교정. 시간 확인하다 흠칫 놀람(상체 움찔 → 러프컷 ECU 펀치인 연결). 회색 줄무늬 상의 + 솔리드 차콜 바지. 모델A 얼굴 · CUT2 톤.',
     camera: '와이드 → 타이트 CU', caption: '헉, 지각!',
   },
   {
-    n: 3, title: '출근 준비 → 출근', durationSec: 3,
-    poster: `${CDN}/hf_20260630_014207_ca333236-c92b-4721-9147-e31c3302a872.png`,
-    video: `${CDN}/hf_20260630_014840_8912b38c-7a8b-4475-ad67-6f893b7b001c.mp4`,
-    desc: '묶은 머리로 개운하게 출근. 3/4 측면 미디엄 클로즈업 · 환한 미소 · 거리 보케 · 따뜻한 톤.',
-    camera: '3/4 측면 미디엄 CU · 인물중심', caption: '근데 몸은 개운해',
+    n: 3, title: '정신없이 갈아입기', durationSec: 3,
+    poster: `${CDN}/hf_20260630_060651_3429cfa6-8007-40a3-afd0-bdd6cd0c0af0.png`,
+    video: `${CDN}/hf_20260630_060907_5999907d-43f0-40f5-9c47-6ac5906a6931.mp4`,
+    desc: '[재생성] 잠옷에서 출근복으로 — 회색 줄무늬 상의 + 솔리드 차콜 바지(줄무늬 바지 → 차콜로 교체, CUT2와 통일) 차림으로 옷걸이에서 네이비 블레이저를 낚아챈다. 잠옷(CUT1·2) → 출근복(CUT4) 의상 연결. 모델A 얼굴 + CUT2 톤. 러프컷에선 약 3초(집기/끌어내기 2비트).',
+    camera: '인물중심 미디엄 · 핸드헬드 · 빠른 동작', caption: '헉 늦었다, 빨리!',
   },
   {
-    n: 4, title: '바쁜 회사', durationSec: 3,
-    poster: `${UP}/c73ae442-6097-456d-84ab-d674af7073db.png`,
-    video: `${CDN}/hf_20260629_084705_b01e2bef-9c80-4061-8480-9fc67370bbea.mp4`,
-    desc: '서류 보며 분주한 하루. 인물 중심 + 배경 보케 (묶은 머리 유지).',
-    camera: '인물중심 미디엄 · 보케', caption: '—',
+    n: 4, title: '출근 준비 → 출근', durationSec: 3,
+    poster: `${UP}/687c7428-3959-4f9a-9a19-d490f84ee5e5.png`,
+    video: `${CDN}/hf_20260630_033101_1bd41b2d-8bc4-4b18-bb7b-81186490570b.mp4`,
+    desc: 'video.mp4 출근샷 따라잡기 — 얼굴이 화면을 꽉 채우는 타이트한 3/4 클로즈업. 환하게 웃으며 빠르게 걷는 당찬 걸음 + 핸드헬드 카메라 흔들림(거리 보케가 흐르며 전진감). 러프컷에선 약 3초로 연장. CUT2 톤으로 색보정 · 모델A 얼굴·정장 유지.',
+    camera: '타이트 3/4 CU · 핸드헬드 · 빠른 워킹', caption: '근데 몸은 개운해',
   },
   {
-    n: 5, title: '쓰러지듯 다이브', durationSec: 2,
+    n: 5, title: '분주한 회사 (복도 이동)', durationSec: 2,
+    poster: `${CDN}/hf_20260630_063703_3b104f29-3573-420e-970d-0f50c3dd22f2.png`,
+    video: `${CDN}/hf_20260630_063837_185d6738-bd3d-4323-bdb2-7d4efad8374c.mp4`,
+    desc: '[교체] 정적 데스크 → 동적 이동. 서류·노트를 안고 사무실 복도를 분주히 걸어온다(다음 일정으로). 자연스러운 핸드헬드 팔로우 · 사실적 다큐 톤(날리는 종이 없이 깔끔하게). 회사씬의 반복감을 깨는 "움직임" 비트. 모델A · 네이비 정장 · CUT2 톤.',
+    camera: '핸드헬드 팔로우 · 빠른 걸음', caption: '바쁘다 바빠',
+  },
+  {
+    n: 6, title: '동료와 짧은 회의', durationSec: 2,
+    poster: `${CDN}/hf_20260630_060653_042b70e6-13ea-4048-acc2-c8778a90c6bc.png`,
+    video: `${CDN}/hf_20260630_060911_d02a8f67-9684-46fe-a591-2d4e9905bf64.mp4`,
+    desc: '[신규] 서류·노트를 들고 동료(뒷모습)와 짧게 논의 — 가볍게 손짓하며 끄덕인다. 회사씬을 "이동 → 상호작용 → 소진"으로 다양화하는 상호작용 비트. 오피스 보케 · 모델A · 네이비 정장 · 포니테일 · CUT2 톤.',
+    camera: '인물중심 미디엄 · 보케 · 핸드헬드', caption: '이건 이렇게요',
+  },
+  {
+    n: 7, title: '지친 표정 (퇴근 직전)', durationSec: 2,
+    poster: `${CDN}/hf_20260630_052118_3980475c-d961-463f-89c1-dc608911595a.png`,
+    video: `${CDN}/hf_20260630_052303_36b70a55-7dfc-49d5-b141-19bed08a394e.mp4`,
+    desc: '퇴근 직전, 책상에 앉아 관자놀이를 짚고 지친 표정. 느린 한숨 · 어깨가 툭 내려간다. 네이비 블레이저 + 묶은 머리 유지(Model A). 오피스 보케 배경. CUT2 톤으로 색보정.',
+    camera: '인물중심 미디엄 · 보케', caption: '오늘도 길었다',
+  },
+  {
+    n: 8, title: '쓰러지듯 다이브', durationSec: 1,
     poster: `${CDN}/hf_20260630_012719_2bebe909-fc52-4c1e-a299-1ba4bfe2fd7c.png`,
     video: `${CDN}/hf_20260630_013307_828039cc-b5b3-45ee-8d73-ec2db6f50e6c.mp4`,
-    desc: '귀가 후 빈백 앞에 서 있다가 → 몸을 던지듯 앞으로 푹 파묻힌다(다이브 → 안착). CUT2와 같은 침실 · 저녁 조명 · 유지해온 따뜻한 필름톤. 인물 중심 로우 앵글.',
-    camera: '인물중심 로우앵글 · 다이브', caption: '역시 집이 최고',
+    desc: '귀가 후 빈백 앞에 서 있다가 → 몸을 던지듯 앞으로 푹 파묻힌다(다이브 → 안착). 러프컷에선 다이브 끝에서 얼굴 쪽으로 푸시인(줌인)하며 CUT9 잠든 얼굴로 디졸브 — "풀썩 안기며 스르륵 잠든다"가 한 동작처럼 연결. CUT2 톤으로 색보정. 인물 중심 로우 앵글.',
+    camera: '인물중심 로우앵글 · 다이브 → 얼굴 푸시인', caption: '역시 집이 최고',
   },
   {
-    n: 6, title: '잠들며 마무리', durationSec: 1,
+    n: 9, title: '잠들며 마무리', durationSec: 3,
     poster: `${CDN}/hf_20260630_010145_fb681a9b-cb05-44f6-bd0f-a03d277ebe85.png`,
     video: `${CDN}/hf_20260630_010352_ed65ab7d-43d8-4581-b653-df759c81ba46.mp4`,
-    desc: '빈백에 뺨을 대고 평온하게 잠든 얼굴 클로즈업 → 배경이 흰색으로 번지며 마무리. (흰 배경 + 요기보 로고는 최종 편집에서)',
-    camera: '얼굴 클로즈업 · 화이트아웃', caption: '내 하루의 끝, 요기보',
+    desc: '빈백에 뺨을 대고 평온하게 잠든 얼굴 클로즈업. CUT8 다이브의 푸시인에서 디졸브로 받아 마무리. CUT2 톤으로 색보정. (화이트아웃 없이) 엔딩 로고 카드로 전환.',
+    camera: '얼굴 클로즈업', caption: '내 하루의 끝, 요기보',
+  },
+  {
+    n: 10, title: '엔딩 — 로고', durationSec: 2.2,
+    poster: '/endcard_poster.png',
+    video: '/endcard.mp4',
+    desc: '흰 배경 엔딩 — 공식 yogibo 로고(차콜+청록 물결)가 흰 화면에서 천천히 떠오르며(슬로우 페이드인) 마무리.',
+    camera: '그래픽 · 흰 배경 · 슬로우 페이드인', caption: 'yogibo',
   },
 ];
 
@@ -105,13 +133,13 @@ export default function StoryboardPage() {
       <div className="note" style={{ marginBottom: 18 }}>
         🎬 <strong>지친 직장인 → 요기보 휴식</strong> · 9:16 세로 · 약 {totalSec}초 · {CUTS.length}컷 · 밝고 포근한 톤
         <br />
-        ✅ <strong>전 컷 영상 생성 완료</strong> — 카드에서 바로 재생됩니다 (Kling 3.0 · 720p · 무음 · 각 3초 소스). 최종 트랜지션·컬러그레이드·흰배경+로고 엔딩은 편집 단계.
+        ✅ <strong>전 컷 영상 생성 + 색보정(CUT2 톤 통일) + 회사씬 다양화(동적 이동·회의·지침) + 공식 yogibo 로고 엔딩 완료</strong> — 카드에서 바로 재생됩니다 (Kling 3.0 · 720p · 무음 · 각 3초 소스). 남은 작업: 톤 최종 확정 → 음악.
       </div>
 
       {/* 러프 컷 미리보기 */}
       <div className="note" style={{ marginBottom: 18, display: 'flex', gap: 16, alignItems: 'flex-start', flexWrap: 'wrap' }}>
         <video
-          src="/rough_cut_v2.mp4"
+          src="/rough_cut_v3.mp4"
           controls
           loop
           muted
@@ -120,17 +148,17 @@ export default function StoryboardPage() {
           style={{ width: 192, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', flexShrink: 0 }}
         />
         <div style={{ minWidth: 240, flex: 1 }}>
-          <div style={{ fontWeight: 700, marginBottom: 6 }}>▶ 러프 컷 v2 (video.mp4 스타일 · 10비트 · 약 14초 · 무음)</div>
+          <div style={{ fontWeight: 700, marginBottom: 6 }}>▶ 러프 컷 v3 (video.mp4 스타일 · 약 18초 · 무음)</div>
           <div className="card-meta" style={{ fontSize: 13, lineHeight: 1.7 }}>
-            원본 <b>video.mp4</b>의 11샷 리듬(긴 오프닝 → 빠른 중반 → 긴 엔딩)에 맞춰 재편집했습니다.
-            인서트 추가(정신없이 옷 갈아입기), 놀람 ECU 펀치인, 회사 펀치인으로 컷 수를 늘리고
-            컷 온 액션으로 빠른 템포를 만들었습니다. <b>CUT1은 video.mp4 오프닝 구도로 새로 제작 + 톤은 CUT2 통일.</b>
-            <br />순서: 기상(엎드림) → 폰 → <b>놀람 ECU</b> → <b>옷갈아입기①②</b> → 출근미소 → 회사 → 회사펀치인 → 다이브 → 평온한 잠.
-            <br />다음 단계: ① 전체 색보정(CUT2 톤 앵커) → ② 음악·자막·로고 엔딩.
+            원본 <b>video.mp4</b>의 리듬(긴 오프닝 → 빠른 중반 → 긴 엔딩)에 맞춰 재편집했습니다.
+            <b>CUT1 오프닝에 로고가 처음부터 떠 있다가 CUT2로 넘어갈 때 서서히 사라지고</b>, CUT2는 기존 구도(빈백·폰)에서 다리만 교정했습니다.
+            옷갈아입기·출근은 약 3초로 늘리고, <b>회사씬은 정적 데스크 대신 ‘계단 분주히 이동(동적)’ → ‘동료와 회의’ → ‘퇴근 직전 지침’</b>으로 공간·에너지를 다양화했습니다.
+            <br />순서: 기상(측면·로고) → 폰 → <b>놀람 ECU</b> → 옷갈아입기①② → 출근(당찬걸음) → <b>계단 이동(동적)</b> → <b>회의</b> → 지친 표정 → 다이브 <b>(얼굴 줌인)</b> → 잠든 얼굴 → <b>yogibo 로고 슬로우 페이드인</b>.
+            <br /><b>전 컷 CUT2 톤으로 색보정 · 다이브→잠 줌인 디졸브 · 화이트아웃 제거(하드 전환).</b> 남은 단계: 톤 최종 확정 → 음악.
             <br />
-            <a href="/rough_cut_v2.mp4" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)' }}>↗ v2 크게 보기</a>
+            <a href="/rough_cut_v3.mp4" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)' }}>↗ v3 크게 보기</a>
             <span style={{ opacity: 0.5 }}> · </span>
-            <a href="/rough_cut.mp4" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)', opacity: 0.7 }}>이전 v1(6컷) 보기</a>
+            <a href="/rough_cut_v2.mp4" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)', opacity: 0.7 }}>v2(엔딩 전) 보기</a>
           </div>
         </div>
       </div>
@@ -179,9 +207,9 @@ export default function StoryboardPage() {
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.9, fontSize: 13.5, color: 'var(--text)' }}>
               <li><strong>필름 질감</strong>: 부드러운 헤이즈 + 미세 그레인 + 소프트 포커스 (과하게 쨍하지 않게)</li>
               <li><strong>색감</strong>: 따뜻한 파스텔 톤, 낮은 대비</li>
-              <li><strong>밝기 아크</strong>: 낮(아침·출근·회사)은 밝게 → 밤(귀가·휴식)은 어둡게. 단 <strong>필름 프레임 톤은 일정</strong>하게 유지</li>
+              <li><strong>색보정(확정)</strong>: 전 컷을 <strong>CUT2(따뜻한 아침) 톤으로 통일</strong> — 밝기·웜톤 매칭으로 컷 간 색 점프 없이 한 편처럼 연결</li>
               <li><strong>제품</strong>: 아보카도 그린 Yogibo Pod (둥근 팟)</li>
-              <li><strong>의상</strong>: 줄무늬 잠옷 → 네이비 정장 → 줄무늬+차콜 운동복 (장면별 일관)</li>
+              <li><strong>의상(일관)</strong>: 줄무늬 잠옷(기상) → <strong>잠옷에서 네이비 정장으로 갈아입기</strong> → 네이비 정장(출근·회사) → 줄무늬+차콜(귀가·휴식)</li>
             </ul>
           </div>
         </div>
@@ -254,7 +282,7 @@ export default function StoryboardPage() {
           </a>
         </div>
         <p className="card-meta" style={{ marginBottom: 12 }}>
-          전체 컷을 한 장으로 정리한 기획 시트 (설명 칸은 후작업용으로 비움). FTP 서버에 업로드되어 링크로 공유 가능합니다.
+          전체 {CUTS.length}컷(엔딩 카드 포함)을 한 장으로 정리한 기획 시트 — 각 컷의 시작/끝 프레임·카메라·연출·나레이션·SFX. FTP 서버에 업로드되어 링크로 공유 가능합니다.
         </p>
         <a href={SHEET_URL} target="_blank" rel="noreferrer">
           {/* eslint-disable-next-line @next/next/no-img-element */}
