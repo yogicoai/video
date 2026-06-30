@@ -133,7 +133,7 @@ export default function StoryboardPage() {
       <div className="note" style={{ marginBottom: 18 }}>
         🎬 <strong>지친 직장인 → 요기보 휴식</strong> · 9:16 세로 · 약 {totalSec}초 · {CUTS.length}컷 · 밝고 포근한 톤
         <br />
-        ✅ <strong>전 컷 영상 생성 + 색보정(CUT2 톤 통일) + 회사씬 다양화(동적 이동·회의·지침) + 공식 yogibo 로고 엔딩 완료</strong> — 카드에서 바로 재생됩니다 (Kling 3.0 · 720p · 무음 · 각 3초 소스). 남은 작업: 톤 최종 확정 → 음악.
+        ✅ <strong>전 컷 영상 생성 + 색보정(원본 video.mp4 컬러 매칭) + 회사씬 다양화(동적 이동·회의·지침) + 공식 yogibo 로고 엔딩 완료</strong> — 카드에서 바로 재생됩니다 (Kling 3.0 · 720p · 무음 · 각 3초 소스). 남은 작업: 음악.
       </div>
 
       {/* 러프 컷 미리보기 */}
@@ -154,7 +154,7 @@ export default function StoryboardPage() {
             <b>CUT1 오프닝에 로고가 처음부터 떠 있다가 CUT2로 넘어갈 때 서서히 사라지고</b>, CUT2는 기존 구도(빈백·폰)에서 다리만 교정했습니다.
             옷갈아입기·출근은 약 3초로 늘리고, <b>회사씬은 정적 데스크 대신 ‘계단 분주히 이동(동적)’ → ‘동료와 회의’ → ‘퇴근 직전 지침’</b>으로 공간·에너지를 다양화했습니다.
             <br />순서: 기상(측면·로고) → 폰 → <b>놀람 ECU</b> → 옷갈아입기①② → 출근(당찬걸음) → <b>계단 이동(동적)</b> → <b>회의</b> → 지친 표정 → 다이브 <b>(얼굴 줌인)</b> → 잠든 얼굴 → <b>yogibo 로고 슬로우 페이드인</b>.
-            <br /><b>전 컷 CUT2 톤으로 색보정 · 다이브→잠 줌인 디졸브 · 화이트아웃 제거(하드 전환).</b> 남은 단계: 톤 최종 확정 → 음악.
+            <br /><b>최종 컬러를 원본 video.mp4 룩에 매칭 · 다이브→잠 줌인 디졸브 · 화이트아웃 제거(하드 전환).</b> 남은 단계: 음악.
             <br />
             <a href="/rough_cut_v3.mp4" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)' }}>↗ v3 크게 보기</a>
             <span style={{ opacity: 0.5 }}> · </span>
@@ -207,7 +207,7 @@ export default function StoryboardPage() {
             <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.9, fontSize: 13.5, color: 'var(--text)' }}>
               <li><strong>필름 질감</strong>: 부드러운 헤이즈 + 미세 그레인 + 소프트 포커스 (과하게 쨍하지 않게)</li>
               <li><strong>색감</strong>: 따뜻한 파스텔 톤, 낮은 대비</li>
-              <li><strong>색보정(확정)</strong>: 전 컷을 <strong>CUT2(따뜻한 아침) 톤으로 통일</strong> — 밝기·웜톤 매칭으로 컷 간 색 점프 없이 한 편처럼 연결</li>
+              <li><strong>색보정(확정)</strong>: 1차로 전 컷을 CUT2 톤으로 통일한 뒤, <strong>최종 룩을 원본 video.mp4 컬러에 매칭</strong>(LAB 색통계 전이 — 살짝 어둡고 채도 낮은 자연스러운 필름톤)으로 한 편처럼 연결</li>
               <li><strong>제품</strong>: 아보카도 그린 Yogibo Pod (둥근 팟)</li>
               <li><strong>의상(일관)</strong>: 줄무늬 잠옷(기상) → <strong>잠옷에서 네이비 정장으로 갈아입기</strong> → 네이비 정장(출근·회사) → 줄무늬+차콜(귀가·휴식)</li>
             </ul>
