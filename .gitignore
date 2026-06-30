@@ -37,3 +37,9 @@ yarn-error.log*
 *.mp4
 /storyboard_*.png
 /yogibo_max.jpg
+
+# 단, 러프컷·엔딩 영상은 Vercel 배포에 필요하므로 예외(추적)
+!/public/rough_cut_v3.mp4
+!/public/rough_cut_v3_textB.mp4
+!/public/rough_cut_v2.mp4
+!/public/endcard.mp4

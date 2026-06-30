@@ -78,9 +78,9 @@ export default function HomePage() {
         className="card"
         style={{ display: 'block', borderColor: 'var(--accent)', marginBottom: 20 }}
       >
-        <div className="card-title">🎬 요기보 15초 단편 CF</div>
+        <div className="card-title">🎬 요기보 20초 단편 CF</div>
         <div className="card-meta">
-          지친 직장인 → 요기보 휴식 · 6컷 컷분할 스토리보드 · 9:16 · 모델 A · 아보카도 Max
+          지친 직장인 → 요기보 휴식 · 10컷 컷분할 스토리보드 · 9:16 · 모델 A · 아보카도 그린 Pod
           <br />
           클릭하면 <strong>이렇게 짜여진 스토리보드</strong>를 볼 수 있어요.
         </div>

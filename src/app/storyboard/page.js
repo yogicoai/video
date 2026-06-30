@@ -6,7 +6,7 @@ const CDN = 'https://d8j0ntlcm91z4.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOY
 // 시작프레임(미디어 인풋) 버킷 — 영상 포스터용
 const UP = 'https://d2ol7oe51mr4n9.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0';
 // 컷분할 스토리보드 시트 (서버 FTP 업로드본)
-const SHEET_URL = 'https://yogibo.openhost.cafe24.com/web/img/ai/storyboard/storyboard_final7.png';
+const SHEET_URL = 'https://yogibo.openhost.cafe24.com/web/img/ai/storyboard/storyboard_final8.png';
 
 // ── STEP 1: 대표 모델(탤런트) 후보 — 선택한 인물로 전 컷을 동일하게 제작한다.
 const MODELS = [
@@ -15,7 +15,7 @@ const MODELS = [
   { key: 'C', label: '모델 C', img: `${CDN}/hf_20260629_034700_78b17fa7-2697-4aac-a0b0-850728f4258a.png`, note: '또렷 · 자신감' },
 ];
 
-// ── STEP 2: 컷 스토리보드 — "지친 직장인 → 요기보 휴식" 15초 CF (모델 A · 아보카도 그린 Pod · 낮→밤 톤).
+// ── STEP 2: 컷 스토리보드 — "지친 직장인 → 요기보 휴식" 20초 CF (모델 A · 아보카도 그린 Pod · 낮→밤 톤).
 //    각 컷은 Kling 3.0(std·720p·무음·9:16)로 생성한 3초 소스 영상. (durationSec = 최종 편집 목표 길이)
 const CUTS = [
   {
@@ -47,11 +47,11 @@ const CUTS = [
     camera: '타이트 3/4 CU · 핸드헬드 · 빠른 워킹', caption: '근데 몸은 개운해',
   },
   {
-    n: 5, title: '분주한 회사 (복도 이동)', durationSec: 2,
-    poster: `${CDN}/hf_20260630_063703_3b104f29-3573-420e-970d-0f50c3dd22f2.png`,
-    video: `${CDN}/hf_20260630_063837_185d6738-bd3d-4323-bdb2-7d4efad8374c.mp4`,
-    desc: '[교체] 정적 데스크 → 동적 이동. 서류·노트를 안고 사무실 복도를 분주히 걸어온다(다음 일정으로). 자연스러운 핸드헬드 팔로우 · 사실적 다큐 톤(날리는 종이 없이 깔끔하게). 회사씬의 반복감을 깨는 "움직임" 비트. 모델A · 네이비 정장 · CUT2 톤.',
-    camera: '핸드헬드 팔로우 · 빠른 걸음', caption: '바쁘다 바빠',
+    n: 5, title: '바쁜 회사', durationSec: 2,
+    poster: `${UP}/c73ae442-6097-456d-84ab-d674af7073db.png`,
+    video: `${CDN}/hf_20260629_084705_b01e2bef-9c80-4061-8480-9fc67370bbea.mp4`,
+    desc: '서류 보며 분주한 하루. 인물 중심 + 배경 보케 (묶은 머리 유지). 러프컷에선 풀샷+펀치인 2비트. 최종 컬러는 video.mp4 룩에 매칭.',
+    camera: '인물중심 미디엄 · 보케', caption: '—',
   },
   {
     n: 6, title: '동료와 짧은 회의', durationSec: 2,
@@ -61,7 +61,7 @@ const CUTS = [
     camera: '인물중심 미디엄 · 보케 · 핸드헬드', caption: '이건 이렇게요',
   },
   {
-    n: 7, title: '지친 표정 (퇴근 직전)', durationSec: 2,
+    n: 7, title: '지친 표정 (퇴근 직전)', durationSec: 3,
     poster: `${CDN}/hf_20260630_052118_3980475c-d961-463f-89c1-dc608911595a.png`,
     video: `${CDN}/hf_20260630_052303_36b70a55-7dfc-49d5-b141-19bed08a394e.mp4`,
     desc: '퇴근 직전, 책상에 앉아 관자놀이를 짚고 지친 표정. 느린 한숨 · 어깨가 툭 내려간다. 네이비 블레이저 + 묶은 머리 유지(Model A). 오피스 보케 배경. CUT2 톤으로 색보정.',
@@ -122,7 +122,7 @@ export default function StoryboardPage() {
       <a href="/" className="back-link">← 프로젝트</a>
       <div className="page-head">
         <div>
-          <h1 className="page-title">요기보 15초 단편 CF</h1>
+          <h1 className="page-title">요기보 20초 단편 CF</h1>
           <p className="page-desc">
             <strong>대표 모델 → 컷분할 스토리보드</strong> 순서로 이렇게 짜였습니다. (지친 직장인 → 요기보 휴식 · 9:16)
           </p>
@@ -136,29 +136,37 @@ export default function StoryboardPage() {
         ✅ <strong>전 컷 영상 생성 + 색보정(원본 video.mp4 컬러 매칭) + 회사씬 다양화(동적 이동·회의·지침) + 공식 yogibo 로고 엔딩 완료</strong> — 카드에서 바로 재생됩니다 (Kling 3.0 · 720p · 무음 · 각 3초 소스). 남은 작업: 음악.
       </div>
 
-      {/* 러프 컷 미리보기 */}
-      <div className="note" style={{ marginBottom: 18, display: 'flex', gap: 16, alignItems: 'flex-start', flexWrap: 'wrap' }}>
-        <video
-          src="/rough_cut_v3.mp4"
-          controls
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          style={{ width: 192, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', flexShrink: 0 }}
-        />
-        <div style={{ minWidth: 240, flex: 1 }}>
-          <div style={{ fontWeight: 700, marginBottom: 6 }}>▶ 러프 컷 v3 (video.mp4 스타일 · 약 18초 · 무음)</div>
-          <div className="card-meta" style={{ fontSize: 13, lineHeight: 1.7 }}>
-            원본 <b>video.mp4</b>의 리듬(긴 오프닝 → 빠른 중반 → 긴 엔딩)에 맞춰 재편집했습니다.
-            <b>CUT1 오프닝에 로고가 처음부터 떠 있다가 CUT2로 넘어갈 때 서서히 사라지고</b>, CUT2는 기존 구도(빈백·폰)에서 다리만 교정했습니다.
-            옷갈아입기·출근은 약 3초로 늘리고, <b>회사씬은 정적 데스크 대신 ‘계단 분주히 이동(동적)’ → ‘동료와 회의’ → ‘퇴근 직전 지침’</b>으로 공간·에너지를 다양화했습니다.
-            <br />순서: 기상(측면·로고) → 폰 → <b>놀람 ECU</b> → 옷갈아입기①② → 출근(당찬걸음) → <b>계단 이동(동적)</b> → <b>회의</b> → 지친 표정 → 다이브 <b>(얼굴 줌인)</b> → 잠든 얼굴 → <b>yogibo 로고 슬로우 페이드인</b>.
-            <br /><b>최종 컬러를 원본 video.mp4 룩에 매칭 · 다이브→잠 줌인 디졸브 · 화이트아웃 제거(하드 전환).</b> 남은 단계: 음악.
-            <br />
-            <a href="/rough_cut_v3.mp4" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)' }}>↗ v3 크게 보기</a>
-            <span style={{ opacity: 0.5 }}> · </span>
-            <a href="/rough_cut_v2.mp4" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)', opacity: 0.7 }}>v2(엔딩 전) 보기</a>
+      {/* 러프 컷 미리보기 — A(자막 없음) / B(자막) 비교 */}
+      <div className="note" style={{ marginBottom: 18 }}>
+        <div style={{ fontWeight: 700, marginBottom: 10 }}>▶ 러프 컷 v3 (video.mp4 스타일 · 약 20초 · 무음) — A / B 비교</div>
+        <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap' }}>
+          <div style={{ textAlign: 'center' }}>
+            <video
+              src="/rough_cut_v3.mp4?v=cut5b"
+              controls loop muted playsInline preload="metadata"
+              style={{ width: 200, aspectRatio: '9 / 16', borderRadius: 10, background: '#000' }}
+            />
+            <div className="card-meta" style={{ fontSize: 12, marginTop: 6 }}><b>버전 A</b> · 자막 없음</div>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <video
+              src="/rough_cut_v3_textB.mp4?v=textb2"
+              controls loop muted playsInline preload="metadata"
+              style={{ width: 200, aspectRatio: '9 / 16', borderRadius: 10, background: '#000' }}
+            />
+            <div className="card-meta" style={{ fontSize: 12, marginTop: 6 }}><b>버전 B</b> · 자막 (Pretendard · 중앙)</div>
+          </div>
+          <div style={{ minWidth: 240, flex: 1 }}>
+            <div className="card-meta" style={{ fontSize: 13, lineHeight: 1.7 }}>
+              순서: 기상(측면·로고) → 폰(상체 리프레임) → <b>놀람</b> → 옷갈아입기 → 출근(당찬걸음) → 바쁜 회사(데스크) → <b>회의</b> → 지친 표정 → 다이브 <b>(얼굴 줌인)</b> → 잠든 얼굴 → <b>yogibo 로고</b>.
+              <br />최종 컬러는 원본 <b>video.mp4 룩에 매칭</b> · 다이브→잠 줌인 디졸브.
+              <br /><b>버전 B 자막 2개</b> (가운데 배치, 페이드): 출근 <i>“자, 오늘도 가볼까”</i> · 마무리 <i>“내 하루의 끝, 요기보”</i>. <span style={{ opacity: 0.7 }}>※ 문구·위치는 조정 가능.</span>
+              <br />남은 단계: 자막 확정 → 음악.
+              <br />
+              <a href="/rough_cut_v3_textB.mp4?v=textb2" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)' }}>↗ B(자막) 크게 보기</a>
+              <span style={{ opacity: 0.5 }}> · </span>
+              <a href="/rough_cut_v3.mp4?v=cut5b" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)', opacity: 0.8 }}>A(자막없음) 보기</a>
+            </div>
           </div>
         </div>
       </div>
