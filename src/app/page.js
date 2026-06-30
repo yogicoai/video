@@ -98,9 +98,9 @@ export default function HomePage() {
       >
         <div className="card-title">🦖 티렉스 × 요기보 — 9초 캐릭터 단편 CF</div>
         <div className="card-meta">
-          2차 테스트 · 캐릭터(티렉스/팍스/유니크) 기반 · 9:16 · 3컷 ~9초 · cf-video-production 방식
+          2차 테스트 · 티렉스 캐릭터 · 9:16 · 3컷 ~9초 · 제품 Yogibo Max(오렌지) · cf-video-production 방식
           <br />
-          등장(에너지) → 요기보 다이브 → 안착·로고. 진행상황을 확인하세요.
+          여름 물놀이(에너지) → Yogibo Max 안착 → 로고. 진행상황을 확인하세요.
         </div>
         <div className="card-foot">
           <span className="badge badge-generating">스토리보드 기획 · 캐릭터 이미지 대기</span>
