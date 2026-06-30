@@ -19,8 +19,7 @@ export default function RootLayout({ children }) {
               <a href="/">프로젝트</a>
               <a href="/ideas">아이디어</a>
               <a href="/brand">브랜드</a>
-              <a href="/guide">가이드</a>
-              <a href="/higgsfield">힉스필드</a>
+              <a href="/guide">CF 제작 프로세스</a>
             </nav>
           </header>
           <main className="content">{children}</main>

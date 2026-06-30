@@ -90,6 +90,24 @@ export default function HomePage() {
         </div>
       </a>
 
+      {/* 고정 — 2차 테스트 프로젝트 (캐릭터) */}
+      <a
+        href="/storyboard2"
+        className="card"
+        style={{ display: 'block', borderColor: 'var(--accent)', marginBottom: 20 }}
+      >
+        <div className="card-title">🦖 티렉스 × 요기보 — 9초 캐릭터 단편 CF</div>
+        <div className="card-meta">
+          2차 테스트 · 캐릭터(티렉스/팍스/유니크) 기반 · 9:16 · 3컷 ~9초 · cf-video-production 방식
+          <br />
+          등장(에너지) → 요기보 다이브 → 안착·로고. 진행상황을 확인하세요.
+        </div>
+        <div className="card-foot">
+          <span className="badge badge-generating">스토리보드 기획 · 캐릭터 이미지 대기</span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
       {loading ? (
         <div className="empty">불러오는 중…</div>
       ) : projects.length === 0 ? (

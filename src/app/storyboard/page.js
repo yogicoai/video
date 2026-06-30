@@ -150,20 +150,20 @@ export default function StoryboardPage() {
           </div>
           <div style={{ textAlign: 'center' }}>
             <video
-              src="/rough_cut_v3_textB.mp4?v=textb2"
+              src="/rough_cut_v3_textB.mp4?v=textb4"
               controls loop muted playsInline preload="metadata"
               style={{ width: 200, aspectRatio: '9 / 16', borderRadius: 10, background: '#000' }}
             />
-            <div className="card-meta" style={{ fontSize: 12, marginTop: 6 }}><b>버전 B</b> · 자막 (Pretendard · 중앙)</div>
+            <div className="card-meta" style={{ fontSize: 12, marginTop: 6 }}><b>버전 B</b> · 자막 (키네틱+에디토리얼)</div>
           </div>
           <div style={{ minWidth: 240, flex: 1 }}>
             <div className="card-meta" style={{ fontSize: 13, lineHeight: 1.7 }}>
               순서: 기상(측면·로고) → 폰(상체 리프레임) → <b>놀람</b> → 옷갈아입기 → 출근(당찬걸음) → 바쁜 회사(데스크) → <b>회의</b> → 지친 표정 → 다이브 <b>(얼굴 줌인)</b> → 잠든 얼굴 → <b>yogibo 로고</b>.
               <br />최종 컬러는 원본 <b>video.mp4 룩에 매칭</b> · 다이브→잠 줌인 디졸브.
-              <br /><b>버전 B 자막 2개</b> (가운데 배치, 페이드): 출근 <i>“자, 오늘도 가볼까”</i> · 마무리 <i>“내 하루의 끝, 요기보”</i>. <span style={{ opacity: 0.7 }}>※ 문구·위치는 조정 가능.</span>
+              <br /><b>버전 B 자막 2개</b> (출근=키네틱 키워드 · 마무리=에디토리얼 미니멀, 페이드): 출근 <i>“자, 오늘도 가볼까”</i> · 마무리 <i>“내 하루의 끝, 요기보”</i>. <span style={{ opacity: 0.7 }}>※ 문구·위치는 조정 가능.</span>
               <br />남은 단계: 자막 확정 → 음악.
               <br />
-              <a href="/rough_cut_v3_textB.mp4?v=textb2" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)' }}>↗ B(자막) 크게 보기</a>
+              <a href="/rough_cut_v3_textB.mp4?v=textb4" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)' }}>↗ B(자막) 크게 보기</a>
               <span style={{ opacity: 0.5 }}> · </span>
               <a href="/rough_cut_v3.mp4?v=cut5b" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)', opacity: 0.8 }}>A(자막없음) 보기</a>
             </div>
