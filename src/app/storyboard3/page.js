@@ -31,12 +31,12 @@ const CDN = 'https://d8j0ntlcm91z4.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOY
 const CUTS = [
   { n: 1, t: '0–1.2s', title: '드라마틱 등장', desc: '암전 → 스포트라이트로 딥한 아쿠아블루 요기보 Max가 어둠에서 드러남, 골드 스파클·바닥 반사 (받침 없이 제품만)', cam: '로우앵글·스포트라이트', img: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/50eef433-cc2d-43c6-b3bd-7d6bbdba9acc.png', video: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/6d6ff396-22e4-4641-87d1-0b731a5608c2.mp4', status: '영상 완료' },
   { n: 2, t: '1.2–2.6s', title: '레드카펫 진입', desc: '딥 아쿠아블루 Max가 레드카펫 위로, 뒤로 파파라치 플래시+골드 스파클, 레드 벨벳 로프 (셀럽 등장)', cam: '트래킹·슬로우모션', img: 'https://d8j0ntlcm91z4.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/hf_20260701_032352_ecabce3f-c85c-46db-a9ed-083f747e98ad.png', video: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/6be6bda8-06dd-4e36-999a-be939430e664.mp4', status: '영상 완료' },
-  { n: 3, t: '2.6–4.0s', title: '매크로 히어로', desc: '원단 결·봉제 디테일 클로즈업, 빛이 결 따라 흐름', cam: '매크로 CU' },
-  { n: 4, t: '4.0–5.6s', title: '컬러 퍼레이드', desc: '여러 색 요기보가 조명 아래 슬라이드 (브랜드 컬러)', cam: '슬라이드' },
-  { n: 5, t: '5.6–7.0s', title: '사람과 함께', desc: '풀썩 안겨 편안한 미소 (10년간의 편안함)', cam: '미디엄' },
-  { n: 6, t: '7.0–8.6s', title: '컬러 웨이브', desc: '색색 요기보가 무대/스타디움을 가득 채우고, 파도타기처럼 컬러가 물결치며 번짐 (스케일 + 브랜드 컬러)', cam: '와이드·크레인 상승' },
-  { n: 7, t: '8.6–10.4s', title: '"10" 리빌', desc: '빛·컨페티·요기보가 모여 우아하게 "10" 형성 → 스파클', cam: '리빌' },
-  { n: 8, t: '10.4–12s', title: '엔딩 로고', desc: '기존 yogibo 로고 슬로우 페이드인 + 태그라인', cam: '그래픽' },
+  { n: 3, t: '2.6–4.0s', title: '무대 합류 (확장)', desc: '스포트라이트가 하나둘 더 켜지며 요기보들이 무대에 드러남 (한 대 → 여러 대), 크레인 백/업으로 스케일 확장 (아쿠아블루 스타 색 락)', cam: '크레인 BACK/UP', img: 'https://d8j0ntlcm91z4.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/hf_20260701_053248_b6545008-a6f3-43e7-8c6b-7d8b56126610.png', video: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/c3332f6f-8377-4a1b-ad0b-c3ba8cfef0d3.mp4', status: '영상 완료' },
+  { n: 4, t: '4.0–5.6s', title: '컬러 퍼레이드', desc: '12색 요기보가 조명 아래 라인업으로 슬라이드 (브랜드 컬러 확산)', cam: 'SLIDE FAST' },
+  { n: 5, t: '5.6–7.0s', title: '사람과 함께 (가치)', desc: '사람이 풀썩 안겨 편안한 미소 (10년간의 편안함 = 제품 가치)', cam: 'CLOSE-UP' },
+  { n: 6, t: '7.0–8.6s', title: '컬러 웨이브 (축제)', desc: '색색 요기보가 무대/스타디움을 가득 채우고, 파도타기처럼 컬러가 물결치며 번짐 (스케일 정점)', cam: '크레인 하이앵글 풀백' },
+  { n: 7, t: '8.6–10.4s', title: '"10" 리빌 (정점)', desc: '빛·요기보가 모여 우아하게 "10" 형성 → 골드 스파클', cam: '와이드·스테디캠' },
+  { n: 8, t: '10.4–12s', title: '로고 엔딩 (브랜드)', desc: '기존 yogibo 로고 슬로우 페이드인 + 태그라인 "편안함의 과학, 행복의 가치"', cam: '그래픽·로고와이프' },
 ];
 
 const card = { borderRadius: 10, border: '1px solid var(--border)', display: 'block', width: '100%' };
@@ -101,6 +101,19 @@ export default function Storyboard3Page() {
         <br />📦 제품: 요기보 <b>Max</b> · 스펙 <b>W65 × D45 × H170 cm</b> (길쭉한 업라이트) · 받침 제외 · Element <code>yogibo-max-clean</code>
         <br />🎨 대표색: <b>아쿠아블루 <span style={{ color: '#0081CC' }}>#0081CC</span></b> (CUT1 히어로 · CUT3 매크로)
         <br />🌊 컬러 웨이브/퍼레이드 6색: 체리레드 · 아쿠아블루 · 시트러스 · 올리브그린 · 브라이트퍼플 · 블라썸핑크
+      </div>
+
+      {/* 러프컷 (3컷 연결) */}
+      <div className="note" style={{ marginBottom: 22, display: 'flex', gap: 16, alignItems: 'flex-start', flexWrap: 'wrap' }}>
+        <video src="/anniv_rough.mp4?v=3" autoPlay loop muted playsInline controls preload="metadata"
+          style={{ width: 200, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', flexShrink: 0 }} />
+        <div style={{ minWidth: 240, flex: 1 }}>
+          <div style={{ fontWeight: 700, marginBottom: 6 }}>▶ 러프컷 (CUT1–3 연결 · 약 8초 · 무음)</div>
+          <div className="card-meta" style={{ fontSize: 13, lineHeight: 1.7 }}>
+            지금까지 만든 <b>CUT1(리빌) → CUT2(레드카펫) → CUT3(무대 합류)</b>를 크로스페이드로 이어 <b>연결성</b>을 확인하는 러프컷입니다. (편집 = 크레딧 0)
+            <br /><span style={{ opacity: 0.7 }}>※ CUT1·2·3 모두 실제 영상. CUT3는 형태 유지 + 아쿠아 스타 색 락 반영.</span>
+          </div>
+        </div>
       </div>
 
       {/* 스토리보드 A */}
