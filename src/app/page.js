@@ -116,12 +116,12 @@ export default function HomePage() {
       >
         <div className="card-title">🎉 요기보 10주년 — 12초 CF (시네마틱)</div>
         <div className="card-meta">
-          3차 테스트 · 제품 중심 · 9:16 · 12초 · 8컷 · 10.mp4 프리미엄 진화판 · cf-video-production 게이트
+          3차 테스트 · 제품 중심 · 9:16 · ~14초 · 9컷 · 10.mp4 리얼 다큐 기법 모방 · cf-video-production 게이트
           <br />
-          제품 형태 Element 락(yogibo-max) 완료 · 스토리보드 A 확정 단계. 진행상황을 확인하세요.
+          CUT1–4 영상 완료(레드카펫 2비트) · 러프컷 11초 연결 확인 단계. 진행상황을 확인하세요.
         </div>
         <div className="card-foot">
-          <span className="badge badge-generating">STAGE 2 · 스토리보드</span>
+          <span className="badge badge-generating">STAGE 4 · CUT1–4 영상</span>
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
