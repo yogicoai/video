@@ -29,8 +29,8 @@ const CDN = 'https://d8j0ntlcm91z4.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOY
 
 // 스토리보드 A (프리미엄 진화판) · 12초 · 8컷
 const CUTS = [
-  { n: 1, t: '0–1.2s', title: '드라마틱 등장', desc: '암전 → 스포트라이트로 딥한 아쿠아블루 요기보 Max가 어둠에서 드러남, 골드 스파클·바닥 반사 (받침 없이 제품만)', cam: '로우앵글·스포트라이트', img: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/50eef433-cc2d-43c6-b3bd-7d6bbdba9acc.png', video: 'https://d8j0ntlcm91z4.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/hf_20260701_032014_20741606-706d-48fd-92ab-fcbe2a32b8bd.mp4', status: '영상 완료' },
-  { n: 2, t: '1.2–2.6s', title: '레드카펫 진입', desc: '요기보가 레드카펫 위로, 플래시 슬로우모션 번쩍', cam: '트래킹·슬로우모션' },
+  { n: 1, t: '0–1.2s', title: '드라마틱 등장', desc: '암전 → 스포트라이트로 딥한 아쿠아블루 요기보 Max가 어둠에서 드러남, 골드 스파클·바닥 반사 (받침 없이 제품만)', cam: '로우앵글·스포트라이트', img: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/50eef433-cc2d-43c6-b3bd-7d6bbdba9acc.png', video: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/6d6ff396-22e4-4641-87d1-0b731a5608c2.mp4', status: '영상 완료' },
+  { n: 2, t: '1.2–2.6s', title: '레드카펫 진입', desc: '딥 아쿠아블루 Max가 레드카펫 위로, 뒤로 파파라치 플래시+골드 스파클, 레드 벨벳 로프 (셀럽 등장)', cam: '트래킹·슬로우모션', img: 'https://d8j0ntlcm91z4.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/hf_20260701_032352_ecabce3f-c85c-46db-a9ed-083f747e98ad.png', video: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/6be6bda8-06dd-4e36-999a-be939430e664.mp4', status: '영상 완료' },
   { n: 3, t: '2.6–4.0s', title: '매크로 히어로', desc: '원단 결·봉제 디테일 클로즈업, 빛이 결 따라 흐름', cam: '매크로 CU' },
   { n: 4, t: '4.0–5.6s', title: '컬러 퍼레이드', desc: '여러 색 요기보가 조명 아래 슬라이드 (브랜드 컬러)', cam: '슬라이드' },
   { n: 5, t: '5.6–7.0s', title: '사람과 함께', desc: '풀썩 안겨 편안한 미소 (10년간의 편안함)', cam: '미디엄' },
