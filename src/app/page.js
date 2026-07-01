@@ -67,9 +67,9 @@ export default function HomePage() {
             제품 이미지와 스토리보드를 올리면 Veo 3 영상 프롬프트를 생성·관리합니다.
           </p>
         </div>
-        <button className="btn btn-primary" onClick={() => setModalOpen(true)}>
+        <a className="btn btn-primary" href="/create">
           + 새 프로젝트
-        </button>
+        </a>
       </div>
 
       {/* 고정 — 완성 스토리보드 프로젝트 */}
@@ -104,6 +104,24 @@ export default function HomePage() {
         </div>
         <div className="card-foot">
           <span className="badge badge-generating">스토리보드 기획 · 캐릭터 이미지 대기</span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
+      {/* 고정 — 3차 프로젝트 (10주년) */}
+      <a
+        href="/storyboard3"
+        className="card"
+        style={{ display: 'block', borderColor: 'var(--accent)', marginBottom: 20 }}
+      >
+        <div className="card-title">🎉 요기보 10주년 — 12초 CF (시네마틱)</div>
+        <div className="card-meta">
+          3차 테스트 · 제품 중심 · 9:16 · 12초 · 8컷 · 10.mp4 프리미엄 진화판 · cf-video-production 게이트
+          <br />
+          제품 형태 Element 락(yogibo-max) 완료 · 스토리보드 A 확정 단계. 진행상황을 확인하세요.
+        </div>
+        <div className="card-foot">
+          <span className="badge badge-generating">STAGE 2 · 스토리보드</span>
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
