@@ -118,10 +118,10 @@ export default function HomePage() {
         <div className="card-meta">
           3차 테스트 · 제품 중심 · 9:16 · ~14초 · 9컷 · 10.mp4 리얼 다큐 기법 모방 · cf-video-production 게이트
           <br />
-          CUT1–4 영상 완료(레드카펫 2비트) · 러프컷 11초 연결 확인 단계. 진행상황을 확인하세요.
+          CUT1–5 영상 완료(레드카펫 2비트 + 컬러 퍼레이드) · 러프컷 15초 연결 확인 단계. 진행상황을 확인하세요.
         </div>
         <div className="card-foot">
-          <span className="badge badge-generating">STAGE 4 · CUT1–4 영상</span>
+          <span className="badge badge-generating">STAGE 4 · CUT1–5 영상</span>
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
