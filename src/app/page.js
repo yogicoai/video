@@ -146,7 +146,8 @@ export default function HomePage() {
         </div>
       </a>
 
-      {/* 고정 — 5차 (10주년 축하 커튼 리빌) */}
+      {/* 고정 — 5차 (10주년 축하 커튼 리빌) · 숨김처리 (요청: 2026-07-03) — 복구 시 아래 false→true
+      {false && (
       <a
         href="/storyboard5"
         className="card"
@@ -163,6 +164,8 @@ export default function HomePage() {
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
+      )}
+      */}
 
       {loading ? (
         <div className="empty">불러오는 중…</div>
