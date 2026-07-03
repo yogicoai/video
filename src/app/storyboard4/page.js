@@ -18,8 +18,8 @@ const WIFE_OPTIONS = [
 const REF_CUTS = [
   { n: 1, t: '0–1.7s', dur: '2.6s', ref: '/ref_family/cut01.jpg', refVid: V('c01_ref'), angle: '하이앵글 부감 · 대각선', ours: '임산부(부인)가 아쿠아 Max에 눈감고 누움, 손은 배에 + 중앙 로고 상시', mine: `${CDN}/hf_20260702_035204_6139132e-2f82-4864-9e75-1b7cfc61e69e.png`, vid: V('c01_ours', 4) },
   { n: 2, t: '1.7–2.7s', dur: '2.0s', ref: '/ref_family/cut02.jpg', refVid: V('c02_ref'), angle: '와이드 설정샷 · 아이레벨', ours: '임부 아내가 아쿠아 Max에 깊이 파묻혀 이완된 미소 · 남편(머스터드 니트)이 무릎 옆에서 다정히 · v10', mine: '/ref_family/cut02_ours_v10.png?v=1', vid: V('c02_ours', 4) },
-  { n: 3, t: '2.7–4.0s', dur: '1.6s', ref: '/ref_family/cut03.jpg', refVid: V('c03_ref'), angle: '하이앵글 · 기대 누워 올려다봄', ours: '아내가 아쿠아 요기보에 머리 기대 누워 올려다보며 환한 미소', mine: '/ref_family/cut03_ours.png?v=5', vid: V('c03_ours', 5) },
-  { n: 4, t: '4.0–6.1s', dur: '1.8s', ref: '/ref_family/cut04.jpg', refVid: V('c04_ref'), angle: '측면 프로필 클로즈업', ours: '출산 간접 컷 — 창백한 역광·민트 이불(병원 신호)에서 위를 올려다봄 · 아기 리빌 직전 비트', mine: '/ref_family/cut04_ours.png?v=3', vid: V('c04_ours', 5) },
+  { n: 3, t: '2.7–4.0s', dur: '1.6s', ref: '/ref_family/cut03.jpg', refVid: V('c03_ref'), angle: '하이앵글 · 기대 누워 올려다봄', ours: '아내가 아쿠아 요기보에 머리 기대 누워 올려다보며 환한 미소', mine: '/ref_family/cut03_ours.png?v=5', vid: V('c03_ours_v5') },
+  { n: 4, t: '4.0–6.1s', dur: '1.8s', ref: '/ref_family/cut04.jpg', refVid: V('c04_ref'), angle: '측면 프로필 클로즈업', ours: '출산 간접 컷 — 창백한 역광·민트 이불(병원 신호)에서 위를 올려다봄 · 아기 리빌 직전 비트', mine: '/ref_family/cut04_ours.png?v=3', vid: V('c04_ours_v5') },
   { n: 5, t: '6.1–7.8s', dur: '0.8s · 러프컷 제외', ref: '/ref_family/cut05.jpg', refVid: V('c05_ref'), angle: '오버숄더 · 프로필(앞을 봄)', ours: '아내(C 얼굴)가 어깨 너머 프로필로 앞을 바라봄 — 예비 컷(러프컷 미사용, 카드 보관)', mine: '/ref_family/cut05_ours.png?v=5', vid: V('c05_ours', 4) },
   { n: 6, t: '7.8–8.7s', dur: '2.8s', ref: '/ref_family/cut06.jpg', refVid: V('c06_ref'), angle: '오버숄더 미디엄CU · 고개만 돌려 카메라', ours: '아기 첫 등장 — 부인이 서포트(그린) 안에서 아기 안고 어깨너머 미소, 미소 커지는 아크 전체 사용', mine: '/ref_family/cut06_ours.png?v=2', vid: V('c06_ours', 4) },
   { n: 7, t: '8.7–10.3s', dur: '2.4s', ref: '/ref_family/cut07.jpg', refVid: V('c07_ref'), angle: '로우앵글 사이드 와이드 · 매트 높이', ours: 'Max 아쿠아 = 아기 라운저 — 문필로우(올리브)에 아기 머리, 엄마 까꿍 lean-in 원모션 · 전경 옐리 보케', mine: '/ref_family/cut07_ours.png?v=1', vid: V('c07_ours', 4) },
@@ -234,7 +234,7 @@ export default function Storyboard4Page() {
             </div>
           )}
           <div style={{ flex: '1 1 240px', maxWidth: 300 }}>
-            <video src={V('ours_rough', 28)} autoPlay loop muted playsInline controls
+            <video src={V('ours_rough_v28')} autoPlay loop muted playsInline controls
               style={{ width: '100%', aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '2px solid var(--accent)' }} />
           </div>
         </div>

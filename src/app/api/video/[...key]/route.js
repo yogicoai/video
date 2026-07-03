@@ -14,7 +14,7 @@ export async function GET(req, { params }) {
 
   // Range 요청 전달(영상 탐색 지원)
   const range = req.headers.get('range');
-  const upstream = await fetch(src, { headers: range ? { range } : {} });
+  const upstream = await fetch(src, { headers: range ? { range } : {}, cache: 'no-store' });
   if (!upstream.ok && upstream.status !== 206) {
     return new Response('upstream error', { status: 502 });
   }
