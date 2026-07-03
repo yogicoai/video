@@ -6,6 +6,8 @@ const CDN = 'https://d8j0ntlcm91z4.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOY
 const HF = 'https://d2ol7oe51mr4n9.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0';
 // cafe24 FTP에 .jpg로 위장 업로드된 영상 → /api/video 프록시가 video/mp4로 서빙 (Vercel 재생 보장)
 const V = (name, ver = 1) => `/api/video/famvid/${name}.jpg?v=${ver}`;
+// 보고용 모드: 레퍼런스(원본) 영상 숨김. 내부 비교로 되돌리려면 true.
+const SHOW_REF = false;
 
 // 부인 캐릭터 후보 (Higgsfield nano_banana_2) — 한 장씩 생성, 별로면 다음 후보 추가
 const WIFE_OPTIONS = [
@@ -16,9 +18,9 @@ const WIFE_OPTIONS = [
 const REF_CUTS = [
   { n: 1, t: '0–1.7s', dur: '2.6s', ref: '/ref_family/cut01.jpg', refVid: V('c01_ref'), angle: '하이앵글 부감 · 대각선', ours: '임산부(부인)가 아쿠아 Max에 눈감고 누움, 손은 배에 + 중앙 로고 상시', mine: `${CDN}/hf_20260702_035204_6139132e-2f82-4864-9e75-1b7cfc61e69e.png`, vid: V('c01_ours', 2) },
   { n: 2, t: '1.7–2.7s', dur: '2.0s', ref: '/ref_family/cut02.jpg', refVid: V('c02_ref'), angle: '와이드 설정샷 · 아이레벨', ours: '임부 아내가 아쿠아 Max에 깊이 파묻혀 이완된 미소 · 남편(머스터드 니트)이 무릎 옆에서 다정히 · v10', mine: '/ref_family/cut02_ours_v10.png?v=1', vid: V('c02_ours', 2) },
-  { n: 3, t: '2.7–4.0s', dur: '1.4s', ref: '/ref_family/cut03.jpg', refVid: V('c03_ref'), angle: '하이앵글 · 기대 누워 올려다봄', ours: '아내가 아쿠아 요기보에 머리 기대 누워 올려다보며 환한 미소 · 짧은 감정 컷', mine: '/ref_family/cut03_ours.png?v=5', vid: V('c03_ours', 2) },
-  { n: 4, t: '4.0–6.1s', dur: '1.3s', ref: '/ref_family/cut04.jpg', refVid: V('c04_ref'), angle: '측면 프로필 클로즈업', ours: '아내 측면 프로필 · 뒷구간 사용 — 차분히 위를 바라보는 마무리', mine: '/ref_family/cut04_ours.png?v=3', vid: V('c04_ours', 2) },
-  { n: 5, t: '6.1–7.8s', dur: '0.8s', ref: '/ref_family/cut05.jpg', refVid: V('c05_ref'), angle: '오버숄더 · 프로필(앞을 봄)', ours: '아내(C 얼굴)가 어깨 너머 프로필로 앞을 바라봄 · 스치듯 짧게', mine: '/ref_family/cut05_ours.png?v=5', vid: V('c05_ours', 2) },
+  { n: 3, t: '2.7–4.0s', dur: '1.2s', ref: '/ref_family/cut03.jpg', refVid: V('c03_ref'), angle: '하이앵글 · 기대 누워 올려다봄', ours: '아내가 아쿠아 요기보에 머리 기대 누워 올려다보며 환한 미소 — 활짝 웃음은 짧게 쳐서 강하게', mine: '/ref_family/cut03_ours.png?v=5', vid: V('c03_ours', 3) },
+  { n: 4, t: '4.0–6.1s', dur: '1.5s', ref: '/ref_family/cut04.jpg', refVid: V('c04_ref'), angle: '측면 프로필 클로즈업', ours: '출산 간접 컷 — 창백한 역광·민트 이불(병원 신호)에서 위를 올려다봄 · 러프컷에선 CUT5 뒤, 아기 리빌 직전 배치', mine: '/ref_family/cut04_ours.png?v=3', vid: V('c04_ours', 3) },
+  { n: 5, t: '6.1–7.8s', dur: '0.8s', ref: '/ref_family/cut05.jpg', refVid: V('c05_ref'), angle: '오버숄더 · 프로필(앞을 봄)', ours: '아내(C 얼굴)가 어깨 너머 프로필로 앞을 바라봄 — 차분 브릿지 · 러프컷 배치 3→5→4', mine: '/ref_family/cut05_ours.png?v=5', vid: V('c05_ours', 3) },
   { n: 6, t: '7.8–8.7s', dur: '2.8s', ref: '/ref_family/cut06.jpg', refVid: V('c06_ref'), angle: '오버숄더 미디엄CU · 고개만 돌려 카메라', ours: '아기 첫 등장 — 부인이 서포트(그린) 안에서 아기 안고 어깨너머 미소, 미소 커지는 아크 전체 사용', mine: '/ref_family/cut06_ours.png?v=2', vid: V('c06_ours', 2) },
   { n: 7, t: '8.7–10.3s', dur: '2.4s', ref: '/ref_family/cut07.jpg', refVid: V('c07_ref'), angle: '로우앵글 사이드 와이드 · 매트 높이', ours: 'Max 아쿠아 = 아기 라운저 — 문필로우(올리브)에 아기 머리, 엄마 까꿍 lean-in 원모션 · 전경 옐리 보케', mine: '/ref_family/cut07_ours.png?v=1', vid: V('c07_ours', 2) },
   { n: 8, t: '10.3–11.3s', dur: '1.8s', ref: '/ref_family/cut08.jpg', refVid: V('c08_ref'), angle: '타이트 CU · 얕은 심도 · 우측 팬', ours: '메이트 옐리 = 아기 장난감 — 엄마가 옐리 들고 놀아줌, 아기 손이 잡는 인터랙션 전체 (CUT7 옐리 연결)', mine: '/ref_family/cut08_ours.png?v=1', vid: V('c08_ours', 2) },
@@ -51,7 +53,7 @@ export default function Storyboard4Page() {
         <div>
           <h1 className="page-title">👨‍👩‍👧 가족 요기보 Max — 라이프스타일 CF (완성형)</h1>
           <p className="page-desc">
-            newvideo.mp4(요기보재팬 가족편) 기반 · 9:16 · 원본 15초/11컷 → <b>우리 러프컷 21.2초</b>(6–11 확장 연출) · 가족 3인(부인·남편·아기) · 임신부터 육아까지 요기보와 함께
+            newvideo.mp4(요기보재팬 가족편) 기반 · 9:16 · 원본 15초/11컷 → <b>우리 러프컷 21.1초</b>(6–11 확장 + 3·5·4 스왑 편집) · 가족 3인(부인·남편·아기) · 임신부터 육아까지 요기보와 함께
           </p>
         </div>
       </div>
@@ -181,57 +183,58 @@ export default function Storyboard4Page() {
         ))}
       </div>
 
-      {/* STAGE 2 — 컷 구도 타깃 보드 */}
-      <h2 className="page-title" style={{ fontSize: 20, marginTop: 8, marginBottom: 4 }}>STAGE 2 · 컷별 원본 vs 우리 (영상 비교)</h2>
+      {/* STAGE 2 — 컷별 영상 보드 (보고용: 우리 영상 단독 / SHOW_REF=true 시 비교 모드) */}
+      <h2 className="page-title" style={{ fontSize: 20, marginTop: 8, marginBottom: 4 }}>STAGE 2 · 컷별 영상 (11컷)</h2>
       <p className="page-desc" style={{ marginBottom: 14 }}>
-        원본 프레임을 <b>구도 가이드</b>로 삼아 같은 앵글에 우리 가족·제품을 앉힘 · 총 11컷 · 영상은 cafe24 프록시로 재생(Vercel 대응)
+        컷별 완성 영상 — 캐스트·제품 Element 락 + 톤 정합 적용 · 영상은 cafe24 프록시로 재생(Vercel 대응)
       </p>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 14, marginBottom: 22 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(170px, 1fr))', gap: 14, marginBottom: 22 }}>
         {REF_CUTS.map((c) => (
           <div key={c.n} style={{ border: '1px solid var(--border)', borderRadius: 10, overflow: 'hidden', background: 'var(--bg-elev)' }}>
             <div style={{ display: 'flex' }}>
-              <div style={{ position: 'relative', flex: 1 }}>
-                {c.refVid ? (
-                  <video src={c.refVid} autoPlay loop muted playsInline style={{ width: '100%', display: 'block', aspectRatio: '9 / 16', objectFit: 'cover' }} />
-                ) : (
-                  <img src={c.ref} alt={`컷${c.n} 원본 구도`} style={{ width: '100%', display: 'block', aspectRatio: '9 / 16', objectFit: 'cover' }} />
-                )}
-                <span style={{ position: 'absolute', top: 6, left: 6, background: 'rgba(0,0,0,0.65)', color: '#fff', fontWeight: 700, fontSize: 11, padding: '2px 7px', borderRadius: 6 }}>{c.refVid ? '원본 ▶' : '원본'} {c.n}</span>
-              </div>
-              {(c.mine || c.vid) && (
-                <div style={{ position: 'relative', flex: 1, borderLeft: '2px solid var(--accent)' }}>
-                  {c.vid ? (
-                    <video src={c.vid} autoPlay loop muted playsInline style={{ width: '100%', display: 'block', aspectRatio: '9 / 16', objectFit: 'cover' }} />
+              {SHOW_REF && (
+                <div style={{ position: 'relative', flex: 1 }}>
+                  {c.refVid ? (
+                    <video src={c.refVid} autoPlay loop muted playsInline style={{ width: '100%', display: 'block', aspectRatio: '9 / 16', objectFit: 'cover' }} />
                   ) : (
-                    <img src={c.mine} alt={`컷${c.n} 우리 결과`} style={{ width: '100%', display: 'block', aspectRatio: '9 / 16', objectFit: 'cover' }} />
+                    <img src={c.ref} alt={`컷${c.n} 레퍼런스`} style={{ width: '100%', display: 'block', aspectRatio: '9 / 16', objectFit: 'cover' }} />
                   )}
-                  <span style={{ position: 'absolute', top: 6, left: 6, background: 'var(--accent)', color: '#fff', fontWeight: 700, fontSize: 11, padding: '2px 7px', borderRadius: 6 }}>{c.vid ? '우리 ▶' : '우리 ✓'}</span>
+                  <span style={{ position: 'absolute', top: 6, left: 6, background: 'rgba(0,0,0,0.65)', color: '#fff', fontWeight: 700, fontSize: 11, padding: '2px 7px', borderRadius: 6 }}>REF {c.n}</span>
                 </div>
               )}
+              <div style={{ position: 'relative', flex: 1, borderLeft: SHOW_REF ? '2px solid var(--accent)' : 'none' }}>
+                {c.vid ? (
+                  <video src={c.vid} autoPlay loop muted playsInline controls style={{ width: '100%', display: 'block', aspectRatio: '9 / 16', objectFit: 'cover', background: '#000' }} />
+                ) : (
+                  <img src={c.mine} alt={`컷${c.n}`} style={{ width: '100%', display: 'block', aspectRatio: '9 / 16', objectFit: 'cover' }} />
+                )}
+                <span style={{ position: 'absolute', top: 6, left: 6, background: 'var(--accent)', color: '#fff', fontWeight: 700, fontSize: 11, padding: '2px 7px', borderRadius: 6 }}>CUT {c.n} ▶</span>
+              </div>
             </div>
             <div style={{ padding: '8px 10px' }}>
-              <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginBottom: 4 }}>CUT {c.n} · 원본 {c.t} → 우리 {c.dur} · 📐 {c.angle}</div>
+              <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginBottom: 4 }}>CUT {c.n} · {c.dur} · 📐 {c.angle}</div>
               <div style={{ fontSize: 12.5, lineHeight: 1.5 }}>{c.ours}</div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* 러프컷 연결성 비교 */}
+      {/* 최종 러프컷 마스터 */}
       <div className="note" style={{ marginBottom: 22 }}>
-        <div style={{ fontWeight: 700, marginBottom: 4 }}>▶ 러프컷 비교 (원본 15.0s vs 우리 21.2s)</div>
+        <div style={{ fontWeight: 700, marginBottom: 4 }}>▶ 최종 러프컷 마스터 (CUT1–11 · 21.1s)</div>
         <div className="card-meta" style={{ fontSize: 12.5, marginBottom: 12 }}>
-          우리 러프컷 = 무손실 파이프라인(최종 1회 인코딩·crf16) + 톤 정합 + 인트로/엔딩 로고. CUT6–11은 확장 연출.
+          무손실 파이프라인(최종 1회 인코딩·crf16) + 전 컷 톤 정합 + 인트로/엔딩 로고 · 편집 순서 1→2→3→5→4→6→…→11 · 무음(음악은 최종 컴펌 후)
         </div>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-          <div style={{ flex: '1 1 200px', maxWidth: 240 }}>
-            <div style={{ fontSize: 12, color: 'var(--text-dim)', marginBottom: 6 }}>원본 러프컷 (CUT1–11 · 풀)</div>
-            <video src={V('ref_rough', 9)} autoPlay loop muted playsInline controls
-              style={{ width: '100%', aspectRatio: '9 / 16', borderRadius: 10, background: '#000' }} />
-          </div>
-          <div style={{ flex: '1 1 200px', maxWidth: 240 }}>
-            <div style={{ fontSize: 12, color: 'var(--accent)', marginBottom: 6 }}>우리 러프컷 (CUT1–11 · 21.2s 마스터)</div>
-            <video src={V('ours_rough', 26)} autoPlay loop muted playsInline controls
+          {SHOW_REF && (
+            <div style={{ flex: '1 1 200px', maxWidth: 240 }}>
+              <div style={{ fontSize: 12, color: 'var(--text-dim)', marginBottom: 6 }}>레퍼런스 러프컷 (내부 확인용)</div>
+              <video src={V('ref_rough', 9)} autoPlay loop muted playsInline controls
+                style={{ width: '100%', aspectRatio: '9 / 16', borderRadius: 10, background: '#000' }} />
+            </div>
+          )}
+          <div style={{ flex: '1 1 240px', maxWidth: 300 }}>
+            <video src={V('ours_rough', 27)} autoPlay loop muted playsInline controls
               style={{ width: '100%', aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '2px solid var(--accent)' }} />
           </div>
         </div>
@@ -257,7 +260,7 @@ export default function Storyboard4Page() {
           </div>
         ))}
         <div style={{ padding: '10px 12px', borderTop: '1px solid var(--border)', fontSize: 12, color: 'var(--text-dim)' }}>
-          합계 21.2초 · 감정 아크: 임신의 쉼(1–2) → 설렘(3–5) → 아기와 육아(6–9) → 가족 완성(10) → 함께 쉼 + 로고(11) · 무음(음악은 최종 컴펌 후)
+          합계 21.1초 · 러프컷 순서 1→2→3→<b>5→4</b>→6→…→11 (C4 = 출산 간접 컷, 아기 리빌 직전) · 감정 아크: 임신의 쉼(1–2) → 설렘(3·5) → 출산(4) → 아기와 육아(6–9) → 가족 완성(10) → 함께 쉼 + 로고(11) · 무음(음악은 최종 컴펌 후)
         </div>
       </div>
     </>
