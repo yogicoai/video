@@ -90,23 +90,25 @@ export default function HomePage() {
         </div>
       </a>
 
-      {/* 고정 — 2차 테스트 프로젝트 (캐릭터) */}
-      <a
-        href="/storyboard2"
-        className="card"
-        style={{ display: 'block', borderColor: 'var(--accent)', marginBottom: 20 }}
-      >
-        <div className="card-title">🦖 티렉스 × 요기보 — 9초 캐릭터 단편 CF</div>
-        <div className="card-meta">
-          2차 테스트 · 티렉스 캐릭터 · 9:16 · 3컷 ~9초 · 제품 Yogibo Max(오렌지) · cf-video-production 방식
-          <br />
-          여름 물놀이(에너지) → Yogibo Max 안착 → 로고. 진행상황을 확인하세요.
-        </div>
-        <div className="card-foot">
-          <span className="badge badge-generating">스토리보드 기획 · 캐릭터 이미지 대기</span>
-          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
-        </div>
-      </a>
+      {/* 고정 — 2차 테스트 프로젝트 (티렉스 캐릭터) — 숨김 처리 (페이지는 유지, 홈 카드만 비노출) */}
+      {false && (
+        <a
+          href="/storyboard2"
+          className="card"
+          style={{ display: 'block', borderColor: 'var(--accent)', marginBottom: 20 }}
+        >
+          <div className="card-title">🦖 티렉스 × 요기보 — 9초 캐릭터 단편 CF</div>
+          <div className="card-meta">
+            2차 테스트 · 티렉스 캐릭터 · 9:16 · 3컷 ~9초 · 제품 Yogibo Max(오렌지) · cf-video-production 방식
+            <br />
+            여름 물놀이(에너지) → Yogibo Max 안착 → 로고. 진행상황을 확인하세요.
+          </div>
+          <div className="card-foot">
+            <span className="badge badge-generating">스토리보드 기획 · 캐릭터 이미지 대기</span>
+            <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+          </div>
+        </a>
+      )}
 
       {/* 고정 — 3차 프로젝트 (10주년) */}
       <a
@@ -122,6 +124,42 @@ export default function HomePage() {
         </div>
         <div className="card-foot">
           <span className="badge badge-generating">STAGE 4 · CUT1–5 영상</span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
+      {/* 고정 — 4차 프로젝트 (가족편) */}
+      <a
+        href="/storyboard4"
+        className="card"
+        style={{ display: 'block', borderColor: 'var(--accent)', marginBottom: 20 }}
+      >
+        <div className="card-title">👨‍👩‍👧 가족 요기보 Max — 15초 라이프스타일 CF</div>
+        <div className="card-meta">
+          4차 · newvideo.mp4(가족편) 기반 · 9:16 · 15초 · 가족 3인(부인·남편·여아) · 제품 Yogibo Max 아쿠아블루 · 웜 필믹 톤
+          <br />
+          레퍼런스 분석 완료 · STAGE 1 캐스트 락(부인 후보 선택) 단계. 진행상황을 확인하세요.
+        </div>
+        <div className="card-foot">
+          <span className="badge badge-generating">STAGE 1 · 등장인물</span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
+      {/* 고정 — 5차 (10주년 축하 커튼 리빌) */}
+      <a
+        href="/storyboard5"
+        className="card"
+        style={{ display: 'block', borderColor: 'var(--accent)', marginBottom: 20 }}
+      >
+        <div className="card-title">🎉 요기보 10주년 축하 — 커튼 리빌 (5초)</div>
+        <div className="card-meta">
+          리프레시용 짧은 축하 영상 · 9:16 · ~5초 · 커튼 열리며 10주년 케이크 등장 + 골드 컨페티·빵빠레
+          <br />
+          커튼 열리며 케이크 등장 + 컨페티/빵빠레 · <strong>5초 영상 완료</strong>.
+        </div>
+        <div className="card-foot">
+          <span className="badge badge-review">영상 완료</span>
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>

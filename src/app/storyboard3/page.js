@@ -34,7 +34,7 @@ const CUTS = [
   { n: 3, t: '3.0–8.0s', title: '레드카펫 직립 히어로 (바운스)', desc: '딥 아쿠아블루 Max가 통통 스프링 바운스로 레드카펫을 튀며 무대로 나아감 (스쿼시&스트레치·에너지↑), 저녁 듀스크 톤·실제 하객 실루엣·보케 스트링라이트 (10.mp4 리얼 다큐 기법 · 5초 롱테이크)', cam: '로우앵글·팔로우', img: 'https://d8j0ntlcm91z4.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/hf_20260701_063201_3ee4a18f-cb1f-418a-9878-574ee3ec8247.png', video: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/16340dbe-8c92-47c6-bac8-6942e1e4ce71.mp4', status: '영상 완료' },
   { n: 4, t: '8.0–9.6s', title: '무대 합류 (확장)', desc: '스포트라이트가 하나둘 더 켜지며 요기보들이 무대에 드러남 (한 대 → 여러 대), 크레인 백/업으로 스케일 확장 (아쿠아블루 스타 색 락)', cam: '크레인 BACK/UP', img: 'https://d8j0ntlcm91z4.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/hf_20260701_053248_b6545008-a6f3-43e7-8c6b-7d8b56126610.png', video: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/c3332f6f-8377-4a1b-ad0b-c3ba8cfef0d3.mp4', status: '영상 완료' },
   { n: 5, t: '9.6–11.0s', title: '컬러 퍼레이드', desc: '8색(아쿠아·체리레드·옐로우·올리브·퍼플·오렌지·블라썸핑크·네이비) 요기보가 저녁 레드카펫에 직립 라인업, 카메라 측면 슬라이드로 컬러 확산 (실제 하객·보케 배경, 리얼 다큐 톤)', cam: '측면 슬라이드 트래킹', img: 'https://d8j0ntlcm91z4.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/hf_20260701_082332_a37abfa4-e983-4255-91ea-49f8149f2051.png', video: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/727b8224-38c4-465c-8d58-1a709def7373.mp4', status: '영상 완료' },
-  { n: 6, t: '11.0–12.4s', title: '사람과 함께 (가치)', desc: '사람이 풀썩 안겨 편안한 미소 (10년간의 편안함 = 제품 가치)', cam: 'CLOSE-UP' },
+  { n: 6, t: '11.0–13.0s', title: '사람과 함께 (가치)', desc: '사람이 170cm 아쿠아블루 Max에 폭 안겨 편안한 미소 (10년간의 편안함 = 제품 가치). 따뜻한 실내·창가광 라이프스타일 톤. ★엔진=Veo 3.1(구글, 6초, 무음본) — Kling 대비 인물 표정·사실감 강함(단가 16.5cr)', cam: '슬로우 푸시인', img: 'https://d8j0ntlcm91z4.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/hf_20260701_085155_5e423eb9-867e-450b-a3bd-104fbfc5fcb9.png', video: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/1e29723e-79c4-4e7c-ba17-5ce301aa25e8.mp4', status: '영상 완료 (Veo 3.1)' },
   { n: 7, t: '12.4–14.0s', title: '컬러 웨이브 (축제)', desc: '색색 요기보가 무대/스타디움을 가득 채우고, 파도타기처럼 컬러가 물결치며 번짐 (스케일 정점)', cam: '크레인 하이앵글 풀백' },
   { n: 8, t: '14.0–16.0s', title: '"10" 리빌 (정점)', desc: '빛·요기보가 모여 우아하게 "10" 형성 → 골드 스파클', cam: '와이드·스테디캠' },
   { n: 9, t: '16.0–17.4s', title: '로고 엔딩 (브랜드)', desc: '기존 yogibo 로고 슬로우 페이드인 + 태그라인 "편안함의 과학, 행복의 가치"', cam: '그래픽·로고와이프' },
@@ -50,16 +50,17 @@ const CREDITS = {
     { name: 'CUT3 직립 히어로 (바운스 5초)', still: 1.5, video: 7.5 },
     { name: 'CUT4 무대 합류', still: 1.5, video: 4.5 },
     { name: 'CUT5 컬러 퍼레이드', still: 1.5, video: 4.5 },
+    { name: 'CUT6 사람과 함께 (Veo 3.1)', still: 1.5, video: 16.5 },
   ],
-  sessionSpend: 54,   // 07-01 세션 실소모(재연출·폐기 반복 포함)
-  balance: 2399,      // 잔여
+  sessionSpend: 72,   // 07-01 세션 실소모(재연출·폐기 반복 포함 · Veo NSFW 오탐 재시도는 무료)
+  balance: 2381,      // 잔여
 };
 
 // 🛠 제작 요소 — 무엇으로·어떻게 만들었는지 (설명·감사 추적용)
 const PRODUCTION = {
   '엔진 · 모델': [
     ['생성 플랫폼', 'Higgsfield (MCP) — 시네마틱 프리셋·모션 컨트롤·Element 락·미디어 호스팅'],
-    ['영상 모델', 'Kling 3.0 (std · 3s/5s · 9:16 · 무음) — 스틸 → 영상(image-to-video)'],
+    ['영상 모델', 'Kling 3.0 (주력 · 제품 모션 · 3s/5s · 무음) + Veo 3.1 (구글 · 인물/감성 컷 · 사실감·오디오, 예: CUT6) — 스틸 → 영상'],
     ['스틸 모델', 'Nano Banana 2 — 레퍼런스 편집 기반 스틸 생성'],
     ['오케스트레이션', 'Claude (Opus 4.8) + cf-video-production 스킬 — 게이트형 컴펌 파이프라인'],
   ],
@@ -176,7 +177,7 @@ export default function Storyboard3Page() {
             <div className="card-meta" style={{ fontSize: 12.5, lineHeight: 1.8, marginTop: 10 }}>
               · 이번 세션 실소모: <b>{CREDITS.sessionSpend}cr</b> (재연출·폐기 반복 <b>+{iteration}cr</b> — 레드카펫 AI톤 교정·CUT3 형태붕괴 재작업 등)<br />
               · 편집·러프컷·레퍼런스 분석·색 락 = <b>0cr</b> (로컬 ffmpeg, 무료)<br />
-              · 잔여 크레딧: <b style={{ color: 'var(--accent)' }}>{CREDITS.balance.toLocaleString()}cr</b> · 남은 CUT6~9 예상 ≈ 24~30cr
+              · 잔여 크레딧: <b style={{ color: 'var(--accent)' }}>{CREDITS.balance.toLocaleString()}cr</b> · 남은 CUT7~9 예상 ≈ 18~24cr (Kling 기준)
             </div>
           </div>
         );
