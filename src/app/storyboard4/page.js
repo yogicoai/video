@@ -18,14 +18,14 @@ const WIFE_OPTIONS = [
 const REF_CUTS = [
   { n: 1, t: '0–1.7s', dur: '2.6s', ref: '/ref_family/cut01.jpg', refVid: V('c01_ref'), angle: '하이앵글 부감 · 대각선', ours: '임산부(부인)가 아쿠아 Max에 눈감고 누움 + 중앙 로고 상시 — 재제작: C 얼굴 3중 락 · 무지 라이트그레이 맨투맨 · 2K 스틸 + kling pro · 웜톤 보정(v5)', mine: '/ref_family/cut01_ours_v2.png?v=1', vid: V('c01_full') },
   { n: 2, t: '1.7–2.7s', dur: '2.0s', ref: '/ref_family/cut02.jpg', refVid: V('c02_ref'), angle: '와이드 설정샷 · 아이레벨', ours: '임부 아내가 아쿠아 Max에 깊이 파묻혀 이완된 미소 · 남편(머스터드 니트)이 무릎 옆에서 다정히 · v10 · 밝기+블랙 앵커·채도 보정(v6)', mine: '/ref_family/cut02_ours_v11.png?v=1', vid: V('c02_full') },
-  { n: 3, t: '2.7–4.0s', dur: '1.6s', ref: '/ref_family/cut03.jpg', refVid: V('c03_ref'), angle: '하이앵글 · 기대 누워 올려다봄', ours: '아내가 아쿠아 요기보에 머리 기대 누워 올려다보며 환한 미소', mine: '/ref_family/cut03_ours.png?v=5', vid: V('c03_full') },
-  { n: 4, t: '4.0–6.1s', dur: '2.4s', ref: '/ref_family/cut04.jpg', refVid: V('c04_ref'), angle: '측면 프로필 클로즈업', ours: '출산 간접 컷 — 역광·민트 이불(병원 신호)에서 위를 올려다봄 · 아기 리빌 직전 비트 · 톤 CUT3 매칭(LAB v6) + 0.7배속 슬로모 연장(v7)', mine: '/ref_family/cut04_ours_v4.png?v=1', vid: V('c04_full') },
+  { n: 3, t: '2.7–4.0s', dur: '3.0s', ref: '/ref_family/cut03.jpg', refVid: V('c03_ref'), angle: '하이앵글 · 기대 누워 올려다봄', ours: '기존 컷 확정 — 남편 쪽 보며 환한 미소 · 웜톤 · 3.0s 풀테이크 (재생성 시안들은 c03_full_v2~v4 보관)', mine: '/ref_family/cut03_ours.png?v=5', vid: V('c03_full') },
+  { n: 4, t: '4.0–6.1s', dur: '2.4s', ref: '/ref_family/cut04.jpg', refVid: V('c04_ref'), angle: '측면 프로필 클로즈업', ours: '출산 컷 — 절제판(2K+pro): 이 악물고 “윽” 미세한 고개 떨림 → 턱 풀리며 숨 내쉼 · 하드컷으로 아기 리빌', mine: '/ref_family/cut04_ours_v7.png?v=1', vid: V('c04_full_v4') },
   { n: 5, t: '6.1–7.8s', dur: '0.8s · 러프컷 제외', ref: '/ref_family/cut05.jpg', refVid: V('c05_ref'), angle: '오버숄더 · 프로필(앞을 봄)', ours: '아내(C 얼굴)가 어깨 너머 프로필로 앞을 바라봄 — 예비 컷(러프컷 미사용, 카드 보관)', mine: '/ref_family/cut05_ours.png?v=5', vid: V('c05_full') },
-  { n: 6, t: '7.8–8.7s', dur: '2.8s', ref: '/ref_family/cut06.jpg', refVid: V('c06_ref'), angle: '오버숄더 미디엄CU · 고개만 돌려 카메라', ours: '아기 첫 등장 — 부인이 서포트(그린) 안에서 아기 안고 어깨너머 미소, 미소 커지는 아크 전체 사용', mine: '/ref_family/cut06_ours.png?v=2', vid: V('c06_full') },
+  { n: 6, t: '7.8–8.7s', dur: '2.8s', ref: '/ref_family/cut06.jpg', refVid: V('c06_ref'), angle: '오버숄더 미디엄CU · 고개만 돌려 카메라', ours: '아기 첫 등장 — 재제작 v3: 아기 얼굴·서포트/우주복 질감 리얼 렌더(2K+pro) · 미소 커지는 아크 전체 사용', mine: '/ref_family/cut06_ours_v3.png?v=1', vid: V('c06_full_v2') },
   { n: 7, t: '8.7–10.3s', dur: '2.4s', ref: '/ref_family/cut07.jpg', refVid: V('c07_ref'), angle: '로우앵글 사이드 와이드 · 매트 높이', ours: 'Max 아쿠아 = 아기 라운저 — 문필로우(올리브)에 아기 머리, 엄마 까꿍 lean-in 원모션 · 전경 옐리 보케', mine: '/ref_family/cut07_ours.png?v=1', vid: V('c07_full') },
   { n: 8, t: '10.3–11.3s', dur: '1.8s', ref: '/ref_family/cut08.jpg', refVid: V('c08_ref'), angle: '타이트 CU · 얕은 심도 · 우측 팬', ours: '메이트 옐리 = 아기 장난감 — 엄마가 옐리 들고 놀아줌, 아기 손이 잡는 인터랙션 전체 (CUT7 옐리 연결)', mine: '/ref_family/cut08_ours.png?v=1', vid: V('c08_full') },
-  { n: 9, t: '11.3–12.1s', dur: '1.6s', ref: '/ref_family/cut09.jpg', refVid: V('c09_ref'), angle: '식탁 높이 사이드 CU', ours: '이유식 컷 — 재제작 v3: 머리카락 가닥·경계 리얼 렌더(2K+pro), 그린 틴트 제거 · 크림 맨투맨 연속성', mine: '/ref_family/cut09_ours_v3.png?v=1', vid: V('c09_full') },
-  { n: 10, t: '12.1–13.0s', dur: '1.5s', ref: '/ref_family/cut10.jpg', refVid: V('c10_ref'), angle: '하이키 클로즈업 · 가족 셋', ours: '가족 완성 — 아빠(머스터드 니트) 재등장, 전경 손장난 → 아기가 손가락 잡는 순간까지', mine: '/ref_family/cut10_ours.png?v=1', vid: V('c10_full') },
+  { n: 9, t: '11.3–12.1s', dur: '2.2s', ref: '/ref_family/cut09.jpg', refVid: V('c09_ref'), angle: '식탁 높이 사이드 CU', ours: '이유식 컷 — 재제작 v3: 머리카락 가닥·경계 리얼 렌더(2K+pro), 그린 틴트 제거 · 크림 맨투맨 연속성', mine: '/ref_family/cut09_ours_v3.png?v=1', vid: V('c09_full') },
+  { n: 10, t: '12.1–13.0s', dur: '2.2s', ref: '/ref_family/cut10.jpg', refVid: V('c10_ref'), angle: '하이키 클로즈업 · 가족 셋', ours: '가족 완성 — 아빠(머스터드 니트) 재등장, 전경 손장난 → 아기가 손가락 잡는 순간까지', mine: '/ref_family/cut10_ours.png?v=1', vid: V('c10_full') },
   { n: 11, t: '13.0–15.0s', dur: '3.0s', ref: '/ref_family/cut11.jpg', refVid: V('c11_ref'), angle: '인티밋 클로즈업 · 엔딩', ours: '부인이 아쿠아 Max에 뺨 기대고 아기를 내려다봄 — 라운징 엔딩 + 로고 중앙 페이드인(원본 동일 크기·위치)', mine: '/ref_family/cut11_ours.png?v=1', vid: V('c11_full') },
 ];
 
@@ -53,7 +53,7 @@ export default function Storyboard4Page() {
         <div>
           <h1 className="page-title">👨‍👩‍👧 가족 요기보 Max — 라이프스타일 CF (완성형)</h1>
           <p className="page-desc">
-            newvideo.mp4(요기보재팬 가족편) 기반 · 9:16 · 원본 15초/11컷 → <b>우리 러프컷 21.7초</b>(6–11 확장 · CUT5 제외 10컷 편집) · 가족 3인(부인·남편·아기) · 임신부터 육아까지 요기보와 함께
+            newvideo.mp4(요기보재팬 가족편) 기반 · 9:16 · 원본 15초/11컷 → <b>우리 러프컷 23.0초</b>(6–11 확장 · CUT5 제외 10컷 편집) · 가족 3인(부인·남편·아기) · 임신부터 육아까지 요기보와 함께
           </p>
         </div>
       </div>
@@ -239,6 +239,22 @@ export default function Storyboard4Page() {
               style={{ width: '100%', aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '2px solid #4CAF50' }} />
             <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
               v37 · 1440×2560 · CUT1·2·9 재제작(2K 스틸+kling pro 1080p) 스플라이스 · H.264 호환 인코딩 · OpenCV LANCZOS4 2배 업스케일 + Ordered Dithering + Bilateral Denoise · H.265 CRF 15 · FTP 서빙 · <b>음악은 이 버전 컴펌 후 별도 합성</b>
+            </div>
+          </div>
+          <div style={{ flex: '1 1 260px', maxWidth: 320 }}>
+            <div style={{ fontSize: 12.5, fontWeight: 700, color: '#FFB300', marginBottom: 6 }}>🎨 톤 변경본(디헤이즈) · v38 — 비교용</div>
+            <video src={V('ours_1440p_v38_tone_h264')} autoPlay loop muted playsInline controls
+              style={{ width: '100%', aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '2px solid #FFB300' }} />
+            <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
+              v37 + 컷별 측정 기반 디헤이즈 — 블랙포인트 20 통일 · 저채도 컷 채도 복원(캡 1.35) · 마이크로 대비(언샤프) 복원 · "뿌연 막" 제거
+            </div>
+          </div>
+          <div style={{ flex: '1 1 260px', maxWidth: 320 }}>
+            <div style={{ fontSize: 12.5, fontWeight: 700, color: '#42A5F5', marginBottom: 6 }}>⭐ 혼합본 · v60 — 최종 후보 (24.5s · C4 절제판: 이 악물고 '윽' 고개 떨림 → 풀리며 숨)</div>
+            <video src={V('ours_1440p_v60_mix_h264')} autoPlay loop muted playsInline controls
+              style={{ width: '100%', aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '2px solid #42A5F5' }} />
+            <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
+              CUT1·2·3·4·10·11 = 톤 변경(디헤이즈) · CUT6·7·8·9 = 기존 톤 유지 · CUT6 = 고화질 재제작(2K+pro) 반영
             </div>
           </div>
           {/* 음악 시안 A (Dream Culture) — 숨김 (컴펌 완료 후 음원 단계에서 복구) */}

@@ -28,9 +28,14 @@ export default function ProductsPage() {
 
   useEffect(() => { load(); }, []);
   async function load() {
-    const r = await fetch('/api/products');
-    const j = await r.json();
-    setProducts(j.products || []);
+    try {
+      const r = await fetch('/api/products');
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) { flash(j.error || '불러오기 실패'); setProducts([]); return; }
+      setProducts(j.products || []);
+    } catch (e) {
+      flash('API 오류: ' + e.message); setProducts([]);
+    }
   }
   function flash(m) { setToast(m); setTimeout(() => setToast(''), 2200); }
 
@@ -39,9 +44,9 @@ export default function ProductsPage() {
   }
 
   async function save(p) {
-    setSaving(p._id);
-    const { _id, createdAt, updatedAt, ...body } = p;
-    const r = await fetch(`/api/products/${p._id}`, {
+    setSaving(p.id);
+    const { id, _id, createdAt, updatedAt, ...body } = p;
+    const r = await fetch(`/api/products/${p.id}`, {
       method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body),
     });
     setSaving('');
@@ -61,7 +66,7 @@ export default function ProductsPage() {
 
   async function removeProduct(p) {
     if (!confirm(`"${p.name}" 삭제할까요?`)) return;
-    await fetch(`/api/products/${p._id}`, { method: 'DELETE' });
+    await fetch(`/api/products/${p.id}`, { method: 'DELETE' });
     await load();
   }
 
@@ -87,16 +92,29 @@ export default function ProductsPage() {
         <br />크레딧: 업로드·Element 생성은 <b>무료</b> — 등록만 해두면 어떤 프로젝트에서든 재사용.
       </div>
 
-      <button onClick={addProduct} style={{ marginBottom: 16, padding: '8px 14px', borderRadius: 8, border: '1px solid var(--accent)', background: 'var(--accent)', color: '#fff', fontWeight: 700, cursor: 'pointer', fontSize: 13 }}>
-        + 제품 추가
-      </button>
+      <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: 16, flexWrap: 'wrap' }}>
+        <button onClick={addProduct} style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid var(--accent)', background: 'var(--accent)', color: '#fff', fontWeight: 700, cursor: 'pointer', fontSize: 13 }}>
+          + 제품 추가
+        </button>
+        <a href="/api/products/export?format=skill" download
+          style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid #4CAF50', background: 'none', color: '#4CAF50', fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
+          ⬇ 스킬 다운로드 (SKILL.md)
+        </a>
+        <a href="/api/products/export?format=json" download
+          style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid var(--border)', background: 'none', color: 'var(--text-dim)', fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
+          ⬇ products.json
+        </a>
+        <span className="card-meta" style={{ fontSize: 11.5 }}>
+          스킬 설치: 받은 SKILL.md를 <b>.claude/skills/yogibo-products/SKILL.md</b>로 저장 → 그 환경의 Claude가 제품 Element·스펙을 자동 참조
+        </span>
+      </div>
 
       {!products ? (
         <div className="empty">불러오는 중…</div>
       ) : (
         <div style={{ display: 'grid', gap: 16 }}>
           {products.map((p, idx) => (
-            <div key={p._id} className="note" style={{ padding: 16 }}>
+            <div key={p.id} className="note" style={{ padding: 16 }}>
               {/* 헤더 */}
               <div style={{ display: 'flex', gap: 10, alignItems: 'center', marginBottom: 12, flexWrap: 'wrap' }}>
                 <input value={p.name} onChange={(e) => patch(idx, (q) => { q.name = e.target.value; return q; })}
@@ -107,9 +125,9 @@ export default function ProductsPage() {
                   {p.colors?.some((c) => c.elementId) ? `✅ Element ${p.colors.filter((c) => c.elementId).length}색 락` : '⬜ Element 미등록'}
                 </span>
                 <div style={{ flex: 1 }} />
-                <button onClick={() => save(p)} disabled={saving === p._id}
+                <button onClick={() => save(p)} disabled={saving === p.id}
                   style={{ padding: '6px 14px', borderRadius: 7, border: 'none', background: 'var(--accent)', color: '#fff', fontWeight: 700, cursor: 'pointer', fontSize: 12.5 }}>
-                  {saving === p._id ? '저장 중…' : '💾 저장'}
+                  {saving === p.id ? '저장 중…' : '💾 저장'}
                 </button>
                 <button onClick={() => removeProduct(p)}
                   style={{ padding: '6px 10px', borderRadius: 7, border: '1px solid var(--border)', background: 'none', color: 'var(--text-dim)', cursor: 'pointer', fontSize: 12 }}>
