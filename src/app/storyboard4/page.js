@@ -17,7 +17,7 @@ const WIFE_OPTIONS = [
 // 컷별 구도 타깃 (newvideo.mp4 프레임 → 우리 버전 매핑) · dur = 우리 러프컷 최종 길이
 const REF_CUTS = [
   { n: 1, t: '0–1.7s', dur: '2.6s', ref: '/ref_family/cut01.jpg', refVid: V('c01_ref'), angle: '하이앵글 부감 · 대각선', ours: '임산부(부인)가 아쿠아 Max에 눈감고 누움 + 중앙 로고 상시 — 재제작: C 얼굴 3중 락 · 무지 라이트그레이 맨투맨 · 2K 스틸 + kling pro · 웜톤 보정(v5)', mine: '/ref_family/cut01_ours_v2.png?v=1', vid: V('c01_ours_v6') },
-  { n: 2, t: '1.7–2.7s', dur: '2.0s', ref: '/ref_family/cut02.jpg', refVid: V('c02_ref'), angle: '와이드 설정샷 · 아이레벨', ours: '임부 아내가 아쿠아 Max에 깊이 파묻혀 이완된 미소 · 남편(머스터드 니트)이 무릎 옆에서 다정히 · v10 · 밝기+블랙 앵커·채도 보정(v6)', mine: '/ref_family/cut02_ours_v10.png?v=1', vid: V('c02_ours_v6') },
+  { n: 2, t: '1.7–2.7s', dur: '2.0s', ref: '/ref_family/cut02.jpg', refVid: V('c02_ref'), angle: '와이드 설정샷 · 아이레벨', ours: '임부 아내가 아쿠아 Max에 깊이 파묻혀 이완된 미소 · 남편(머스터드 니트)이 무릎 옆에서 다정히 · v10 · 밝기+블랙 앵커·채도 보정(v6)', mine: '/ref_family/cut02_ours_v11.png?v=1', vid: V('c02_ours_v7') },
   { n: 3, t: '2.7–4.0s', dur: '1.6s', ref: '/ref_family/cut03.jpg', refVid: V('c03_ref'), angle: '하이앵글 · 기대 누워 올려다봄', ours: '아내가 아쿠아 요기보에 머리 기대 누워 올려다보며 환한 미소', mine: '/ref_family/cut03_ours.png?v=5', vid: V('c03_ours_v5') },
   { n: 4, t: '4.0–6.1s', dur: '2.4s', ref: '/ref_family/cut04.jpg', refVid: V('c04_ref'), angle: '측면 프로필 클로즈업', ours: '출산 간접 컷 — 역광·민트 이불(병원 신호)에서 위를 올려다봄 · 아기 리빌 직전 비트 · 톤 CUT3 매칭(LAB v6) + 0.7배속 슬로모 연장(v7)', mine: '/ref_family/cut04_ours_v4.png?v=1', vid: V('c04_ours_v7') },
   { n: 5, t: '6.1–7.8s', dur: '0.8s · 러프컷 제외', ref: '/ref_family/cut05.jpg', refVid: V('c05_ref'), angle: '오버숄더 · 프로필(앞을 봄)', ours: '아내(C 얼굴)가 어깨 너머 프로필로 앞을 바라봄 — 예비 컷(러프컷 미사용, 카드 보관)', mine: '/ref_family/cut05_ours.png?v=5', vid: V('c05_ours', 4) },
@@ -235,10 +235,10 @@ export default function Storyboard4Page() {
           )}
           <div style={{ flex: '1 1 260px', maxWidth: 320 }}>
             <div style={{ fontSize: 12.5, fontWeight: 700, color: '#4CAF50', marginBottom: 6 }}>✅ 최종본(컴펌 대상) · 1440p · 무음</div>
-            <video src={V('ours_1440p_v35')} autoPlay loop muted playsInline controls
+            <video src={V('ours_1440p_v36')} autoPlay loop muted playsInline controls
               style={{ width: '100%', aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '2px solid #4CAF50' }} />
             <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
-              v35 · 1440×2560 · CUT1 재제작(2K 스틸+kling pro 1080p) 스플라이스 · OpenCV LANCZOS4 2배 업스케일 + Ordered Dithering + Bilateral Denoise · H.265 CRF 15 · FTP 서빙 · <b>음악은 이 버전 컴펌 후 별도 합성</b>
+              v36 · 1440×2560 · CUT1·CUT2 재제작(2K 스틸+kling pro 1080p) 스플라이스 · OpenCV LANCZOS4 2배 업스케일 + Ordered Dithering + Bilateral Denoise · H.265 CRF 15 · FTP 서빙 · <b>음악은 이 버전 컴펌 후 별도 합성</b>
             </div>
           </div>
           <div style={{ flex: '1 1 240px', maxWidth: 300 }}>
