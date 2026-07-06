@@ -24,7 +24,7 @@ const REF_CUTS = [
   { n: 6, t: '7.8–8.7s', dur: '2.8s', ref: '/ref_family/cut06.jpg', refVid: V('c06_ref'), angle: '오버숄더 미디엄CU · 고개만 돌려 카메라', ours: '아기 첫 등장 — 부인이 서포트(그린) 안에서 아기 안고 어깨너머 미소, 미소 커지는 아크 전체 사용', mine: '/ref_family/cut06_ours.png?v=2', vid: V('c06_ours', 4) },
   { n: 7, t: '8.7–10.3s', dur: '2.4s', ref: '/ref_family/cut07.jpg', refVid: V('c07_ref'), angle: '로우앵글 사이드 와이드 · 매트 높이', ours: 'Max 아쿠아 = 아기 라운저 — 문필로우(올리브)에 아기 머리, 엄마 까꿍 lean-in 원모션 · 전경 옐리 보케', mine: '/ref_family/cut07_ours.png?v=1', vid: V('c07_ours', 4) },
   { n: 8, t: '10.3–11.3s', dur: '1.8s', ref: '/ref_family/cut08.jpg', refVid: V('c08_ref'), angle: '타이트 CU · 얕은 심도 · 우측 팬', ours: '메이트 옐리 = 아기 장난감 — 엄마가 옐리 들고 놀아줌, 아기 손이 잡는 인터랙션 전체 (CUT7 옐리 연결)', mine: '/ref_family/cut08_ours.png?v=1', vid: V('c08_ours', 4) },
-  { n: 9, t: '11.3–12.1s', dur: '1.6s', ref: '/ref_family/cut09.jpg', refVid: V('c09_ref'), angle: '식탁 높이 사이드 CU', ours: '이유식 컷 (원본 충실) — 엄마가 숟가락으로 먹여줌 + 미소 여운, 크림 맨투맨 연속성', mine: '/ref_family/cut09_ours.png?v=2', vid: V('c09_ours', 4) },
+  { n: 9, t: '11.3–12.1s', dur: '1.6s', ref: '/ref_family/cut09.jpg', refVid: V('c09_ref'), angle: '식탁 높이 사이드 CU', ours: '이유식 컷 — 재제작 v3: 머리카락 가닥·경계 리얼 렌더(2K+pro), 그린 틴트 제거 · 크림 맨투맨 연속성', mine: '/ref_family/cut09_ours_v3.png?v=1', vid: V('c09_ours_v3') },
   { n: 10, t: '12.1–13.0s', dur: '1.5s', ref: '/ref_family/cut10.jpg', refVid: V('c10_ref'), angle: '하이키 클로즈업 · 가족 셋', ours: '가족 완성 — 아빠(머스터드 니트) 재등장, 전경 손장난 → 아기가 손가락 잡는 순간까지', mine: '/ref_family/cut10_ours.png?v=1', vid: V('c10_ours', 4) },
   { n: 11, t: '13.0–15.0s', dur: '3.0s', ref: '/ref_family/cut11.jpg', refVid: V('c11_ref'), angle: '인티밋 클로즈업 · 엔딩', ours: '부인이 아쿠아 Max에 뺨 기대고 아기를 내려다봄 — 라운징 엔딩 + 로고 중앙 페이드인(원본 동일 크기·위치)', mine: '/ref_family/cut11_ours.png?v=1', vid: V('c11_ours', 4) },
 ];
@@ -235,10 +235,10 @@ export default function Storyboard4Page() {
           )}
           <div style={{ flex: '1 1 260px', maxWidth: 320 }}>
             <div style={{ fontSize: 12.5, fontWeight: 700, color: '#4CAF50', marginBottom: 6 }}>✅ 최종본(컴펌 대상) · 1440p · 무음</div>
-            <video src={V('ours_1440p_v36')} autoPlay loop muted playsInline controls
+            <video src={V('ours_1440p_v37_h264')} autoPlay loop muted playsInline controls
               style={{ width: '100%', aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '2px solid #4CAF50' }} />
             <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
-              v36 · 1440×2560 · CUT1·CUT2 재제작(2K 스틸+kling pro 1080p) 스플라이스 · OpenCV LANCZOS4 2배 업스케일 + Ordered Dithering + Bilateral Denoise · H.265 CRF 15 · FTP 서빙 · <b>음악은 이 버전 컴펌 후 별도 합성</b>
+              v37 · 1440×2560 · CUT1·2·9 재제작(2K 스틸+kling pro 1080p) 스플라이스 · H.264 호환 인코딩 · OpenCV LANCZOS4 2배 업스케일 + Ordered Dithering + Bilateral Denoise · H.265 CRF 15 · FTP 서빙 · <b>음악은 이 버전 컴펌 후 별도 합성</b>
             </div>
           </div>
           <div style={{ flex: '1 1 240px', maxWidth: 300 }}>

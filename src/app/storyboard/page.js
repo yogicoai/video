@@ -136,25 +136,25 @@ export default function StoryboardPage() {
         ✅ <strong>전 컷 영상 생성 + 색보정(원본 video.mp4 컬러 매칭) + 회사씬 다양화(동적 이동·회의·지침) + 공식 yogibo 로고 엔딩 완료</strong> — 카드에서 바로 재생됩니다 (Kling 3.0 · 720p · 무음 · 각 3초 소스). 남은 작업: 음악.
       </div>
 
-      {/* 러프 컷 미리보기 — A(자막 없음) / B(자막) 비교 */}
+      {/* 러프 컷 미리보기 — A(자막 없음) / B(자막) 비교 · 1440p 개선본(FTP 프록시) */}
       <div className="note" style={{ marginBottom: 18 }}>
-        <div style={{ fontWeight: 700, marginBottom: 10 }}>▶ 러프 컷 v3 (video.mp4 스타일 · 약 20초 · 무음) — A / B 비교</div>
+        <div style={{ fontWeight: 700, marginBottom: 10 }}>▶ 러프 컷 v3 · <span style={{ color: '#4CAF50' }}>1440p 개선본</span> (약 20초 · 무음) — A / B 비교</div>
         <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap' }}>
           <div style={{ textAlign: 'center' }}>
             <video
-              src="/rough_cut_v3.mp4?v=cut5b"
+              src="/api/video/famvid/cf20_a_1440p_h264.jpg?v=1"
               controls loop muted playsInline preload="metadata"
               style={{ width: 200, aspectRatio: '9 / 16', borderRadius: 10, background: '#000' }}
             />
-            <div className="card-meta" style={{ fontSize: 12, marginTop: 6 }}><b>버전 A</b> · 자막 없음</div>
+            <div className="card-meta" style={{ fontSize: 12, marginTop: 6 }}><b>버전 A</b> · 자막 없음 · 1440p</div>
           </div>
           <div style={{ textAlign: 'center' }}>
             <video
-              src="/rough_cut_v3_textB.mp4?v=textb4"
+              src="/api/video/famvid/cf20_b_1440p_h264.jpg?v=1"
               controls loop muted playsInline preload="metadata"
               style={{ width: 200, aspectRatio: '9 / 16', borderRadius: 10, background: '#000' }}
             />
-            <div className="card-meta" style={{ fontSize: 12, marginTop: 6 }}><b>버전 B</b> · 자막 (키네틱+에디토리얼)</div>
+            <div className="card-meta" style={{ fontSize: 12, marginTop: 6 }}><b>버전 B</b> · 자막 (키네틱+에디토리얼) · 1440p</div>
           </div>
           <div style={{ minWidth: 240, flex: 1 }}>
             <div className="card-meta" style={{ fontSize: 13, lineHeight: 1.7 }}>
@@ -163,9 +163,10 @@ export default function StoryboardPage() {
               <br /><b>버전 B 자막 2개</b> (출근=키네틱 키워드 · 마무리=에디토리얼 미니멀, 페이드): 출근 <i>“자, 오늘도 가볼까”</i> · 마무리 <i>“내 하루의 끝, 요기보”</i>. <span style={{ opacity: 0.7 }}>※ 문구·위치는 조정 가능.</span>
               <br />남은 단계: 자막 확정 → 음악.
               <br />
-              <a href="/rough_cut_v3_textB.mp4?v=textb4" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)' }}>↗ B(자막) 크게 보기</a>
+              <a href="/api/video/famvid/cf20_b_1440p_h264.jpg?v=1" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)' }}>↗ B(자막) 크게 보기</a>
               <span style={{ opacity: 0.5 }}> · </span>
-              <a href="/rough_cut_v3.mp4?v=cut5b" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)', opacity: 0.8 }}>A(자막없음) 보기</a>
+              <a href="/api/video/famvid/cf20_a_1440p_h264.jpg?v=1" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)', opacity: 0.8 }}>A(자막없음) 보기</a>
+              <br /><span style={{ opacity: 0.7 }}>화질: 716×1284 → <b>1440×2560</b> (LANCZOS4 2배 + Bilateral Denoise + Dither · H.264 호환 인코딩) · FTP 프록시 서빙(Vercel 대응) · 무료 처리</span>
             </div>
           </div>
         </div>
