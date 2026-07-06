@@ -16,17 +16,17 @@ const WIFE_OPTIONS = [
 
 // 컷별 구도 타깃 (newvideo.mp4 프레임 → 우리 버전 매핑) · dur = 우리 러프컷 최종 길이
 const REF_CUTS = [
-  { n: 1, t: '0–1.7s', dur: '2.6s', ref: '/ref_family/cut01.jpg', refVid: V('c01_ref'), angle: '하이앵글 부감 · 대각선', ours: '임산부(부인)가 아쿠아 Max에 눈감고 누움 + 중앙 로고 상시 — 재제작: C 얼굴 3중 락 · 무지 라이트그레이 맨투맨 · 2K 스틸 + kling pro · 웜톤 보정(v5)', mine: '/ref_family/cut01_ours_v2.png?v=1', vid: V('c01_ours_v6') },
-  { n: 2, t: '1.7–2.7s', dur: '2.0s', ref: '/ref_family/cut02.jpg', refVid: V('c02_ref'), angle: '와이드 설정샷 · 아이레벨', ours: '임부 아내가 아쿠아 Max에 깊이 파묻혀 이완된 미소 · 남편(머스터드 니트)이 무릎 옆에서 다정히 · v10 · 밝기+블랙 앵커·채도 보정(v6)', mine: '/ref_family/cut02_ours_v11.png?v=1', vid: V('c02_ours_v7') },
-  { n: 3, t: '2.7–4.0s', dur: '1.6s', ref: '/ref_family/cut03.jpg', refVid: V('c03_ref'), angle: '하이앵글 · 기대 누워 올려다봄', ours: '아내가 아쿠아 요기보에 머리 기대 누워 올려다보며 환한 미소', mine: '/ref_family/cut03_ours.png?v=5', vid: V('c03_ours_v5') },
-  { n: 4, t: '4.0–6.1s', dur: '2.4s', ref: '/ref_family/cut04.jpg', refVid: V('c04_ref'), angle: '측면 프로필 클로즈업', ours: '출산 간접 컷 — 역광·민트 이불(병원 신호)에서 위를 올려다봄 · 아기 리빌 직전 비트 · 톤 CUT3 매칭(LAB v6) + 0.7배속 슬로모 연장(v7)', mine: '/ref_family/cut04_ours_v4.png?v=1', vid: V('c04_ours_v7') },
-  { n: 5, t: '6.1–7.8s', dur: '0.8s · 러프컷 제외', ref: '/ref_family/cut05.jpg', refVid: V('c05_ref'), angle: '오버숄더 · 프로필(앞을 봄)', ours: '아내(C 얼굴)가 어깨 너머 프로필로 앞을 바라봄 — 예비 컷(러프컷 미사용, 카드 보관)', mine: '/ref_family/cut05_ours.png?v=5', vid: V('c05_ours', 4) },
-  { n: 6, t: '7.8–8.7s', dur: '2.8s', ref: '/ref_family/cut06.jpg', refVid: V('c06_ref'), angle: '오버숄더 미디엄CU · 고개만 돌려 카메라', ours: '아기 첫 등장 — 부인이 서포트(그린) 안에서 아기 안고 어깨너머 미소, 미소 커지는 아크 전체 사용', mine: '/ref_family/cut06_ours.png?v=2', vid: V('c06_ours', 4) },
-  { n: 7, t: '8.7–10.3s', dur: '2.4s', ref: '/ref_family/cut07.jpg', refVid: V('c07_ref'), angle: '로우앵글 사이드 와이드 · 매트 높이', ours: 'Max 아쿠아 = 아기 라운저 — 문필로우(올리브)에 아기 머리, 엄마 까꿍 lean-in 원모션 · 전경 옐리 보케', mine: '/ref_family/cut07_ours.png?v=1', vid: V('c07_ours', 4) },
-  { n: 8, t: '10.3–11.3s', dur: '1.8s', ref: '/ref_family/cut08.jpg', refVid: V('c08_ref'), angle: '타이트 CU · 얕은 심도 · 우측 팬', ours: '메이트 옐리 = 아기 장난감 — 엄마가 옐리 들고 놀아줌, 아기 손이 잡는 인터랙션 전체 (CUT7 옐리 연결)', mine: '/ref_family/cut08_ours.png?v=1', vid: V('c08_ours', 4) },
-  { n: 9, t: '11.3–12.1s', dur: '1.6s', ref: '/ref_family/cut09.jpg', refVid: V('c09_ref'), angle: '식탁 높이 사이드 CU', ours: '이유식 컷 — 재제작 v3: 머리카락 가닥·경계 리얼 렌더(2K+pro), 그린 틴트 제거 · 크림 맨투맨 연속성', mine: '/ref_family/cut09_ours_v3.png?v=1', vid: V('c09_ours_v3') },
-  { n: 10, t: '12.1–13.0s', dur: '1.5s', ref: '/ref_family/cut10.jpg', refVid: V('c10_ref'), angle: '하이키 클로즈업 · 가족 셋', ours: '가족 완성 — 아빠(머스터드 니트) 재등장, 전경 손장난 → 아기가 손가락 잡는 순간까지', mine: '/ref_family/cut10_ours.png?v=1', vid: V('c10_ours', 4) },
-  { n: 11, t: '13.0–15.0s', dur: '3.0s', ref: '/ref_family/cut11.jpg', refVid: V('c11_ref'), angle: '인티밋 클로즈업 · 엔딩', ours: '부인이 아쿠아 Max에 뺨 기대고 아기를 내려다봄 — 라운징 엔딩 + 로고 중앙 페이드인(원본 동일 크기·위치)', mine: '/ref_family/cut11_ours.png?v=1', vid: V('c11_ours', 4) },
+  { n: 1, t: '0–1.7s', dur: '2.6s', ref: '/ref_family/cut01.jpg', refVid: V('c01_ref'), angle: '하이앵글 부감 · 대각선', ours: '임산부(부인)가 아쿠아 Max에 눈감고 누움 + 중앙 로고 상시 — 재제작: C 얼굴 3중 락 · 무지 라이트그레이 맨투맨 · 2K 스틸 + kling pro · 웜톤 보정(v5)', mine: '/ref_family/cut01_ours_v2.png?v=1', vid: V('c01_full') },
+  { n: 2, t: '1.7–2.7s', dur: '2.0s', ref: '/ref_family/cut02.jpg', refVid: V('c02_ref'), angle: '와이드 설정샷 · 아이레벨', ours: '임부 아내가 아쿠아 Max에 깊이 파묻혀 이완된 미소 · 남편(머스터드 니트)이 무릎 옆에서 다정히 · v10 · 밝기+블랙 앵커·채도 보정(v6)', mine: '/ref_family/cut02_ours_v11.png?v=1', vid: V('c02_full') },
+  { n: 3, t: '2.7–4.0s', dur: '1.6s', ref: '/ref_family/cut03.jpg', refVid: V('c03_ref'), angle: '하이앵글 · 기대 누워 올려다봄', ours: '아내가 아쿠아 요기보에 머리 기대 누워 올려다보며 환한 미소', mine: '/ref_family/cut03_ours.png?v=5', vid: V('c03_full') },
+  { n: 4, t: '4.0–6.1s', dur: '2.4s', ref: '/ref_family/cut04.jpg', refVid: V('c04_ref'), angle: '측면 프로필 클로즈업', ours: '출산 간접 컷 — 역광·민트 이불(병원 신호)에서 위를 올려다봄 · 아기 리빌 직전 비트 · 톤 CUT3 매칭(LAB v6) + 0.7배속 슬로모 연장(v7)', mine: '/ref_family/cut04_ours_v4.png?v=1', vid: V('c04_full') },
+  { n: 5, t: '6.1–7.8s', dur: '0.8s · 러프컷 제외', ref: '/ref_family/cut05.jpg', refVid: V('c05_ref'), angle: '오버숄더 · 프로필(앞을 봄)', ours: '아내(C 얼굴)가 어깨 너머 프로필로 앞을 바라봄 — 예비 컷(러프컷 미사용, 카드 보관)', mine: '/ref_family/cut05_ours.png?v=5', vid: V('c05_full') },
+  { n: 6, t: '7.8–8.7s', dur: '2.8s', ref: '/ref_family/cut06.jpg', refVid: V('c06_ref'), angle: '오버숄더 미디엄CU · 고개만 돌려 카메라', ours: '아기 첫 등장 — 부인이 서포트(그린) 안에서 아기 안고 어깨너머 미소, 미소 커지는 아크 전체 사용', mine: '/ref_family/cut06_ours.png?v=2', vid: V('c06_full') },
+  { n: 7, t: '8.7–10.3s', dur: '2.4s', ref: '/ref_family/cut07.jpg', refVid: V('c07_ref'), angle: '로우앵글 사이드 와이드 · 매트 높이', ours: 'Max 아쿠아 = 아기 라운저 — 문필로우(올리브)에 아기 머리, 엄마 까꿍 lean-in 원모션 · 전경 옐리 보케', mine: '/ref_family/cut07_ours.png?v=1', vid: V('c07_full') },
+  { n: 8, t: '10.3–11.3s', dur: '1.8s', ref: '/ref_family/cut08.jpg', refVid: V('c08_ref'), angle: '타이트 CU · 얕은 심도 · 우측 팬', ours: '메이트 옐리 = 아기 장난감 — 엄마가 옐리 들고 놀아줌, 아기 손이 잡는 인터랙션 전체 (CUT7 옐리 연결)', mine: '/ref_family/cut08_ours.png?v=1', vid: V('c08_full') },
+  { n: 9, t: '11.3–12.1s', dur: '1.6s', ref: '/ref_family/cut09.jpg', refVid: V('c09_ref'), angle: '식탁 높이 사이드 CU', ours: '이유식 컷 — 재제작 v3: 머리카락 가닥·경계 리얼 렌더(2K+pro), 그린 틴트 제거 · 크림 맨투맨 연속성', mine: '/ref_family/cut09_ours_v3.png?v=1', vid: V('c09_full') },
+  { n: 10, t: '12.1–13.0s', dur: '1.5s', ref: '/ref_family/cut10.jpg', refVid: V('c10_ref'), angle: '하이키 클로즈업 · 가족 셋', ours: '가족 완성 — 아빠(머스터드 니트) 재등장, 전경 손장난 → 아기가 손가락 잡는 순간까지', mine: '/ref_family/cut10_ours.png?v=1', vid: V('c10_full') },
+  { n: 11, t: '13.0–15.0s', dur: '3.0s', ref: '/ref_family/cut11.jpg', refVid: V('c11_ref'), angle: '인티밋 클로즈업 · 엔딩', ours: '부인이 아쿠아 Max에 뺨 기대고 아기를 내려다봄 — 라운징 엔딩 + 로고 중앙 페이드인(원본 동일 크기·위치)', mine: '/ref_family/cut11_ours.png?v=1', vid: V('c11_full') },
 ];
 
 const CAST = [
@@ -186,7 +186,7 @@ export default function Storyboard4Page() {
       {/* STAGE 2 — 컷별 영상 보드 (보고용: 우리 영상 단독 / SHOW_REF=true 시 비교 모드) */}
       <h2 className="page-title" style={{ fontSize: 20, marginTop: 8, marginBottom: 4 }}>STAGE 2 · 컷별 영상 (11컷)</h2>
       <p className="page-desc" style={{ marginBottom: 14 }}>
-        컷별 완성 영상 — 캐스트·제품 Element 락 + 톤 정합 적용 · 영상은 cafe24 프록시로 재생(Vercel 대응)
+        컷별 <b>생성 원본 풀버전(3.0s)</b> 재생 — 러프컷에 실제 사용된 구간은 각 카드의 길이 표기 참고. 몇 초까지 쓸지 여기서 판단 → 러프컷 트림은 무료 반영
       </p>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(170px, 1fr))', gap: 14, marginBottom: 22 }}>
         {REF_CUTS.map((c) => (
@@ -212,7 +212,7 @@ export default function Storyboard4Page() {
               </div>
             </div>
             <div style={{ padding: '8px 10px' }}>
-              <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginBottom: 4 }}>CUT {c.n} · {c.dur} · 📐 {c.angle}</div>
+              <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginBottom: 4 }}>CUT {c.n} · 원본 3.0s 중 <b style={{color:'var(--accent)'}}>{c.dur}</b> 사용 · 📐 {c.angle}</div>
               <div style={{ fontSize: 12.5, lineHeight: 1.5 }}>{c.ours}</div>
             </div>
           </div>

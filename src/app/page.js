@@ -72,6 +72,24 @@ export default function HomePage() {
         </a>
       </div>
 
+      {/* 고정 — 제품 데이터 레지스트리 */}
+      <a
+        href="/products"
+        className="card"
+        style={{ display: 'block', borderColor: '#4CAF50', marginBottom: 20 }}
+      >
+        <div className="card-title">📦 제품 데이터 레지스트리</div>
+        <div className="card-meta">
+          영상 제작용 제품 단일 소스 — 색상별 <strong>360 스프라이트 URL · Element ID · 스펙(사이즈) · 비교 프롬프트</strong>를 여기서 채워나갑니다.
+          <br />
+          등록된 제품은 어떤 CF 프로젝트에서든 Element 락·사이즈 정확도에 자동 활용.
+        </div>
+        <div className="card-foot">
+          <span className="badge badge-review">4종 시드 · 채워나가는 중</span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
       {/* 고정 — 완성 스토리보드 프로젝트 */}
       <a
         href="/storyboard"

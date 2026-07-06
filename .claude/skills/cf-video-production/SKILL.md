@@ -129,6 +129,15 @@ STAGE 0 프로젝트 정의   → 컴펌 → STAGE 1 에셋 락 → 컴펌 → S
 - **생성 엔진 대안 — Seedance 2.0** (`ai-video-gen`, fal.ai `FAL_KEY`): **단일 패스 네이티브 오디오 + 멀티샷 + 감독급 카메라 컨트롤 + 립싱크**. 카메라 무빙/멀티샷이 중요한 컷은 Higgsfield Kling과 **비교 테스트** 후 채택. (`ltx2`=Modal 기반 I2V 대안)
 - **다국어 버전** (`video-translate`): 확정본을 글로벌 더빙 버전으로. (아바타·토킹헤드 계열 create-video/heygen/avatar-video/faceswap = 제품 CF엔 적합도 낮음.)
 
+## 11. 제품 데이터 레지스트리 — Element 락·사이즈 정확도의 단일 소스 ★
+
+제품이 등장하는 모든 생성 전에 **`/products` 페이지(= Mongo `products` 컬렉션, `GET /api/products`)를 먼저 조회**한다. 가족 CF에서 도출·검증된 체계.
+
+- **구조**: 제품별 `{ name, category, colors[{color, hex, sprite360(cafe24 360 스프라이트 URL), elementId, elementName}], spec{w,h,d,weight}, scalePrompt, notes, usedIn }`
+- **Element 락 절차**: ① 레지스트리에서 해당 색상의 `elementId` 확인 → 있으면 그대로 `<<<id>>>` 사용. ② 없으면 `sprite360` URL 다운로드 → 프레임 분할(가로 스프라이트, 폭÷높이=프레임 수) → **정면/측면/뒤 3각도** 선별 → media_upload → Element 생성(무료) → **elementId를 레지스트리에 기록**(PUT `/api/products/:id`). 색상이 다르면 HSV 리컬러 후 락(문필로우 사례: 블루→올리브, H=38).
+- **사이즈 정확도**: 생성 모델은 cm 숫자를 못 읽는다 → `spec`은 **`scalePrompt`(인물 대비 비교 언어)**로 변환해 프롬프트에 주입. 예: "Max(170cm) = a bean bag long enough for an adult to lie on". 생성 후엔 프레임에서 인물 대비 비율을 spec과 대조 검수.
+- **워크스페이스 주의**: Higgsfield Element는 삭제될 수 있음(실제 사고: yogibo-wife-real 소실) → 레지스트리의 elementId가 죽어 있으면 `show_reference_elements(list)`로 확인 후 재락하고 ID 갱신. **레지스트리가 원본, Element는 캐시**라는 관점.
+
 ## 핵심 교훈 (요약)
 1. 레퍼런스를 프레임 단위로 해부하고 그 리듬·톤·구도를 따른다.
 2. 스틸 먼저 승인받고 애니메이션(크레딧 절약).
@@ -140,3 +149,4 @@ STAGE 0 프로젝트 정의   → 컴펌 → STAGE 1 에셋 락 → 컴펌 → S
 8. 캐시버스트 + gitignore 예외로 Vercel 재생 보장.
 9. **AI 티 제거 = 리얼 다큐 톤 락**: 제품은 직립 스웨이/바운스(걷지 않음), 로우앵글·락 카메라, 실제 환경광·실사 배경, 저채도 위 컬러만 톡. (§9)
 10. **색 일관성은 재생성 말고 편집(HSV 색 락)**, 형태 일관성은 스틸-우선→애니메이션. 확장 기법은 설치 말고 흡수. (§10)
+11. **제품은 레지스트리(/products)부터** — 360 URL→3각도 Element 락, 스펙→비교 프롬프트. 레지스트리가 원본, Element는 캐시. (§11)
