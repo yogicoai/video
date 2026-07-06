@@ -19,7 +19,7 @@ const REF_CUTS = [
   { n: 1, t: '0–1.7s', dur: '2.6s', ref: '/ref_family/cut01.jpg', refVid: V('c01_ref'), angle: '하이앵글 부감 · 대각선', ours: '임산부(부인)가 아쿠아 Max에 눈감고 누움 + 중앙 로고 상시 — 재제작: C 얼굴 3중 락 · 무지 라이트그레이 맨투맨 · 2K 스틸 + kling pro · 웜톤 보정(v5)', mine: '/ref_family/cut01_ours_v2.png?v=1', vid: V('c01_full') },
   { n: 2, t: '1.7–2.7s', dur: '2.0s', ref: '/ref_family/cut02.jpg', refVid: V('c02_ref'), angle: '와이드 설정샷 · 아이레벨', ours: '임부 아내가 아쿠아 Max에 깊이 파묻혀 이완된 미소 · 남편(머스터드 니트)이 무릎 옆에서 다정히 · v10 · 밝기+블랙 앵커·채도 보정(v6)', mine: '/ref_family/cut02_ours_v11.png?v=1', vid: V('c02_full') },
   { n: 3, t: '2.7–4.0s', dur: '3.0s', ref: '/ref_family/cut03.jpg', refVid: V('c03_ref'), angle: '하이앵글 · 기대 누워 올려다봄', ours: '기존 컷 확정 — 남편 쪽 보며 환한 미소 · 웜톤 · 3.0s 풀테이크 (재생성 시안들은 c03_full_v2~v4 보관)', mine: '/ref_family/cut03_ours.png?v=5', vid: V('c03_full') },
-  { n: 4, t: '4.0–6.1s', dur: '2.4s', ref: '/ref_family/cut04.jpg', refVid: V('c04_ref'), angle: '측면 프로필 클로즈업', ours: '출산 컷 — 절제판(2K+pro): 이 악물고 “윽” 미세한 고개 떨림 → 턱 풀리며 숨 내쉼 · 하드컷으로 아기 리빌', mine: '/ref_family/cut04_ours_v7.png?v=1', vid: V('c04_full_v4') },
+  { n: 4, t: '4.0–6.1s', dur: '2.4s', ref: '/ref_family/cut04.jpg', refVid: V('c04_ref'), angle: '측면 프로필 클로즈업', ours: '출산 컷 — 절제판(2K+pro): 이 악물고 “윽” 고개 떨림 + 핸드헬드 카메라 셰이크(릴리즈에서 감쇠) → 턱 풀리며 숨 · 하드컷으로 아기 리빌', mine: '/ref_family/cut04_ours_v7.png?v=1', vid: V('c04_full_v4') },
   { n: 5, t: '6.1–7.8s', dur: '0.8s · 러프컷 제외', ref: '/ref_family/cut05.jpg', refVid: V('c05_ref'), angle: '오버숄더 · 프로필(앞을 봄)', ours: '아내(C 얼굴)가 어깨 너머 프로필로 앞을 바라봄 — 예비 컷(러프컷 미사용, 카드 보관)', mine: '/ref_family/cut05_ours.png?v=5', vid: V('c05_full') },
   { n: 6, t: '7.8–8.7s', dur: '2.8s', ref: '/ref_family/cut06.jpg', refVid: V('c06_ref'), angle: '오버숄더 미디엄CU · 고개만 돌려 카메라', ours: '아기 첫 등장 — 재제작 v3: 아기 얼굴·서포트/우주복 질감 리얼 렌더(2K+pro) · 미소 커지는 아크 전체 사용', mine: '/ref_family/cut06_ours_v3.png?v=1', vid: V('c06_full_v2') },
   { n: 7, t: '8.7–10.3s', dur: '2.4s', ref: '/ref_family/cut07.jpg', refVid: V('c07_ref'), angle: '로우앵글 사이드 와이드 · 매트 높이', ours: 'Max 아쿠아 = 아기 라운저 — 문필로우(올리브)에 아기 머리, 엄마 까꿍 lean-in 원모션 · 전경 옐리 보케', mine: '/ref_family/cut07_ours.png?v=1', vid: V('c07_full') },
@@ -250,8 +250,8 @@ export default function Storyboard4Page() {
             </div>
           </div>
           <div style={{ flex: '1 1 260px', maxWidth: 320 }}>
-            <div style={{ fontSize: 12.5, fontWeight: 700, color: '#42A5F5', marginBottom: 6 }}>⭐ 혼합본 · v60 — 최종 후보 (24.5s · C4 절제판: 이 악물고 '윽' 고개 떨림 → 풀리며 숨)</div>
-            <video src={V('ours_1440p_v60_mix_h264')} autoPlay loop muted playsInline controls
+            <div style={{ fontSize: 12.5, fontWeight: 700, color: '#42A5F5', marginBottom: 6 }}>⭐ 혼합본 · v61 — 최종 후보 (24.5s · C4 절제판 + 카메라 셰이크: 긴장 순간 흔들리다 릴리즈에서 잦아듦)</div>
+            <video src={V('ours_1440p_v61_mix_h264')} autoPlay loop muted playsInline controls
               style={{ width: '100%', aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '2px solid #42A5F5' }} />
             <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
               CUT1·2·3·4·10·11 = 톤 변경(디헤이즈) · CUT6·7·8·9 = 기존 톤 유지 · CUT6 = 고화질 재제작(2K+pro) 반영
