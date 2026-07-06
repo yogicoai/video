@@ -241,6 +241,8 @@ export default function Storyboard4Page() {
               v37 · 1440×2560 · CUT1·2·9 재제작(2K 스틸+kling pro 1080p) 스플라이스 · H.264 호환 인코딩 · OpenCV LANCZOS4 2배 업스케일 + Ordered Dithering + Bilateral Denoise · H.265 CRF 15 · FTP 서빙 · <b>음악은 이 버전 컴펌 후 별도 합성</b>
             </div>
           </div>
+          {/* 음악 시안 A (Dream Culture) — 숨김 (컴펌 완료 후 음원 단계에서 복구) */}
+          {false && (
           <div style={{ flex: '1 1 240px', maxWidth: 300 }}>
             <div style={{ fontSize: 12, color: 'var(--text-dim)', marginBottom: 6 }}>참고 · 음악 시안 A (Dream Culture)</div>
             <video src={V('ours_rough_v33_enhanced')} loop playsInline controls
@@ -249,6 +251,7 @@ export default function Storyboard4Page() {
               v33 · 동일 1440p 영상 + 음악 Dream Culture · <span style={{color:'#ff6b6b'}}>크레딧 필요: “Music: Kevin MacLeod (incompetech.com), CC BY 4.0”</span>
             </div>
           </div>
+          )}
         </div>
       </div>
 
