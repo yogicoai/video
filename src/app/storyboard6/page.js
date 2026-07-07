@@ -186,6 +186,8 @@ export default function Storyboard6Page() {
       {/* 테스트 러프컷 (무료) */}
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>4.5 테스트 러프컷 — 9색 스와이프 느낌 확인 (무료 · 9.75s)</h2>
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 8 }}>
+        {/* A(누움 하드컷)·B(누움 휩) — 숨김 (사용자 요청 2026-07-07 · FTP 보존: swipe_test_v2 / swipe_whip_v1) */}
+        {false && (<>
         <div>
           <video src={V('swipe_test_v2')} autoPlay loop muted playsInline controls
             style={{ width: 280, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '2px solid #AB47BC' }} />
@@ -195,6 +197,12 @@ export default function Storyboard6Page() {
           <video src={V('swipe_whip_v1')} loop muted playsInline controls
             style={{ width: 280, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '2px solid #26A69A' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 5, textAlign: 'center' }}>B. 휩 액센트 (3·6·9번째 색에서 휙—)</div>
+        </div>
+        </>)}
+        <div>
+          <video src={V('swipe_v1seated')} autoPlay loop muted playsInline controls
+            style={{ width: 280, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '2px solid #FFB300' }} />
+          <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 5, textAlign: 'center' }}>C. v1 앉은 구도 · 하드컷 (9색)</div>
         </div>
         <div className="note" style={{ flex: '1 1 300px', padding: 14, fontSize: 12.5, lineHeight: 1.7, alignSelf: 'flex-start' }}>
           <b>구성 (색감 테스트용 — 최종 아님)</b>
