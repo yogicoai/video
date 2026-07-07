@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { randomUUID } from 'crypto';
+import { matchProduct, materialsFor } from '@/lib/sizeChart';
 
 // 제품 레지스트리 저장소 — Mongo가 설정돼 있으면 Mongo, 아니면 로컬 JSON 파일.
 // (.env.local의 MONGODB_URI가 플레이스홀더인 환경 대응. Vercel에서 쓰기가 필요해지면 실제 Atlas URI만 넣으면 됨)
@@ -92,14 +93,19 @@ export async function listProducts() {
 
 export async function createProduct(body) {
   const now = new Date().toISOString();
+  // 공식 차트에서 이름 인식 → 카테고리·스펙(cm)·소재 노트 자동 입력
+  const chart = matchProduct(body.name);
+  const specEmpty = !body.spec || !(body.spec.w || body.spec.h || body.spec.d);
   const doc = {
     id: randomUUID().slice(0, 8),
     name: String(body.name),
-    category: String(body.category || ''),
+    category: String(body.category || (chart ? chart.category : '')),
     colors: Array.isArray(body.colors) ? body.colors : [],
-    spec: body.spec || { w: '', h: '', d: '', weight: '' },
-    scalePrompt: String(body.scalePrompt || ''),
-    notes: String(body.notes || ''),
+    spec: specEmpty && chart
+      ? { w: String(chart.w), d: String(chart.d), h: String(chart.h), weight: chart.kg != null ? String(chart.kg) : '' }
+      : (body.spec || { w: '', h: '', d: '', weight: '' }),
+    scalePrompt: String(body.scalePrompt || (chart && chart.scale) || ''),
+    notes: String(body.notes || (chart ? [chart.en, materialsFor(chart), chart.dir].filter(Boolean).join(' · ') : '')),
     usedIn: Array.isArray(body.usedIn) ? body.usedIn : [],
     createdAt: now,
     updatedAt: now,

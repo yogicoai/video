@@ -164,6 +164,24 @@ export default function HomePage() {
         </div>
       </a>
 
+      {/* 고정 — 6차 프로젝트 (맥스 컬러 스와이프) */}
+      <a
+        href="/storyboard6"
+        className="card"
+        style={{ display: 'block', borderColor: 'var(--accent)', marginBottom: 20 }}
+      >
+        <div className="card-title">🎨 맥스 컬러 스와이프 — 15초 CF "너의 컬러를 골라봐"</div>
+        <div className="card-meta">
+          6차 · IG 릴스 · 9:16 · 15초 · 같은 구도에서 맥스 18색 비트 교체 · 캐스트 = 가족 CF 부인 재사용 · 컬러칩 레지스트리 실전 투입
+          <br />
+          기획·스토리보드 확정 · 베이스 스틸(2cr) 생성 컨펌 대기. 진행상황을 확인하세요.
+        </div>
+        <div className="card-foot">
+          <span className="badge badge-generating">STAGE 3 · 베이스 스틸 대기</span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
       {/* 고정 — 5차 (10주년 축하 커튼 리빌) · 숨김처리 (요청: 2026-07-03) — 복구 시 아래 false→true
       {false && (
       <a

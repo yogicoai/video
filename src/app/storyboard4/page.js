@@ -19,10 +19,10 @@ const REF_CUTS = [
   { n: 1, t: '0–1.7s', dur: '2.6s', ref: '/ref_family/cut01.jpg', refVid: V('c01_ref'), angle: '하이앵글 부감 · 대각선', ours: '임산부(부인)가 아쿠아 Max에 눈감고 누움 + 중앙 로고 상시 — 재제작: C 얼굴 3중 락 · 무지 라이트그레이 맨투맨 · 2K 스틸 + kling pro · 웜톤 보정(v5)', mine: '/ref_family/cut01_ours_v2.png?v=1', vid: V('c01_full') },
   { n: 2, t: '1.7–2.7s', dur: '2.0s', ref: '/ref_family/cut02.jpg', refVid: V('c02_ref'), angle: '와이드 설정샷 · 아이레벨', ours: '임부 아내가 아쿠아 Max에 깊이 파묻혀 이완된 미소 · 남편(머스터드 니트)이 무릎 옆에서 다정히 · v10 · 밝기+블랙 앵커·채도 보정(v6)', mine: '/ref_family/cut02_ours_v11.png?v=1', vid: V('c02_full') },
   { n: 3, t: '2.7–4.0s', dur: '3.0s', ref: '/ref_family/cut03.jpg', refVid: V('c03_ref'), angle: '하이앵글 · 기대 누워 올려다봄', ours: '기존 컷 확정 — 남편 쪽 보며 환한 미소 · 웜톤 · 3.0s 풀테이크 (재생성 시안들은 c03_full_v2~v4 보관)', mine: '/ref_family/cut03_ours.png?v=5', vid: V('c03_full') },
-  { n: 4, t: '4.0–6.1s', dur: '2.4s', ref: '/ref_family/cut04.jpg', refVid: V('c04_ref'), angle: '측면 프로필 클로즈업', ours: '출산 컷 — 절제판(2K+pro): 이 악물고 “윽” 고개 떨림 + 핸드헬드 카메라 셰이크(릴리즈에서 감쇠) → 턱 풀리며 숨 · 하드컷으로 아기 리빌', mine: '/ref_family/cut04_ours_v7.png?v=1', vid: V('c04_full_v4') },
+  { n: 4, t: '4.0–6.1s', dur: '2.4s', ref: '/ref_family/cut04.jpg', refVid: V('c04_ref'), angle: '측면 프로필 클로즈업', ours: '출산 컷 — 원조 연출(v37 C4): 고개 든 프로필, 입술 살짝 벌어진 채 벅찬 호흡 → 하드컷으로 아기 리빌', mine: '/ref_family/cut04_ours_v7.png?v=1', vid: V('c04_full_v4') },
   { n: 5, t: '6.1–7.8s', dur: '0.8s · 러프컷 제외', ref: '/ref_family/cut05.jpg', refVid: V('c05_ref'), angle: '오버숄더 · 프로필(앞을 봄)', ours: '아내(C 얼굴)가 어깨 너머 프로필로 앞을 바라봄 — 예비 컷(러프컷 미사용, 카드 보관)', mine: '/ref_family/cut05_ours.png?v=5', vid: V('c05_full') },
   { n: 6, t: '7.8–8.7s', dur: '2.8s', ref: '/ref_family/cut06.jpg', refVid: V('c06_ref'), angle: '오버숄더 미디엄CU · 고개만 돌려 카메라', ours: '아기 첫 등장 — 재제작 v3: 아기 얼굴·서포트/우주복 질감 리얼 렌더(2K+pro) · 미소 커지는 아크 전체 사용', mine: '/ref_family/cut06_ours_v3.png?v=1', vid: V('c06_full_v2') },
-  { n: 7, t: '8.7–10.3s', dur: '2.4s', ref: '/ref_family/cut07.jpg', refVid: V('c07_ref'), angle: '로우앵글 사이드 와이드 · 매트 높이', ours: 'Max 아쿠아 = 아기 라운저 — 문필로우(올리브)에 아기 머리, 엄마 까꿍 lean-in 원모션 · 전경 옐리 보케', mine: '/ref_family/cut07_ours.png?v=1', vid: V('c07_full') },
+  { n: 7, t: '8.7–10.3s', dur: '2.4s', ref: '/ref_family/cut07.jpg', refVid: V('c07_ref'), angle: '로우앵글 사이드 와이드 · 매트 높이', ours: 'Max 아쿠아 = 아기 라운저 — 문필로우(올리브)에 아기 머리, 엄마 까꿍 lean-in 원모션 · 전경 옐리 보케 · 2K+pro 재생성(화질업)', mine: '/ref_family/cut07_ours.png?v=1', vid: V('c07_full_v2') },
   { n: 8, t: '10.3–11.3s', dur: '1.8s', ref: '/ref_family/cut08.jpg', refVid: V('c08_ref'), angle: '타이트 CU · 얕은 심도 · 우측 팬', ours: '메이트 옐리 = 아기 장난감 — 엄마가 옐리 들고 놀아줌, 아기 손이 잡는 인터랙션 전체 (CUT7 옐리 연결)', mine: '/ref_family/cut08_ours.png?v=1', vid: V('c08_full') },
   { n: 9, t: '11.3–12.1s', dur: '2.2s', ref: '/ref_family/cut09.jpg', refVid: V('c09_ref'), angle: '식탁 높이 사이드 CU', ours: '이유식 컷 — 재제작 v3: 머리카락 가닥·경계 리얼 렌더(2K+pro), 그린 틴트 제거 · 크림 맨투맨 연속성', mine: '/ref_family/cut09_ours_v3.png?v=1', vid: V('c09_full') },
   { n: 10, t: '12.1–13.0s', dur: '2.2s', ref: '/ref_family/cut10.jpg', refVid: V('c10_ref'), angle: '하이키 클로즈업 · 가족 셋', ours: '가족 완성 — 아빠(머스터드 니트) 재등장, 전경 손장난 → 아기가 손가락 잡는 순간까지', mine: '/ref_family/cut10_ours.png?v=1', vid: V('c10_full') },
@@ -241,6 +241,8 @@ export default function Storyboard4Page() {
               v37 · 1440×2560 · CUT1·2·9 재제작(2K 스틸+kling pro 1080p) 스플라이스 · H.264 호환 인코딩 · OpenCV LANCZOS4 2배 업스케일 + Ordered Dithering + Bilateral Denoise · H.265 CRF 15 · FTP 서빙 · <b>음악은 이 버전 컴펌 후 별도 합성</b>
             </div>
           </div>
+          {/* 톤 변경본(v38) — 2안 체제 정리로 내림 (파일은 FTP에 보존: ours_1440p_v38_tone_h264.jpg) */}
+          {false && (
           <div style={{ flex: '1 1 260px', maxWidth: 320 }}>
             <div style={{ fontSize: 12.5, fontWeight: 700, color: '#FFB300', marginBottom: 6 }}>🎨 톤 변경본(디헤이즈) · v38 — 비교용</div>
             <video src={V('ours_1440p_v38_tone_h264')} autoPlay loop muted playsInline controls
@@ -249,14 +251,34 @@ export default function Storyboard4Page() {
               v37 + 컷별 측정 기반 디헤이즈 — 블랙포인트 20 통일 · 저채도 컷 채도 복원(캡 1.35) · 마이크로 대비(언샤프) 복원 · "뿌연 막" 제거
             </div>
           </div>
+          )}
           <div style={{ flex: '1 1 260px', maxWidth: 320 }}>
-            <div style={{ fontSize: 12.5, fontWeight: 700, color: '#42A5F5', marginBottom: 6 }}>⭐ 혼합본 · v61 — 최종 후보 (24.5s · C4 절제판 + 카메라 셰이크: 긴장 순간 흔들리다 릴리즈에서 잦아듦)</div>
-            <video src={V('ours_1440p_v61_mix_h264')} autoPlay loop muted playsInline controls
+            <div style={{ fontSize: 12.5, fontWeight: 700, color: '#42A5F5', marginBottom: 6 }}>⭐ 혼합본 · v66 — 최종 후보 (24.4s · C4 원조 컷 + C4→C6 직결 하드컷 · C7 2K+kling pro 재생성)</div>
+            <video src={V('ours_1440p_v66_mix_h264')} autoPlay loop muted playsInline controls
               style={{ width: '100%', aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '2px solid #42A5F5' }} />
             <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
-              CUT1·2·3·4·10·11 = 톤 변경(디헤이즈) · CUT6·7·8·9 = 기존 톤 유지 · CUT6 = 고화질 재제작(2K+pro) 반영
+              재제작(2K 스틸+kling pro): C1·C2·C6·C7·C9 · 원조 유지: C3(3.0s 롱)·C4(웜 프로필)·C8·C10·C11 · C4→C6 직결 하드컷 · C7 톤정합 스플라이스 · 무음(음원 별도 합성)
             </div>
           </div>
+          <div style={{ flex: '1 1 260px', maxWidth: 320 }}>
+            <div style={{ fontSize: 12.5, fontWeight: 700, color: '#AB47BC', marginBottom: 6 }}>🏆 최종 후보 · v67A = 혼합본 v66 + 음원 A (감성 피아노)</div>
+            <video src={V('ours_1440p_v67a_music_h264')} loop playsInline controls
+              style={{ width: '100%', aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '3px solid #AB47BC' }} />
+            <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
+              Tender Hopeful — 잔잔한 인트로 → 아기 리빌부터 차오르는 빌드 · Pixabay #253216 (상업 OK·표시 불필요) · -14 LUFS · 엔딩 로고에 맞춰 페이드아웃 · 🔊 재생 버튼으로 소리 확인
+            </div>
+          </div>
+          {/* 음원 시안 B (Warm Guitar Nostalgia) — A안 확정으로 내림 (FTP 보존: ours_1440p_v67b_music_h264.jpg) */}
+          {false && (
+          <div style={{ flex: '1 1 260px', maxWidth: 320 }}>
+            <div style={{ fontSize: 12.5, fontWeight: 700, color: '#26A69A', marginBottom: 6 }}>🎸 음원 시안 B — 따뜻한 어쿠스틱 (v66 + Warm Guitar Nostalgia)</div>
+            <video src={V('ours_1440p_v67b_music_h264')} loop playsInline controls
+              style={{ width: '100%', aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '2px solid #26A69A' }} />
+            <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
+              처음부터 끝까지 고른 따뜻함·아늑한 가족 무드 · Pixabay #510779 (상업 OK·표시 불필요) · -14 LUFS · 엔딩 페이드아웃 · 🔊 재생 버튼으로 소리 확인
+            </div>
+          </div>
+          )}
           {/* 음악 시안 A (Dream Culture) — 숨김 (컴펌 완료 후 음원 단계에서 복구) */}
           {false && (
           <div style={{ flex: '1 1 240px', maxWidth: 300 }}>
