@@ -41,6 +41,9 @@ const SEED = [
 ];
 
 function mongoConfigured() {
+  // 제품/컬러칩 데이터는 git 커밋 JSON이 단일 소스 (로컬 편집 → 커밋 → 배포 반영).
+  // Vercel에 MONGODB_URI가 있어도 기본은 파일/스냅샷 — Mongo는 PRODUCTS_USE_MONGO=1로 명시할 때만.
+  if (process.env.PRODUCTS_USE_MONGO !== '1') return false;
   const uri = process.env.MONGODB_URI || '';
   return /^mongodb(\+srv)?:\/\//.test(uri) && !uri.includes('<');
 }
