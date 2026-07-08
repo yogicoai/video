@@ -1559,5 +1559,205 @@
     "usedIn": [],
     "createdAt": "2026-07-07T05:58:32.509Z",
     "updatedAt": "2026-07-07T05:58:43.416Z"
+  },
+  {
+    "id": "d963ae92",
+    "name": "스퀴지보 아울",
+    "category": "악세서리",
+    "colors": [
+      {
+        "color": "",
+        "hex": "",
+        "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/squeezibo/스퀴지보_아울_29_0808.jpg",
+        "elementId": "",
+        "elementName": ""
+      }
+    ],
+    "spec": {
+      "w": "5.5",
+      "d": "5.5",
+      "h": "4.5",
+      "weight": ""
+    },
+    "scalePrompt": "a tiny palm-sized squishy toy (5.5cm — about the size of a golf ball or a macaron); fits entirely inside one closed hand",
+    "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
+    "usedIn": [],
+    "createdAt": "2026-07-08T01:55:01.675Z",
+    "updatedAt": "2026-07-08T01:55:13.542Z"
+  },
+  {
+    "id": "a614c1e5",
+    "name": "스퀴지보 캣",
+    "category": "악세서리",
+    "colors": [
+      {
+        "color": "",
+        "hex": "",
+        "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/squeezibo/스퀴지보_캣_30_0805.jpg",
+        "elementId": "",
+        "elementName": ""
+      }
+    ],
+    "spec": {
+      "w": "5.5",
+      "d": "5.5",
+      "h": "4.5",
+      "weight": ""
+    },
+    "scalePrompt": "a tiny palm-sized squishy toy (5.5cm — about the size of a golf ball or a macaron); fits entirely inside one closed hand",
+    "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
+    "usedIn": [],
+    "createdAt": "2026-07-08T01:55:59.962Z",
+    "updatedAt": "2026-07-08T01:56:09.011Z"
+  },
+  {
+    "id": "ebf4a241",
+    "name": "스퀴지보 코알라",
+    "category": "악세서리",
+    "colors": [
+      {
+        "color": "",
+        "hex": "",
+        "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/squeezibo/스퀴지보_코알라_27_0809_01.jpg",
+        "elementId": "",
+        "elementName": ""
+      }
+    ],
+    "spec": {
+      "w": "5.5",
+      "d": "5.5",
+      "h": "4.5",
+      "weight": ""
+    },
+    "scalePrompt": "a tiny palm-sized squishy toy (5.5cm — about the size of a golf ball or a macaron); fits entirely inside one closed hand",
+    "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
+    "usedIn": [],
+    "createdAt": "2026-07-08T01:56:35.905Z",
+    "updatedAt": "2026-07-08T01:56:41.150Z"
+  },
+  {
+    "id": "56739f21",
+    "name": "스퀴지보 멍키",
+    "category": "악세서리",
+    "colors": [
+      {
+        "color": "",
+        "hex": "",
+        "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/squeezibo/스퀴지보_멍키_수정_38_0808_1.jpg",
+        "elementId": "",
+        "elementName": ""
+      }
+    ],
+    "spec": {
+      "w": "5.5",
+      "d": "5.5",
+      "h": "4.5",
+      "weight": ""
+    },
+    "scalePrompt": "a tiny palm-sized squishy toy (5.5cm — about the size of a golf ball or a macaron); fits entirely inside one closed hand",
+    "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
+    "usedIn": [],
+    "createdAt": "2026-07-08T01:57:08.461Z",
+    "updatedAt": "2026-07-08T01:57:13.995Z"
+  },
+  {
+    "id": "09ad4c18",
+    "name": "백 마이스터 클레이",
+    "category": "",
+    "colors": [
+      {
+        "color": "초코브라운",
+        "hex": "#5D4131",
+        "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/백마이스터_28.jpg",
+        "elementId": "",
+        "elementName": ""
+      }
+    ],
+    "spec": {
+      "w": "",
+      "h": "",
+      "d": "",
+      "weight": ""
+    },
+    "scalePrompt": "",
+    "notes": "",
+    "usedIn": [],
+    "createdAt": "2026-07-08T02:32:11.431Z",
+    "updatedAt": "2026-07-08T02:32:30.424Z"
+  },
+  {
+    "id": "f31e656e",
+    "name": "바디 허그 2.0 클레이",
+    "category": "",
+    "colors": [
+      {
+        "color": "",
+        "hex": "",
+        "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/바디허그.jpeg",
+        "elementId": "",
+        "elementName": ""
+      }
+    ],
+    "spec": {
+      "w": "",
+      "h": "",
+      "d": "",
+      "weight": ""
+    },
+    "scalePrompt": "",
+    "notes": "",
+    "usedIn": [],
+    "createdAt": "2026-07-08T02:33:20.940Z",
+    "updatedAt": "2026-07-08T02:33:30.736Z"
+  },
+  {
+    "id": "b13efca8",
+    "name": "키보드쿠션",
+    "category": "",
+    "colors": [
+      {
+        "color": "",
+        "hex": "",
+        "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/cushion/키보드쿠션_28.jpg",
+        "elementId": "",
+        "elementName": ""
+      }
+    ],
+    "spec": {
+      "w": "",
+      "h": "",
+      "d": "",
+      "weight": ""
+    },
+    "scalePrompt": "",
+    "notes": "",
+    "usedIn": [],
+    "createdAt": "2026-07-08T02:34:32.277Z",
+    "updatedAt": "2026-07-08T02:34:40.174Z"
+  },
+  {
+    "id": "1c2a6619",
+    "name": "메이트 디포",
+    "category": "메이트(인형)",
+    "colors": [
+      {
+        "color": "",
+        "hex": "",
+        "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/메이트_디포_옥자_28_02.jpg",
+        "elementId": "",
+        "elementName": ""
+      }
+    ],
+    "spec": {
+      "w": "",
+      "h": "",
+      "d": "",
+      "weight": ""
+    },
+    "scalePrompt": "",
+    "notes": "a plush animal character toy sized for a child to hug (roughly 30-40cm) — fits between a child's arms, smaller than a house cat",
+    "usedIn": [],
+    "createdAt": "2026-07-08T02:35:34.553Z",
+    "updatedAt": "2026-07-08T02:36:10.075Z"
   }
 ]
