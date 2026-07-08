@@ -8,6 +8,9 @@ import { randomUUID } from 'crypto';
 
 const FILE = path.join(process.cwd(), 'data', 'colorchips.json');
 
+// 빌드 타임 스냅샷 — Vercel 서버리스 번들 포함 보장 (fs 동적 읽기 실패 시 폴백)
+import CHIPS_SNAPSHOT from '../../data/colorchips.json';
+
 // 시드 = 요기보 공식 컬러칩 — hex는 사이트 360 실측값 기준 (2026-07 캘리브레이션, 스위트오렌지·그레이 2종·줄라는 CSS값 유지)
 const SEED = [
   { id: 'cherry_red', name: '체리레드', hex: '#980224', note: '스탠다드' },
@@ -46,14 +49,20 @@ function readFileStore() {
   try {
     return JSON.parse(fs.readFileSync(FILE, 'utf8'));
   } catch {
+    // Vercel 등 파일 미접근 환경 → 커밋 스냅샷 폴백
+    if (Array.isArray(CHIPS_SNAPSHOT) && CHIPS_SNAPSHOT.length) return structuredClone(CHIPS_SNAPSHOT);
     writeFileStore(SEED);
     return [...SEED];
   }
 }
 
 function writeFileStore(chips) {
-  fs.mkdirSync(path.dirname(FILE), { recursive: true });
-  fs.writeFileSync(FILE, JSON.stringify(chips, null, 2), 'utf8');
+  try {
+    fs.mkdirSync(path.dirname(FILE), { recursive: true });
+    fs.writeFileSync(FILE, JSON.stringify(chips, null, 2), 'utf8');
+  } catch (e) {
+    console.warn('colorChips: file write skipped (read-only fs?)', e.message);
+  }
 }
 
 async function mongoCol() {

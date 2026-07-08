@@ -8,6 +8,10 @@ import { matchProduct, materialsFor } from '@/lib/sizeChart';
 
 const FILE = path.join(process.cwd(), 'data', 'products.json');
 
+// 빌드 타임 스냅샷 — 정적 import라서 Vercel 서버리스 번들에 반드시 포함됨.
+// (fs 동적 경로 읽기는 Vercel에서 번들 누락 → ENOENT → 시드 4종 폴백되는 사고가 있었음, 2026-07-07)
+import PRODUCTS_SNAPSHOT from '../../data/products.json';
+
 const SEED = [
   {
     id: 'max',
@@ -61,6 +65,10 @@ function readFileStore() {
   try {
     return JSON.parse(fs.readFileSync(FILE, 'utf8'));
   } catch {
+    // Vercel 등 파일 미접근 환경 → 빌드에 포함된 커밋 스냅샷으로 폴백 (읽기 전용 서빙)
+    if (Array.isArray(PRODUCTS_SNAPSHOT) && PRODUCTS_SNAPSHOT.length) {
+      return structuredClone(PRODUCTS_SNAPSHOT);
+    }
     const now = new Date().toISOString();
     const seeded = SEED.map((p) => ({ ...p, createdAt: now, updatedAt: now }));
     writeFileStore(seeded);
@@ -69,8 +77,13 @@ function readFileStore() {
 }
 
 function writeFileStore(products) {
-  fs.mkdirSync(path.dirname(FILE), { recursive: true });
-  fs.writeFileSync(FILE, JSON.stringify(products, null, 2), 'utf8');
+  // Vercel 서버리스는 읽기 전용 FS — 쓰기 실패가 조회까지 500내지 않게 흡수
+  try {
+    fs.mkdirSync(path.dirname(FILE), { recursive: true });
+    fs.writeFileSync(FILE, JSON.stringify(products, null, 2), 'utf8');
+  } catch (e) {
+    console.warn('productsStore: file write skipped (read-only fs?)', e.message);
+  }
 }
 
 async function mongoCol() {
