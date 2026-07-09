@@ -240,8 +240,12 @@ export default function ProductsPage() {
           style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid var(--border)', background: 'none', color: 'var(--text-dim)', fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
           ⬇ products.json
         </a>
+        <a href="/api/skills/export" download
+          style={{ padding: '8px 14px', borderRadius: 8, border: '1px solid #AB47BC', background: 'none', color: '#AB47BC', fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
+          ⬇ 제작 스킬 (cf-video-production)
+        </a>
         <span className="card-meta" style={{ fontSize: 11.5 }}>
-          스킬 설치: 받은 SKILL.md를 <b>.claude/skills/yogibo-products/SKILL.md</b>로 저장 → 그 환경의 Claude가 제품 Element·스펙을 자동 참조
+          스킬 설치: 제품 SKILL.md → <b>.claude/skills/yogibo-products/</b> · 제작 SKILL.md → <b>.claude/skills/cf-video-production/</b>에 저장 → 제품 데이터와 검증된 제작 워크플로우(게이트·엔진 선택·원테이크)를 자동 참조
         </span>
       </div>
 

@@ -61,8 +61,8 @@
     "category": "필로우",
     "colors": [
       {
-        "color": "올리브그린",
-        "hex": "#668B01",
+        "color": "아쿠아블루",
+        "hex": "#0075BD",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/pillow/%EB%A9%94%EA%B0%80%EB%AC%B8%ED%95%84%EB%A1%9C%EC%9A%B0_30.jpg",
         "elementId": "432687a2-bec1-487d-8482-5f522d250fa0",
         "elementName": "yogibo-moonpillow-olive"
@@ -80,7 +80,7 @@
       "가족 CF CUT7"
     ],
     "createdAt": "2026-07-06T03:23:04.701Z",
-    "updatedAt": "2026-07-07T02:36:12.027Z"
+    "updatedAt": "2026-07-09T05:59:03.028Z"
   },
   {
     "id": "mate-yelly",

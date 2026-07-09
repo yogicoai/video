@@ -182,6 +182,60 @@ export default function HomePage() {
         </div>
       </a>
 
+      {/* 고정 — 7차 프로젝트 (파티 리빌 & 불꽃놀이) */}
+      <a
+        href="/storyboard7"
+        className="card"
+        style={{ display: 'block', borderColor: 'var(--accent)', marginBottom: 20 }}
+      >
+        <div className="card-title">🎆 파티 리빌 & 리버 불꽃놀이 — 브랜드 무드필름</div>
+        <div className="card-meta">
+          7차 · 9:16 · 10초 · 인물 없음 · 10주년 파티 — 블루 커튼 리빌→파스텔 파티(메이트)→벽면 로고→10주년 케이크→강 불꽃놀이→yogibo 로고 불꽃 · 6섹션
+          <br />
+          카메라 동선(마케터 영상)+키비주얼 2종(커튼·케이크) 확보 · STAGE 0 확정. 진행상황을 확인하세요.
+        </div>
+        <div className="card-foot">
+          <span className="badge badge-generating">STAGE 0 · 스펙 컨펌 대기</span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
+      {/* 고정 — 9차 프로젝트 (가족 2탄 사계절) */}
+      <a
+        href="/storyboard9"
+        className="card"
+        style={{ display: 'block', borderColor: 'var(--accent)', marginBottom: 20 }}
+      >
+        <div className="card-title">🌱 가족 요기보 2탄 — "함께 자라는 자리" (사계절 성장)</div>
+        <div className="card-meta">
+          9차 · 1탄 공식 후속 · 9:16 · 15초 · 같은 거실·같은 맥스 고정 구도에서 계절과 아기만 자라는 몽타주 · 주연 엄마(wife-c3)+아기 · Kling 3.0
+          <br />
+          스토리·5컷 확정 · 에셋 전부 1탄 재사용 · C1(봄) 베이스 스틸 게이트 대기. 진행상황을 확인하세요.
+        </div>
+        <div className="card-foot">
+          <span className="badge badge-generating">STAGE 3 · 봄 베이스 스틸 대기</span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
+      {/* 고정 — 8차 프로젝트 (요기보 스위트 호텔 파티) */}
+      <a
+        href="/storyboard8"
+        className="card"
+        style={{ display: 'block', borderColor: 'var(--accent)', marginBottom: 20 }}
+      >
+        <div className="card-title">🏨 요기보 스위트 — 호텔 파티 원테이크 (10주년)</div>
+        <div className="card-meta">
+          8차 · 9:16 · 15초(시안) · 마케터 6씬 프롬프트 기반 · 스위트 도어→파티→케이크 오빗→창가→야경 틸트업→로고 불꽃 피날레
+          <br />
+          프롬프트 분석 완료(강점/리스크 3) · STAGE 0 결정 대기: 게스트 처리·케이크 레퍼런스. 진행상황을 확인하세요.
+        </div>
+        <div className="card-foot">
+          <span className="badge badge-generating">STAGE 0 · 게스트·케이크 컨펌 대기</span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
       {/* 고정 — 5차 (10주년 축하 커튼 리빌) · 숨김처리 (요청: 2026-07-03) — 복구 시 아래 false→true
       {false && (
       <a
