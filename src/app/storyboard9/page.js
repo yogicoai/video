@@ -49,9 +49,9 @@ const CUTS = [
     id: 'C5', season: '✨ 엔딩', t: '12–15s', months: '—',
     title: '태그라인 — "함께 자라는 자리"',
     motion: 'C4 마지막 프레임 슬로우 홀드 → 타이포 페이드인 → 로고',
-    desc: '엔딩 = 브랜드 타이포 카드 v2 (릴레이): C4 포옹 끝에서 화이트 카드로 0.6s 크로스디졸브 → "아이의 일년"→"엄마의 일년"→"함께 자라는" 명조 문구가 화면 정중앙에서 한 문단씩 나타났다 사라지는 릴레이(각 ~1.3s) → 마지막에 공식 로고가 오프닝과 동일 위치·크기(정중앙 420px)로 페이드인 — 수미상관. 로고 원본 합성(왜곡 0) · 무료.',
-    vid: '/fam2/brandcard_anim_v2.mp4?v=1',
-    status: '✅ 완료 (무료 합성 · 릴레이 타이포 카드 v2) — 러프컷 v10 엔딩으로 반영',
+    desc: '엔딩 = 사용자 제작 GIF 채택 (yogibo_section_logo.gif · 1536×2752 · 8.1s): "아이의 일 년 → 엄마의 일 년 → 함께 자라는 자리" 문구 누적 등장 → 로고 마무리. C4 포옹 끝에서 0.6s 크로스디졸브로 연결. (구버전: 클로드 합성 릴레이 카드 brandcard_anim_v2.mp4 보관)',
+    vid: '/fam2/cut5_gif_ending.mp4?v=1',
+    status: '✅ 완료 (사용자 제작 GIF → 24fps 영상 변환) — 러프컷 v12 엔딩으로 반영',
   },
 ];
 
@@ -172,11 +172,11 @@ export default function Storyboard9Page() {
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>4.5 러프컷 (진행하며 버전업 · 무료 조립)</h2>
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 8 }}>
         <div style={{ flex: '0 0 260px' }}>
-          <video src="/fam2/rough_v11.mp4?v=1" controls loop muted playsInline
+          <video src="/fam2/rough_v12.mp4?v=1" controls loop muted playsInline
             style={{ width: 260, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #FFB300' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
-            <b>러프컷 v11 (전 컷 · 17.2s · 맥스 네이비 통일 완료)</b> · C1 수유(슬로우+로고 인트로) + C2 옹알이 + C3 일어서기 + C4 포옹(겨울) + C5 릴레이 카드(문구 교대 등장 → 로고 정중앙) · 전 컷 LAB 톤 매칭 + 화질 패스(hqdn3d+cas) + <b>C2·C4 맥스 아쿠아→네이비 무료 HSV 리컬러(타깃=C3 네이비 실측, 클립 고정 변환으로 플리커 방지)</b><br />
-            남은 후반: 음원(최종 컴펌 후) · 4K 업스케일본(rough_v11_4k) 처리 중
+            <b>러프컷 v12 (전 컷 · 20.0s · 네이비 통일 + 사용자 GIF 엔딩)</b> · C1 수유(슬로우+로고 인트로) + C2 옹알이 + C3 일어서기 + C4 포옹(겨울) + <b>C5 사용자 제작 GIF 엔딩(문구 누적 → 로고 · 8.1s)</b> · 전 컷 LAB 톤 매칭 + 화질 패스 + C2·C4 맥스 네이비 리컬러<br />
+            남은 후반: 음원(최종 컴펌 후) · 4K 업스케일본(rough_v12_4k) 처리 중
           </div>
         </div>
       </div>
