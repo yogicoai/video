@@ -31,9 +31,9 @@ const CUTS = [
     title: '붙잡고 서기 — 기다리는 두 팔',
     motion: '아기가 서포트를 붙잡고 일어서고, 엄마가 두 팔을 벌려 기다림 · 미세 흔들림(긴장감)',
     desc: '아기 눈높이 로우앵글 — 올리브 서포트를 붙잡고 일어서는 순간(긴팔 맨투맨), 엄마는 가디건 차림으로 두 팔 벌려 기다림. 플레이매트에 장난감 소품 배치(레지스트리 실측 스케일): 메이트 티렉스·유니콘(30~40cm 인형) + 스퀴지보 티렉스·유니콘(5.5cm 골프공 크기, yogibo 태그 디테일) + 옐리. 웜 앰버 가을 빛 · 맥스 = 네이비 블루(사용자 확정).',
-    img: '/fam2/c3_autumn_v2.png?v=1',
-    vid: '/fam2/c3_v1.mp4?v=1',
-    status: '🎬 영상 완료 (kling pro 1080p · Element 포함 · 5.25cr) — 아기 팔걸이 그립 유지·웃음 성장·어색 모션 없음 · 러프컷 v4 반영',
+    img: '/fam2/c3_autumn_v3.png?v=1',
+    vid: '/fam2/c3_v2.mp4?v=1',
+    status: '🎬 영상 v2 완료 (kling pro · 5.25cr) — 시선 릴레이 완성: 아기가 3초 내내 엄마를 올려다보며 웃음 + 엄마 환호 비트 · 러프컷 v15 반영. 스틸 v3(시선 리터치 2cr)',
   },
   {
     id: 'C4', season: '❄️ 겨울', t: '9–12s', months: '12~14개월',
@@ -172,11 +172,11 @@ export default function Storyboard9Page() {
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>4.5 러프컷 (진행하며 버전업 · 무료 조립)</h2>
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 8 }}>
         <div style={{ flex: '0 0 260px' }}>
-          <video src="/fam2/rough_v14.mp4?v=1" controls loop muted playsInline
+          <video src="/fam2/rough_v15.mp4?v=1" controls loop muted playsInline
             style={{ width: 260, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #FFB300' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
-            <b>러프컷 v14 (전 컷 · 20.0s · 최종 컬러 확정 + 사용자 GIF 엔딩)</b> · C1 수유(슬로우+로고 인트로) + C2 옹알이 + C3 일어서기 + C4 포옹(겨울) + <b>C5 사용자 제작 GIF 엔딩(문구 누적 → 로고 · 8.1s)</b> · 전 컷 LAB 톤 매칭 + 화질 패스 + C2 맥스 네이비 리컬러 · C4는 원본 아쿠아 유지(사용자 확정 — 역광 리컬러 얼룩 회피, 원본 발색이 최선)<br />
-            남은 후반: 음원(최종 컴펌 후) · 4K 업스케일본(rough_v14_4k) 처리 중
+            <b>러프컷 v15 (전 컷 · 20.0s · C3 시선 릴레이 교체)</b> · C1 수유(슬로우+로고 인트로) + C2 옹알이 + C3 일어서기 + C4 포옹(겨울) + <b>C5 사용자 제작 GIF 엔딩(문구 누적 → 로고 · 8.1s)</b> · 전 컷 LAB 톤 매칭 + 화질 패스 + C2 맥스 네이비 리컬러 · C4는 원본 아쿠아 유지(사용자 확정 — 역광 리컬러 얼룩 회피, 원본 발색이 최선)<br />
+            남은 후반: 음원(최종 컴펌 후) · 4K 업스케일본(rough_v15_4k) 처리 중
           </div>
         </div>
       </div>
