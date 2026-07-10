@@ -19,9 +19,9 @@ const CUTS = [
     title: '스퀴지보 쌓기 놀이 — 아빠 재등장',
     motion: '아빠가 스퀴지보 하나를 얹고, 아이가 마지막 하나를 조심조심 꼭대기에 — 흔들리는 탑에 둘 다 숨죽였다 까르르',
     desc: '아빠(1탄 Element 재등장)와 딸이 플레이매트에서 스퀴지보 5~6개(티렉스·유니콘·블루·도그 등, 각 5.5cm 골프공 크기)를 탑처럼 쌓는 놀이 (2026-07-10 사용자 확정 — 쿠션 성에서 변경). 시선 릴레이 = 아이↔아빠 ↔ 흔들리는 탑. 배경에 네이비 맥스·올리브 팟. 스퀴지보 형태는 레지스트리 360 락.',
-    img: '/fam3/c2_stack_v1.png?v=1',
-    status: '🔴 스틸 v1 (2cr) — 구도·딸·네이비맥스·올리브팟은 좋으나 ①아빠가 수염+40대로 드리프트(참조 슬롯 부족으로 Element+프로즈만 사용 — 2탄 C4 동일 패턴) ②스퀴지보 타워 디자인 이탈. 수정안: v2 아빠 얼굴 복원(베이스=v1+1탄 CUT10 얼굴참조, 2cr) → v3 타워 교정(베이스=v2+소품 콜라주, 2cr) — 최소 편집 1건씩 분리',
-    prompt: 'Use the first image as the ENVIRONMENT and CHARACTER reference (living room + the SAME girl <<<yogibo-daughter>>>). New composition: the girl and her FATHER <<<yogibo-husband>>> kneel on the play mat facing each other, stacking tiny Yogibo Squeezibo squishies (second image for exact designs, each 5.5cm golf-ball sized) - a wobbly tower of four, the girl placing the fifth on top, father leaning in hands-ready. Background: navy Max <<<yogibo-max-navy>>> + olive egg-shaped Pod (95cm, smooth undented top). [참조: ①C1 v1(환경+딸) ②2탄 소품 콜라주(스퀴지보) — 아빠 얼굴참조 슬롯 없음 → 드리프트 원인]',
+    img: '/fam3/c2_stack_v3.png?v=1',
+    status: '🟢 스틸 v3 (6cr: v1 구도 → v2 아빠 얼굴 복원(1탄 CUT10 참조) → v3 제품 교정) — 스퀴지보 타워 = 실제 라인업 5종(티렉스·블루·도그·캣+유니콘, 360 콜라주 락) · 팟 = 실물 물방울형+손잡이 탭(신규 Element 8f120498, 레지스트리 기록) · 아빠 30대 초반 복원. 확정 대기',
+    prompt: '[v3 최종] Use the first image as the EXACT base - keep composition/girl/father(young clean-shaven)/poses/navy Max/light ALL unchanged. ONLY TWO product corrections using the second image (official Yogibo lineup sheet): (1) REPLACE the tower with REAL Squeezibo characters - red T-rex(bottom), blue, brown dog, purple cat, girl placing purple unicorn(cone horn) on top - each a soft fabric cylinder 5.5cm golf-ball sized with tiny yogibo tag; remove the yellow elephant block (not a Yogibo product). (2) REPLACE the olive ball with the REAL Yogibo Pod <<<yogibo-pod-olive>>> - teardrop/egg 95cm, small handle tab on top, matte fabric, slightly slouched. [참조: ①v2(베이스) ②스퀴지보 5종+팟 360 콜라주 · v2단계 참조: ①v1 ②1탄 CUT10(아빠 얼굴)]',
   },
   {
     id: 'C3', energy: '🔍 디테일', t: '6–9s',
