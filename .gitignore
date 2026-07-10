@@ -45,3 +45,14 @@ yarn-error.log*
 !/public/endcard.mp4
 !/public/trex_rough.mp4
 !/public/anniv_rough.mp4
+
+# 7차(파티)·8차(스위트)·9차(가족 2탄) 페이지가 직접 참조하는 영상 — Vercel 재생용 예외
+!/public/refparty/ref.mp4
+!/public/refparty/oneshot_v1.mp4
+!/public/suite/take1.mp4
+!/public/fam2/c1_v1.mp4
+!/public/fam2/c2_v1.mp4
+!/public/fam2/c3_v1.mp4
+!/public/fam2/c4_v1.mp4
+!/public/fam2/c5_ending_v2.mp4
+!/public/fam2/rough_v8.mp4

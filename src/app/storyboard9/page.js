@@ -42,14 +42,16 @@ const CUTS = [
     desc: '같은 구도. 아기가 엄마 품으로 안기고 둘이 맥스에 파묻히며 웃는 클라이맥스 — 맥스의 폭신함(USP)이 감정 비트와 결합. 계절감 = 두툼한 스웨터·아기 겨울 우주복·무릎 담요, 실내 웜 조명. 스틸 = "포옹 후 맥스에 막 파묻힌 순간"으로 고정(걷기 과정은 kling 3s 한계 밖) · 모션 = 파묻히는 반동+마주보는 웃음. 맥스는 아쿠아로 생성 후 후반 일괄 네이비 리컬러(C1·C2와 동일 처리).',
     scaffold: '/ref_family/cut11_ours.png?v=1',
     img: '/fam2/c4_winter_v3.png?v=1',
-    status: '🟢 스틸 v3 (6cr: v1 포옹 구도 → v2 아기 복원 → v3 엄마 얼굴 교정) — 얼굴 기준을 Element 설명문이 아닌 C2 승인 프레임(웃는 얼굴)으로 앵커: 갸름한 계란형+시스루 앞머리 복원 · 영상화 5.25cr 승인 대기',
+    vid: '/fam2/c4_v1.mp4?v=1',
+    status: '🎬 영상 완료 (kling pro 1080p · Element 포함 · 5.25cr) — 마주 웃다 이마 맞대는 흐름 · 얼굴 유지 · 어색 모션 없음 · 러프컷 v6 반영. 스틸은 v3(6cr: 포옹 구도 → 아기 복원 → 엄마 얼굴을 C2 승인 프레임으로 교정)',
   },
   {
     id: 'C5', season: '✨ 엔딩', t: '12–15s', months: '—',
     title: '태그라인 — "함께 자라는 자리"',
     motion: 'C4 마지막 프레임 슬로우 홀드 → 타이포 페이드인 → 로고',
-    desc: '"아이의 일 년, 엄마의 일 년. 함께 자라는 자리, Yogibo" (Pretendard) + 로고 페이드인. 무료 합성. ⭐ 오프닝(C1 도입)에도 요기보 로고 오버레이 — 1탄 방식(logo_brand.png 키잉, 작게 중앙, 다음 컷 전 페이드아웃).',
-    status: '⬜ 무료 (조립 단계)',
+    desc: 'C4 그레이딩본 마지막 프레임 3s 슬로우 줌 홀드(zoompan 1.0→1.04) + 로고 페이드인(0.8s in). 타이포그래피(태그라인)는 사용자 직접 작업으로 확정 — 영상에는 로고만. 오프닝 로고는 C1에 유지(1탄 방식). 사용자 타이포 작업용 소스 = c5_ending_hd.mp4.',
+    vid: '/fam2/c5_ending_v2.mp4?v=1',
+    status: '✅ 완료 (무료 합성 · 로고만 v2) — 러프컷 v7~v8 엔딩으로 반영',
   },
 ];
 
@@ -170,11 +172,11 @@ export default function Storyboard9Page() {
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>4.5 러프컷 (진행하며 버전업 · 무료 조립)</h2>
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 8 }}>
         <div style={{ flex: '0 0 260px' }}>
-          <video src="/fam2/rough_v5.mp4?v=1" controls loop muted playsInline
+          <video src="/fam2/rough_v8.mp4?v=1" controls loop muted playsInline
             style={{ width: 260, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #FFB300' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
-            <b>러프컷 v5 (실영상 · 9.5s · 톤 매칭)</b> · C1 수유(슬로우+로고) + C2 옹알이 + C3 일어서기 · <b>LAB 공통 앵커 부분 수렴(L 0.4 / 색 0.55 — 계절 라이트 변주는 보존)</b> 적용: C1↔C2 노출 점프(L 140↔163)와 C3 앰버 캐스트 완화 · 조립·그레이딩 무료<br />
-            C4 영상이 나오면 버전업 → 맥스 네이비 일괄 리컬러·태그라인·음원은 최종 단계
+            <b>러프컷 v8 (전 컷 · 15.6s · 톤 매칭 + 화질 개선)</b> · C1 수유(슬로우+로고 인트로) + C2 옹알이 + C3 일어서기 + C4 포옹(겨울) + <b>C5 엔딩(로고만 — 타이포는 사용자 직접 작업)</b> · 전 컷 LAB 톤 매칭 + <b>무료 화질 패스(시간축 디노이즈 hqdn3d + 적응형 샤프닝 cas, crf17)</b><br />
+            편집용 개별 HD 클립: <code style={{ fontSize: 10.5 }}>c1_hd·c2_hd·c3_hd·c4_hd·c5_ending_hd.mp4</code> (톤+화질 처리본, 원배속) · 남은 후반: 맥스 네이비 일괄 리컬러 · 음원(최종 컴펌 후)
           </div>
         </div>
       </div>
