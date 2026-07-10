@@ -12,13 +12,16 @@ const CUTS = [
     desc: '거실 와이드 — 딸(2~3살)이 티렉스 메이트(30~40cm)를 꼭 안고 네이비 맥스를 향해 달려오는 도입. kling 보행 한계를 감안해 스틸 = "도착 직전 마지막 스텝" 순간으로 고정, 모션은 1~2스텝+상체 반동만. 로고 인트로는 1·2탄 방식(정중앙 오버레이 → 페이드아웃). 2탄 거실 연속성.',
     img: '/fam3/c1_run_v1.png?v=1',
     status: '🟢 스틸 v1 확정 (2cr) — 딸 룩 사용자 컨펌(2026-07-10 "귀엽다") → yogibo-daughter Element 신규 락(b4eaaa37). 영상화 5.25cr 대기',
+    prompt: 'Wide living room shot, vertical 9:16, camera at child height. Use the first image as the ENVIRONMENT reference - same living room from this campaign: the window with sheer curtains and warm light, the colorful alphabet play mat, the wooden floor, the red T-rex plush toy design. New composition: a 2-3 year old Korean toddler GIRL runs toward a deep navy blue Yogibo Max bean bag <<<yogibo-max-navy>>> - a large pill-shaped bean bag sofa as long as an adult is tall (170cm), lying on the floor by the window, plump and smooth with NO armrests and NO backrest. The girl is captured at her LAST STEP just before reaching it - one foot forward mid-stride, leaning slightly forward with momentum, hugging the red T-rex plush (30-40cm) tightly to her chest, laughing with excitement, soft black chin-length hair bouncing mid-motion. Her identity: <<<yogibo-baby>>> grown up - the SAME child as the toddler in the second image, now 2-3 years old, a little girl wearing a cream knit dress over soft leggings. Warm daytime home light, photorealistic warm family film photograph. [참조: ①2탄 C3 v3(환경·티렉스) ②2탄 C4 v3(얼굴 성장 출발점)]',
   },
   {
     id: 'C2', energy: '🏗 놀이 1', t: '3–6s',
     title: '스퀴지보 쌓기 놀이 — 아빠 재등장',
     motion: '아빠가 스퀴지보 하나를 얹고, 아이가 마지막 하나를 조심조심 꼭대기에 — 흔들리는 탑에 둘 다 숨죽였다 까르르',
     desc: '아빠(1탄 Element 재등장)와 딸이 플레이매트에서 스퀴지보 5~6개(티렉스·유니콘·블루·도그 등, 각 5.5cm 골프공 크기)를 탑처럼 쌓는 놀이 (2026-07-10 사용자 확정 — 쿠션 성에서 변경). 시선 릴레이 = 아이↔아빠 ↔ 흔들리는 탑. 배경에 네이비 맥스·올리브 팟. 스퀴지보 형태는 레지스트리 360 락.',
-    status: '⬜ 대기',
+    img: '/fam3/c2_stack_v1.png?v=1',
+    status: '🔴 스틸 v1 (2cr) — 구도·딸·네이비맥스·올리브팟은 좋으나 ①아빠가 수염+40대로 드리프트(참조 슬롯 부족으로 Element+프로즈만 사용 — 2탄 C4 동일 패턴) ②스퀴지보 타워 디자인 이탈. 수정안: v2 아빠 얼굴 복원(베이스=v1+1탄 CUT10 얼굴참조, 2cr) → v3 타워 교정(베이스=v2+소품 콜라주, 2cr) — 최소 편집 1건씩 분리',
+    prompt: 'Use the first image as the ENVIRONMENT and CHARACTER reference (living room + the SAME girl <<<yogibo-daughter>>>). New composition: the girl and her FATHER <<<yogibo-husband>>> kneel on the play mat facing each other, stacking tiny Yogibo Squeezibo squishies (second image for exact designs, each 5.5cm golf-ball sized) - a wobbly tower of four, the girl placing the fifth on top, father leaning in hands-ready. Background: navy Max <<<yogibo-max-navy>>> + olive egg-shaped Pod (95cm, smooth undented top). [참조: ①C1 v1(환경+딸) ②2탄 소품 콜라주(스퀴지보) — 아빠 얼굴참조 슬롯 없음 → 드리프트 원인]',
   },
   {
     id: 'C3', energy: '🔍 디테일', t: '6–9s',
@@ -136,6 +139,12 @@ export default function Storyboard10Page() {
             <div style={{ fontSize: 12, color: 'var(--accent)', marginTop: 6 }}>🎬 {c.motion}</div>
             <div style={{ fontSize: 12.5, color: 'var(--text-dim)', marginTop: 4, lineHeight: 1.6 }}>{c.desc}</div>
             <div style={{ fontSize: 12, marginTop: 6 }}>{c.status}</div>
+            {c.prompt && (
+              <details style={{ marginTop: 8 }}>
+                <summary style={{ fontSize: 11.5, color: 'var(--accent)', cursor: 'pointer' }}>📝 생성 프롬프트 보기</summary>
+                <pre style={{ fontSize: 10.5, lineHeight: 1.5, whiteSpace: 'pre-wrap', background: 'rgba(0,0,0,.15)', padding: 10, borderRadius: 8, marginTop: 6, color: 'var(--text-dim)' }}>{c.prompt}</pre>
+              </details>
+            )}
             {(c.vid || c.img || c.scaffold) && (
               <div style={{ display: 'flex', gap: 10, marginTop: 10, alignItems: 'flex-start' }}>
                 {c.vid && (
