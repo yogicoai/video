@@ -11,7 +11,8 @@ const CUTS = [
     motion: '아이가 메이트 티렉스를 안고 맥스를 향해 마지막 한두 스텝 + 기대감 웃음 · 머리칼 출렁',
     desc: '거실 와이드 — 딸(2~3살)이 티렉스 메이트(30~40cm)를 꼭 안고 네이비 맥스를 향해 달려오는 도입. kling 보행 한계를 감안해 스틸 = "도착 직전 마지막 스텝" 순간으로 고정, 모션은 1~2스텝+상체 반동만. 로고 인트로는 1·2탄 방식(정중앙 오버레이 → 페이드아웃). 2탄 거실 연속성.',
     img: '/fam3/c1_run_v1.png?v=1',
-    status: '🟢 스틸 v1 확정 (2cr) — 딸 룩 사용자 컨펌(2026-07-10 "귀엽다") → yogibo-daughter Element 신규 락(b4eaaa37). 영상화 5.25cr 대기',
+    vid: '/fam3/c1_v1.mp4?v=1',
+    status: '🎬 영상 완료 (kling pro 1080p · daughter+max-navy Element · 5.25cr) — 종종걸음 1~2스텝 → 맥스에 폭 안김, 머리칼·원피스 출렁, 어색 모션 없음. 스틸 v1(2cr, 룩 확정컷)',
     prompt: 'Wide living room shot, vertical 9:16, camera at child height. Use the first image as the ENVIRONMENT reference - same living room from this campaign: the window with sheer curtains and warm light, the colorful alphabet play mat, the wooden floor, the red T-rex plush toy design. New composition: a 2-3 year old Korean toddler GIRL runs toward a deep navy blue Yogibo Max bean bag <<<yogibo-max-navy>>> - a large pill-shaped bean bag sofa as long as an adult is tall (170cm), lying on the floor by the window, plump and smooth with NO armrests and NO backrest. The girl is captured at her LAST STEP just before reaching it - one foot forward mid-stride, leaning slightly forward with momentum, hugging the red T-rex plush (30-40cm) tightly to her chest, laughing with excitement, soft black chin-length hair bouncing mid-motion. Her identity: <<<yogibo-baby>>> grown up - the SAME child as the toddler in the second image, now 2-3 years old, a little girl wearing a cream knit dress over soft leggings. Warm daytime home light, photorealistic warm family film photograph. [참조: ①2탄 C3 v3(환경·티렉스) ②2탄 C4 v3(얼굴 성장 출발점)]',
   },
   {
@@ -20,7 +21,7 @@ const CUTS = [
     motion: '아빠가 스퀴지보 하나를 얹고, 아이가 마지막 하나를 조심조심 꼭대기에 — 흔들리는 탑에 둘 다 숨죽였다 까르르',
     desc: '아빠(1탄 Element 재등장)와 딸이 플레이매트에서 스퀴지보 5~6개(티렉스·유니콘·블루·도그 등, 각 5.5cm 골프공 크기)를 탑처럼 쌓는 놀이 (2026-07-10 사용자 확정 — 쿠션 성에서 변경). 시선 릴레이 = 아이↔아빠 ↔ 흔들리는 탑. 배경에 네이비 맥스·올리브 팟. 스퀴지보 형태는 레지스트리 360 락.',
     img: '/fam3/c2_stack_v5.png?v=1',
-    status: '🟢 스틸 v5 (10cr 누적) — ①딸 손 유니콘 = 원통 스퀴시로 교체(메이트형 인형 제거) ②팟 = 구형+손잡이 탭(360 실물) ③아빠 수염 완전 제거. 팟 스케일 실측 ~95cm ✓ · 타워 = 라인업 내 캐릭터(유니콘·블루·캣·팍스·티렉스). 맥스 좌측 걸침(온전 노출은 C1·C4·C5 담당). 확정 대기',
+    status: '🟢 스틸 v5 (10cr 누적) — ①딸 손 유니콘 = 원통 스퀴시로 교체(메이트형 인형 제거) ②팟 = 구형+손잡이 탭(360 실물) ③아빠 수염 완전 제거. 팟 스케일 실측 ~95cm ✓ · 타워 = 라인업 내 캐릭터(유니콘·블루·캣·팍스·티렉스). 맥스 좌측 걸침(온전 노출은 C1·C4·C5 담당). 사용자 확정(2026-07-10)',
     prompt: '[v3 최종] Use the first image as the EXACT base - keep composition/girl/father(young clean-shaven)/poses/navy Max/light ALL unchanged. ONLY TWO product corrections using the second image (official Yogibo lineup sheet): (1) REPLACE the tower with REAL Squeezibo characters - red T-rex(bottom), blue, brown dog, purple cat, girl placing purple unicorn(cone horn) on top - each a soft fabric cylinder 5.5cm golf-ball sized with tiny yogibo tag; remove the yellow elephant block (not a Yogibo product). (2) REPLACE the olive ball with the REAL Yogibo Pod <<<yogibo-pod-olive>>> - teardrop/egg 95cm, small handle tab on top, matte fabric, slightly slouched. [참조: ①v2(베이스) ②스퀴지보 5종+팟 360 콜라주 · v2단계 참조: ①v1 ②1탄 CUT10(아빠 얼굴)]',
   },
   {
