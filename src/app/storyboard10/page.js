@@ -26,7 +26,16 @@ const CUTS = [
     prompt: '[v3 최종] Use the first image as the EXACT base - keep composition/girl/father(young clean-shaven)/poses/navy Max/light ALL unchanged. ONLY TWO product corrections using the second image (official Yogibo lineup sheet): (1) REPLACE the tower with REAL Squeezibo characters - red T-rex(bottom), blue, brown dog, purple cat, girl placing purple unicorn(cone horn) on top - each a soft fabric cylinder 5.5cm golf-ball sized with tiny yogibo tag; remove the yellow elephant block (not a Yogibo product). (2) REPLACE the olive ball with the REAL Yogibo Pod <<<yogibo-pod-olive>>> - teardrop/egg 95cm, small handle tab on top, matte fabric, slightly slouched. [참조: ①v2(베이스) ②스퀴지보 5종+팟 360 콜라주 · v2단계 참조: ①v1 ②1탄 CUT10(아빠 얼굴)]',
   },
   {
-    id: 'C3', energy: '🧸 놀이 2', t: '6–9s',
+    id: 'C3', energy: '💥 클라이맥스', t: '6–9s',
+    title: '탑 와르르 — 쌓았으면 무너뜨린다 (C2 직결)',
+    motion: '딸이 두 손으로 탑을 와르르 스윕 → 스퀴시들 폭신하게 흩어지며 한두 개 통통 → 둘이 폭소, 아빠 만세 항복',
+    desc: 'C2와 같은 구도 연속(같은 자리·같은 조명) — 쌓기의 서스펜스가 무너뜨리기의 카타르시스로 회수되는 아이 놀이의 완결 (2026-07-10 재배열 확정: 연결점 문제를 서사로 해결). 스틸 = 스윕 직후 스퀴시 공중+흩어짐 순간. 지정 6종 정품 디자인 유지. C3 원본 톤 기준.',
+    img: '/fam3/c3_crash_v1.png?v=1',
+    status: '🟡 스틸 v1 (2cr) — 스윕 팔로스루·도그 공중 부양·폭소 콤보 성공. 영상화 5.25cr 대기',
+    prompt: '[와르르] Use the first image as the EXACT base (C2 v10 그대로) - ONLY the ACTION changes to the NEXT MOMENT: the girl has just SWEPT the tower over with both hands - squishies TUMBLING mid-air and scattering softly, her face bursting into triumphant laugh; father throws head back laughing, hands open in mock surrender. Soft plush physics. [참조: ①C2 v10(구도 연속) ②지정 콜라주(디자인)]',
+  },
+  {
+    id: 'C4', energy: '🧸 놀이 2', t: '9–12s',
     title: '메이트 인형놀이 — 엄마 등장',
     motion: '딸이 티렉스 메이트를 들고 어흥, 엄마가 유니콘 메이트로 화답 — 인형끼리 콩 부딪히자 둘 다 웃음 터짐',
     desc: '하이앵글 부감(시리즈 최초) — 엄마가 네이비 맥스에 비스듬히 눕고 딸이 몸 위에 폭 안겨 올라탄 채 티렉스 메이트로 어흥, 엄마는 유니콘 메이트로 방어. 맥스가 프레임을 대각으로 채우는 밀착 인형놀이 (2026-07-10 A안 확정 — 마주앉기 구도는 C2와 중복이라 폐기, 팟은 프레임 아웃으로 로켓 이슈 회피). 인형 만남 = 화면 시각 중심. 가족 구조: C2 아빠 컷 ↔ C3 엄마 컷 → C5 셋.',
