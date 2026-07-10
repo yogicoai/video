@@ -3,6 +3,9 @@
 import { useEffect, useState } from 'react';
 import NewProjectModal from '@/components/NewProjectModal';
 
+// 보관 프로젝트(7차 파티 리빌·8차 스위트 호텔) 홈 카드 노출 여부 — 페이지 자체는 유지
+const SHOW_ARCHIVED = false;
+
 const STATUS_LABEL = {
   draft: '작성 중',
   generating: '생성 중',
@@ -183,6 +186,7 @@ export default function HomePage() {
       </a>
 
       {/* 고정 — 7차 프로젝트 (파티 리빌 & 불꽃놀이) */}
+      {SHOW_ARCHIVED && (
       <a
         href="/storyboard7"
         className="card"
@@ -199,6 +203,7 @@ export default function HomePage() {
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
+      )}
 
       {/* 고정 — 10차 프로젝트 (가족 3탄 놀이) */}
       <a
@@ -237,6 +242,7 @@ export default function HomePage() {
       </a>
 
       {/* 고정 — 8차 프로젝트 (요기보 스위트 호텔 파티) */}
+      {SHOW_ARCHIVED && (
       <a
         href="/storyboard8"
         className="card"
@@ -253,6 +259,7 @@ export default function HomePage() {
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
+      )}
 
       {/* 고정 — 5차 (10주년 축하 커튼 리빌) · 숨김처리 (요청: 2026-07-03) — 복구 시 아래 false→true
       {false && (

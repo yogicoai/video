@@ -11,10 +11,10 @@ export default function RootLayout({ children }) {
       <body>
         <div className="app-shell">
           <header className="topbar">
-            <div className="brand">
+            <a href="/storyboard10" className="brand" style={{ textDecoration: 'none', color: 'inherit' }}>
               <span className="brand-dot" />
               VideoGen <span className="brand-sub">Studio</span>
-            </div>
+            </a>
             <nav className="topnav">
               <a href="/">프로젝트</a>
               {/* 제작 플로우(/create) 내비 숨김 — CF 제작 프로세스에서 설명 */}
