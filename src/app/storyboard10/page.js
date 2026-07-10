@@ -173,10 +173,10 @@ export default function Storyboard10Page() {
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>4. 러프컷 (진행하며 버전업 · 무료 조립)</h2>
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 8 }}>
         <div style={{ flex: '0 0 260px' }}>
-          <video src="/fam3/rough_v4.mp4?v=1" controls loop muted playsInline
+          <video src="/fam3/rough_v6.mp4?v=1" controls loop muted playsInline
             style={{ width: 260, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #FFB300' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
-            <b>러프컷 v4 (실영상 · 9.5s)</b> · C1 점프 다이브(착지 후 1.8x 슬로우 — 얼굴 돌릴 때까지 여유, 사용자 템포 피드백 반영) + C2 스퀴지보 탑 + <b>C3 하이앵글 인형놀이(펀치인 1.15x — 포커스 당김)</b> · 톤 앵커 = C1 데이라이트, C2·C3 수렴 + 전 컷 화질 패스 · 무료<br />
+            <b>러프컷 v6 (실영상 · 8.8s)</b> · C1 점프 다이브(착지 후 1.35x 마일드 슬로우 — 속도 전환 완화) + C2 스퀴지보 탑 + C3 하이앵글 인형놀이(원본 톤 무보정 + 펀치인 1.15x) · <b>톤 앵커 = C3 원본(사용자 확정 — 필터감 없는 자연 노출)</b>, C1·C2를 C3로 수렴 + 화질 패스 · 무료<br />
             C3~C5 영상이 나오면 버전업 → 톤 매칭·화질 패스·4K·엔딩·음원은 후반
           </div>
         </div>
