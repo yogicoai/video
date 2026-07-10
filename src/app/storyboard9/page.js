@@ -172,11 +172,11 @@ export default function Storyboard9Page() {
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>4.5 러프컷 (진행하며 버전업 · 무료 조립)</h2>
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 8 }}>
         <div style={{ flex: '0 0 260px' }}>
-          <video src="/fam2/rough_v13.mp4?v=1" controls loop muted playsInline
+          <video src="/fam2/rough_v14.mp4?v=1" controls loop muted playsInline
             style={{ width: 260, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #FFB300' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
-            <b>러프컷 v13 (전 컷 · 20.0s · 네이비 통일 v2 + 사용자 GIF 엔딩)</b> · C1 수유(슬로우+로고 인트로) + C2 옹알이 + C3 일어서기 + C4 포옹(겨울) + <b>C5 사용자 제작 GIF 엔딩(문구 누적 → 로고 · 8.1s)</b> · 전 컷 LAB 톤 매칭 + 화질 패스 + C2·C4 맥스 네이비 리컬러(C4는 역광 림까지 커버하는 기하+블루도미넌스 마스크 v2)<br />
-            남은 후반: 음원(최종 컴펌 후) · 4K 업스케일본(rough_v13_4k) 처리 중
+            <b>러프컷 v14 (전 컷 · 20.0s · 최종 컬러 확정 + 사용자 GIF 엔딩)</b> · C1 수유(슬로우+로고 인트로) + C2 옹알이 + C3 일어서기 + C4 포옹(겨울) + <b>C5 사용자 제작 GIF 엔딩(문구 누적 → 로고 · 8.1s)</b> · 전 컷 LAB 톤 매칭 + 화질 패스 + C2 맥스 네이비 리컬러 · C4는 원본 아쿠아 유지(사용자 확정 — 역광 리컬러 얼룩 회피, 원본 발색이 최선)<br />
+            남은 후반: 음원(최종 컴펌 후) · 4K 업스케일본(rough_v14_4k) 처리 중
           </div>
         </div>
       </div>
