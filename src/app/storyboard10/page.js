@@ -20,9 +20,9 @@ const CUTS = [
     title: '스퀴지보 쌓기 놀이 — 아빠 재등장',
     motion: '아빠가 스퀴지보 하나를 얹고, 아이가 마지막 하나를 조심조심 꼭대기에 — 흔들리는 탑에 둘 다 숨죽였다 까르르',
     desc: '아빠(1탄 Element 재등장)와 딸이 플레이매트에서 스퀴지보 5~6개(티렉스·유니콘·블루·도그 등, 각 5.5cm 골프공 크기)를 탑처럼 쌓는 놀이 (2026-07-10 사용자 확정 — 쿠션 성에서 변경). 시선 릴레이 = 아이↔아빠 ↔ 흔들리는 탑. 배경에 네이비 맥스·올리브 팟. 스퀴지보 형태는 레지스트리 360 락.',
-    img: '/fam3/c2_stack_v8.png?v=1',
-    vid: '/fam3/c2_v1.mp4?v=1',
-    status: '🟢 스틸 v8 (16cr 누적) — 지정 6종 전부 정품 등장: 타워(티렉스→블루→도그→팍스) + 딸 손 유니콘(순수화) + 캣(매트 대기) ✓ · 메이트 크앙이·유니크윤희 정품 ✓ · 팟 실측 95cm+우측 라운드 보정 ✓. 스퀴시 렌더 8.5cm(실물 5.5)는 판독성 이득으로 허용 판정. 🎬 영상 완료(kling pro · 5.25cr): 유니콘 올리고→손 떼고→탑 버팀→박수+까르르, 시선 릴레이 완성 · 타워/메이트/캣 전부 유지',
+    img: '/fam3/c2_stack_v10.png?v=1',
+    vid: '/fam3/c2_v2.mp4?v=1',
+    status: '🟢 스틸 v8 (16cr 누적) — 지정 6종 전부 정품 등장: 타워(티렉스→블루→도그→팍스) + 딸 손 유니콘(순수화) + 캣(매트 대기) ✓ · 메이트 크앙이·유니크윤희 정품 ✓ · 팟 실측 95cm+우측 라운드 보정 ✓. 전면 재생성 v9-v10(2026-07-10): 팟 프레임 아웃 · 스퀴시 실측 축소 · C3 원본을 라이팅 참조로 네이티브 생성(제품 발색 보존) · 유니콘 실린더 재교정. 🎬 영상 v2 완료(5.25cr): 유니콘 올리고→탑 버팀→박수+까르르 재현 · 러프컷 v7 반영',
     prompt: '[v3 최종] Use the first image as the EXACT base - keep composition/girl/father(young clean-shaven)/poses/navy Max/light ALL unchanged. ONLY TWO product corrections using the second image (official Yogibo lineup sheet): (1) REPLACE the tower with REAL Squeezibo characters - red T-rex(bottom), blue, brown dog, purple cat, girl placing purple unicorn(cone horn) on top - each a soft fabric cylinder 5.5cm golf-ball sized with tiny yogibo tag; remove the yellow elephant block (not a Yogibo product). (2) REPLACE the olive ball with the REAL Yogibo Pod <<<yogibo-pod-olive>>> - teardrop/egg 95cm, small handle tab on top, matte fabric, slightly slouched. [참조: ①v2(베이스) ②스퀴지보 5종+팟 360 콜라주 · v2단계 참조: ①v1 ②1탄 CUT10(아빠 얼굴)]',
   },
   {
@@ -166,10 +166,10 @@ export default function Storyboard10Page() {
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>4. 러프컷 (진행하며 버전업 · 무료 조립)</h2>
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 8 }}>
         <div style={{ flex: '0 0 260px' }}>
-          <video src="/fam3/rough_v6.mp4?v=1" controls loop muted playsInline
+          <video src="/fam3/rough_v7.mp4?v=1" controls loop muted playsInline
             style={{ width: 260, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #FFB300' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
-            <b>러프컷 v6 (실영상 · 8.8s)</b> · C1 점프 다이브(착지 후 1.35x 마일드 슬로우 — 속도 전환 완화) + C2 스퀴지보 탑 + C3 하이앵글 인형놀이(원본 톤 무보정 + 펀치인 1.15x) · <b>톤 앵커 = C3 원본(사용자 확정 — 필터감 없는 자연 노출)</b>, C1·C2를 C3로 수렴 + 화질 패스 · 무료<br />
+            <b>러프컷 v7 (실영상 · 8.8s)</b> · C1 점프 다이브(마일드 슬로우+로고) + <b>C2 재생성본(팟 아웃·스퀴시 실측·네이티브 톤)</b> + C3 하이앵글(원본 톤 · <b>펀치인 1.3x 확대</b>) · 톤 앵커 = C3 원본, C1·C2 수렴 + 화질 패스 · 무료<br />남은 컷: C4(연출 선택 대기) → C5(더블+로고 피날레)<br />
             C3~C5 영상이 나오면 버전업 → 톤 매칭·화질 패스·4K·엔딩·음원은 후반
           </div>
         </div>
