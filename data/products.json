@@ -369,8 +369,8 @@
         "color": "네이비블루",
         "hex": "#1D395D",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_네이비블루.jpg",
-        "elementId": "",
-        "elementName": ""
+        "elementId": "eeddd2d7-32c2-42b7-884e-724f44e3df8d",
+        "elementName": "yogibo-max-navy"
       }
     ],
     "spec": {
@@ -383,7 +383,7 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T03:41:19.139Z",
-    "updatedAt": "2026-07-07T03:41:26.244Z"
+    "updatedAt": "2026-07-10T03:26:29.123Z"
   },
   {
     "id": "d08b343b",
@@ -1216,11 +1216,11 @@
     "category": "빈백",
     "colors": [
       {
-        "color": "",
-        "hex": "",
+        "color": "올리브그린",
+        "hex": "#668B01",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/pod/요기보-팟_올리브그린-수정_27.jpg",
-        "elementId": "",
-        "elementName": ""
+        "elementId": "8f120498-f4b5-4c18-90d5-fe54a3d7a015",
+        "elementName": "yogibo-pod-olive"
       }
     ],
     "spec": {
@@ -1233,7 +1233,7 @@
     "notes": "POD · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: round egg-shaped bean bag; deep enveloping seat, one person sinks in as if hugged; living room or bedroom",
     "usedIn": [],
     "createdAt": "2026-07-07T05:33:36.054Z",
-    "updatedAt": "2026-07-07T05:33:42.198Z"
+    "updatedAt": "2026-07-10T03:52:11.334Z"
   },
   {
     "id": "057ddac6",
