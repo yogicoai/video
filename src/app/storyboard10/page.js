@@ -10,9 +10,9 @@ const CUTS = [
     title: '달려옴 — 티렉스를 안고 (로고 인트로)',
     motion: '아이가 메이트 티렉스를 안고 맥스를 향해 마지막 한두 스텝 + 기대감 웃음 · 머리칼 출렁',
     desc: '거실 와이드 — 딸(2~3살)이 티렉스 메이트(30~40cm)를 꼭 안고 네이비 맥스를 향해 달려오는 도입. kling 보행 한계를 감안해 스틸 = "도착 직전 마지막 스텝" 순간으로 고정, 모션은 1~2스텝+상체 반동만. 로고 인트로는 1·2탄 방식(정중앙 오버레이 → 페이드아웃). 2탄 거실 연속성.',
-    img: '/fam3/c1_run_v1.png?v=1',
+    img: '/fam3/c1_jump_v2.png?v=1',
     vid: '/fam3/c1_v1.mp4?v=1',
-    status: '🎬 영상 완료 (kling pro 1080p · daughter+max-navy Element · 5.25cr) — 종종걸음 1~2스텝 → 맥스에 폭 안김, 머리칼·원피스 출렁, 어색 모션 없음. 스틸 v1(2cr, 룩 확정컷)',
+    status: '🟡 재설계 (2026-07-10): v1 영상 초당 분석 결과 보행 글라이딩·모멘텀 역전 발견(kling 보행 한계 실증) → 연출 변경 = "폴짝 뛰어 안착". 스틸 v2 = 공중 정점(발 이탈·원피스 들림·맥스 착지 직전, 2cr) — kling은 착지+파묻힘+반동만 담당 예정(마이크로 모션 영역). v1 영상은 임베드 유지(비교용). 영상화 5.25cr 승인 대기',
     prompt: 'Wide living room shot, vertical 9:16, camera at child height. Use the first image as the ENVIRONMENT reference - same living room from this campaign: the window with sheer curtains and warm light, the colorful alphabet play mat, the wooden floor, the red T-rex plush toy design. New composition: a 2-3 year old Korean toddler GIRL runs toward a deep navy blue Yogibo Max bean bag <<<yogibo-max-navy>>> - a large pill-shaped bean bag sofa as long as an adult is tall (170cm), lying on the floor by the window, plump and smooth with NO armrests and NO backrest. The girl is captured at her LAST STEP just before reaching it - one foot forward mid-stride, leaning slightly forward with momentum, hugging the red T-rex plush (30-40cm) tightly to her chest, laughing with excitement, soft black chin-length hair bouncing mid-motion. Her identity: <<<yogibo-baby>>> grown up - the SAME child as the toddler in the second image, now 2-3 years old, a little girl wearing a cream knit dress over soft leggings. Warm daytime home light, photorealistic warm family film photograph. [참조: ①2탄 C3 v3(환경·티렉스) ②2탄 C4 v3(얼굴 성장 출발점)]',
   },
   {
