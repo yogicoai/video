@@ -172,11 +172,11 @@ export default function Storyboard9Page() {
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>4.5 러프컷 (진행하며 버전업 · 무료 조립)</h2>
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 8 }}>
         <div style={{ flex: '0 0 260px' }}>
-          <video src="/fam2/rough_v10.mp4?v=1" controls loop muted playsInline
+          <video src="/fam2/rough_v11.mp4?v=1" controls loop muted playsInline
             style={{ width: 260, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #FFB300' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
-            <b>러프컷 v10 (전 컷 · 17.2s · 톤 매칭 + 화질 개선 + 릴레이 타이포 엔딩)</b> · C1 수유(슬로우+로고 인트로) + C2 옹알이 + C3 일어서기 + C4 포옹(겨울) + <b>C5 릴레이 카드(문구 한 문단씩 교대 등장 → 로고가 오프닝과 동일 정중앙 자리로 페이드인)</b> · 전 컷 LAB 톤 매칭 + 무료 화질 패스(hqdn3d+cas)<br />
-            편집용 개별 HD 클립: <code style={{ fontSize: 10.5 }}>c1_hd·c2_hd·c3_hd·c4_hd.mp4</code> · 남은 후반: 맥스 네이비 일괄 리컬러 · 음원(최종 컴펌 후)
+            <b>러프컷 v11 (전 컷 · 17.2s · 맥스 네이비 통일 완료)</b> · C1 수유(슬로우+로고 인트로) + C2 옹알이 + C3 일어서기 + C4 포옹(겨울) + C5 릴레이 카드(문구 교대 등장 → 로고 정중앙) · 전 컷 LAB 톤 매칭 + 화질 패스(hqdn3d+cas) + <b>C2·C4 맥스 아쿠아→네이비 무료 HSV 리컬러(타깃=C3 네이비 실측, 클립 고정 변환으로 플리커 방지)</b><br />
+            남은 후반: 음원(최종 컴펌 후) · 4K 업스케일본(rough_v11_4k) 처리 중
           </div>
         </div>
       </div>
