@@ -200,6 +200,24 @@ export default function HomePage() {
         </div>
       </a>
 
+      {/* 고정 — 10차 프로젝트 (가족 3탄 놀이) */}
+      <a
+        href="/storyboard10"
+        className="card"
+        style={{ display: 'block', borderColor: 'var(--accent)', marginBottom: 20 }}
+      >
+        <div className="card-title">🧸 가족 요기보 3탄 — "노는 자리" (유아기 놀이)</div>
+        <div className="card-meta">
+          10차 · 시리즈 3부작 완결 · 9:16 · 20초 · 아빠 재등장으로 가족 3인 완성 · 제품 노출 최다(맥스 네이비·팟·스퀴지보·메이트) · Kling 3.0
+          <br />
+          A안 확정 · 6컷 초안 · 첫 게이트 = 아이(2~3살) 캐스팅 스틸. 진행상황을 확인하세요.
+        </div>
+        <div className="card-foot">
+          <span className="badge badge-generating">STAGE 2 · 컷 구성 컨펌 대기</span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
       {/* 고정 — 9차 프로젝트 (가족 2탄 사계절) */}
       <a
         href="/storyboard9"
