@@ -49,9 +49,9 @@ const CUTS = [
     id: 'C5', season: '✨ 엔딩', t: '12–15s', months: '—',
     title: '태그라인 — "함께 자라는 자리"',
     motion: 'C4 마지막 프레임 슬로우 홀드 → 타이포 페이드인 → 로고',
-    desc: '엔딩 = 브랜드 타이포 카드 (사용자 시안 재현): C4 포옹 끝에서 화이트 카드로 0.6s 크로스디졸브 → "아이의 일년 / 엄마의 일년 / 함께 자라는" 명조 3행이 0.35s 간격 순차 페이드인 → 공식 로고 페이드인. 로고는 logo_brand.png 원본 합성(왜곡 0) · 폰트/자간/타이밍 픽셀 제어 · 무료. 정적 시안 A(명조)/B(산세리프) = brandcard_serif/sans.png.',
-    vid: '/fam2/brandcard_anim.mp4?v=1',
-    status: '✅ 완료 (무료 합성 · 타이포 카드 애니메이션) — 러프컷 v9 엔딩으로 반영',
+    desc: '엔딩 = 브랜드 타이포 카드 v2 (릴레이): C4 포옹 끝에서 화이트 카드로 0.6s 크로스디졸브 → "아이의 일년"→"엄마의 일년"→"함께 자라는" 명조 문구가 화면 정중앙에서 한 문단씩 나타났다 사라지는 릴레이(각 ~1.3s) → 마지막에 공식 로고가 오프닝과 동일 위치·크기(정중앙 420px)로 페이드인 — 수미상관. 로고 원본 합성(왜곡 0) · 무료.',
+    vid: '/fam2/brandcard_anim_v2.mp4?v=1',
+    status: '✅ 완료 (무료 합성 · 릴레이 타이포 카드 v2) — 러프컷 v10 엔딩으로 반영',
   },
 ];
 
@@ -172,10 +172,10 @@ export default function Storyboard9Page() {
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>4.5 러프컷 (진행하며 버전업 · 무료 조립)</h2>
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 8 }}>
         <div style={{ flex: '0 0 260px' }}>
-          <video src="/fam2/rough_v9.mp4?v=1" controls loop muted playsInline
+          <video src="/fam2/rough_v10.mp4?v=1" controls loop muted playsInline
             style={{ width: 260, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #FFB300' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
-            <b>러프컷 v9 (전 컷 · 15.8s · 톤 매칭 + 화질 개선 + 타이포 카드 엔딩)</b> · C1 수유(슬로우+로고 인트로) + C2 옹알이 + C3 일어서기 + C4 포옹(겨울) + <b>C5 브랜드 타이포 카드(크로스디졸브 → 명조 3행 순차 페이드인 → 로고)</b> · 전 컷 LAB 톤 매칭 + 무료 화질 패스(hqdn3d+cas)<br />
+            <b>러프컷 v10 (전 컷 · 17.2s · 톤 매칭 + 화질 개선 + 릴레이 타이포 엔딩)</b> · C1 수유(슬로우+로고 인트로) + C2 옹알이 + C3 일어서기 + C4 포옹(겨울) + <b>C5 릴레이 카드(문구 한 문단씩 교대 등장 → 로고가 오프닝과 동일 정중앙 자리로 페이드인)</b> · 전 컷 LAB 톤 매칭 + 무료 화질 패스(hqdn3d+cas)<br />
             편집용 개별 HD 클립: <code style={{ fontSize: 10.5 }}>c1_hd·c2_hd·c3_hd·c4_hd.mp4</code> · 남은 후반: 맥스 네이비 일괄 리컬러 · 음원(최종 컴펌 후)
           </div>
         </div>
