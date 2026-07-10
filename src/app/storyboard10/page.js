@@ -19,8 +19,8 @@ const CUTS = [
     title: '스퀴지보 쌓기 놀이 — 아빠 재등장',
     motion: '아빠가 스퀴지보 하나를 얹고, 아이가 마지막 하나를 조심조심 꼭대기에 — 흔들리는 탑에 둘 다 숨죽였다 까르르',
     desc: '아빠(1탄 Element 재등장)와 딸이 플레이매트에서 스퀴지보 5~6개(티렉스·유니콘·블루·도그 등, 각 5.5cm 골프공 크기)를 탑처럼 쌓는 놀이 (2026-07-10 사용자 확정 — 쿠션 성에서 변경). 시선 릴레이 = 아이↔아빠 ↔ 흔들리는 탑. 배경에 네이비 맥스·올리브 팟. 스퀴지보 형태는 레지스트리 360 락.',
-    img: '/fam3/c2_stack_v4.png?v=1',
-    status: '🟡 스틸 v4 (8cr 누적) — 팟 스케일 교정 완료: 실측 검증(아빠 머리 24cm 앵커)으로 보이는 부분 57cm+하단 가림 = 실체 ~75-95cm ✓ (v3는 38cm였음). 맥스는 좌측 프레임에 걸침(온전 노출은 C1·C4·C5가 담당 — 실사 프레이밍 관례상 허용 여부 사용자 판단 대기). 아빠 얼굴 = CUT10 대비 유사도 ~70%(프로필 하향각 한계)',
+    img: '/fam3/c2_stack_v5.png?v=1',
+    status: '🟢 스틸 v5 (10cr 누적) — ①딸 손 유니콘 = 원통 스퀴시로 교체(메이트형 인형 제거) ②팟 = 구형+손잡이 탭(360 실물) ③아빠 수염 완전 제거. 팟 스케일 실측 ~95cm ✓ · 타워 = 라인업 내 캐릭터(유니콘·블루·캣·팍스·티렉스). 맥스 좌측 걸침(온전 노출은 C1·C4·C5 담당). 확정 대기',
     prompt: '[v3 최종] Use the first image as the EXACT base - keep composition/girl/father(young clean-shaven)/poses/navy Max/light ALL unchanged. ONLY TWO product corrections using the second image (official Yogibo lineup sheet): (1) REPLACE the tower with REAL Squeezibo characters - red T-rex(bottom), blue, brown dog, purple cat, girl placing purple unicorn(cone horn) on top - each a soft fabric cylinder 5.5cm golf-ball sized with tiny yogibo tag; remove the yellow elephant block (not a Yogibo product). (2) REPLACE the olive ball with the REAL Yogibo Pod <<<yogibo-pod-olive>>> - teardrop/egg 95cm, small handle tab on top, matte fabric, slightly slouched. [참조: ①v2(베이스) ②스퀴지보 5종+팟 360 콜라주 · v2단계 참조: ①v1 ②1탄 CUT10(아빠 얼굴)]',
   },
   {
