@@ -31,7 +31,8 @@ const CUTS = [
     motion: '딸이 티렉스 메이트를 들고 어흥, 엄마가 유니콘 메이트로 화답 — 인형끼리 콩 부딪히자 둘 다 웃음 터짐',
     desc: '하이앵글 부감(시리즈 최초) — 엄마가 네이비 맥스에 비스듬히 눕고 딸이 몸 위에 폭 안겨 올라탄 채 티렉스 메이트로 어흥, 엄마는 유니콘 메이트로 방어. 맥스가 프레임을 대각으로 채우는 밀착 인형놀이 (2026-07-10 A안 확정 — 마주앉기 구도는 C2와 중복이라 폐기, 팟은 프레임 아웃으로 로켓 이슈 회피). 인형 만남 = 화면 시각 중심. 가족 구조: C2 아빠 컷 ↔ C3 엄마 컷 → C5 셋.',
     img: '/fam3/c3_dollplay_v2.png?v=1',
-    status: '🟡 스틸 v2 (4cr: v1 마주앉기 → v2 하이앵글 재구도) — 프레이밍: 맥스 대각 풀프레임 + 엄마 상단 1/3 + 인형 중심 교차 · 엄마 3중 락 성공(갸름·시스루) · 데이라이트 톤 · 확정 대기',
+    vid: '/fam3/c3_v1.mp4?v=1',
+    status: '🎬 영상 완료 (kling pro · 5.25cr) — 티렉스 어흥→유니콘 방어→인형 콩콩→둘이 웃음, 하이앵글·얼굴·맥스 출렁 유지 · 러프컷 v4 반영(펀치인 1.15x). 스틸 v2(하이앵글 재구도 4cr)',
   },
   {
     id: 'C4', energy: '💥 클라이맥스', t: '9–12s',
@@ -172,10 +173,10 @@ export default function Storyboard10Page() {
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>4. 러프컷 (진행하며 버전업 · 무료 조립)</h2>
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 8 }}>
         <div style={{ flex: '0 0 260px' }}>
-          <video src="/fam3/rough_v3.mp4?v=1" controls loop muted playsInline
+          <video src="/fam3/rough_v4.mp4?v=1" controls loop muted playsInline
             style={{ width: 260, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #FFB300' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
-            <b>러프컷 v3 (실영상 · 5.3s · 톤 매칭 + 화질 패스)</b> · C1 점프 다이브(트림본+로고 인트로) + C2 스퀴지보 탑 · 톤 앵커 = C1 원본(사용자 확정 — 밝고 깨끗한 데이라이트), C2를 강수렴(α 0.6/0.75) + 전 컷 hqdn3d+cas 화질 패스 · 무료<br />
+            <b>러프컷 v4 (실영상 · 9.5s)</b> · C1 점프 다이브(착지 후 1.8x 슬로우 — 얼굴 돌릴 때까지 여유, 사용자 템포 피드백 반영) + C2 스퀴지보 탑 + <b>C3 하이앵글 인형놀이(펀치인 1.15x — 포커스 당김)</b> · 톤 앵커 = C1 데이라이트, C2·C3 수렴 + 전 컷 화질 패스 · 무료<br />
             C3~C5 영상이 나오면 버전업 → 톤 매칭·화질 패스·4K·엔딩·음원은 후반
           </div>
         </div>
