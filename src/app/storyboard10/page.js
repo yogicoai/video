@@ -26,11 +26,11 @@ const CUTS = [
     prompt: '[v3 최종] Use the first image as the EXACT base - keep composition/girl/father(young clean-shaven)/poses/navy Max/light ALL unchanged. ONLY TWO product corrections using the second image (official Yogibo lineup sheet): (1) REPLACE the tower with REAL Squeezibo characters - red T-rex(bottom), blue, brown dog, purple cat, girl placing purple unicorn(cone horn) on top - each a soft fabric cylinder 5.5cm golf-ball sized with tiny yogibo tag; remove the yellow elephant block (not a Yogibo product). (2) REPLACE the olive ball with the REAL Yogibo Pod <<<yogibo-pod-olive>>> - teardrop/egg 95cm, small handle tab on top, matte fabric, slightly slouched. [참조: ①v2(베이스) ②스퀴지보 5종+팟 360 콜라주 · v2단계 참조: ①v1 ②1탄 CUT10(아빠 얼굴)]',
   },
   {
-    id: 'C3', energy: '🔍 디테일', t: '6–9s',
-    title: '스퀴지보 조몰락 — 접사 호흡',
-    motion: '아이 손바닥 위 스퀴지보를 조몰락조몰락 — 눌렸다 복원되는 스퀴시 질감 강조',
-    desc: '접사 클로즈업 — 아이 손바닥의 스퀴지보 티렉스(5.5cm 골프공 크기, 레지스트리 스케일문+yogibo 태그)를 쥐었다 펴는 디테일. 배경 보케에 부모 실루엣. 빠른 놀이 컷 사이 호흡 조절 + 스퀴지보 USP(쥐는 맛) 제품 샷.',
-    status: '⬜ 대기',
+    id: 'C3', energy: '🧸 놀이 2', t: '6–9s',
+    title: '메이트 인형놀이 — 엄마 등장',
+    motion: '딸이 티렉스 메이트를 들고 어흥, 엄마가 유니콘 메이트로 화답 — 인형끼리 콩 부딪히자 둘 다 웃음 터짐',
+    desc: '딸과 엄마(wife-c3, 3탄 첫 등장)가 매트에 마주앉아 메이트 인형극 놀이 (2026-07-10 사용자 변경 — 스퀴지보 접사에서 교체). 딸 = 크앙이 티렉스 메이트, 엄마 = 유니크윤희 유니콘 메이트(각 30~40cm, C2 정품 디자인 그대로). 시선 릴레이 = 인형↔인형↔서로. 배경 네이비 맥스·올리브 팟, C1 데이라이트 톤 앵커. 가족 구조: C2 아빠 컷 ↔ C3 엄마 컷 → C5 셋.',
+    status: '⬜ 대기 — 스틸 2cr 승인 대기 (3중 락: 엄마 = wife-c3 Element + 2탄 C2 웃는 프레임 얼굴참조 + 갸름한 계란형·시스루 앞머리 프로즈)',
   },
   {
     id: 'C4', energy: '💥 클라이맥스', t: '9–12s',
