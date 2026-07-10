@@ -176,7 +176,7 @@ export default function Storyboard9Page() {
             style={{ width: 260, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #FFB300' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
             <b>러프컷 v15 (전 컷 · 20.0s · C3 시선 릴레이 교체)</b> · C1 수유(슬로우+로고 인트로) + C2 옹알이 + C3 일어서기 + C4 포옹(겨울) + <b>C5 사용자 제작 GIF 엔딩(문구 누적 → 로고 · 8.1s)</b> · 전 컷 LAB 톤 매칭 + 화질 패스 + C2 맥스 네이비 리컬러 · C4는 원본 아쿠아 유지(사용자 확정 — 역광 리컬러 얼룩 회피, 원본 발색이 최선)<br />
-            남은 후반: 음원(최종 컴펌 후) · 4K 업스케일본(rough_v15_4k) 처리 중
+            남은 후반: 음원(최종 컴펌 후) · <a href="/fam2/rough_v15_4k.mp4" download style={{ color: 'var(--accent)' }}>⬇ 4K 마스터 다운로드 (2160×3840 · 20s · Real-ESRGAN 무료 업스케일)</a>
           </div>
         </div>
       </div>
