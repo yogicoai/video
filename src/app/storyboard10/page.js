@@ -30,8 +30,8 @@ const CUTS = [
     title: '탑 와르르 — 쌓았으면 무너뜨린다 (C2 직결)',
     motion: '딸이 두 손으로 탑을 와르르 스윕 → 스퀴시들 폭신하게 흩어지며 한두 개 통통 → 둘이 폭소, 아빠 만세 항복',
     desc: 'C2와 같은 구도 연속(같은 자리·같은 조명) — 쌓기의 서스펜스가 무너뜨리기의 카타르시스로 회수되는 아이 놀이의 완결 (2026-07-10 재배열 확정: 연결점 문제를 서사로 해결). 스틸 = 스윕 직후 스퀴시 공중+흩어짐 순간. 지정 6종 정품 디자인 유지. C3 원본 톤 기준.',
-    img: '/fam3/c3_crash_v1.png?v=1',
-    status: '🟡 스틸 v1 (2cr) — 스윕 팔로스루·도그 공중 부양·폭소 콤보 성공. 영상화 5.25cr 대기',
+    img: '/fam3/c3_crash_v2.png?v=1',
+    status: '🟢 스틸 v2 (4cr: v1 와르르 순간 + v2 아빠 얼굴 복원 CUT10 3중 락) — 스윕·도그 공중·폭소·아빠 동일인 확인. 영상화 5.25cr 대기',
     prompt: '[와르르] Use the first image as the EXACT base (C2 v10 그대로) - ONLY the ACTION changes to the NEXT MOMENT: the girl has just SWEPT the tower over with both hands - squishies TUMBLING mid-air and scattering softly, her face bursting into triumphant laugh; father throws head back laughing, hands open in mock surrender. Soft plush physics. [참조: ①C2 v10(구도 연속) ②지정 콜라주(디자인)]',
   },
   {
