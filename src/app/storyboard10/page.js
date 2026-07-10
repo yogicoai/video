@@ -171,10 +171,10 @@ export default function Storyboard10Page() {
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>4. 러프컷 (진행하며 버전업 · 무료 조립)</h2>
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 8 }}>
         <div style={{ flex: '0 0 260px' }}>
-          <video src="/fam3/rough_v1.mp4?v=1" controls loop muted playsInline
+          <video src="/fam3/rough_v2.mp4?v=1" controls loop muted playsInline
             style={{ width: 260, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #FFB300' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
-            <b>러프컷 v1 (실영상 · 5.3s)</b> · C1 점프 다이브(트림본 2.3s + 로고 정중앙 인트로) + C2 스퀴지보 탑(3.0s) · 조립 무료<br />
+            <b>러프컷 v2 (실영상 · 5.3s · 톤 매칭 + 화질 패스)</b> · C1 점프 다이브(트림본+로고 인트로) + C2 스퀴지보 탑 · C1을 C2 웜 톤 앵커로 LAB 강수렴(같은 장면 연속이라 α 0.6/0.75) + 전 컷 hqdn3d+cas 화질 패스 · 무료<br />
             C3~C5 영상이 나오면 버전업 → 톤 매칭·화질 패스·4K·엔딩·음원은 후반
           </div>
         </div>
