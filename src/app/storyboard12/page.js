@@ -106,6 +106,29 @@ export default function Storyboard12Page() {
         <b>Seedance 프롬프트 레시피 확립</b>: 카테고리 전형 밖 제품은 ①카테고리 단어 대신 기하 서술 ②치수 명시 ③NOT 네거티브 ④인체 대비 앵커 — 이 4종 세트로 형태·스케일 모두 통제 가능 (단, 사용 자세까지는 별도 연출 지시 필요)
       </div>
 
+      {/* 러프컷 — 세그먼트 연결본 */}
+      <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>3-3. 러프컷 — 세그먼트 연결본 (v3 파이프라인 실전)</h2>
+      <div className="note" style={{ padding: 14, marginBottom: 8 }}>
+        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+          <div style={{ flex: '0 0 auto' }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#4CAF50', marginBottom: 6 }}>▶ 러프컷 v1 — S1+S2 (8.8s)</div>
+            <video src="/cf12/rough_v1.mp4?v=1" controls loop playsInline
+              style={{ width: 220, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #4CAF50' }} />
+          </div>
+          <div style={{ flex: '0 0 auto' }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-dim)', marginBottom: 6 }}>S2 단독 (5s · 22.5cr)</div>
+            <video src="/cf12/s2_v1.mp4?v=1" controls loop playsInline
+              style={{ width: 150, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '1px solid var(--border)' }} />
+          </div>
+          <div style={{ flex: '1 1 280px', fontSize: 12.5, lineHeight: 1.8, color: 'var(--text-dim)' }}>
+            <b style={{ color: 'var(--text)' }}>v1 구성</b>: S1-4 트림(0–3.75s · 잠듦→폰 뻗기) + S2(5s · 놀람→벌떡→환복→대시) 하드컷 연결 · 24fps · 720×1280 · crf17 · 네이티브 오디오 유지<br />
+            <b style={{ color: 'var(--text)' }}>S2 QC</b>: 놀람 ECU ✓(폰 보고 눈 번쩍·입 벌어짐 — S1에서 못 잡은 인과가 여기서 성립) · 벌떡 일어남 ✓ · 옷걸이 랙 환복 ✓ · 문 나감 후 <b>빈 방에 네이비 맥스+여우만 남는 엔딩</b> ✓(제품 라스트 임프레션) · 같은 원룸 레이아웃 유지 ✓<br />
+            <b style={{ color: 'var(--text)' }}>연속성 기법</b>: S1-4에서 얼굴 CU(4.6s)·와이드(3.4s) 2장 추출 → FTP 업로드 → S2의 image_references로 체이닝 (정체성·공간 동시 고정)<br />
+            <b style={{ color: 'var(--text)' }}>다음</b>: S3(회사 출근→업무→지침) 생성 후 러프컷 v2로 확장
+          </div>
+        </div>
+      </div>
+
       {/* v4 — 경계 스틸 게이트 설계 */}
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>3-2. v4 설계 — 경계 스틸 게이트 (start_image + end_image · 2026-07-15 사용자 제안)</h2>
       <div className="note" style={{ padding: 14, marginBottom: 8, fontSize: 12.5, lineHeight: 1.8, borderLeft: '3px solid #FF7043' }}>
