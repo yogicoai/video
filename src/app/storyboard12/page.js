@@ -20,6 +20,27 @@ const MASTER_CUTS = [
   { n: 10, t: '00:17–00:18', title: '엔딩 — 로고', dir: 'yogibo 로고 천천히 떠오르며 끝', cam: '그래픽 흰배경 페이드인', line: '—', seg: '⬜ 후편집 오버레이' },
 ];
 
+// ★ 세그먼트 재설계 (2026-07-15 사용자 지시) — "CUT 2개씩 합쳐서, 초대로"
+// Seedance 최소 길이 = 4s (실측: 3s 요청 시 4s로 클램프) · 720p std = 4.5cr/s → 4s=18cr · 5s=22.5cr
+// 원 타이밍보다 짧게 못 만드는 구간은 4s 생성 후 편집에서 트림(무료)
+const SEG_PLAN = [
+  { id: 'A', cuts: 'CUT1 깨어남 + CUT2 폰 놀람', t: '0:00–0:04', dur: '4s', cr: '18cr',
+    desc: '침대 두고 요기보에서 잠 → 고개 듦 → 폰 확인 → 깜짝 놀람까지 한 컷',
+    state: '🔴 재생성 — S1-5에 놀람 없음(폰 집기에서 끝)' },
+  { id: 'B', cuts: 'CUT3 옷 찾기 + CUT4 출근 출발', t: '0:04–0:09', dur: '5s', cr: '22.5cr',
+    desc: '옷걸이에서 옷 낚아채 갈아입기 → 문 나서 → ★환한 미소 당찬 걸음 출근("근데 몸은 개운해")까지 한 컷',
+    state: '🔴 재생성 — S2는 문밖 대시에서 끝, 출근 당찬 걸음 없음' },
+  { id: 'C', cuts: 'CUT5 바쁜 회사 + CUT6 동료 회의', t: '0:09–0:12', dur: '4s→3s 트림', cr: '18cr',
+    desc: '서류 보며 바쁜 하루 → 동료(뒷모습)와 짧게 논의·끄덕임',
+    state: '🔴 재생성 — S3에 회의 비트 없음(수화기로 대체됨)' },
+  { id: 'D', cuts: 'CUT7 지친 표정 + CUT8 다이브', t: '0:12–0:15', dur: '4s→3s 트림', cr: '18cr',
+    desc: '퇴근 직전 관자놀이 짚고 지친 한숨 → (하드컷) 귀가해 요기보에 몸 던져 안착',
+    state: '⬜ 미생성' },
+  { id: 'E', cuts: 'CUT9 잠들며 마무리 (+CUT10 로고=후편집)', t: '0:15–0:18', dur: '4s→2s 트림', cr: '18cr',
+    desc: '요기보에 뺨 대고 평온하게 잠든 얼굴 CU — S1과 수미상관 · 로고는 후편집 오버레이',
+    state: '⬜ 미생성' },
+];
+
 const REF_CUTS = [
   { t: '0.0–2.0s', desc: '빈백에서 자는 여성 클로즈업 + 로고/캠페인 타이틀 오버레이' },
   { t: '2.0–3.3s', desc: '폰을 집어 확인 (빈백에 기댄 와이드)' },
@@ -86,6 +107,40 @@ export default function Storyboard12Page() {
               );
             })}
           </div>
+        </div>
+      </div>
+
+      {/* ★ 세그먼트 재설계 */}
+      <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>0-1. ★ 세그먼트 재설계 — &quot;CUT 2개씩 · 초대로&quot; (2026-07-15 사용자 지시)</h2>
+      <div className="note" style={{ padding: 14, marginBottom: 8, borderLeft: '3px solid #FF7043' }}>
+        <div style={{ fontSize: 12.5, lineHeight: 1.8, marginBottom: 10 }}>
+          <b>원칙</b>: 시댄스 세그먼트 = <b>마스터 컷 2개를 한 컷에</b> 담고, <b>원 스토리보드의 초 배분을 그대로</b> 따른다. 5초 세그먼트에 컷을 임의로 욱여넣어 타이밍을 뭉개지 않는다.<br />
+          <b>실측 (2026-07-15 프리플라이트)</b>: Seedance 최소 길이 <b>4초</b>(3초 요청 시 4초로 강제 클램프) · 720p std <b>4.5cr/s</b> → 4s = <b>18cr</b> · 5s = <b>22.5cr</b>. 원 타이밍이 3초인 페어는 <b>4초 생성 후 편집에서 트림</b>(무료).<br />
+          <b>사용자 표현 그대로</b>: &quot;요기보에서 깨고 나서 놀라기까지가 한 컷&quot; · &quot;옷을 찾아 출발까지가 한 컷&quot;
+        </div>
+        <div style={{ display: 'grid', gap: 6 }}>
+          {SEG_PLAN.map((s) => {
+            const need = s.state.startsWith('🔴');
+            const todo = s.state.startsWith('⬜');
+            return (
+              <div key={s.id} style={{ padding: '7px 9px', borderRadius: 6, background: need ? 'rgba(229,57,53,.12)' : (todo ? 'rgba(255,255,255,.03)' : 'transparent'), border: '1px solid var(--border)' }}>
+                <div style={{ display: 'flex', gap: 8, alignItems: 'baseline', flexWrap: 'wrap', fontSize: 12 }}>
+                  <b style={{ fontSize: 13.5, color: '#FF7043' }}>SEG {s.id}</b>
+                  <b style={{ flex: '0 0 240px' }}>{s.cuts}</b>
+                  <span style={{ color: 'var(--text-dim)' }}>{s.t}</span>
+                  <span className="badge badge-review" style={{ fontSize: 10.5 }}>{s.dur}</span>
+                  <span style={{ color: 'var(--accent)', fontWeight: 700 }}>{s.cr}</span>
+                  <div style={{ flex: 1 }} />
+                  <span style={{ fontWeight: 700, color: need ? '#E53935' : 'var(--text-dim)' }}>{s.state}</span>
+                </div>
+                <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 3 }}>{s.desc}</div>
+              </div>
+            );
+          })}
+        </div>
+        <div style={{ fontSize: 12, marginTop: 10, lineHeight: 1.7 }}>
+          <b>총 예상</b>: 18 + 22.5 + 18 + 18 + 18 = <b style={{ color: 'var(--accent)' }}>94.5cr</b> · 완성 시 <b>18초 마스터 준수 러프컷</b> (+ 로고 후편집)<br />
+          <b>기존 자산 처리</b>: S1-5(침대 대비 성공)·S2·S3은 <b>구조가 마스터와 어긋나 폐기 후보</b> — 단, S1-5의 침대 리빌 구도·S2의 놀람 ECU는 재생성 시 참조로 재활용
         </div>
       </div>
 
