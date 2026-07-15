@@ -96,6 +96,30 @@ yarn-error.log*
 !/public/cf12/rough_v4.mp4
 !/public/cf12/mini_test.mp4
 
+# 페이지 참조 영상 일괄 예외 (2026-07-15 감사 — Vercel 재생 보장)
+!/public/fam2/c3_v3.mp4
+!/public/fam2/rough_v15_musicA.mp4
+!/public/fam2/rough_v15_musicB.mp4
+!/public/fam2/rough_v16.mp4
+!/public/fam2/rough_v16_4k.mp4
+!/public/fam3/c2_stack_mom_v1.mp4
+!/public/fam3/c34_bridge_v1.mp4
+!/public/fam3/c4_mateplay_v1.mp4
+!/public/fam3/c5_sleep_v1.mp4
+!/public/fam3/rough_v15.mp4
+!/public/fam3/rough_v15_4k.mp4
+!/public/fam3/rough_v15_4k_music.mp4
+!/public/fam3/rough_v15_musicA.mp4
+!/public/fam3/rough_v15_musicB.mp4
+!/public/fam4/c1_v1.mp4
+!/public/fam4/c3_v1.mp4
+!/public/fam4/c4_v1.mp4
+!/public/fam4/c5_v1.mp4
+!/public/fam4/rough_v1.mp4
+!/public/fam4/rough_v1_4k.mp4
+!/public/pat/reveal.mp4
+!/public/videoFile.mp4
+
 # backup files
 *.zip
 /my-video/
