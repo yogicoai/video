@@ -94,6 +94,7 @@ yarn-error.log*
 !/public/cf12/s4_commute.mp4
 !/public/cf12/s5_office.mp4
 !/public/cf12/rough_v4.mp4
+!/public/cf12/mini_test.mp4
 
 # backup files
 *.zip

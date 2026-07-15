@@ -116,6 +116,36 @@ export default function Storyboard12Page() {
         </div>
       </div>
 
+      {/* ★ mini A/B 실측 */}
+      <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>0-2. ★ Seedance mini A/B 실측 — &quot;10cr이 45cr을 이겼다&quot; (2026-07-15)</h2>
+      <div className="note" style={{ padding: 14, marginBottom: 8, borderLeft: '3px solid #4CAF50' }}>
+        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+          <div style={{ flex: '0 0 auto' }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#4CAF50', marginBottom: 6 }}>▶ mini 480p · 10초 · <b>10cr</b></div>
+            <video src="/cf12/mini_test.mp4?v=1" controls loop playsInline
+              style={{ width: 200, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #4CAF50' }} />
+            <div style={{ fontSize: 11, color: 'var(--text-dim)', marginTop: 4 }}>단일 테이크 · 1회 성공</div>
+          </div>
+          <div style={{ flex: '0 0 auto' }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-dim)', marginBottom: 6 }}>std 720p · 10초 · <b>45cr</b> (S1-5+S2)</div>
+            <video src="/cf12/rough_v3.mp4?v=1" controls loop playsInline
+              style={{ width: 150, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '1px solid var(--border)' }} />
+            <div style={{ fontSize: 11, color: 'var(--text-dim)', marginTop: 4 }}>2테이크 · 5회 시도(v1~v5)</div>
+          </div>
+          <div style={{ flex: '1 1 300px', fontSize: 12.5, lineHeight: 1.8, color: 'var(--text-dim)' }}>
+            <b style={{ color: 'var(--text)' }}>동일 조건 A/B</b>: 같은 프롬프트 골격·같은 참조 4장(모델A 시트·usage sleeping·맥스 네이비 360·메이트 여우)<br />
+            <b style={{ color: '#4CAF50' }}>mini 판정 — 전항목 통과 + std 실패분까지 성공</b>:<br />
+            · 침대 대비 ✓ (2.0s 풀백에 빈 침대 노출)<br />
+            · 침대 모드 파묻힘·네이비·여우 1개·무텍스트 ✓<br />
+            · <b style={{ color: '#4CAF50' }}>폰 들어올림 → 놀람 ECU 인과 ✓✓</b> — <b>std S1-4가 3회 실패한 바로 그 구간</b>을 1회에 성립 (4.5s 폰 확인 → 5.6s 경악)<br />
+            · 환복 → 뛰쳐나감 → 빈 방에 맥스+여우 엔딩 ✓<br />
+            <b style={{ color: 'var(--text)' }}>실측 단가</b>: mini 480p = <b>1cr/초</b> · mini 720p = 2.5cr/초 · std 720p = 4.5cr/초 · std 1080p = 9cr/초<br />
+            <b style={{ color: 'var(--text)' }}>기능 제약 없음</b>: start/end_image · image_references · video_references · audio_references · 4~15초 · 전 비율 · 네이티브 오디오 — <b>std와 100% 동일</b>. 차이는 해상도 상한(720p)뿐<br />
+            <b style={{ color: '#E53935' }}>결론</b>: 탐색·연출 검증은 <b>mini 480p(1cr/초)</b>가 표준. std는 확정본 마스터링에만. 오늘 S1을 5회 돌린 ~100cr이 mini였다면 ~20cr
+          </div>
+        </div>
+      </div>
+
       {/* ★ 세그먼트 재설계 */}
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>0-1. ★ 세그먼트 재설계 — &quot;CUT 2개씩 · 초대로&quot; (2026-07-15 사용자 지시)</h2>
       <div className="note" style={{ padding: 14, marginBottom: 8, borderLeft: '3px solid #FF7043' }}>
