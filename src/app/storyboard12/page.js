@@ -4,6 +4,22 @@
 // 동일 원작 레퍼런스(videoFile.mp4 · 15.04s · 10컷)를 두 엔진으로 각각 제작해 파이프라인을 비교
 // 2026-07-12 사용자 확정 — 모델 교체 + 빈백 색상 차별화
 
+// ★ 마스터 기준 = 사용자가 1차(Kling)에서 직접 짠 컷분할 스토리보드 (시작/끝 프레임 시트)
+// 시댄스 세그먼트는 반드시 이 10컷 서사를 따른다 — 2026-07-15 사용자 지적으로 기준 명문화
+const SHEET_URL = 'https://yogibo.openhost.cafe24.com/web/img/ai/storyboard/storyboard_final8.png';
+const MASTER_CUTS = [
+  { n: 1, t: '00:00–00:02', title: '깨어남', dir: '★침대가 있는데도 요기보에서 잠 — 빈 침대(이불 젖혀진 채)가 뒤에 보이고, 그는 요기보에 파묻혀 잠듦 → 고개 살짝 듦', cam: '측면 인티메이트 CU', line: '"음… 잘 잤다"', seg: '🔴 S1 재생성 — 침대 누락' },
+  { n: 2, t: '00:02–00:04', title: '깜짝 — 폰 확인', dir: '빈백에 기대 폰 확인 → 깜짝 놀람(상체)', cam: '와이드→타이트 CU', line: '"헉, 지각!"', seg: 'S1 뻗기 + S2 놀람 ✅' },
+  { n: 3, t: '00:04–00:07', title: '정신없이 갈아입기', dir: '줄무늬 잠옷 → 네이비 블레이저', cam: '핸드헬드 미디엄', line: '"늦었다 늦었어"', seg: 'S2 ✅' },
+  { n: 4, t: '00:07–00:09', title: '출근 — 당찬 걸음', dir: '개운하게 줄쭉, 환한 미소·빠른 걸음', cam: '타이트 핸드헬드 워크', line: '"근데 몸은 개운해" ★제품 페이오프', seg: '🔴 누락 — 생성 필요' },
+  { n: 5, t: '00:09–00:11', title: '바쁜 회사', dir: '서류 보며 바쁜 하루', cam: '인물중심 미디엄 보케', line: '—', seg: 'S3 ✅' },
+  { n: 6, t: '00:11–00:12', title: '동료와 짧은 회의', dir: '동료(뒷모습)와 짧게 논의·끄덕임', cam: '미디엄 보케 핸드헬드', line: '"이건 이렇게요"', seg: '🟡 S3에 미포함(수화기로 대체)' },
+  { n: 7, t: '00:12–00:14', title: '지친 표정 (퇴근 직전)', dir: '관자놀이 짚고 지친 한숨·어깨 툭', cam: '인물중심 보케', line: '"오늘도 길었다"', seg: 'S3 ✅' },
+  { n: 8, t: '00:14–00:15', title: '쓰러지듯 다이브', dir: '빈백에 몸 던져 안착 → 얼굴로 줌인', cam: '로우앵글 다이브→푸시인', line: '"역시 집이 최고"', seg: '⬜ S4 예정' },
+  { n: 9, t: '00:15–00:17', title: '잠들며 마무리', dir: '잠든 얼굴 클로즈업·평온하게', cam: '얼굴 CU (디졸브)', line: '"내 하루의 끝, 요기보"', seg: '⬜ S4 예정' },
+  { n: 10, t: '00:17–00:18', title: '엔딩 — 로고', dir: 'yogibo 로고 천천히 떠오르며 끝', cam: '그래픽 흰배경 페이드인', line: '—', seg: '⬜ 후편집 오버레이' },
+];
+
 const REF_CUTS = [
   { t: '0.0–2.0s', desc: '빈백에서 자는 여성 클로즈업 + 로고/캠페인 타이틀 오버레이' },
   { t: '2.0–3.3s', desc: '폰을 집어 확인 (빈백에 기댄 와이드)' },
@@ -36,6 +52,40 @@ export default function Storyboard12Page() {
           <p className="page-desc">
             12차 · 동일 원작(15.04s · 10컷)을 <b>Kling 컷 단위 파이프라인</b>과 <b>Seedance 원테이크 파이프라인</b>으로 각각 제작 — 연출 충실도·캐스팅·비용·통제력 비교 실험
           </p>
+        </div>
+      </div>
+
+      {/* ★ 마스터 기준 — 사용자 원 스토리보드 */}
+      <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>0. ★ 마스터 기준 — 사용자 원 스토리보드 (1차 Kling · 시작/끝 프레임 시트)</h2>
+      <div className="note" style={{ padding: 14, marginBottom: 8, borderLeft: '3px solid #E53935' }}>
+        <div style={{ fontSize: 12.5, lineHeight: 1.8, marginBottom: 10 }}>
+          <b style={{ color: '#E53935' }}>불변 규칙 (2026-07-15 사용자 지적으로 명문화)</b>: 시댄스 세그먼트는 <b>반드시 이 10컷 서사를 따른다</b> — 컷을 건너뛰지 않는다.
+          <br />
+          <br /><b style={{ color: '#FFB300' }}>★ 핵심 요소 ① — CUT1 &quot;침대가 있는데도 요기보에서 잔다&quot;</b>: 방에 <b>멀쩡한 침대가 보이는데(이불이 젖혀진 채 비어 있음)</b> 그는 요기보 맥스에 파묻혀 잠들어 있다. 침대를 두고도 요기보를 고른다 = <b>제품 우위의 시각적 증명</b>. 침대가 없으면 &quot;침대 대신 쓰는 싸구려&quot;로 읽혀 의미가 정반대가 된다.
+          <br /><b style={{ color: '#FFB300' }}>★ 핵심 요소 ② — CUT4 &quot;근데 몸은 개운해&quot;</b>: 이 CF의 <b>제품 페이오프</b> — 지각했지만 요기보에서 잘 자서 몸이 개운하다 → 환한 미소로 당차게 출근. 이 컷이 빠지면 &quot;지각→회사→소진&quot;의 의미 없는 고생담이 된다.
+          <br />
+          <br />나레이션 아크: &quot;음… 잘 잤다&quot; → &quot;헉, 지각!&quot; → &quot;늦었다 늦었어&quot; → <b>&quot;근데 몸은 개운해&quot;</b> → &quot;오늘도 길었다&quot; → &quot;역시 집이 최고&quot; → &quot;내 하루의 끝, 요기보&quot; · <b>서사 논리</b>: 침대를 두고 요기보에서 잤다(①) → 그래서 지각했지만 몸은 개운하다(②) → 하루를 버틴다 → 하루의 끝에 다시 요기보로 돌아온다(수미상관)
+        </div>
+        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+          <a href={SHEET_URL} target="_blank" rel="noreferrer" style={{ flex: '0 0 auto' }}>
+            <img src={SHEET_URL} alt="원 컷분할 스토리보드 시트 (시작/끝 프레임)"
+              style={{ width: 240, borderRadius: 10, border: '2px solid #E53935', display: 'block' }} />
+            <div style={{ fontSize: 11, color: 'var(--text-dim)', marginTop: 4 }}>↗ 시트 원본 열기 (시작/끝 프레임·카메라·SFX)</div>
+          </a>
+          <div style={{ flex: '1 1 420px', display: 'grid', gap: 4 }}>
+            {MASTER_CUTS.map((c) => {
+              const miss = c.seg.startsWith('🔴');
+              return (
+                <div key={c.n} style={{ display: 'flex', gap: 8, fontSize: 11.5, alignItems: 'baseline', padding: '3px 6px', borderRadius: 5, background: miss ? 'rgba(229,57,53,.14)' : 'transparent' }}>
+                  <b style={{ flex: '0 0 46px' }}>CUT{c.n}</b>
+                  <span style={{ flex: '0 0 78px', color: 'var(--text-dim)' }}>{c.t}</span>
+                  <b style={{ flex: '0 0 106px', color: miss ? '#E53935' : 'var(--text)' }}>{c.title}</b>
+                  <span style={{ flex: '1 1 0', color: 'var(--text-dim)' }}>{c.dir} · <i>{c.line}</i></span>
+                  <span style={{ flex: '0 0 150px', fontWeight: 700, color: miss ? '#E53935' : 'var(--text-dim)' }}>{c.seg}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
 
@@ -137,7 +187,8 @@ export default function Storyboard12Page() {
             <b style={{ color: 'var(--text)' }}>S2 QC</b>: 놀람 ECU ✓(S1에서 못 잡은 인과가 여기서 성립) · 벌떡 ✓ · 옷걸이 랙 환복 ✓ · 퇴장 후 <b>빈 방에 네이비 맥스+여우만 남음</b> ✓(제품 라스트 임프레션)<br />
             <b style={{ color: 'var(--text)' }}>S3 QC</b>: 한국 오피스(창가 파티션·모니터) ✓ <b>헬멧 현장 완전 제거</b>(v2 잔존 이슈 해결) · 타이핑→서류→수화기 업무 몽타주 ✓ · 창밖 노을로 시간 경과 ✓ · 엎드려 소진 엔딩 ✓ · 무텍스트 ✓ · 🟡 <b>얼굴이 S1·S2보다 다소 성숙</b>(체이닝 참조 1장 한계 — 필요 시 재생성)<br />
             <b style={{ color: 'var(--text)' }}>연속성 기법</b>: S1-4에서 얼굴 CU(4.6s)·와이드(3.4s) 추출 → FTP → 다음 세그먼트 image_references로 체이닝<br />
-            <b style={{ color: 'var(--text)' }}>다음</b>: S4(귀가→맥스 다이브→잠든 엔딩 · 22.5cr) → 러프컷 v3 = 전체 ~19s 완성
+            <b style={{ color: '#E53935' }}>🔴 v2 결함 (2026-07-15 사용자 QC — 마스터 스토리보드 미준수)</b>: ① <b>CUT1에 침대가 없음</b> → &quot;침대를 두고도 요기보&quot;라는 제품 우위가 소실 (S1 재생성 필요) ② <b>CUT4 출근길 당찬 걸음이 통째로 누락</b> → 문밖 대시에서 바로 사무실로 점프, &quot;근데 몸은 개운해&quot; 제품 페이오프 소실 (신규 생성 필요)<br />
+            <b style={{ color: 'var(--text)' }}>교정 계획</b>: S1 재생성(침대 포함 · 22.5cr) + S2.5 출근길 신규(22.5cr) + S4 귀가·다이브·잠(22.5cr) → 러프컷 v3 = 마스터 10컷 전체 준수 ~22s
           </div>
         </div>
       </div>
