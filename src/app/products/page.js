@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { buildProductPrompt } from '@/lib/productPrompt';
 
 // 360 스프라이트(가로로 이어붙은 정사각 프레임들)의 첫 프레임만 보여주는 미리보기
 function Sprite360Preview({ url, size = 110 }) {
@@ -27,6 +28,46 @@ const VIEW_ORDER = [
   ['front', '정면 0°'], ['a045', '45°'], ['side', '측면 90°'], ['a135', '135°'],
   ['back', '후면 180°'], ['a225', '225°'], ['a270', '270°'], ['a315', '315°'],
 ];
+// 생성용 영문 프롬프트 — 레지스트리 데이터에서 자동 조립 (기하·치수·네거티브·인체앵커 4종 세트 + 참조 URL)
+function PromptBlock({ product, ci }) {
+  const [open, setOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const text = useMemo(() => buildProductPrompt(product, ci).text, [product, ci]);
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); document.body.removeChild(ta);
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1800);
+  }
+
+  return (
+    <div style={{ marginTop: 8, borderTop: '1px dashed var(--border)', paddingTop: 8 }}>
+      <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+        <button onClick={() => setOpen(!open)}
+          style={{ padding: '4px 10px', borderRadius: 6, border: '1px solid #FF7043', background: open ? '#FF7043' : 'none', color: open ? '#fff' : '#FF7043', cursor: 'pointer', fontSize: 11.5, fontWeight: 700 }}>
+          {open ? '▾' : '▸'} 생성 프롬프트 (EN)
+        </button>
+        <button onClick={copy}
+          style={{ padding: '4px 10px', borderRadius: 6, border: '1px solid var(--border)', background: copied ? '#4CAF50' : 'none', color: copied ? '#fff' : 'var(--text-dim)', cursor: 'pointer', fontSize: 11.5, fontWeight: 700 }}>
+          {copied ? '✓ 복사됨' : '📋 복사'}
+        </button>
+        <span style={{ fontSize: 10.5, color: 'var(--text-dim)' }}>
+          기하 서술 · 치수 · NOT 네거티브 · 인체 대비 앵커 · 참조 URL 자동 포함 — 그대로 붙여넣어 사용
+        </span>
+      </div>
+      {open && (
+        <pre style={{ marginTop: 6, padding: 10, borderRadius: 8, background: 'rgba(0,0,0,.22)', border: '1px solid var(--border)', fontSize: 10.5, lineHeight: 1.55, whiteSpace: 'pre-wrap', color: 'var(--text-dim)', maxHeight: 320, overflow: 'auto' }}>{text}</pre>
+      )}
+    </div>
+  );
+}
+
 // 사용 연출컷 — 자세·패브릭 눌림 물리의 참조 (2026-07-15 · 맥스 라인부터). 스틸 생성 시 "각도 프레임(형태) + 연출컷(자세)" 세트로 참조
 const USAGE_LABEL = {
   sitting_recliner: '리클라이너 앉기', sitting_on_top: '눕힌 위 앉기', modes4: '4형태(의자·소파·리클·침대)',
@@ -375,6 +416,9 @@ export default function ProductsPage() {
                     <div>
                       <span style={lbl}>Element 이름</span>
                       <input value={c.elementName || ''} placeholder="yogibo-..." onChange={(e) => patch(idx, (q) => { q.colors[ci].elementName = e.target.value; return q; })} style={inp} />
+                    </div>
+                    <div style={{ gridColumn: '1 / -1' }}>
+                      <PromptBlock product={p} ci={ci} />
                     </div>
                   </div>
                   <button onClick={() => patch(idx, (q) => { q.colors.splice(ci, 1); return q; })}

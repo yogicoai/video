@@ -1,6 +1,7 @@
 import { listProducts } from '@/lib/productsStore';
 import { listChips } from '@/lib/colorChips';
 import { BRAND, MATERIALS } from '@/lib/sizeChart';
+import { buildProductPrompt } from '@/lib/productPrompt';
 
 export const dynamic = 'force-dynamic';
 
@@ -31,10 +32,16 @@ export async function GET(req) {
     const spec = p.spec && (p.spec.w || p.spec.h || p.spec.d || p.spec.weight)
       ? `\n- 스펙: 가로 ${p.spec.w || '?'}cm × 높이 ${p.spec.h || '?'}cm × 깊이 ${p.spec.d || '?'}cm · ${p.spec.weight || '?'}kg`
       : '';
+    const prompts = (p.colors || []).map((c, ci) => {
+      const { text } = buildProductPrompt(p, ci);
+      return `<details>\n<summary>📋 생성 프롬프트 (EN) — ${c.color || '기본'}</summary>\n\n\`\`\`text\n${text}\n\`\`\`\n</details>`;
+    }).join('\n\n');
     return `### ${p.name}${p.category ? ` (${p.category})` : ''}
 ${colors}${spec}
 - 사이즈 프롬프트: "${p.scalePrompt || '-'}"
-- 노트: ${p.notes || '-'}${p.usedIn?.length ? `\n- 사용 이력: ${p.usedIn.join(', ')}` : ''}`;
+- 노트: ${p.notes || '-'}${p.usedIn?.length ? `\n- 사용 이력: ${p.usedIn.join(', ')}` : ''}
+
+${prompts}`;
   }).join('\n\n');
 
   const md = `---
