@@ -81,6 +81,8 @@ yarn-error.log*
 !/public/fam3/c2_v2.mp4
 !/public/fam3/c3_v1.mp4
 !/public/fam2/cut5_gif_ending.mp4
+!/public/cf12/s1_v3.mp4
+!/public/cf12/s1_v4.mp4
 
 # backup files
 *.zip

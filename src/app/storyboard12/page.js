@@ -87,13 +87,16 @@ export default function Storyboard12Page() {
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>3-1. S1 세그먼트 반복 기록 — 제품 지오메트리·스케일 전투 (22.5cr × 3)</h2>
       <div className="note" style={{ padding: 14, marginBottom: 8 }}>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+          <video src="/cf12/s1_v4.mp4?v=1" controls loop playsInline
+            style={{ width: 200, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #4CAF50', flex: '0 0 auto' }} />
           <video src="/cf12/s1_v3.mp4" controls loop playsInline
-            style={{ width: 200, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '2px solid #26A69A', flex: '0 0 auto' }} />
+            style={{ width: 130, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '1px solid var(--border)', opacity: .55, flex: '0 0 auto' }} />
           <div style={{ flex: '1 1 300px', fontSize: 12.5, lineHeight: 1.8, color: 'var(--text-dim)' }}>
             · <b style={{ color: 'var(--text)' }}>S1-1</b>: 맥스가 <b>공 모양</b>(빈백 카테고리 전형)으로 렌더 — 공식 360 이미지 레퍼런스를 제품 지오메트리가 무시함. NSFW 오탐 2회(잠든 자세 앵커 시트가 원인 — 소거법 특정, 자동 환불 확인)<br />
             · <b style={{ color: 'var(--text)' }}>S1-2</b>: 기하 서술 전략("LONG SAUSAGE / GIANT BODY PILLOW, NOT a ball")으로 <b>필 형태 전투 승리</b> ✓ 로고 제거 ✓ 메이트 수량·크기 ✓ — 그러나 스케일이 <b>침대급(~250cm)</b>으로 과대, 여성이 매트리스처럼 위에 누움<br />
             · <b style={{ color: 'var(--text)' }}>S1-3 (최종)</b>: 스케일 앵커 4종 투입 — ①STRICT SIZE 170×65×45cm ②NOT a bed/mattress 네거티브 ③<b>인체 대비 앵커</b>(여성 몸이 길이 대부분을 덮고 발이 끝에 걸침·앉으면 어깨가 더 높음) ④"올라타는 가구 아님, 바닥에서 기대는 쿠션" → <b>스케일 전투 승리</b> ✓ 인체 스케일 안착·필 형태·네이비·모델A·무텍스트 전부 유지<br />
-            · <b style={{ color: 'var(--text)' }}>잔존 이슈 = 연출</b>: 모델이 맥스 <b>위에 올라타 엎드린</b> 자세로 렌더 — 스케일이 아니라 제품 사용 방식이 어색 (실제로는 기대거나 파묻히는 제품)
+            · <b style={{ color: 'var(--text)' }}>잔존 이슈 = 연출</b>: 모델이 맥스 <b>위에 올라타 엎드린</b> 자세로 렌더 — 스케일이 아니라 제품 사용 방식이 어색 (실제로는 기대거나 파묻히는 제품)<br />
+            · <b style={{ color: '#4CAF50' }}>S1-4 (2026-07-15 · 초록 보더 = 검토 대상)</b>: <b>usage 연출컷 실전 투입</b> — 레지스트리 공식 sleeping 컷(자세·눌림 물리)을 참조로 동봉 + &quot;침대 모드, COMPLETELY FLAT&quot; 명시 + NOT wedge/draped 네거티브 + <b>자취 원룸으로 공간 축소</b> + <b>메이트 1개 제한</b> → QC: 침대 모드 파묻힘 ✓(가장자리가 몸을 감쌈) · 좁은 원룸(옷걸이 랙·작은 책상) ✓ · 메이트 여우 1개 ✓ · 네이비 전 프레임 ✓ · 무텍스트 ✓ (5s · 22.5cr · job 9d7ca728)
           </div>
         </div>
       </div>
