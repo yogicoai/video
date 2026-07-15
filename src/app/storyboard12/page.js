@@ -111,20 +111,33 @@ export default function Storyboard12Page() {
       <div className="note" style={{ padding: 14, marginBottom: 8 }}>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
           <div style={{ flex: '0 0 auto' }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#4CAF50', marginBottom: 6 }}>▶ 러프컷 v1 — S1+S2 (8.8s)</div>
-            <video src="/cf12/rough_v1.mp4?v=1" controls loop playsInline
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#4CAF50', marginBottom: 6 }}>▶ 러프컷 v2 — S1+S2+S3 (13.9s · 검토 대상)</div>
+            <video src="/cf12/rough_v2.mp4?v=1" controls loop playsInline
               style={{ width: 220, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #4CAF50' }} />
           </div>
-          <div style={{ flex: '0 0 auto' }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--text-dim)', marginBottom: 6 }}>S2 단독 (5s · 22.5cr)</div>
-            <video src="/cf12/s2_v1.mp4?v=1" controls loop playsInline
-              style={{ width: 150, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '1px solid var(--border)' }} />
+          <div style={{ flex: '0 0 auto', display: 'flex', gap: 8 }}>
+            <div>
+              <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--text-dim)', marginBottom: 4 }}>S2 (놀람·환복)</div>
+              <video src="/cf12/s2_v1.mp4?v=1" controls loop playsInline
+                style={{ width: 130, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '1px solid var(--border)' }} />
+            </div>
+            <div>
+              <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--text-dim)', marginBottom: 4 }}>S3 (오피스·소진)</div>
+              <video src="/cf12/s3_v1.mp4?v=1" controls loop playsInline
+                style={{ width: 130, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '1px solid var(--border)' }} />
+            </div>
+            <div>
+              <div style={{ fontSize: 11, color: 'var(--text-dim)', marginBottom: 4 }}>v1 (S1+S2)</div>
+              <video src="/cf12/rough_v1.mp4?v=1" controls loop playsInline
+                style={{ width: 110, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '1px solid var(--border)', opacity: .6 }} />
+            </div>
           </div>
           <div style={{ flex: '1 1 280px', fontSize: 12.5, lineHeight: 1.8, color: 'var(--text-dim)' }}>
-            <b style={{ color: 'var(--text)' }}>v1 구성</b>: S1-4 트림(0–3.75s · 잠듦→폰 뻗기) + S2(5s · 놀람→벌떡→환복→대시) 하드컷 연결 · 24fps · 720×1280 · crf17 · 네이티브 오디오 유지<br />
-            <b style={{ color: 'var(--text)' }}>S2 QC</b>: 놀람 ECU ✓(폰 보고 눈 번쩍·입 벌어짐 — S1에서 못 잡은 인과가 여기서 성립) · 벌떡 일어남 ✓ · 옷걸이 랙 환복 ✓ · 문 나감 후 <b>빈 방에 네이비 맥스+여우만 남는 엔딩</b> ✓(제품 라스트 임프레션) · 같은 원룸 레이아웃 유지 ✓<br />
-            <b style={{ color: 'var(--text)' }}>연속성 기법</b>: S1-4에서 얼굴 CU(4.6s)·와이드(3.4s) 2장 추출 → FTP 업로드 → S2의 image_references로 체이닝 (정체성·공간 동시 고정)<br />
-            <b style={{ color: 'var(--text)' }}>다음</b>: S3(회사 출근→업무→지침) 생성 후 러프컷 v2로 확장
+            <b style={{ color: 'var(--text)' }}>v2 구성 (13.9s)</b>: S1-4 트림(3.75s 잠듦→폰 뻗기) + S2(5s 놀람→벌떡→환복→대시) + S3(5s 출근→업무→소진) 하드컷 · 24fps · 720×1280 · crf17 · 네이티브 오디오<br />
+            <b style={{ color: 'var(--text)' }}>S2 QC</b>: 놀람 ECU ✓(S1에서 못 잡은 인과가 여기서 성립) · 벌떡 ✓ · 옷걸이 랙 환복 ✓ · 퇴장 후 <b>빈 방에 네이비 맥스+여우만 남음</b> ✓(제품 라스트 임프레션)<br />
+            <b style={{ color: 'var(--text)' }}>S3 QC</b>: 한국 오피스(창가 파티션·모니터) ✓ <b>헬멧 현장 완전 제거</b>(v2 잔존 이슈 해결) · 타이핑→서류→수화기 업무 몽타주 ✓ · 창밖 노을로 시간 경과 ✓ · 엎드려 소진 엔딩 ✓ · 무텍스트 ✓ · 🟡 <b>얼굴이 S1·S2보다 다소 성숙</b>(체이닝 참조 1장 한계 — 필요 시 재생성)<br />
+            <b style={{ color: 'var(--text)' }}>연속성 기법</b>: S1-4에서 얼굴 CU(4.6s)·와이드(3.4s) 추출 → FTP → 다음 세그먼트 image_references로 체이닝<br />
+            <b style={{ color: 'var(--text)' }}>다음</b>: S4(귀가→맥스 다이브→잠든 엔딩 · 22.5cr) → 러프컷 v3 = 전체 ~19s 완성
           </div>
         </div>
       </div>
