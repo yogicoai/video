@@ -8,7 +8,7 @@
 // 시댄스 세그먼트는 반드시 이 10컷 서사를 따른다 — 2026-07-15 사용자 지적으로 기준 명문화
 const SHEET_URL = 'https://yogibo.openhost.cafe24.com/web/img/ai/storyboard/storyboard_final8.png';
 const MASTER_CUTS = [
-  { n: 1, t: '00:00–00:02', title: '깨어남', dir: '★침대가 있는데도 요기보에서 잠 — 빈 침대(이불 젖혀진 채)가 뒤에 보이고, 그는 요기보에 파묻혀 잠듦 → 고개 살짝 듦', cam: '측면 인티메이트 CU', line: '"음… 잘 잤다"', seg: '🔴 S1 재생성 — 침대 누락' },
+  { n: 1, t: '00:00–00:02', title: '깨어남', dir: '★침대가 있는데도 요기보에서 잠 — 빈 침대가 뒤에 보이고, 그는 요기보에 파묻혀 잠듦 → 고개 살짝 듦', cam: '측면 인티메이트 CU', line: '"음… 잘 잤다"', seg: 'S1-5 ✅ 침대 반영' },
   { n: 2, t: '00:02–00:04', title: '깜짝 — 폰 확인', dir: '빈백에 기대 폰 확인 → 깜짝 놀람(상체)', cam: '와이드→타이트 CU', line: '"헉, 지각!"', seg: 'S1 뻗기 + S2 놀람 ✅' },
   { n: 3, t: '00:04–00:07', title: '정신없이 갈아입기', dir: '줄무늬 잠옷 → 네이비 블레이저', cam: '핸드헬드 미디엄', line: '"늦었다 늦었어"', seg: 'S2 ✅' },
   { n: 4, t: '00:07–00:09', title: '출근 — 당찬 걸음', dir: '개운하게 줄쭉, 환한 미소·빠른 걸음', cam: '타이트 핸드헬드 워크', line: '"근데 몸은 개운해" ★제품 페이오프', seg: '🔴 누락 — 생성 필요' },
@@ -161,9 +161,14 @@ export default function Storyboard12Page() {
       <div className="note" style={{ padding: 14, marginBottom: 8 }}>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
           <div style={{ flex: '0 0 auto' }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#4CAF50', marginBottom: 6 }}>▶ 러프컷 v2 — S1+S2+S3 (13.9s · 검토 대상)</div>
-            <video src="/cf12/rough_v2.mp4?v=1" controls loop playsInline
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#4CAF50', marginBottom: 6 }}>▶ 러프컷 v3 — S1-5(침대)+S2+S3 (15.2s · 검토 대상)</div>
+            <video src="/cf12/rough_v3.mp4?v=1" controls loop playsInline
               style={{ width: 220, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #4CAF50' }} />
+          </div>
+          <div style={{ flex: '0 0 auto' }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: '#FFB300', marginBottom: 4 }}>★ S1-5 — 침대 대비 (5s · 22.5cr)</div>
+            <video src="/cf12/s1_v5.mp4?v=1" controls loop playsInline
+              style={{ width: 150, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '2px solid #FFB300' }} />
           </div>
           <div style={{ flex: '0 0 auto', display: 'flex', gap: 8 }}>
             <div>
@@ -183,12 +188,13 @@ export default function Storyboard12Page() {
             </div>
           </div>
           <div style={{ flex: '1 1 280px', fontSize: 12.5, lineHeight: 1.8, color: 'var(--text-dim)' }}>
-            <b style={{ color: 'var(--text)' }}>v2 구성 (13.9s)</b>: S1-4 트림(3.75s 잠듦→폰 뻗기) + S2(5s 놀람→벌떡→환복→대시) + S3(5s 출근→업무→소진) 하드컷 · 24fps · 720×1280 · crf17 · 네이티브 오디오<br />
+            <b style={{ color: '#FFB300' }}>★ S1-5 QC (2026-07-15 · 침대 대비 성공)</b>: 2.0s에 카메라가 빠지며 <b>말끔히 정리된 빈 침대</b>가 뒤로 드러나고, 그는 바닥의 네이비 맥스에 파묻혀 잠듦 → <b>&quot;침대를 두고도 요기보&quot;가 한 프레임에 성립</b> ✓ · 침대가 흐트러지지 않아 &quot;아예 쓰지도 않았다&quot;로 더 강하게 읽힘 ✓ · 인티메이트 CU→와이드 리빌 카메라 ✓ · 여우 1개·네이비·무텍스트 유지 ✓ · <b>끝 프레임에서 폰을 집어 S2 놀람과 정확히 연결</b> ✓<br />
+            <b style={{ color: 'var(--text)' }}>v3 구성 (15.2s)</b>: S1-5(5s 침대 대비→잠듦→폰 집기) + S2(5s 놀람→벌떡→환복→대시) + S3(5s 출근→업무→소진) 하드컷 · 24fps · 720×1280 · crf17 · 네이티브 오디오<br />
             <b style={{ color: 'var(--text)' }}>S2 QC</b>: 놀람 ECU ✓(S1에서 못 잡은 인과가 여기서 성립) · 벌떡 ✓ · 옷걸이 랙 환복 ✓ · 퇴장 후 <b>빈 방에 네이비 맥스+여우만 남음</b> ✓(제품 라스트 임프레션)<br />
             <b style={{ color: 'var(--text)' }}>S3 QC</b>: 한국 오피스(창가 파티션·모니터) ✓ <b>헬멧 현장 완전 제거</b>(v2 잔존 이슈 해결) · 타이핑→서류→수화기 업무 몽타주 ✓ · 창밖 노을로 시간 경과 ✓ · 엎드려 소진 엔딩 ✓ · 무텍스트 ✓ · 🟡 <b>얼굴이 S1·S2보다 다소 성숙</b>(체이닝 참조 1장 한계 — 필요 시 재생성)<br />
             <b style={{ color: 'var(--text)' }}>연속성 기법</b>: S1-4에서 얼굴 CU(4.6s)·와이드(3.4s) 추출 → FTP → 다음 세그먼트 image_references로 체이닝<br />
-            <b style={{ color: '#E53935' }}>🔴 v2 결함 (2026-07-15 사용자 QC — 마스터 스토리보드 미준수)</b>: ① <b>CUT1에 침대가 없음</b> → &quot;침대를 두고도 요기보&quot;라는 제품 우위가 소실 (S1 재생성 필요) ② <b>CUT4 출근길 당찬 걸음이 통째로 누락</b> → 문밖 대시에서 바로 사무실로 점프, &quot;근데 몸은 개운해&quot; 제품 페이오프 소실 (신규 생성 필요)<br />
-            <b style={{ color: 'var(--text)' }}>교정 계획</b>: S1 재생성(침대 포함 · 22.5cr) + S2.5 출근길 신규(22.5cr) + S4 귀가·다이브·잠(22.5cr) → 러프컷 v3 = 마스터 10컷 전체 준수 ~22s
+            <b style={{ color: '#E53935' }}>🔴 잔여 결함 — CUT4 누락</b>: <b>출근길 당찬 걸음(&quot;근데 몸은 개운해&quot;)</b>이 아직 없음 → S2 문밖 대시에서 S3 사무실로 바로 점프. 제품 페이오프 소실 상태 (S2.5 신규 생성 필요 · 22.5cr)<br />
+            <b style={{ color: 'var(--text)' }}>남은 계획</b>: S2.5 출근길(22.5cr · CUT4) + S4 귀가·다이브·잠(22.5cr · CUT8-9) → 러프컷 v4 = 마스터 10컷 전체 준수 ~25s + 로고 후편집
           </div>
         </div>
       </div>

@@ -88,6 +88,8 @@ yarn-error.log*
 !/public/cf12/s3_v1.mp4
 !/public/cf12/rough_v1.mp4
 !/public/cf12/rough_v2.mp4
+!/public/cf12/s1_v5.mp4
+!/public/cf12/rough_v3.mp4
 
 # backup files
 *.zip
