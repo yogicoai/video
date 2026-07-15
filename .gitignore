@@ -90,6 +90,10 @@ yarn-error.log*
 !/public/cf12/rough_v2.mp4
 !/public/cf12/s1_v5.mp4
 !/public/cf12/rough_v3.mp4
+!/public/cf12/s1_v5_logo.mp4
+!/public/cf12/s4_commute.mp4
+!/public/cf12/s5_office.mp4
+!/public/cf12/rough_v4.mp4
 
 # backup files
 *.zip

@@ -11,7 +11,7 @@ const MASTER_CUTS = [
   { n: 1, t: '00:00–00:02', title: '깨어남', dir: '★침대가 있는데도 요기보에서 잠 — 빈 침대가 뒤에 보이고, 그는 요기보에 파묻혀 잠듦 → 고개 살짝 듦', cam: '측면 인티메이트 CU', line: '"음… 잘 잤다"', seg: 'S1-5 ✅ 침대 반영' },
   { n: 2, t: '00:02–00:04', title: '깜짝 — 폰 확인', dir: '빈백에 기대 폰 확인 → 깜짝 놀람(상체)', cam: '와이드→타이트 CU', line: '"헉, 지각!"', seg: 'S1 뻗기 + S2 놀람 ✅' },
   { n: 3, t: '00:04–00:07', title: '정신없이 갈아입기', dir: '줄무늬 잠옷 → 네이비 블레이저', cam: '핸드헬드 미디엄', line: '"늦었다 늦었어"', seg: 'S2 ✅' },
-  { n: 4, t: '00:07–00:09', title: '출근 — 당찬 걸음', dir: '개운하게 줄쭉, 환한 미소·빠른 걸음', cam: '타이트 핸드헬드 워크', line: '"근데 몸은 개운해" ★제품 페이오프', seg: '🔴 누락 — 생성 필요' },
+  { n: 4, t: '00:07–00:09', title: '출근 — 당찬 걸음', dir: '개운하게 줄쭉, 환한 미소·빠른 걸음', cam: '타이트 핸드헬드 워크', line: '"근데 몸은 개운해" ★제품 페이오프', seg: '✅ s4_commute 완료' },
   { n: 5, t: '00:09–00:11', title: '바쁜 회사', dir: '서류 보며 바쁜 하루', cam: '인물중심 미디엄 보케', line: '—', seg: 'S3 ✅' },
   { n: 6, t: '00:11–00:12', title: '동료와 짧은 회의', dir: '동료(뒷모습)와 짧게 논의·끄덕임', cam: '미디엄 보케 핸드헬드', line: '"이건 이렇게요"', seg: '🟡 S3에 미포함(수화기로 대체)' },
   { n: 7, t: '00:12–00:14', title: '지친 표정 (퇴근 직전)', dir: '관자놀이 짚고 지친 한숨·어깨 툭', cam: '인물중심 보케', line: '"오늘도 길었다"', seg: 'S3 ✅' },
@@ -24,15 +24,21 @@ const MASTER_CUTS = [
 // Seedance 최소 길이 = 4s (실측: 3s 요청 시 4s로 클램프) · 720p std = 4.5cr/s → 4s=18cr · 5s=22.5cr
 // 원 타이밍보다 짧게 못 만드는 구간은 4s 생성 후 편집에서 트림(무료)
 const SEG_PLAN = [
-  { id: 'A', cuts: 'CUT1 깨어남 + CUT2 폰 놀람', t: '0:00–0:04', dur: '4s', cr: '18cr',
-    desc: '침대 두고 요기보에서 잠 → 고개 듦 → 폰 확인 → 깜짝 놀람까지 한 컷',
-    state: '🔴 재생성 — S1-5에 놀람 없음(폰 집기에서 끝)' },
-  { id: 'B', cuts: 'CUT3 옷 찾기 + CUT4 출근 출발', t: '0:04–0:09', dur: '5s', cr: '22.5cr',
-    desc: '옷걸이에서 옷 낚아채 갈아입기 → 문 나서 → ★환한 미소 당찬 걸음 출근("근데 몸은 개운해")까지 한 컷',
-    state: '🔴 재생성 — S2는 문밖 대시에서 끝, 출근 당찬 걸음 없음' },
-  { id: 'C', cuts: 'CUT5 바쁜 회사 + CUT6 동료 회의', t: '0:09–0:12', dur: '4s→3s 트림', cr: '18cr',
-    desc: '서류 보며 바쁜 하루 → 동료(뒷모습)와 짧게 논의·끄덕임',
-    state: '🔴 재생성 — S3에 회의 비트 없음(수화기로 대체됨)' },
+  { id: 'A', cuts: 'CUT1 깨어남 (+로고 인트로)', t: '0:00–0:05', dur: '5s', cr: '완료',
+    desc: '★침대 두고 요기보에서 잠 → 와이드 리빌(빈 침대 노출) → 고개 듦 → 폰 집기 · yogibo 로고 페이드 인/아웃 오버레이(후편집·무료)',
+    state: '✅ S1-5 채택' },
+  { id: 'B', cuts: 'CUT3 옷 찾기 → 뛰어나감', t: '0:04–0:09', dur: '5s', cr: '완료',
+    desc: '놀람 → 벌떡 → 옷걸이 환복 → 문밖 대시 → 빈 방에 맥스+여우만 남음 (S2 그대로 채택 · 사용자 승인 2026-07-15)',
+    state: '✅ S2 채택' },
+  { id: 'B2', cuts: 'CUT4 출근길 — 개운한 미소', t: '0:09–0:13', dur: '4s', cr: '18cr',
+    desc: '★제품 페이오프 — 지각했는데도 개운한 표정으로 환하게 웃으며 당찬 걸음, 거리 보케 흐름 (타이트 3/4 핸드헬드)',
+    state: '✅ s4_commute 완료' },
+  { id: 'C', cuts: 'CUT5 회사 도착 → 서류', t: '0:13–0:17', dur: '4s', cr: '18cr',
+    desc: '자리로 뛰어 들어와 코트 벗고 앉기 → 끊김 없이 서류 넘기기 (한 동작 연결 · 사용자 지정 구성)',
+    state: '✅ s5_office 완료' },
+  { id: 'C2', cuts: 'CUT6 동료 회의 · 회사 컷 추가', t: '—', dur: '4s', cr: '18cr',
+    desc: '동료(뒷모습)와 짧게 논의·끄덕임 — 회사 바쁜 일상 확장',
+    state: '⬜ 다음 생성' },
   { id: 'D', cuts: 'CUT7 지친 표정 + CUT8 다이브', t: '0:12–0:15', dur: '4s→3s 트림', cr: '18cr',
     desc: '퇴근 직전 관자놀이 짚고 지친 한숨 → (하드컷) 귀가해 요기보에 몸 던져 안착',
     state: '⬜ 미생성' },
@@ -216,9 +222,29 @@ export default function Storyboard12Page() {
       <div className="note" style={{ padding: 14, marginBottom: 8 }}>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
           <div style={{ flex: '0 0 auto' }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#4CAF50', marginBottom: 6 }}>▶ 러프컷 v3 — S1-5(침대)+S2+S3 (15.2s · 검토 대상)</div>
-            <video src="/cf12/rough_v3.mp4?v=1" controls loop playsInline
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#4CAF50', marginBottom: 6 }}>▶ 러프컷 v4 — 로고+침대+놀람+출근길+회사 (18.3s · 미팅 보고본)</div>
+            <video src="/cf12/rough_v4.mp4?v=1" controls loop playsInline
               style={{ width: 220, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #4CAF50' }} />
+            <div style={{ fontSize: 11, color: 'var(--text-dim)', marginTop: 4, lineHeight: 1.5 }}>
+              yogibo 로고 인트로(페이드 인/아웃) → 침대 두고 요기보에서 잠 → 폰 놀람·환복·뛰어나감 → <b>개운한 미소 출근길</b> → 회사 도착·서류
+            </div>
+          </div>
+          <div style={{ flex: '0 0 auto', display: 'flex', gap: 8 }}>
+            <div>
+              <div style={{ fontSize: 11, fontWeight: 700, color: '#FFB300', marginBottom: 4 }}>★출근길(개운)</div>
+              <video src="/cf12/s4_commute.mp4?v=1" controls loop playsInline
+                style={{ width: 120, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '2px solid #FFB300' }} />
+            </div>
+            <div>
+              <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--text-dim)', marginBottom: 4 }}>회사 도착·서류</div>
+              <video src="/cf12/s5_office.mp4?v=1" controls loop playsInline
+                style={{ width: 120, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '1px solid var(--border)' }} />
+            </div>
+            <div>
+              <div style={{ fontSize: 11, color: 'var(--text-dim)', marginBottom: 4 }}>v3 (구)</div>
+              <video src="/cf12/rough_v3.mp4?v=1" controls loop playsInline
+                style={{ width: 100, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '1px solid var(--border)', opacity: .55 }} />
+            </div>
           </div>
           <div style={{ flex: '0 0 auto' }}>
             <div style={{ fontSize: 11, fontWeight: 700, color: '#FFB300', marginBottom: 4 }}>★ S1-5 — 침대 대비 (5s · 22.5cr)</div>
