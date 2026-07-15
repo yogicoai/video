@@ -32,7 +32,7 @@ const CUTS = [
     motion: '아기가 서포트를 붙잡고 일어서고, 엄마가 두 팔을 벌려 기다림 · 미세 흔들림(긴장감)',
     desc: '아기 눈높이 로우앵글 — 올리브 서포트를 붙잡고 일어서는 순간(긴팔 맨투맨), 엄마는 가디건 차림으로 두 팔 벌려 기다림. 플레이매트에 장난감 소품 배치(레지스트리 실측 스케일): 메이트 티렉스·유니콘(30~40cm 인형) + 스퀴지보 티렉스·유니콘(5.5cm 골프공 크기, yogibo 태그 디테일) + 옐리. 웜 앰버 가을 빛 · 맥스 = 네이비 블루(사용자 확정).',
     img: '/fam2/c3_autumn_v3.png?v=1',
-    vid: '/fam2/c3_v2.mp4?v=1',
+    vid: '/fam2/c3_v3.mp4?v=1',
     status: '🎬 영상 v2 완료 (kling pro · 5.25cr) — 시선 릴레이 완성: 아기가 3초 내내 엄마를 올려다보며 웃음 + 엄마 환호 비트 · 러프컷 v15 반영. 스틸 v3(시선 리터치 2cr)',
   },
   {
@@ -172,12 +172,36 @@ export default function Storyboard9Page() {
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>4.5 러프컷 (진행하며 버전업 · 무료 조립)</h2>
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 8 }}>
         <div style={{ flex: '0 0 260px' }}>
-          <video src="/fam2/rough_v15.mp4?v=1" controls loop muted playsInline
+          <video src="/fam2/rough_v16.mp4?v=1" controls loop muted playsInline
             style={{ width: 260, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #FFB300' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
-            <b>러프컷 v15 (전 컷 · 20.0s · C3 시선 릴레이 교체)</b> · C1 수유(슬로우+로고 인트로) + C2 옹알이 + C3 일어서기 + C4 포옹(겨울) + <b>C5 사용자 제작 GIF 엔딩(문구 누적 → 로고 · 8.1s)</b> · 전 컷 LAB 톤 매칭 + 화질 패스 + C2 맥스 네이비 리컬러 · C4는 원본 아쿠아 유지(사용자 확정 — 역광 리컬러 얼룩 회피, 원본 발색이 최선)<br />
-            남은 후반: 음원(최종 컴펌 후) · <a href="/fam2/rough_v15_4k.mp4" download style={{ color: 'var(--accent)' }}>⬇ 4K 마스터 다운로드 (2160×3840 · 20s · Real-ESRGAN 무료 업스케일)</a>
+            <b>러프컷 v16 (전 컷 · 20.0s · C3 AI-티 수정 반영 · 2026-07-12)</b> · C1 수유(슬로우+로고 인트로) + C2 옹알이 + C3 일어서기 + C4 포옹(겨울) + <b>C5 사용자 제작 GIF 엔딩(문구 누적 → 로고 · 8.1s)</b> · 전 컷 LAB 톤 매칭 + 화질 패스 + C2 맥스 네이비 리컬러 · C4는 원본 아쿠아 유지(사용자 확정 — 역광 리컬러 얼룩 회피, 원본 발색이 최선)<br />
+            C3 수정 완료: 바나나형 서포트 → 공식 U자(360 시트 주입) + 그립 유지 RULE + 엄마 파도형 표정 재생성(7.25cr) · LAB 톤 전이로 v15 톤매칭 유지 · <a href="/fam2/rough_v16_4k.mp4" download style={{ color: 'var(--accent)' }}>⬇ 4K 마스터 다운로드 (2160×3840 · 20s · 27.4MB)</a> · 음원 A/B 시안 아래(v16 기준 재먹싱) · 구버전 v15(+4K) 보존
           </div>
+        </div>
+      </div>
+
+      {/* 음원 A/B 시안 */}
+      <div className="note" style={{ marginBottom: 22, padding: 14 }}>
+        <div style={{ fontWeight: 700, marginBottom: 6 }}>🎵 음원 A/B 시안 (무료 · Incompetech CC-BY · 2026-07-12) — 컨펌 대기</div>
+        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+          <div style={{ flex: '0 0 220px' }}>
+            <video src="/fam2/rough_v15_musicA.mp4?v=1" controls loop playsInline
+              style={{ width: 220, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '2px solid #66BB6A' }} />
+            <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
+              <b>A안 · Heartwarming</b> — 피아노 솔로 · 82bpm — 이름 그대로 성장 서사의 감동 무드
+            </div>
+          </div>
+          <div style={{ flex: '0 0 220px' }}>
+            <video src="/fam2/rough_v15_musicB.mp4?v=1" controls loop playsInline
+              style={{ width: 220, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '2px solid #42A5F5' }} />
+            <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
+              <b>B안 · Carefree</b> — 우쿨렐레+마림바+글로켄 — 밝고 포근한 무드
+            </div>
+          </div>
+        </div>
+        <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 10 }}>
+          공통 처리: 0.85 볼륨 · 페이드인 0.3s · GIF 엔딩 구간(17.5s~) 페이드아웃 2.5s · 무음 버전 별도 보존 — 컨펌 시 선택곡으로 4K 음원 마스터 출력 (C3 교체 v16 기준으로 재먹싱). <b>게시 시 크레딧 필수: &quot;Music: Kevin MacLeod (incompetech.com), CC BY 4.0&quot;</b>
         </div>
       </div>
 

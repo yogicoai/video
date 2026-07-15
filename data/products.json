@@ -9,7 +9,17 @@
         "hex": "#0075BD",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_아쿠아블루.jpg",
         "elementId": "c329fc5b-5283-4821-99e6-ddba2bd741c8",
-        "elementName": "yogibo-max-aqua"
+        "elementName": "yogibo-max-aqua",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/max_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/max_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/max_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/max_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/max_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/max_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/max_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/max_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -26,7 +36,15 @@
       "CUT11"
     ],
     "createdAt": "2026-07-06T03:23:04.701Z",
-    "updatedAt": "2026-07-07T02:40:54.842Z"
+    "updatedAt": "2026-07-15T01:44:22.497Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "support",
@@ -38,7 +56,12 @@
         "hex": "#668B01",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/suport/%EC%9A%94%EA%B8%B0%EB%B3%B4_%EC%84%9C%ED%8F%AC%ED%8A%B8_29_green.jpg",
         "elementId": "fd32ee39-f00e-491c-857b-d132cbb87481",
-        "elementName": "yogibo-support-green"
+        "elementName": "yogibo-support-green",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/support_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/support_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/support_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -53,7 +76,7 @@
       "가족 CF CUT6"
     ],
     "createdAt": "2026-07-06T03:23:04.701Z",
-    "updatedAt": "2026-07-07T02:36:12.976Z"
+    "updatedAt": "2026-07-15T01:30:50.086Z"
   },
   {
     "id": "moonpillow",
@@ -65,7 +88,12 @@
         "hex": "#0075BD",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/pillow/%EB%A9%94%EA%B0%80%EB%AC%B8%ED%95%84%EB%A1%9C%EC%9A%B0_30.jpg",
         "elementId": "432687a2-bec1-487d-8482-5f522d250fa0",
-        "elementName": "yogibo-moonpillow-olive"
+        "elementName": "yogibo-moonpillow-olive",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/moonpillow_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/moonpillow_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/moonpillow_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -80,7 +108,7 @@
       "가족 CF CUT7"
     ],
     "createdAt": "2026-07-06T03:23:04.701Z",
-    "updatedAt": "2026-07-09T05:59:03.028Z"
+    "updatedAt": "2026-07-15T01:30:50.417Z"
   },
   {
     "id": "mate-yelly",
@@ -92,7 +120,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/%EC%98%90%EB%A6%AC_28.jpg",
         "elementId": "cd0310ab-4858-4aff-b523-d1cfcca12dfe",
-        "elementName": "yogibo-mate-yelly"
+        "elementName": "yogibo-mate-yelly",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/mate-yelly_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/mate-yelly_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/mate-yelly_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -108,7 +141,7 @@
       "CUT8"
     ],
     "createdAt": "2026-07-06T03:23:04.701Z",
-    "updatedAt": "2026-07-07T02:36:12.026Z"
+    "updatedAt": "2026-07-15T01:30:50.641Z"
   },
   {
     "id": "12ce89ec",
@@ -120,7 +153,17 @@
         "hex": "#E2A8BE",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_블라썸핑크.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/12ce89ec_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/12ce89ec_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/12ce89ec_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/12ce89ec_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/12ce89ec_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/12ce89ec_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/12ce89ec_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/12ce89ec_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -133,7 +176,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T02:58:55.171Z",
-    "updatedAt": "2026-07-07T03:28:57.997Z"
+    "updatedAt": "2026-07-15T01:44:22.697Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "058f33ce",
@@ -145,7 +196,17 @@
         "hex": "#644D9A",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_브라이트퍼플.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/058f33ce_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/058f33ce_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/058f33ce_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/058f33ce_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/058f33ce_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/058f33ce_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/058f33ce_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/058f33ce_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -158,7 +219,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T03:08:59.705Z",
-    "updatedAt": "2026-07-07T03:09:42.389Z"
+    "updatedAt": "2026-07-15T01:44:22.960Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "2a799b2d",
@@ -170,7 +239,17 @@
         "hex": "#EBCD00",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_브라이트옐로우2.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/2a799b2d_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/2a799b2d_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/2a799b2d_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/2a799b2d_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/2a799b2d_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/2a799b2d_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/2a799b2d_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/2a799b2d_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -183,7 +262,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T03:10:05.033Z",
-    "updatedAt": "2026-07-07T03:18:02.454Z"
+    "updatedAt": "2026-07-15T01:44:23.172Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "5bcf2da7",
@@ -195,7 +282,17 @@
         "hex": "#980224",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_체리레드_03.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/5bcf2da7_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/5bcf2da7_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/5bcf2da7_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/5bcf2da7_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/5bcf2da7_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/5bcf2da7_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/5bcf2da7_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/5bcf2da7_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -208,7 +305,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T03:33:55.232Z",
-    "updatedAt": "2026-07-07T03:34:06.163Z"
+    "updatedAt": "2026-07-15T01:44:23.401Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "1529b2e6",
@@ -220,7 +325,17 @@
         "hex": "#5D4131",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_초코브라운2.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/1529b2e6_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/1529b2e6_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/1529b2e6_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/1529b2e6_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/1529b2e6_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/1529b2e6_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/1529b2e6_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/1529b2e6_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -233,7 +348,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T03:34:27.455Z",
-    "updatedAt": "2026-07-07T03:34:38.634Z"
+    "updatedAt": "2026-07-15T01:44:23.619Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "f22bdca5",
@@ -245,7 +368,17 @@
         "hex": "#615F5F",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_다크그레이.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/f22bdca5_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/f22bdca5_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/f22bdca5_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/f22bdca5_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/f22bdca5_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/f22bdca5_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/f22bdca5_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/f22bdca5_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -258,7 +391,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T03:38:49.101Z",
-    "updatedAt": "2026-07-07T03:39:06.270Z"
+    "updatedAt": "2026-07-15T01:44:23.866Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "4daa8200",
@@ -270,7 +411,17 @@
         "hex": "#5F2A38",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_딥퍼플.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/4daa8200_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/4daa8200_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/4daa8200_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/4daa8200_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/4daa8200_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/4daa8200_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/4daa8200_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/4daa8200_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -283,7 +434,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T03:39:19.501Z",
-    "updatedAt": "2026-07-07T03:39:30.078Z"
+    "updatedAt": "2026-07-15T01:44:24.099Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "611b5d66",
@@ -295,7 +454,17 @@
         "hex": "#CDA7DB",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_라벤더퍼플.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/611b5d66_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/611b5d66_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/611b5d66_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/611b5d66_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/611b5d66_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/611b5d66_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/611b5d66_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/611b5d66_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -308,7 +477,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T03:39:44.572Z",
-    "updatedAt": "2026-07-07T03:40:00.908Z"
+    "updatedAt": "2026-07-15T01:44:24.353Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "bc448083",
@@ -320,7 +497,17 @@
         "hex": "#E5DED3",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_라이트그레이.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/bc448083_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/bc448083_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/bc448083_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/bc448083_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/bc448083_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/bc448083_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/bc448083_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/bc448083_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -333,7 +520,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T03:40:13.395Z",
-    "updatedAt": "2026-07-07T03:40:19.651Z"
+    "updatedAt": "2026-07-15T01:44:24.570Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "86cef4d5",
@@ -345,7 +540,17 @@
         "hex": "#EA3D19",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_리빙코랄.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/86cef4d5_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/86cef4d5_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/86cef4d5_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/86cef4d5_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/86cef4d5_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/86cef4d5_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/86cef4d5_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/86cef4d5_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -358,7 +563,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T03:40:30.915Z",
-    "updatedAt": "2026-07-07T03:41:00.266Z"
+    "updatedAt": "2026-07-15T01:44:24.799Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "a016d3e9",
@@ -370,7 +583,17 @@
         "hex": "#1D395D",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_네이비블루.jpg",
         "elementId": "eeddd2d7-32c2-42b7-884e-724f44e3df8d",
-        "elementName": "yogibo-max-navy"
+        "elementName": "yogibo-max-navy",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a016d3e9_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a016d3e9_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a016d3e9_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a016d3e9_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a016d3e9_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a016d3e9_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a016d3e9_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a016d3e9_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -383,7 +606,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T03:41:19.139Z",
-    "updatedAt": "2026-07-10T03:26:29.123Z"
+    "updatedAt": "2026-07-15T01:44:25.048Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "d08b343b",
@@ -395,7 +626,17 @@
         "hex": "#668B01",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_올리브그린.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d08b343b_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d08b343b_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d08b343b_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d08b343b_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d08b343b_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d08b343b_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d08b343b_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d08b343b_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -408,7 +649,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T03:49:21.805Z",
-    "updatedAt": "2026-07-07T03:49:33.934Z"
+    "updatedAt": "2026-07-15T01:44:25.306Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "16d8dfa1",
@@ -420,7 +669,17 @@
         "hex": "#BEDDEF",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_파스텔블루.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/16d8dfa1_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/16d8dfa1_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/16d8dfa1_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/16d8dfa1_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/16d8dfa1_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/16d8dfa1_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/16d8dfa1_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/16d8dfa1_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -433,7 +692,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T03:49:53.286Z",
-    "updatedAt": "2026-07-07T03:50:02.438Z"
+    "updatedAt": "2026-07-15T01:44:25.457Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "a946fa6e",
@@ -445,7 +712,17 @@
         "hex": "#B0EEE7",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_프레시민트.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a946fa6e_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a946fa6e_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a946fa6e_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a946fa6e_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a946fa6e_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a946fa6e_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a946fa6e_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a946fa6e_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -458,7 +735,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T03:50:30.339Z",
-    "updatedAt": "2026-07-07T03:50:42.540Z"
+    "updatedAt": "2026-07-15T01:44:25.754Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "9b4462b5",
@@ -470,7 +755,17 @@
         "hex": "#EF0066",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_로즈핑크.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/9b4462b5_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/9b4462b5_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/9b4462b5_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/9b4462b5_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/9b4462b5_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/9b4462b5_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/9b4462b5_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/9b4462b5_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -483,7 +778,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T05:01:46.460Z",
-    "updatedAt": "2026-07-07T05:02:03.775Z"
+    "updatedAt": "2026-07-15T01:44:25.971Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "01bf1d03",
@@ -495,7 +798,17 @@
         "hex": "#EE780C",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_스위트오렌.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/01bf1d03_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/01bf1d03_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/01bf1d03_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/01bf1d03_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/01bf1d03_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/01bf1d03_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/01bf1d03_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/01bf1d03_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -508,7 +821,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T05:02:20.572Z",
-    "updatedAt": "2026-07-07T05:02:33.257Z"
+    "updatedAt": "2026-07-15T01:44:26.257Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "c3d77e1f",
@@ -520,7 +841,17 @@
         "hex": "#7A031F",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/max_nn/맥스_와인버건디.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/c3d77e1f_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/c3d77e1f_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/c3d77e1f_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/c3d77e1f_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/c3d77e1f_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/c3d77e1f_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/c3d77e1f_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/c3d77e1f_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -533,7 +864,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T05:02:47.741Z",
-    "updatedAt": "2026-07-07T05:02:55.709Z"
+    "updatedAt": "2026-07-15T01:44:26.482Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "f2553ed0",
@@ -545,7 +884,12 @@
         "hex": "#E5DED3",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/더블_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/f2553ed0_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/f2553ed0_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/f2553ed0_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -558,7 +902,7 @@
     "notes": "DOUBLE · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: extra-large bean bag for two or more; family sitting side by side or lounging widely; living room centerpiece; can be split like two Max units",
     "usedIn": [],
     "createdAt": "2026-07-07T05:04:08.778Z",
-    "updatedAt": "2026-07-07T05:04:20.755Z"
+    "updatedAt": "2026-07-15T01:30:55.133Z"
   },
   {
     "id": "d6c4469e",
@@ -570,7 +914,12 @@
         "hex": "#1D395D",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/drop/드롭네이비블루_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d6c4469e_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d6c4469e_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d6c4469e_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -583,7 +932,7 @@
     "notes": "DROP · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: round droplet-shaped bean bag, lower than Pod; stable low sitting close to the floor; corner of living room or personal space",
     "usedIn": [],
     "createdAt": "2026-07-07T05:06:36.258Z",
-    "updatedAt": "2026-07-07T05:06:44.698Z"
+    "updatedAt": "2026-07-15T01:30:55.353Z"
   },
   {
     "id": "39f5e9ea",
@@ -595,7 +944,17 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/max/럭스_맥스_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/39f5e9ea_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/39f5e9ea_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/39f5e9ea_c0_back.jpg",
+          "a045": "https://yogibo.openhost.cafe24.com/web/img/ai/views/39f5e9ea_c0_a045.jpg",
+          "a135": "https://yogibo.openhost.cafe24.com/web/img/ai/views/39f5e9ea_c0_a135.jpg",
+          "a225": "https://yogibo.openhost.cafe24.com/web/img/ai/views/39f5e9ea_c0_a225.jpg",
+          "a270": "https://yogibo.openhost.cafe24.com/web/img/ai/views/39f5e9ea_c0_a270.jpg",
+          "a315": "https://yogibo.openhost.cafe24.com/web/img/ai/views/39f5e9ea_c0_a315.jpg"
+        }
       }
     ],
     "spec": {
@@ -608,7 +967,15 @@
     "notes": "MAX · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: stands upright as a backrest chair or lies flat as a full-body lounger; a person can sit on, lean against, or lie across it; soft stretch fabric compresses under body weight",
     "usedIn": [],
     "createdAt": "2026-07-07T05:07:13.353Z",
-    "updatedAt": "2026-07-07T05:07:30.465Z"
+    "updatedAt": "2026-07-15T01:44:26.746Z",
+    "usage": {
+      "sitting_recliner": "https://yogibo.kr/web/product/small/202604/e2dddaffa0142d2f0e0dfc4a103c1988.jpg",
+      "sitting_on_top": "https://yogibo.kr/web/product/extra/small/202310/7f10734a7413299da76f51b605907376.jpg",
+      "modes4": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_02.jpg",
+      "sleeping": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/sofa/max/standard/max_goods_03.jpg",
+      "cover_gif": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/cover.gif",
+      "howto": "https://yogibo.openhost.cafe24.com/web/img/product/2026_detailpage/common/how_to_use.jpg"
+    }
   },
   {
     "id": "11762f74",
@@ -620,7 +987,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/메이트_다니엘_용용이_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/11762f74_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/11762f74_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/11762f74_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -633,7 +1005,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-07T05:07:56.792Z",
-    "updatedAt": "2026-07-07T05:16:41.611Z"
+    "updatedAt": "2026-07-15T01:30:55.801Z"
   },
   {
     "id": "0b5378b6",
@@ -645,7 +1017,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/메이트_딜라일라_동해_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/0b5378b6_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/0b5378b6_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/0b5378b6_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -658,7 +1035,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-07T05:08:48.391Z",
-    "updatedAt": "2026-07-07T05:16:44.195Z"
+    "updatedAt": "2026-07-15T01:30:56.026Z"
   },
   {
     "id": "24444af8",
@@ -670,7 +1047,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/롤메이트_도그_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/24444af8_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/24444af8_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/24444af8_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -683,7 +1065,7 @@
     "notes": "ROLL MATE · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam",
     "usedIn": [],
     "createdAt": "2026-07-07T05:09:28.855Z",
-    "updatedAt": "2026-07-07T05:09:34.895Z"
+    "updatedAt": "2026-07-15T01:30:56.262Z"
   },
   {
     "id": "1f7524f1",
@@ -695,7 +1077,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/롤메이트_엘리게이터_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/1f7524f1_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/1f7524f1_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/1f7524f1_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -708,7 +1095,7 @@
     "notes": "ROLL MATE · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam",
     "usedIn": [],
     "createdAt": "2026-07-07T05:09:55.827Z",
-    "updatedAt": "2026-07-07T05:10:01.944Z"
+    "updatedAt": "2026-07-15T01:30:56.491Z"
   },
   {
     "id": "259566ee",
@@ -720,7 +1107,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/팍스_롤메이트_27.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/259566ee_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/259566ee_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/259566ee_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -733,7 +1125,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-07T05:10:12.518Z",
-    "updatedAt": "2026-07-07T05:16:14.196Z"
+    "updatedAt": "2026-07-15T01:30:56.748Z"
   },
   {
     "id": "26eb9faa",
@@ -745,7 +1137,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/미호_28.jpeg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/26eb9faa_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/26eb9faa_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/26eb9faa_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -758,7 +1155,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-07T05:11:01.366Z",
-    "updatedAt": "2026-07-07T05:16:49.915Z"
+    "updatedAt": "2026-07-15T01:30:56.964Z"
   },
   {
     "id": "ef2d0d63",
@@ -770,7 +1167,12 @@
         "hex": "#1D395D",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/아로마슬리퍼_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/ef2d0d63_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/ef2d0d63_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/ef2d0d63_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -783,7 +1185,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-07T05:15:01.021Z",
-    "updatedAt": "2026-07-07T05:15:52.580Z"
+    "updatedAt": "2026-07-15T01:30:57.258Z"
   },
   {
     "id": "5645cc71",
@@ -795,7 +1197,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/cushion/미니_하트필로우_레드_24.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/5645cc71_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/5645cc71_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/5645cc71_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -808,7 +1215,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-07T05:19:42.016Z",
-    "updatedAt": "2026-07-07T05:19:53.506Z"
+    "updatedAt": "2026-07-15T01:30:57.497Z"
   },
   {
     "id": "be8f153f",
@@ -820,7 +1227,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/hug/허기보_28_rose_pink.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/be8f153f_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/be8f153f_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/be8f153f_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -833,7 +1245,7 @@
     "notes": "HUGIBO · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam",
     "usedIn": [],
     "createdAt": "2026-07-07T05:20:23.016Z",
-    "updatedAt": "2026-07-07T05:20:27.312Z"
+    "updatedAt": "2026-07-15T01:30:57.729Z"
   },
   {
     "id": "953ea5a8",
@@ -845,7 +1257,12 @@
         "hex": "#668B01",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/rounger/라운저_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/953ea5a8_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/953ea5a8_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/953ea5a8_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -858,7 +1275,7 @@
     "notes": "LOUNGER · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: low chair-style bean bag with built-in backrest; supports back and waist for seated scenes (reading, watching TV, chatting); NOT for lying flat",
     "usedIn": [],
     "createdAt": "2026-07-07T05:20:55.472Z",
-    "updatedAt": "2026-07-07T05:21:05.016Z"
+    "updatedAt": "2026-07-15T01:30:57.860Z"
   },
   {
     "id": "adf93cc8",
@@ -870,7 +1287,12 @@
         "hex": "#0075BD",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/living/냅_25_수정3.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/adf93cc8_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/adf93cc8_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/adf93cc8_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -883,7 +1305,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-07T05:21:22.998Z",
-    "updatedAt": "2026-07-07T05:21:35.743Z"
+    "updatedAt": "2026-07-15T01:30:58.135Z"
   },
   {
     "id": "6488066e",
@@ -895,7 +1317,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/lounger/럭스_라운저_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/6488066e_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/6488066e_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/6488066e_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -908,7 +1335,7 @@
     "notes": "LOUNGER · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: low chair-style bean bag with built-in backrest; supports back and waist for seated scenes (reading, watching TV, chatting); NOT for lying flat",
     "usedIn": [],
     "createdAt": "2026-07-07T05:21:52.935Z",
-    "updatedAt": "2026-07-07T05:22:00.840Z"
+    "updatedAt": "2026-07-15T01:30:58.398Z"
   },
   {
     "id": "150a873b",
@@ -920,7 +1347,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/suport/럭스_서포트_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/150a873b_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/150a873b_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/150a873b_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -933,7 +1365,7 @@
     "notes": "SUPPORT · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: U-shaped body pillow wrapping around a seated person's lower back, sides and arms; used alone or paired with a bean bag sofa; proven for parenting scenes (nursing, holding a baby)",
     "usedIn": [],
     "createdAt": "2026-07-07T05:22:15.287Z",
-    "updatedAt": "2026-07-07T05:22:20.311Z"
+    "updatedAt": "2026-07-15T01:30:58.643Z"
   },
   {
     "id": "e418a3c5",
@@ -945,7 +1377,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/메이트_데릭_딘딘_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/e418a3c5_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/e418a3c5_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/e418a3c5_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -958,7 +1395,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-07T05:23:18.925Z",
-    "updatedAt": "2026-07-07T05:23:35.480Z"
+    "updatedAt": "2026-07-15T01:30:58.820Z"
   },
   {
     "id": "fc2d4a14",
@@ -970,7 +1407,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/방울이_28.jpeg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/fc2d4a14_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/fc2d4a14_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/fc2d4a14_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -983,7 +1425,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-07T05:24:02.663Z",
-    "updatedAt": "2026-07-07T05:24:15.319Z"
+    "updatedAt": "2026-07-15T01:30:59.003Z"
   },
   {
     "id": "2c44fbf0",
@@ -995,7 +1437,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/코리_28(수정).jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/2c44fbf0_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/2c44fbf0_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/2c44fbf0_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1008,7 +1455,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-07T05:25:02.941Z",
-    "updatedAt": "2026-07-07T05:25:11.428Z"
+    "updatedAt": "2026-07-15T01:30:59.192Z"
   },
   {
     "id": "df9ad57d",
@@ -1020,7 +1467,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/릴리_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/df9ad57d_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/df9ad57d_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/df9ad57d_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1033,7 +1485,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-07T05:25:30.931Z",
-    "updatedAt": "2026-07-07T05:25:39.302Z"
+    "updatedAt": "2026-07-15T01:30:59.386Z"
   },
   {
     "id": "04c10926",
@@ -1045,7 +1497,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/오스왈스_28_03.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/04c10926_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/04c10926_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/04c10926_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1058,7 +1515,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-07T05:26:26.844Z",
-    "updatedAt": "2026-07-07T05:29:15.338Z"
+    "updatedAt": "2026-07-15T01:30:59.582Z"
   },
   {
     "id": "de57760c",
@@ -1070,7 +1527,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/롤메이트_판다_28_v1.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/de57760c_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/de57760c_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/de57760c_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1083,7 +1545,7 @@
     "notes": "ROLL MATE · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam",
     "usedIn": [],
     "createdAt": "2026-07-07T05:29:02.906Z",
-    "updatedAt": "2026-07-07T05:29:16.808Z"
+    "updatedAt": "2026-07-15T01:30:59.768Z"
   },
   {
     "id": "657bbc7f",
@@ -1095,7 +1557,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/이레_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/657bbc7f_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/657bbc7f_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/657bbc7f_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1108,7 +1575,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-07T05:29:36.753Z",
-    "updatedAt": "2026-07-07T05:29:47.778Z"
+    "updatedAt": "2026-07-15T01:30:59.957Z"
   },
   {
     "id": "49a8735b",
@@ -1120,7 +1587,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/샤크_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/49a8735b_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/49a8735b_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/49a8735b_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1133,7 +1605,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-07T05:30:30.128Z",
-    "updatedAt": "2026-07-07T05:30:37.681Z"
+    "updatedAt": "2026-07-15T01:31:00.149Z"
   },
   {
     "id": "81603f7e",
@@ -1145,7 +1617,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/크앙이_27.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/81603f7e_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/81603f7e_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/81603f7e_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1158,7 +1635,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-07T05:31:21.895Z",
-    "updatedAt": "2026-07-07T05:32:08.874Z"
+    "updatedAt": "2026-07-15T01:31:00.366Z"
   },
   {
     "id": "151268f1",
@@ -1170,7 +1647,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/유니크윤희_28..jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/151268f1_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/151268f1_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/151268f1_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1183,7 +1665,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-07T05:32:00.543Z",
-    "updatedAt": "2026-07-07T05:32:10.560Z"
+    "updatedAt": "2026-07-15T01:31:00.569Z"
   },
   {
     "id": "6d4bd71b",
@@ -1195,7 +1677,12 @@
         "hex": "#0075BD",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/pod/요기보-팟_26_01.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/6d4bd71b_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/6d4bd71b_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/6d4bd71b_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1208,7 +1695,7 @@
     "notes": "POD · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: round egg-shaped bean bag; deep enveloping seat, one person sinks in as if hugged; living room or bedroom",
     "usedIn": [],
     "createdAt": "2026-07-07T05:33:15.270Z",
-    "updatedAt": "2026-07-07T05:33:23.647Z"
+    "updatedAt": "2026-07-15T01:31:00.766Z"
   },
   {
     "id": "ff505175",
@@ -1220,7 +1707,12 @@
         "hex": "#668B01",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/pod/요기보-팟_올리브그린-수정_27.jpg",
         "elementId": "8f120498-f4b5-4c18-90d5-fe54a3d7a015",
-        "elementName": "yogibo-pod-olive"
+        "elementName": "yogibo-pod-olive",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/ff505175_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/ff505175_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/ff505175_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1233,7 +1725,7 @@
     "notes": "POD · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: round egg-shaped bean bag; deep enveloping seat, one person sinks in as if hugged; living room or bedroom",
     "usedIn": [],
     "createdAt": "2026-07-07T05:33:36.054Z",
-    "updatedAt": "2026-07-10T03:52:11.334Z"
+    "updatedAt": "2026-07-15T01:31:00.948Z"
   },
   {
     "id": "057ddac6",
@@ -1245,7 +1737,12 @@
         "hex": "#EF0066",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/pyramid/피라미드_로즈핑크_29_new2.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/057ddac6_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/057ddac6_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/057ddac6_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1258,7 +1755,7 @@
     "notes": "PYRAMID · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: triangular floor bean bag; casual sitting or leaning with a natural recline angle; suits scenes with children and small spaces",
     "usedIn": [],
     "createdAt": "2026-07-07T05:33:56.669Z",
-    "updatedAt": "2026-07-07T05:34:25.399Z"
+    "updatedAt": "2026-07-15T01:31:01.136Z"
   },
   {
     "id": "292bf45a",
@@ -1270,7 +1767,12 @@
         "hex": "#88BCA4",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/slim/슬림_360 (1).jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/292bf45a_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/292bf45a_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/292bf45a_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1283,7 +1785,7 @@
     "notes": "SLIM · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: narrow vertical bean bag sofa; sitting or leaning solo rest in tight spaces and room corners",
     "usedIn": [],
     "createdAt": "2026-07-07T05:34:50.677Z",
-    "updatedAt": "2026-07-07T05:35:14.174Z"
+    "updatedAt": "2026-07-15T01:31:01.332Z"
   },
   {
     "id": "e14548e2",
@@ -1295,7 +1797,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/slim/럭스슬림_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/e14548e2_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/e14548e2_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/e14548e2_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1308,7 +1815,7 @@
     "notes": "SLIM · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: narrow vertical bean bag sofa; sitting or leaning solo rest in tight spaces and room corners",
     "usedIn": [],
     "createdAt": "2026-07-07T05:35:25.283Z",
-    "updatedAt": "2026-07-07T05:35:29.309Z"
+    "updatedAt": "2026-07-15T01:31:01.512Z"
   },
   {
     "id": "472bb906",
@@ -1320,7 +1827,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/squeezibo/스퀴지보_블루_38_0804.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/472bb906_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/472bb906_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/472bb906_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1333,7 +1845,7 @@
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-07T05:35:49.500Z",
-    "updatedAt": "2026-07-07T05:35:54.679Z"
+    "updatedAt": "2026-07-15T01:31:01.708Z"
   },
   {
     "id": "743c2f25",
@@ -1345,7 +1857,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/squeezibo/스퀴지보_도그_32_0809_02.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/743c2f25_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/743c2f25_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/743c2f25_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1358,7 +1875,7 @@
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-07T05:36:44.611Z",
-    "updatedAt": "2026-07-07T05:36:50.661Z"
+    "updatedAt": "2026-07-15T01:31:01.893Z"
   },
   {
     "id": "dd3b3acc",
@@ -1370,7 +1887,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/squeezibo/360도fox.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/dd3b3acc_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/dd3b3acc_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/dd3b3acc_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1383,7 +1905,7 @@
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-07T05:37:22.130Z",
-    "updatedAt": "2026-07-07T05:37:42.148Z"
+    "updatedAt": "2026-07-15T01:31:02.090Z"
   },
   {
     "id": "d64b56ca",
@@ -1395,7 +1917,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/squeezibo/스퀴지보_옥토퍼스_28_0809.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d64b56ca_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d64b56ca_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d64b56ca_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1408,7 +1935,7 @@
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-07T05:37:51.890Z",
-    "updatedAt": "2026-07-07T05:37:57.636Z"
+    "updatedAt": "2026-07-15T01:31:02.309Z"
   },
   {
     "id": "18ce4f74",
@@ -1420,7 +1947,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/squeezibo/스퀴지보_티렉스_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/18ce4f74_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/18ce4f74_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/18ce4f74_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1433,7 +1965,7 @@
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-07T05:38:14.387Z",
-    "updatedAt": "2026-07-07T05:38:20.508Z"
+    "updatedAt": "2026-07-15T01:31:02.510Z"
   },
   {
     "id": "b097fc3c",
@@ -1445,7 +1977,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/squeezibo/스퀴지보_유니콘_27_0808_01.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/b097fc3c_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/b097fc3c_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/b097fc3c_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1458,7 +1995,7 @@
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-07T05:38:32.835Z",
-    "updatedAt": "2026-07-07T05:38:36.308Z"
+    "updatedAt": "2026-07-15T01:31:02.719Z"
   },
   {
     "id": "47fea49b",
@@ -1470,7 +2007,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/suport/요기보_서포트_28_green2.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/47fea49b_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/47fea49b_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/47fea49b_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1483,7 +2025,7 @@
     "notes": "SUPPORT · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: U-shaped body pillow wrapping around a seated person's lower back, sides and arms; used alone or paired with a bean bag sofa; proven for parenting scenes (nursing, holding a baby)",
     "usedIn": [],
     "createdAt": "2026-07-07T05:39:07.690Z",
-    "updatedAt": "2026-07-07T05:39:13.573Z"
+    "updatedAt": "2026-07-15T01:31:02.930Z"
   },
   {
     "id": "e6425423",
@@ -1495,7 +2037,12 @@
         "hex": "#98ABB6",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/midi/줄라_미디_스톤.jpeg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/e6425423_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/e6425423_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/e6425423_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1508,7 +2055,7 @@
     "notes": "MIDI · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: mid-size vertical bean bag sofa (smaller than Max, larger than Mini); solo relaxation with balanced sitting, leaning and lying",
     "usedIn": [],
     "createdAt": "2026-07-07T05:39:53.195Z",
-    "updatedAt": "2026-07-07T05:40:10.067Z"
+    "updatedAt": "2026-07-15T01:31:03.133Z"
   },
   {
     "id": "bfe5ba62",
@@ -1520,7 +2067,12 @@
         "hex": "#E5DED3",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mini/라이트_그레이_미니_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/bfe5ba62_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/bfe5ba62_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/bfe5ba62_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1533,7 +2085,7 @@
     "notes": "MINI · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: compact single-person bean bag; sitting or leaning poses close to the floor; fits small rooms and corners",
     "usedIn": [],
     "createdAt": "2026-07-07T05:57:59.663Z",
-    "updatedAt": "2026-07-07T05:58:11.360Z"
+    "updatedAt": "2026-07-15T01:31:03.355Z"
   },
   {
     "id": "a2d83eea",
@@ -1545,7 +2097,12 @@
         "hex": "#980224",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/midi/미디_30.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a2d83eea_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a2d83eea_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a2d83eea_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1558,7 +2115,7 @@
     "notes": "MIDI · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: mid-size vertical bean bag sofa (smaller than Max, larger than Mini); solo relaxation with balanced sitting, leaning and lying",
     "usedIn": [],
     "createdAt": "2026-07-07T05:58:32.509Z",
-    "updatedAt": "2026-07-07T05:58:43.416Z"
+    "updatedAt": "2026-07-15T01:31:03.561Z"
   },
   {
     "id": "d963ae92",
@@ -1570,7 +2127,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/squeezibo/스퀴지보_아울_29_0808.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d963ae92_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d963ae92_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/d963ae92_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1583,7 +2145,7 @@
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-08T01:55:01.675Z",
-    "updatedAt": "2026-07-08T01:55:13.542Z"
+    "updatedAt": "2026-07-15T01:31:03.792Z"
   },
   {
     "id": "a614c1e5",
@@ -1595,7 +2157,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/squeezibo/스퀴지보_캣_30_0805.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a614c1e5_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a614c1e5_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/a614c1e5_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1608,7 +2175,7 @@
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-08T01:55:59.962Z",
-    "updatedAt": "2026-07-08T01:56:09.011Z"
+    "updatedAt": "2026-07-15T01:31:04.032Z"
   },
   {
     "id": "ebf4a241",
@@ -1620,7 +2187,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/squeezibo/스퀴지보_코알라_27_0809_01.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/ebf4a241_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/ebf4a241_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/ebf4a241_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1633,7 +2205,7 @@
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-08T01:56:35.905Z",
-    "updatedAt": "2026-07-08T01:56:41.150Z"
+    "updatedAt": "2026-07-15T01:31:04.250Z"
   },
   {
     "id": "56739f21",
@@ -1645,7 +2217,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/squeezibo/스퀴지보_멍키_수정_38_0808_1.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/56739f21_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/56739f21_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/56739f21_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1658,7 +2235,7 @@
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-08T01:57:08.461Z",
-    "updatedAt": "2026-07-08T01:57:13.995Z"
+    "updatedAt": "2026-07-15T01:31:04.533Z"
   },
   {
     "id": "09ad4c18",
@@ -1670,7 +2247,12 @@
         "hex": "#5D4131",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/백마이스터_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/09ad4c18_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/09ad4c18_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/09ad4c18_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1683,7 +2265,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-08T02:32:11.431Z",
-    "updatedAt": "2026-07-08T02:32:30.424Z"
+    "updatedAt": "2026-07-15T01:31:04.762Z"
   },
   {
     "id": "f31e656e",
@@ -1695,7 +2277,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/바디허그.jpeg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/f31e656e_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/f31e656e_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/f31e656e_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1708,7 +2295,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-08T02:33:20.940Z",
-    "updatedAt": "2026-07-08T02:33:30.736Z"
+    "updatedAt": "2026-07-15T01:31:04.983Z"
   },
   {
     "id": "b13efca8",
@@ -1720,7 +2307,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/cushion/키보드쿠션_28.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/b13efca8_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/b13efca8_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/b13efca8_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1733,7 +2325,7 @@
     "notes": "",
     "usedIn": [],
     "createdAt": "2026-07-08T02:34:32.277Z",
-    "updatedAt": "2026-07-08T02:34:40.174Z"
+    "updatedAt": "2026-07-15T01:31:05.197Z"
   },
   {
     "id": "1c2a6619",
@@ -1745,7 +2337,12 @@
         "hex": "",
         "sprite360": "https://yogibo.openhost.cafe24.com/web/img/360/mate/메이트_디포_옥자_28_02.jpg",
         "elementId": "",
-        "elementName": ""
+        "elementName": "",
+        "views": {
+          "front": "https://yogibo.openhost.cafe24.com/web/img/ai/views/1c2a6619_c0_front.jpg",
+          "side": "https://yogibo.openhost.cafe24.com/web/img/ai/views/1c2a6619_c0_side.jpg",
+          "back": "https://yogibo.openhost.cafe24.com/web/img/ai/views/1c2a6619_c0_back.jpg"
+        }
       }
     ],
     "spec": {
@@ -1758,6 +2355,6 @@
     "notes": "a plush animal character toy sized for a child to hug (roughly 30-40cm) — fits between a child's arms, smaller than a house cat",
     "usedIn": [],
     "createdAt": "2026-07-08T02:35:34.553Z",
-    "updatedAt": "2026-07-08T02:36:10.075Z"
+    "updatedAt": "2026-07-15T01:31:05.403Z"
   }
 ]

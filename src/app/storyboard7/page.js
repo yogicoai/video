@@ -24,14 +24,14 @@ const SECTIONS = [
   {
     id: 'S3', t: '3.0–4.7s', title: '로고 — 파스텔블루 벽면 yogibo 클로즈업',
     camera: '오른쪽으로 트래킹 — 벽 패널을 스치듯 지나며 로고 정면 → 골드 컨페티가 전경에 흩날림',
-    desc: '파스텔블루 웨인스코팅 벽에 화이트 입체(3D) yogibo 로고. 골드 컨페티 낙하가 정적인 벽에 생동감. 로고가 화면 중앙을 지나가는 무빙 클로즈업.',
+    desc: '미술 기준 = kaka.png 배경 벽(2026-07-15 교체): 파스텔블루 아치 몰딩 벽 + 화이트 입체 yogibo 로고(시안 g) + 은은한 로고 워터마크 패턴 + 골드 컨페티 낙하. 로고가 화면 중앙을 지나가는 무빙 클로즈업 — S4 케이크와 같은 공간이라 연속성 확보.',
     how: '스틸 1장(2cr) → Seedance 트래킹',
     status: '⬜ 대기',
   },
   {
     id: 'S4', t: '4.7–6.3s', title: '케이크 연출 — 10주년 케이크 히어로 비트 → 창으로',
     camera: '트래킹이 케이크 앞에서 감속 → 케이크 클로즈업 홀드(~1s, 살짝 오비탈) → 다시 가속해 아치창으로 푸시인',
-    desc: '케이크가 이 구간의 주인공 — 미술은 visual_line.png 키비주얼 그대로: 화이트·파스텔블루 3단 + "10th" 캔들(불꽃 흔들림) + 케이크 위 요기보 제품 미니어처(문필로우·카터필러 롤 레인보우·하트 쿠션·로고 마크)가 또렷이 보이게 클로즈업. 주변에 메이트 인형·풍선·선물상자, 골드 컨페티 낙하. 홀드 후 카메라가 창으로 넘어가며 창밖 저녁 하늘로 시선 유도.',
+    desc: '케이크가 이 구간의 주인공 — 미술 기준 교체(2026-07-15): kaka.png 키비주얼 — 화이트 2단 + 파스텔블루 드레이프 아이싱 + 대형 반투명 젤리 "10th" 캔들(불꽃) + 골드 케이크 스탠드, 토퍼 = 요기보 제품 미니어처(문필로우 퍼플/핑크 · 캐터필러 롤 레인보우 · 하트 쿠션 레드 · 로고 g 마크 · 미니 옐리·웨일) + 블루 "1" 캔들. 주변 크림·블루 풍선, 골드 컨페티. 배경이 S3 아치 벽 로고와 같은 공간이라 트래킹 연속성 유지. 홀드 후 카메라가 창으로 넘어가며 창밖 저녁 하늘로 시선 유도.',
     how: '스틸 1장(2cr · 케이크 히어로 프레임) → Seedance 감속-홀드-가속',
     status: '⬜ 대기',
   },
@@ -53,10 +53,10 @@ const SECTIONS = [
 
 const GATES = [
   { stage: 'STAGE 0 · 정의', s: '✅ 완료', note: '9:16 · 10s 확정 · 인물 없음 · 10주년 케이크 유지 · 메이트 상품 노출 (2026-07-09 컨펌)' },
-  { stage: 'STAGE 1 · 에셋 락', s: '✅ 완료', note: '카메라 동선 ref.mp4 · 커튼 kt.jpg · 케이크 visual_line.png · 메이트 Element(옐리) · yogibo 로고 PNG(투명배경) — 전부 확보' },
+  { stage: 'STAGE 1 · 에셋 락', s: '✅ 완료', note: '카메라 동선 ref.mp4 · 커튼 kt.jpg · 케이크 kaka.png(07-15 교체 — 아치 벽 로고 포함, S3·S4 겸용) · 메이트 Element(옐리) · yogibo 로고 PNG(투명배경) — 전부 확보' },
   { stage: 'STAGE 2 · 스토리보드', s: '📝 이 페이지', note: '6섹션 · 레퍼런스 실측 타임라인 반영 완료' },
   { stage: 'STAGE 3 · 스틸', s: '✅ 완료', note: 'S1 커튼 v2(풀블리드) + S2 파티 v4(라운저 교체) 확정 — 총 12cr' },
-  { stage: 'STAGE 4 · 영상화', s: '🟡 검토중', note: 'Seedance 2.0 통짜 10s 1회차 완료(std 720p·45cr·오디오 포함) — 검수 대기 · 통과 시 1080p 마스터(90cr)' },
+  { stage: 'STAGE 4 · 영상화', s: '🟡 재개(07-15)', note: '통짜 1회차(oneshot_v1)는 구 케이크(visual_line) 기준 — 케이크 kaka.png 교체 반영한 2회차 재생성 필요(720p 45cr) → 통과 시 1080p 마스터(90cr)' },
   { stage: 'STAGE 5 · 조립', s: '⬜', note: '통짜 성공 시 트림·톤만 / 분할 시 와이프 포인트(3.0s 벽·6.3s 창틀) 스티치 + S6 합성 (무료)' },
 ];
 
@@ -108,12 +108,17 @@ export default function Storyboard7Page() {
             <b>커튼 키비주얼 (kt.jpg)</b> — S1·S2의 미술 기준: 블루(아쿠아) 극장식 커튼, 깊은 주름 + 스포트 그라데이션
           </div>
         </div>
-        <div style={{ flex: '0 0 160px' }}>
-          <img src="/refparty/cake_visual.png?v=1" alt="케이크 키비주얼"
-            style={{ width: 160, borderRadius: 10, border: '1px solid var(--border)', display: 'block' }} />
+        <div style={{ flex: '0 0 200px' }}>
+          <img src="/refparty/cake_kaka.png?v=1" alt="케이크 키비주얼 (신규)"
+            style={{ width: 200, borderRadius: 10, border: '2px solid #FFB300', display: 'block' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 5, lineHeight: 1.5 }}>
-            <b>10주년 케이크 키비주얼 (visual_line.png)</b> — S4의 미술 기준: 화이트·파스텔블루 3단 + &quot;10th&quot; 캔들 + 요기보 제품 미니어처 데코
+            <b>🆕 10주년 케이크 키비주얼 (kaka.png · 07-15 교체)</b> — S3·S4 미술 기준: 화이트 2단 + 젤리 &quot;10th&quot; 캔들 + 골드 스탠드 + 제품 미니어처 토퍼 + <b>아치 벽 yogibo 로고까지 한 공간</b>
           </div>
+        </div>
+        <div style={{ flex: '0 0 110px' }}>
+          <img src="/refparty/cake_visual.png?v=1" alt="케이크 키비주얼 (구버전)"
+            style={{ width: 110, borderRadius: 10, border: '1px solid var(--border)', display: 'block', opacity: .45 }} />
+          <div style={{ fontSize: 11, color: 'var(--text-dim)', marginTop: 4 }}>구버전 (visual_line.png) — 교체됨</div>
         </div>
         <div className="note" style={{ flex: '1 1 280px', padding: 14, fontSize: 12.5, lineHeight: 1.7, alignSelf: 'flex-start' }}>
           <b>종합</b> — 카메라는 영상 레퍼런스의 동선을 그대로, 미술은 키비주얼 2종 + 10주년 파스텔 팔레트로 교체.

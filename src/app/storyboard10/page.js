@@ -1,78 +1,81 @@
 'use client';
 
 // 10차 프로젝트 — 가족 요기보 3탄 "노는 자리" (유아기 놀이 · 2026-07-10 A안 확정)
-// 시리즈 3부작 완결: 시작(1탄) → 성장(2탄) → 놀이(3탄) · 아빠(1탄 Element) 재등장으로 가족 3인 완성
+// 시리즈 3부작 완결: 시작(1탄) → 성장(2탄) → 놀이(3탄) · 엄마와 딸의 일상 (아빠는 드리프트 반복으로 제외 · 2026-07-11)
 // 엔진 = Kling 3.0 (인물 마이크로 모션 — 2탄 검증 포맷 계승) · 20초 = 본편 5컷 + GIF 엔딩
 
 const CUTS = [
   {
-    id: 'C1', energy: '🏃 도입', t: '0–3s',
-    title: '달려옴 — 티렉스를 안고 (로고 인트로)',
-    motion: '아이가 메이트 티렉스를 안고 맥스를 향해 마지막 한두 스텝 + 기대감 웃음 · 머리칼 출렁',
-    desc: '거실 와이드 — 딸(2~3살)이 티렉스 메이트(30~40cm)를 꼭 안고 네이비 맥스를 향해 달려오는 도입. kling 보행 한계를 감안해 스틸 = "도착 직전 마지막 스텝" 순간으로 고정, 모션은 1~2스텝+상체 반동만. 로고 인트로는 1·2탄 방식(정중앙 오버레이 → 페이드아웃). 2탄 거실 연속성.',
+    id: 'C1', energy: '🏃 도입 · 훅', t: '0–2.4s',
+    title: '다이브 — 티렉스를 안고 (로고 인트로: 첫 프레임부터)',
+    motion: '아이가 티렉스 메이트를 안고 점프 정점 → 슈퍼맨 다이브 → 맥스에 깊이 파묻힘 → 까르르 (보간 슬로모 1.2x)',
+    desc: '딸(2~3살)이 티렉스 메이트(30~40cm)를 꼭 안고 네이비 맥스로 다이브하는 오프닝 훅 — 1.25x 펀치인으로 점프 정점이 프레임을 채움. 로고는 첫 프레임부터 화이트+섀도 정중앙 표시 → 착지 후 페이드아웃(2026-07-11 사용자 확정). minterpolate 보간 슬로모로 주기 저더 제거. 2탄 거실 연속성.',
     img: '/fam3/c1_jump_v2.png?v=1',
     vid: '/fam3/c1_v2_trim.mp4?v=1',
-    status: '🎬 영상 v2 완료 (kling pro · 5.25cr) — 국면 분할 전략 성공: 글라이딩·후진 없음, 트림본 확정(0.75s 컷·2.3s): 점프→슈퍼맨 다이브→깊이 파묻힘→앉아서 까르르. 쿠션 덴트 물리 자연스러움. 스틸 v2(공중 정점 2cr). 구버전: v1 보행실패 영상(c1_v1.mp4)·v1 스틸(c1_run_v1.png) 보관',
-    prompt: 'Wide living room shot, vertical 9:16, camera at child height. Use the first image as the ENVIRONMENT reference - same living room from this campaign: the window with sheer curtains and warm light, the colorful alphabet play mat, the wooden floor, the red T-rex plush toy design. New composition: a 2-3 year old Korean toddler GIRL runs toward a deep navy blue Yogibo Max bean bag <<<yogibo-max-navy>>> - a large pill-shaped bean bag sofa as long as an adult is tall (170cm), lying on the floor by the window, plump and smooth with NO armrests and NO backrest. The girl is captured at her LAST STEP just before reaching it - one foot forward mid-stride, leaning slightly forward with momentum, hugging the red T-rex plush (30-40cm) tightly to her chest, laughing with excitement, soft black chin-length hair bouncing mid-motion. Her identity: <<<yogibo-baby>>> grown up - the SAME child as the toddler in the second image, now 2-3 years old, a little girl wearing a cream knit dress over soft leggings. Warm daytime home light, photorealistic warm family film photograph. [참조: ①2탄 C3 v3(환경·티렉스) ②2탄 C4 v3(얼굴 성장 출발점)]',
+    status: '🎬 영상 v2 완료 (kling pro · 5.25cr) — 국면 분할 전략 성공: 글라이딩·후진 없음, 트림본(2.3s): 점프→다이브→파묻힘→까르르. v13 처리: 1.25x 펀치인 + LAB 톤 재전이 + 보간 슬로모 + 로고 프레임0부터. 구버전 v1 보관',
+    prompt: 'Wide living room shot, vertical 9:16, camera at child height. A 2-3 year old Korean toddler GIRL <<<yogibo-daughter>>> (chubby cheeks, black bob, cream knit dress) captured at the peak of a little jump hugging the red T-rex Mate plush (30-40cm), right above the deep navy blue Yogibo Max bean bag <<<yogibo-max-navy>>> (170cm pill, NO armrests). Warm daytime home light, photorealistic warm family film. [참조: ①2탄 C3 v3(환경·티렉스) ②2탄 C4 v3(얼굴 성장 출발점)]',
   },
   {
-    id: 'C3', energy: '🏗 놀이 2 · 아빠', t: '6–9s',
-    title: '스퀴지보 쌓기 놀이 — 아빠와',
-    motion: '아빠가 스퀴지보 하나를 얹고, 아이가 마지막 하나를 조심조심 꼭대기에 — 흔들리는 탑에 둘 다 숨죽였다 까르르',
-    desc: '아빠(1탄 Element 재등장)와 딸이 플레이매트에서 스퀴지보 5~6개(티렉스·유니콘·블루·도그 등, 각 5.5cm 골프공 크기)를 탑처럼 쌓는 놀이 (2026-07-10 사용자 확정 — 쿠션 성에서 변경). 시선 릴레이 = 아이↔아빠 ↔ 흔들리는 탑. 배경에 네이비 맥스·올리브 팟. 스퀴지보 형태는 레지스트리 360 락.',
-    img: '/fam3/c2_stack_v10.png?v=1',
-    vid: '/fam3/c2_v2.mp4?v=1',
-    status: '🟢 스틸 v8 (16cr 누적) — 지정 6종 전부 정품 등장: 타워(티렉스→블루→도그→팍스) + 딸 손 유니콘(순수화) + 캣(매트 대기) ✓ · 메이트 크앙이·유니크윤희 정품 ✓ · 팟 실측 95cm+우측 라운드 보정 ✓. 전면 재생성 v9-v10(2026-07-10): 팟 프레임 아웃 · 스퀴시 실측 축소 · C3 원본을 라이팅 참조로 네이티브 생성(제품 발색 보존) · 유니콘 실린더 재교정. 🎬 영상 v2 완료(5.25cr): 유니콘 올리고→탑 버팀→박수+까르르 재현 · 러프컷 v7 반영',
-    prompt: '[v3 최종] Use the first image as the EXACT base - keep composition/girl/father(young clean-shaven)/poses/navy Max/light ALL unchanged. ONLY TWO product corrections using the second image (official Yogibo lineup sheet): (1) REPLACE the tower with REAL Squeezibo characters - red T-rex(bottom), blue, brown dog, purple cat, girl placing purple unicorn(cone horn) on top - each a soft fabric cylinder 5.5cm golf-ball sized with tiny yogibo tag; remove the yellow elephant block (not a Yogibo product). (2) REPLACE the olive ball with the REAL Yogibo Pod <<<yogibo-pod-olive>>> - teardrop/egg 95cm, small handle tab on top, matte fabric, slightly slouched. [참조: ①v2(베이스) ②스퀴지보 5종+팟 360 콜라주 · v2단계 참조: ①v1 ②1탄 CUT10(아빠 얼굴)]',
+    id: 'C2', energy: '💥 클라이맥스', t: '2.4–4.3s',
+    title: '메이트 인형놀이 — 엄마와 (공식 라인업 총출동 · 콩 임팩트 컷인)',
+    motion: '지라프 스윙 하강 → 딸의 엘리펀트와 콩! 인사 → 둘 다 웃음 터짐 · 관객석 드래곤·팍스·옥토푸스는 얌전히 대기',
+    desc: '엄마(wife-c3)와 메이트 인형놀이 — 공식 메이트 5종 등장: 딸=엘리펀트(베이지·오렌지 귀), 엄마=지라프(버건디·올리브 다리), 관객=드래곤(올리브·날개)·팍스(오렌지)·옥토푸스(레드·블루 촉수). 바닥엔 솔리드 스퀴지보 산개. 러프컷은 콩 임팩트 직전(f28) 컷인 — 다이브 낙하 에너지가 지라프 스윙으로 이어짐. 메이트 디자인은 yogibo.kr 공식 스와치 24종에서 추출한 5종 시트로 락.',
+    img: '/fam3/c3_mateplay_v1.png?v=1',
+    vid: '/fam3/c4_mateplay_v1.mp4?v=1',
+    status: '🎬 영상 v2 완료 (누적 10.5cr) — v1은 지라프 자율비행+고정폭소로 AI-티 판정(사용자 지적 2026-07-11) → v2 재생성: 그립 유지 CRITICAL RULE + 파도형 웃음 지시로 해소, 확대 QC 통과(인형-손 분리 0프레임). 러프컷 v15 반영. 교훈: 인형 모션은 손 그립 유지를 명시적 RULE로 지시할 것',
+    prompt: '[메이트 인형놀이 v1] Use the first image as the SCENE, COLOR and CAST reference and the second image for EXACT official Yogibo Mate designs. Play-mat height, 9:16: girl <<<yogibo-daughter>>> holds up the beige ELEPHANT Mate making it talk; MOTHER <<<yogibo-wife-c3>>> (slim oval face, wispy see-through bangs, beige knit top) holds the burgundy GIRAFFE Mate answering - plushes leaning toward each other mid doll-play, both laughing. Audience on mat: olive DRAGON, orange FOX, red-orange OCTOPUS Mates + tiny Squeezibo cylinders scattered. Navy Max <<<yogibo-max-navy>>> behind. [참조: ①인형놀이 스틸(색감) ②공식 메이트 5종 시트(cf3_mates_sheet_5)]',
   },
   {
-    id: 'C4', energy: '💥 클라이맥스', t: '9–12s',
-    title: '탑 와르르 — 쌓았으면 무너뜨린다 (C3 직결)',
-    motion: '딸이 두 손으로 탑을 와르르 스윕 → 스퀴시들 폭신하게 흩어지며 한두 개 통통 → 둘이 폭소, 아빠 만세 항복',
-    desc: 'C3(쌓기)와 같은 구도 연속 — 쌓기의 서스펜스가 무너뜨리기의 카타르시스로 회수 (2026-07-10 S3 최종 확정: 3인 심사 패널 만장일치 — 엄마 추가 편집은 완성 스틸·아빠 모델링 훼손 리스크로 폐기, 셋의 감정은 C5+엄마 웃음 오프스크린 사운드가 담당). 스틸 = 스윕 직후 스퀴시 공중 순간 — 이 낙하가 C5 담요 낙하와 모션 매치컷으로 연결됨.',
-    img: '/fam3/c3_crash_v2.png?v=1',
-    status: '🟢 스틸 v2 (4cr: v1 와르르 순간 + v2 아빠 얼굴 복원 CUT10 3중 락) — 스윕·도그 공중·폭소·아빠 동일인 확인. 영상화 5.25cr 대기',
-    prompt: '[와르르] Use the first image as the EXACT base (C2 v10 그대로) - ONLY the ACTION changes to the NEXT MOMENT: the girl has just SWEPT the tower over with both hands - squishies TUMBLING mid-air and scattering softly, her face bursting into triumphant laugh; father throws head back laughing, hands open in mock surrender. Soft plush physics. [참조: ①C2 v10(구도 연속) ②지정 콜라주(디자인)]',
+    id: 'C3', energy: '🏗 서스펜스', t: '4.3–7.1s',
+    title: '스퀴지보 쌓기 놀이 — 엄마와',
+    motion: '아이가 유니콘 스퀴지보를 조심조심 꼭대기에 — 엄마가 두 손으로 받칠 준비 — 탑이 흔들 → 버팀 → 둘이 박수+까르르',
+    desc: '2026-07-11 사용자 확정: 아빠 얼굴 드리프트가 신규 포즈마다 반복돼 전 컷을 "엄마와의 일상"으로 통일 — 쌓기 컷도 엄마(wife-c3)로 재제작. 스퀴지보 스케일 사용자 확정(v13 크기), 캣 스퀴지보 공식 원기둥 디자인 교정, 유니콘 메이트 보라 통일(C2·C4와 동일 개체). 톤 = LAB 영역별 보정(전역 + 하이라이트 쿨링)으로 기존 컷 실측 매칭(a 141.9 vs 기존 142.0).',
+    img: '/fam3/c2_stack_v13_mom.png?v=1',
+    vid: '/fam3/c2_stack_mom_v1.mp4?v=1',
+    status: '🎬 엄마 버전 영상 완료 (kling pro · 5.25cr · 스틸 3장 6cr) — 유니콘 올리기→손 떼기→탑 버팀→둘이 박수+까르르, 얼굴·톤 드리프트 없음(a 141.8~142.3 안정). 러프컷 v13 반영. 구버전(아빠, v10 스틸·v2 영상)은 파일 보존',
+    prompt: '[엄마 버전 v13] Use the first image as the EXACT base - keep the girl placing the purple unicorn Squeezibo on the tower, the Mates, mat, navy Max, room. Corrections: (1) REPLACE the father with the MOTHER <<<yogibo-wife-c3>>> (slim oval face, wispy see-through bangs, chin-length black bob, beige knit top) kneeling in the same spot, both hands hovering ready to catch; (2) every Squeezibo tiny golf-ball scale (5.5cm), official cylinder designs with yogibo tag (cat = cylinder, not ball); (3) tone = LAB post-grade to previous cuts. [참조: ①쌓기 v10(구도) ②스퀴지보 공식 콜라주 ③메이트놀이 스틸(엄마 얼굴·톤)]',
   },
   {
-    id: 'C2', energy: '🧸 놀이 1 · 엄마', t: '3–6s',
-    title: '메이트 인형놀이 — 엄마와 (하이앵글)',
+    id: 'C4', energy: '🧸 이완', t: '7.1–9.7s',
+    title: '메이트 인형놀이 — 엄마와 (하이앵글 · 빈백에 누워서)',
     motion: '딸이 티렉스 메이트를 들고 어흥, 엄마가 유니콘 메이트로 화답 — 인형끼리 콩 부딪히자 둘 다 웃음 터짐',
-    desc: '하이앵글 부감(시리즈 최초) — 엄마가 네이비 맥스에 비스듬히 눕고 딸이 몸 위에 폭 안겨 올라탄 채 티렉스 메이트로 어흥, 엄마는 유니콘 메이트로 방어. 맥스가 프레임을 대각으로 채우는 밀착 인형놀이 (2026-07-10 A안 확정 — 마주앉기 구도는 C2와 중복이라 폐기, 팟은 프레임 아웃으로 로켓 이슈 회피). 인형 만남 = 화면 시각 중심. 가족 구조: C2 아빠 컷 ↔ C3 엄마 컷 → C5 셋.',
+    desc: '하이앵글 부감(시리즈 최초) — 엄마가 네이비 맥스에 비스듬히 눕고 딸이 몸 위에 폭 안겨 올라탄 채 티렉스 메이트로 어흥, 엄마는 유니콘 메이트로 방어. 맥스가 프레임을 대각으로 채우는 밀착 인형놀이. 러프컷은 1.35x 추가 펀치인(사용자 확정 프레이밍) — 얼굴·인형 밀착. 누워서 노는 이완 비트가 잠듦(C5)으로 자연스럽게 전이 + 티렉스 릴레이.',
     img: '/fam3/c3_dollplay_v2.png?v=1',
     vid: '/fam3/c3_v1.mp4?v=1',
-    status: '🎬 영상 완료 (kling pro · 5.25cr) — 티렉스 어흥→유니콘 방어→인형 콩콩→둘이 웃음, 하이앵글·얼굴·맥스 출렁 유지 · 러프컷 v4 반영(펀치인 1.15x). 스틸 v2(하이앵글 재구도 4cr)',
+    status: '🎬 영상 완료 (kling pro · 5.25cr) — 티렉스 어흥→유니콘 방어→인형 콩콩→둘이 웃음, 하이앵글·얼굴·맥스 출렁 유지 · 러프컷 v13 반영(펀치인 1.35x). 스틸 v2(하이앵글 재구도 4cr)',
   },
   {
-    id: 'C4', energy: '💥 클라이맥스', t: '9–12s',
-    title: '다이브 — 폭신하게 파묻힘 (1탄 오마주)',
-    motion: '착지 직후 쿠션 반동으로 몸이 살짝 튀어오르고 까르르 — 부모 웃음 리액션',
-    desc: '아이가 네이비 맥스로 폴짝 다이브 — 스틸 = "착지 직후 파묻힌 순간"으로 고정(점프 궤적은 kling 한계 밖), 모션 = 쿠션 반동+웃음. 1탄 다이브 컷 오마주 + 맥스 폭신함(USP) 클라이맥스. 컬러는 생성 단계에서 네이비 확정(사후 리컬러 지양 — 역광 교훈).',
-    status: '⬜ 대기',
-  },
-  {
-    id: 'C5', energy: '😴 피날레', t: '12–15s',
+    id: 'C5', energy: '😴 피날레', t: '9.7–12.5s',
     title: '잠듦 — 놀던 자리에서 (맥스 수미상관 + 로고)',
-    motion: '딸이 티렉스를 안고 맥스에서 새근새근 → 엄마가 담요를 살며시 덮어주며 미소 → 로고 페이드인',
-    desc: '실컷 논 딸이 티렉스 메이트를 꼭 안은 채 C1에서 뛰어들었던 그 네이비 맥스에서 잠들고, 엄마가 담요를 덮어주며 지켜봄 → 로고 페이드인 (2026-07-10 재확정: 아빠는 신규 포즈마다 드리프트가 반복돼 잠듦 컷에서 제외 — 엄마 단독, wife-c3 최고 재현률 활용). 단짝 릴레이 마무리(티렉스도 품에) + 맥스 수미상관 + 에너지 최고조(와르르) 직후 최저(잠)의 낙차.',
+    motion: '딸이 티렉스를 안고 맥스에서 새근새근 → 엄마가 담요를 살며시 여며주고 토닥토닥 → 로고 정중앙 페이드인',
+    desc: '실컷 논 딸이 티렉스 메이트를 꼭 안은 채 C1에서 뛰어들었던 그 네이비 맥스에서 잠들고, 엄마가 담요를 여며주며 지켜봄 → 화이트+섀도 로고 정중앙 페이드인. 단짝 릴레이 마무리(C4에서 안고 놀던 티렉스 그대로 품에) + 맥스 수미상관 + 놀이 에너지에서 잠으로의 점진 하강 완결.',
     img: '/fam3/c5_sleep_v5.png?v=1',
-    status: '🟡 스틸 v5 (10cr 누적: 3인→엄마 단독→담요 재설계(이미 덮인 상태+여며주는 손길, 공중 패브릭 원천 제거)→배경 스퀴시 골프공 사이즈 5개 산개) — 구도 사용자 확정. 영상화 5.25cr 대기 (모션: 여며주기+토닥토닥)',
+    vid: '/fam3/c5_sleep_v1.mp4?v=1',
+    status: '🎬 영상 v1 완료 (kling pro · 5.25cr) — 여며주기→토닥토닥 2회→지켜보는 미소, 딸은 내내 잠든 상태 유지·티렉스 품에·담요 패브릭 자연스러움. 스틸 v5(10cr 누적) 기반. 러프컷 v13 반영',
+  },
+  {
+    id: 'C3.5', energy: '🌉 브릿지 (보관)', t: '미사용',
+    title: '티렉스 안고 엄마 품으로 — 멀티샷 브릿지 (신기법 검증)',
+    motion: '샷1: 탑에서 돌아서 티렉스 메이트를 집어들고 일어섬 → 샷컷(걷기 생략) → 샷2: 하이앵글, 엄마 품 맥스로 폴짝 안착 → 인형놀이 시작',
+    desc: 'Kling 3.0 멀티샷 + start/end 양끝을 승인 스틸로 고정하는 신기법 첫 검증 (2026-07-11) — 얼굴 드리프트 없이 6s 2샷 생성 성공. 다음 프로젝트 자산으로 보관.',
+    vid: '/fam3/c34_bridge_v1.mp4?v=1',
+    status: '📦 보관 (미사용 · 사용자 결정 2026-07-11) — kling pro 멀티샷 6s(10.5cr) 신기법 검증 성공했으나 샷2 진입부 글라이딩 이슈로 본편 제외. 교훈: 이동 모션은 프롬프트가 아니라 컷 생략으로 처리',
   },
 ];
 
 const GATES = [
   { stage: 'STAGE 0 · 정의', s: '✅ 완료', note: '9:16 · 20s · A안 "노는 자리" 확정(2026-07-10) · 유아기 놀이 에너지 · 가족 3인 완성 · Kling 3.0' },
-  { stage: 'STAGE 1 · 에셋 락', s: '🟡 진행', note: '엄마 wife-c3 ✅ · 아빠 husband ✅(1탄 재등장) · 아이 2~3살 = 신규 캐스팅 게이트(3중 락 필수) · 제품: 맥스 네이비·팟·스퀴지보·메이트·옐리(레지스트리)' },
-  { stage: 'STAGE 2 · 스토리보드', s: '📝 이 페이지', note: '6컷 초안 — 에너지 아크: 도입→놀이→디테일→클라이맥스→쉼→엔딩' },
-  { stage: 'STAGE 3 · 스틸', s: '⬜', note: '첫 게이트 = 아이 캐스팅 스틸(C1) — 룩 확정 후 필요시 신규 Element 락 · 이후 컷별 2cr' },
-  { stage: 'STAGE 4 · 영상화', s: '⬜', note: 'Kling 3.0 3s pro 무음 × 5컷 (실측 5.25cr/컷) — 승인 스틸만' },
-  { stage: 'STAGE 5 · 조립', s: '⬜', note: '러프컷 버전업(무료) → 톤 매칭 → 화질 패스 → 4K 업스케일(무료 Real-ESRGAN) → 음원(최종)' },
+  { stage: 'STAGE 1 · 에셋 락', s: '✅ 완료', note: '엄마 wife-c3 ✅ · 딸 yogibo-daughter ✅ · 아빠 제외(드리프트→엄마 일상 전환) · 제품: 맥스 네이비·스퀴지보·메이트 공식 라인업(레지스트리+yogibo.kr 스와치)' },
+  { stage: 'STAGE 2 · 스토리보드', s: '✅ 확정', note: '5컷 — 에너지 아크: 다이브(훅)→콩 임팩트(클라이맥스)→쌓기(서스펜스)→누워 인형놀이(이완)→잠듦(피날레) · 엄마와의 일상' },
+  { stage: 'STAGE 3 · 스틸', s: '✅ 완료', note: '전 컷 승인 스틸 확보 (아이 캐스팅 락 → 컷별 2cr, 쌓기 엄마 전환 포함)' },
+  { stage: 'STAGE 4 · 영상화', s: '✅ 완료', note: 'Kling 3.0 3s pro 무음 × 5컷 (실측 5.25cr/컷) — 전 컷 완료, 쌓기는 엄마 버전 재제작' },
+  { stage: 'STAGE 5 · 조립', s: '✅ 완료', note: 'v15 확정 + 4K 마스터 2종 완성(음원 Carpe Diem 버전 · 무음 버전) — 🎬 게시 준비 완료 (크레딧 표기: Music: Kevin MacLeod (incompetech.com), CC BY 4.0)' },
 ];
 
 const CAST = [
   { role: '아이 (주연) — 딸 ✅ 확정', el: 'yogibo-daughter · b4eaaa37', img: '/fam3/_daughter_face.png?v=1', imgNote: '확정 캐스팅 (C1 v1 기준 · 2026-07-10) — 이 얼굴이 전 컷 기준', note: '2~3살 여아 — 통통한 둥근 볼·또렷한 눈(2탄 아기 성장형)·검은 단발+앞머리·크림 니트 원피스. 이후 컷은 daughter Element + C1 v1 얼굴참조 + 프로즈 3중 락' },
   { role: '엄마', el: 'yogibo-wife-c3 · f761df4a', img: '/fam2/_c2_face_ref.png?v=1', imgNote: '확정 룩 앵커 = 2탄 C2 웃는 프레임 (갸름한 계란형·시스루 앞머리)', note: '프로즈 주의: Element 설명문의 "도톰한 볼·두꺼운 앞머리" 금지 — 2탄 C4 드리프트 교훈. 이 이미지가 3중 락 얼굴 참조(media 3b0dbce9)' },
-  { role: '아빠', el: 'yogibo-husband · 7d9a9105', img: '/ref_family/cut10_ours.png?v=1', imgNote: '얼굴 기준 = 1탄 CUT10 승인 룩', note: '1탄 Element 재등장 — 30대 초반 다정한 인상, 무채색 레이어드(회색 니트+카디건)' },
+  { role: '아빠 — ❌ 최종본 제외 (2026-07-11)', el: 'yogibo-husband · 7d9a9105', img: '/ref_family/cut10_ours.png?v=1', imgNote: '얼굴 기준 = 1탄 CUT10 (보관)', note: '신규 포즈마다 얼굴 드리프트가 반복돼 전 컷을 "엄마와의 일상"으로 전환하며 제외 — 쌓기 컷도 엄마로 재제작. Element·구버전 파일은 보관' },
   { role: '제품 — 올리브그린·네이비 기준 (사용자 확정)', el: '레지스트리 단일 소스', note: '맥스 네이비블루 ✅ Element 락 완료(yogibo-max-navy · eeddd2d7 — 공식 360 정면·측면 프레임, 레지스트리 기록됨) · 팟 올리브그린(ff505175 · 360) · 서포트 올리브그린(el 락 완료) · 스퀴지보 티렉스 18ce4f74·유니콘 b097fc3c 외(360 · 5.5cm 골프공 스케일문) · 메이트 티렉스 81603f7e(30~40cm) · 지퍼 반대면 · 엄마 160cm 스케일 앵커. 딥 컬러(올리브·네이비)가 발색 최선 — 생성 단계 확정, 사후 리컬러 지양' },
 ];
 
@@ -84,7 +87,7 @@ export default function Storyboard10Page() {
         <div>
           <h1 className="page-title">🧸 가족 요기보 3탄 — "노는 자리" (유아기 놀이)</h1>
           <p className="page-desc">
-            10차 · 시리즈 3부작 완결(시작→성장→<b>놀이</b>) · 9:16 · 20초 · <b>아빠 재등장으로 가족 3인 완성 · 제품 노출 최다(맥스·팟·스퀴지보·메이트)</b> · Kling 3.0
+            10차 · 시리즈 3부작 완결(시작→성장→<b>놀이</b>) · 9:16 · 12.5초 · <b>엄마와 딸의 일상 · 제품 노출 최다(맥스·스퀴지보·메이트 공식 라인업)</b> · Kling 3.0
           </p>
         </div>
       </div>
@@ -176,12 +179,37 @@ export default function Storyboard10Page() {
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>4. 러프컷 (진행하며 버전업 · 무료 조립)</h2>
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 8 }}>
         <div style={{ flex: '0 0 260px' }}>
-          <video src="/fam3/rough_v7.mp4?v=1" controls loop muted playsInline
+          <video src="/fam3/rough_v15.mp4?v=1" controls loop muted playsInline
             style={{ width: 260, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #FFB300' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
-            <b>러프컷 v7 (실영상 · 8.8s)</b> · C1 점프 다이브(마일드 슬로우+로고) + <b>C2 재생성본(팟 아웃·스퀴시 실측·네이티브 톤)</b> + C3 하이앵글(원본 톤 · <b>펀치인 1.3x 확대</b>) · 톤 앵커 = C3 원본, C1·C2 수렴 + 화질 패스 · 무료<br />남은 컷: C4(연출 선택 대기) → C5(더블+로고 피날레)<br />
-            C3~C5 영상이 나오면 버전업 → 톤 매칭·화질 패스·4K·엔딩·음원은 후반
+            <b>러프컷 v15 (본편 5컷 · 12.6s) — 2026-07-11 AI-티 감사 수정 완결</b> · <b>아기 뛰고(다이브) → 엄마랑 메이트놀이(콩 임팩트) → 엄마랑 스퀴지보 쌓기 → 빈백에 누워 인형놀이 → 엄마가 재워줌</b> — 전 컷 엄마(wife-c3) 통일 · 로고 첫 프레임부터+피날레 정중앙 수미상관 · 티렉스 릴레이<br />
+            감사 반영: <b>C1 보간 고스팅 제거(슬로모 해제)</b> · <b>C2 메이트놀이 재생성(5.25cr — 그립 유지 CRITICAL RULE + 파도형 웃음 지시로 인형 자율비행·고정폭소 해소)</b> · <b>C3 엄마 글라이딩 트림</b> · 프리즈 0(302f 전수검사)<br />
+            <a href="/fam3/rough_v15_4k.mp4" download style={{ color: 'var(--accent)' }}>⬇ 4K 마스터 다운로드 (2160×3840 · 12.6s · LANCZOS4+디더링+디노이즈 무료 업스케일)</a> · 남은 후반: 음원(최종) · 구버전 v7~v14(+v13 4K) 보존
           </div>
+        </div>
+      </div>
+
+      {/* 음원 A/B 시안 */}
+      <div className="note" style={{ marginBottom: 22, padding: 14 }}>
+        <div style={{ fontWeight: 700, marginBottom: 6 }}>🎵 음원 확정: B안 Carpe Diem (무료 · Incompetech CC-BY · 사용자 선택 2026-07-12)</div>
+        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+          <div style={{ flex: '0 0 220px' }}>
+            <video src="/fam3/rough_v15_musicA.mp4?v=1" controls loop playsInline
+              style={{ width: 220, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '2px solid #66BB6A' }} />
+            <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
+              A안 · Carefree — 미채택 (시안 보존)
+            </div>
+          </div>
+          <div style={{ flex: '0 0 220px' }}>
+            <video src="/fam3/rough_v15_musicB.mp4?v=1" controls loop playsInline
+              style={{ width: 220, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '2px solid #42A5F5' }} />
+            <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 6, lineHeight: 1.5 }}>
+              <b>✅ B안 · Carpe Diem 확정</b> — 클라리넷+우쿨렐레+실로폰 · 장난기 있는 놀이 무드 · <a href="/fam3/rough_v15_4k_music.mp4" download style={{ color: 'var(--accent)' }}>⬇ 4K 음원 마스터 다운로드 (2160×3840 · 27.2MB)</a>
+            </div>
+          </div>
+        </div>
+        <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 10 }}>
+          처리: 0.85 볼륨 · 페이드인 0.3s · 잠듦 구간(10.8s~) 페이드아웃 1.8s · <b>최종 2종 산출: 음원 4K 마스터(rough_v15_4k_music) + 무음 4K 마스터(rough_v15_4k)</b>. <b>게시 시 크레딧 필수: &quot;Music: Kevin MacLeod (incompetech.com), CC BY 4.0&quot;</b>
         </div>
       </div>
 

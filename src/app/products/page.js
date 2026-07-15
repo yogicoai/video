@@ -21,6 +21,50 @@ function Sprite360Preview({ url, size = 110 }) {
 
 const EMPTY_COLOR = { color: '', hex: '', sprite360: '', elementId: '', elementName: '' };
 
+// 각도별 미리보기 — 스프라이트에서 추출·FTP 업로드된 생성용 참조 프레임 (2026-07-15)
+// 기본 3뷰(정면·측면·후면) · 주력 제품(맥스 라인)은 45° 간격 8각도 확장
+const VIEW_ORDER = [
+  ['front', '정면 0°'], ['a045', '45°'], ['side', '측면 90°'], ['a135', '135°'],
+  ['back', '후면 180°'], ['a225', '225°'], ['a270', '270°'], ['a315', '315°'],
+];
+// 사용 연출컷 — 자세·패브릭 눌림 물리의 참조 (2026-07-15 · 맥스 라인부터). 스틸 생성 시 "각도 프레임(형태) + 연출컷(자세)" 세트로 참조
+const USAGE_LABEL = {
+  sitting_recliner: '리클라이너 앉기', sitting_on_top: '눕힌 위 앉기', modes4: '4형태(의자·소파·리클·침대)',
+  sleeping: '누워 잠듦', cover_gif: '커버 탄성(GIF)', howto: '활용법 시트',
+};
+function UsagePreview({ usage }) {
+  if (!usage || !Object.keys(usage).length) return null;
+  const img = { width: 92, height: 66, objectFit: 'cover', background: '#fff', borderRadius: 8, border: '1px solid var(--border)', display: 'block' };
+  return (
+    <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', padding: '8px 0 2px' }}>
+      <span style={{ fontSize: 10.5, color: 'var(--text-dim)', alignSelf: 'center', fontWeight: 700 }}>연출컷</span>
+      {Object.entries(usage).map(([k, url]) => (
+        <a key={k} href={url} target="_blank" rel="noreferrer" style={{ width: 92, textAlign: 'center' }} title={`${USAGE_LABEL[k] || k} — 자세·눌림 참조`}>
+          <img src={url} alt={USAGE_LABEL[k] || k} style={img} loading="lazy" />
+          <span style={{ fontSize: 9.5, color: 'var(--text-dim)' }}>{USAGE_LABEL[k] || k}</span>
+        </a>
+      ))}
+    </div>
+  );
+}
+
+function ViewsPreview({ views }) {
+  if (!views || !views.front) return null;
+  const keys = VIEW_ORDER.filter(([k]) => views[k]);
+  const cell = { width: 74, textAlign: 'center', flex: '0 0 auto' };
+  const img = { width: 74, height: 74, objectFit: 'contain', background: '#fff', borderRadius: 8, border: '1px solid var(--border)', display: 'block' };
+  return (
+    <div style={{ display: 'flex', gap: 6, flex: '0 0 auto', flexWrap: 'wrap', maxWidth: 336 }}>
+      {keys.map(([k, label]) => (
+        <a key={k} href={views[k]} target="_blank" rel="noreferrer" style={cell} title={`${label} — 생성 참조용 (클릭: 원본)`}>
+          <img src={views[k]} alt={label} style={img} loading="lazy" />
+          <span style={{ fontSize: 10, color: 'var(--text-dim)' }}>{label}</span>
+        </a>
+      ))}
+    </div>
+  );
+}
+
 // 다른 사람이 이 스킬을 가져다 쓰는 방법 안내 (접이식)
 function SkillGuide() {
   const [open, setOpen] = useState(false);
@@ -277,10 +321,14 @@ export default function ProductsPage() {
                 </button>
               </div>
 
+              {/* 사용 연출컷 (자세·눌림 참조) */}
+              <UsagePreview usage={p.usage} />
+
               {/* 색상별 360 + Element */}
               {(p.colors || []).map((c, ci) => (
                 <div key={ci} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: '10px 0', borderTop: '1px solid var(--border)' }}>
                   <Sprite360Preview url={c.sprite360} />
+                  <ViewsPreview views={c.views} />
                   <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '190px 120px 1fr', gap: 8 }}>
                     <div>
                       <span style={lbl}>색상 (컬러칩 선택)</span>

@@ -13,6 +13,23 @@ const STATUS_LABEL = {
   done: '완료',
 };
 
+// 엔진별 컬러 태그 — 작업물이 어느 영상 엔진으로 제작됐는지 홈에서 바로 구분
+const ENGINE_TAG = {
+  kling: { label: '⚙ Kling 3.0', bg: '#3F51B5' },          // 인디고 — 컷 단위 · 얼굴 픽셀 락 · 시리즈물
+  seedance: { label: '🎥 Seedance 2.0', bg: '#FF7043' },    // 오렌지 — 원테이크 · 카메라 안무 · 네이티브 오디오
+  both: { label: '🆚 Kling vs Seedance', bg: '#26A69A' },   // 두 엔진 비교 프로젝트
+};
+
+function EngineChip({ e }) {
+  const t = ENGINE_TAG[e];
+  if (!t) return null;
+  return (
+    <span style={{ background: t.bg, color: '#fff', fontSize: 10.5, fontWeight: 700, padding: '2px 8px', borderRadius: 6, letterSpacing: 0.3, whiteSpace: 'nowrap' }}>
+      {t.label}
+    </span>
+  );
+}
+
 function fmtDate(d) {
   if (!d) return '';
   const dt = new Date(d);
@@ -75,6 +92,14 @@ export default function HomePage() {
         </a>
       </div>
 
+      {/* 엔진 태그 범례 */}
+      <div className="note" style={{ padding: '8px 12px', marginBottom: 16, display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap', fontSize: 12 }}>
+        <b style={{ fontSize: 12 }}>엔진 구분</b>
+        <EngineChip e="kling" /><span style={{ color: 'var(--text-dim)' }}>컷 단위 · 얼굴 픽셀 락 · 시리즈물</span>
+        <EngineChip e="seedance" /><span style={{ color: 'var(--text-dim)' }}>원테이크 · 카메라 안무 · 네이티브 오디오</span>
+        <EngineChip e="both" /><span style={{ color: 'var(--text-dim)' }}>동일 원작 비교</span>
+      </div>
+
       {/* 고정 — 제품 데이터 레지스트리 */}
       <a
         href="/products"
@@ -106,7 +131,7 @@ export default function HomePage() {
           클릭하면 <strong>이렇게 짜여진 스토리보드</strong>를 볼 수 있어요.
         </div>
         <div className="card-foot">
-          <span className="badge badge-review">스토리보드 완료</span>
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="kling" /><span className="badge badge-review">스토리보드 완료</span></span>
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
@@ -125,7 +150,7 @@ export default function HomePage() {
             여름 물놀이(에너지) → Yogibo Max 안착 → 로고. 진행상황을 확인하세요.
           </div>
           <div className="card-foot">
-            <span className="badge badge-generating">스토리보드 기획 · 캐릭터 이미지 대기</span>
+            <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="kling" /><span className="badge badge-generating">스토리보드 기획 · 캐릭터 이미지 대기</span></span>
             <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
           </div>
         </a>
@@ -144,7 +169,7 @@ export default function HomePage() {
           CUT1–5 영상 완료(레드카펫 2비트 + 컬러 퍼레이드) · 러프컷 15초 연결 확인 단계. 진행상황을 확인하세요.
         </div>
         <div className="card-foot">
-          <span className="badge badge-generating">STAGE 4 · CUT1–5 영상</span>
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="kling" /><span className="badge badge-generating">STAGE 4 · CUT1–5 영상</span></span>
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
@@ -162,7 +187,7 @@ export default function HomePage() {
           레퍼런스 분석 완료 · STAGE 1 캐스트 락(부인 후보 선택) 단계. 진행상황을 확인하세요.
         </div>
         <div className="card-foot">
-          <span className="badge badge-generating">STAGE 1 · 등장인물</span>
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="kling" /><span className="badge badge-generating">STAGE 1 · 등장인물</span></span>
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
@@ -180,7 +205,7 @@ export default function HomePage() {
           기획·스토리보드 확정 · 베이스 스틸(2cr) 생성 컨펌 대기. 진행상황을 확인하세요.
         </div>
         <div className="card-foot">
-          <span className="badge badge-generating">STAGE 3 · 베이스 스틸 대기</span>
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="kling" /><span className="badge badge-generating">STAGE 3 · 베이스 스틸 대기</span></span>
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
@@ -199,11 +224,47 @@ export default function HomePage() {
           카메라 동선(마케터 영상)+키비주얼 2종(커튼·케이크) 확보 · STAGE 0 확정. 진행상황을 확인하세요.
         </div>
         <div className="card-foot">
-          <span className="badge badge-generating">STAGE 0 · 스펙 컨펌 대기</span>
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="seedance" /><span className="badge badge-generating">STAGE 0 · 스펙 컨펌 대기</span></span>
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
       )}
+
+      {/* 고정 — 12차 프로젝트 (엔진 비교) */}
+      <a
+        href="/storyboard12"
+        className="card"
+        style={{ display: 'block', borderColor: '#26A69A', marginBottom: 20 }}
+      >
+        <div className="card-title">🆚 요기보 단편 CF — Kling vs Seedance 엔진 비교</div>
+        <div className="card-meta">
+          12차 · 동일 원작(15s·10컷)을 두 엔진으로 각각 제작 — 연출 충실도·캐스팅·비용·통제력 비교 · 모델 교체 + 색상 차별화(아쿠아블루 시안)
+          <br />
+          v1~v3 실측(원본 복제→70% 한계→세그먼트 분할) · v4 = 경계 스틸 게이트(start+end_image) 설계 확정. 진행상황을 확인하세요.
+        </div>
+        <div className="card-foot">
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="both" /><span className="badge badge-draft">STAGE 3 · P0 경계 스틸 대기</span></span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
+      {/* 고정 — 11차 프로젝트 (가족 4탄 · 무비나잇) */}
+      <a
+        href="/storyboard11"
+        className="card"
+        style={{ display: 'block', borderColor: '#5C6BC0', marginBottom: 20 }}
+      >
+        <div className="card-title">🌙 가족 요기보 4탄 — &quot;저녁의 자리&quot; (무비나잇)</div>
+        <div className="card-meta">
+          11차 · 시리즈 4번째 장(쉼) · 9:16 · ~13초 · 시리즈 최초 저녁 룩 · 엄마+딸(3탄 캐스팅 재사용) · 맥스+팟+서포트 아지트
+          <br />
+          A안 확정(2026-07-11) · 5컷 컷보드+프롬프트 초안 완료 · C1 저조도 스틸 게이트 대기. 진행상황을 확인하세요.
+        </div>
+        <div className="card-foot">
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="kling" /><span className="badge badge-draft">STAGE 3 · C1 스틸 대기</span></span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
 
       {/* 고정 — 10차 프로젝트 (가족 3탄 놀이) */}
       <a
@@ -218,7 +279,7 @@ export default function HomePage() {
           A안 확정 · 6컷 초안 · 첫 게이트 = 아이(2~3살) 캐스팅 스틸. 진행상황을 확인하세요.
         </div>
         <div className="card-foot">
-          <span className="badge badge-generating">STAGE 2 · 컷 구성 컨펌 대기</span>
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="kling" /><span className="badge badge-generating">STAGE 2 · 컷 구성 컨펌 대기</span></span>
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
@@ -236,7 +297,7 @@ export default function HomePage() {
           스토리·5컷 확정 · 에셋 전부 1탄 재사용 · C1(봄) 베이스 스틸 게이트 대기. 진행상황을 확인하세요.
         </div>
         <div className="card-foot">
-          <span className="badge badge-generating">STAGE 3 · 봄 베이스 스틸 대기</span>
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="kling" /><span className="badge badge-generating">STAGE 3 · 봄 베이스 스틸 대기</span></span>
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
@@ -255,7 +316,7 @@ export default function HomePage() {
           프롬프트 분석 완료(강점/리스크 3) · STAGE 0 결정 대기: 게스트 처리·케이크 레퍼런스. 진행상황을 확인하세요.
         </div>
         <div className="card-foot">
-          <span className="badge badge-generating">STAGE 0 · 게스트·케이크 컨펌 대기</span>
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="seedance" /><span className="badge badge-generating">STAGE 0 · 게스트·케이크 컨펌 대기</span></span>
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>

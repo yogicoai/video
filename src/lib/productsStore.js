@@ -138,7 +138,7 @@ export async function createProduct(body) {
 }
 
 export async function updateProduct(id, body) {
-  const allowed = ['name', 'category', 'colors', 'spec', 'scalePrompt', 'notes', 'usedIn'];
+  const allowed = ['name', 'category', 'colors', 'spec', 'scalePrompt', 'notes', 'usedIn', 'usage'];
   if (mongoConfigured()) {
     const col = await mongoCol();
     const $set = { updatedAt: new Date().toISOString() };
