@@ -131,8 +131,12 @@ const DESIGN_LOCK = [
 
 
 // 포즈 카드 — 완성 프롬프트 + 클립보드 복사
-function CopyBlock({ label, text, accent = '#FF7043' }) {
+const CA_BASE = 'https://yogibo.kr/web/img/video/ca';
+const caUrl = (name) => `${CA_BASE}/${encodeURIComponent(name)}.png`;
+
+function CopyBlock({ label, text, accent = '#FF7043', img }) {
   const [copied, setCopied] = useState(false);
+  const [hasImg, setHasImg] = useState(true);
   async function copy() {
     try { await navigator.clipboard.writeText(text); }
     catch {
@@ -145,6 +149,12 @@ function CopyBlock({ label, text, accent = '#FF7043' }) {
   return (
     <div style={{ border: '1px solid var(--border)', borderLeft: `3px solid ${accent}`, borderRadius: 8, padding: 9, background: 'var(--bg-elev)' }}>
       <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 6 }}>
+        {img && hasImg && (
+          <a href={caUrl(img)} target="_blank" rel="noreferrer" style={{ flex: '0 0 auto' }}>
+            <img src={caUrl(img)} alt={label} onError={() => setHasImg(false)}
+              style={{ width: 44, height: 58, objectFit: 'cover', borderRadius: 5, border: `1px solid ${accent}`, display: 'block', background: '#fff' }} />
+          </a>
+        )}
         <b style={{ fontSize: 12.5, flex: 1 }}>{label}</b>
         <button onClick={copy}
           style={{ padding: '3px 10px', borderRadius: 6, border: `1px solid ${copied ? '#4CAF50' : 'var(--border)'}`, background: copied ? '#4CAF50' : 'none', color: copied ? '#fff' : 'var(--text-dim)', cursor: 'pointer', fontSize: 11, fontWeight: 700, flex: '0 0 auto' }}>
@@ -285,7 +295,7 @@ export default function Storyboard14Page() {
           <div style={{ fontSize: 13, fontWeight: 700, margin: '10px 0 6px', color: '#FF7043' }}>{grp.g} <span style={{ color: 'var(--text-dim)', fontWeight: 400, fontSize: 11.5 }}>· {grp.items.length}종</span></div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 8 }}>
             {grp.items.map(([label, pose]) => (
-              <CopyBlock key={label} label={label} text={foxPrompt(pose)} />
+              <CopyBlock key={label} label={label} text={foxPrompt(pose)} img={label.replace(/[^가-힣A-Za-z0-9]/g, '')} />
             ))}
           </div>
         </div>
@@ -298,7 +308,7 @@ export default function Storyboard14Page() {
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 8, marginBottom: 14 }}>
         {COMBO.map(([label, pid, desc]) => (
-          <CopyBlock key={label} label={`팍스 × ${label}`} text={comboPrompt(pid, desc)} accent="#4CAF50" />
+          <CopyBlock key={label} label={`팍스 × ${label}`} text={comboPrompt(pid, desc)} accent="#4CAF50" img={label.replace(/[^가-힣A-Za-z0-9]/g, '')} />
         ))}
       </div>
 
