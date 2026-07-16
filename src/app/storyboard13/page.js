@@ -104,20 +104,34 @@ export default function Storyboard13Page() {
       </div>
 
       {/* 결과물 */}
-      <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>▶ 1회차 결과 — A안 4초 원컷 (Kling 3.0 · pro · 7cr · 2026-07-16)</h2>
+      <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>▶ 결과물 — v3 최신 (10초 · 빌드 + 햇살·바다 앰비언트)</h2>
       <div className="note" style={{ padding: 14, marginBottom: 8, borderLeft: '3px solid #4CAF50' }}>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-          <video src="/clay/build_v1.mp4?v=1" controls loop autoPlay muted playsInline
-            style={{ width: 240, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #4CAF50', flex: '0 0 auto' }} />
-          <div style={{ flex: '1 1 320px', fontSize: 12.5, lineHeight: 1.8, color: 'var(--text-dim)' }}>
-            <b style={{ color: '#4CAF50' }}>✅ 1회 생성 성공</b> — start_v1(빈 데크+인부) → end(완성본) 사이를 Kling이 채움. 총 <b>9cr</b>(스틸 2 + 영상 7).<br />
-            <b style={{ color: 'var(--text)' }}>QC</b>:<br />
-            · 빈 데크 → 완성 build-up 성립 ✓ · 마지막 프레임이 <b>완성 키비주얼로 정확히 안착</b> ✓<br />
-            · 인부들이 실제로 나르고 놓음 — 맥스 둘러메기·팟 굴리기·돗자리 펴기 ✓<br />
-            · 클레이 질감·색·아이소메트릭 앵글 전 구간 유지 ✓ · 야자수·바다 은은한 모션 ✓<br />
-            · 메이트(티렉스·유니콘)·간식 세팅까지 재현 ✓<br />
-            <b style={{ color: '#FFB300' }}>🟡 아쉬운 점</b>: ① &quot;LOCKED OFF&quot; 지시에도 <b>미세한 푸시인/드리프트</b>가 있음(디오라마가 점점 커짐) ② 2.4s 부근 제품이 <b>공중에 뜬 채 이동</b>하는 순간이 있어 클레이 물리가 잠깐 깨짐 ③ 4초라 배치 3비트가 다소 급함<br />
-            <b style={{ color: 'var(--text)' }}>다음 선택지</b>: 현재본 채택 / B안 5초 재생성(8.75cr · 여유 확보) / 프롬프트에 &quot;products never float, always carried or slid&quot; 추가 후 재시도(7cr)
+          <div style={{ flex: '0 0 auto' }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#4CAF50', marginBottom: 6 }}>▶ v3 — 10초 (17.5cr · 검토 대상)</div>
+            <video src="/clay/build_v3.mp4?v=1" controls loop autoPlay muted playsInline
+              style={{ width: 230, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #4CAF50' }} />
+            <div style={{ fontSize: 11, color: 'var(--text-dim)', marginTop: 4 }}>0–6s 빌드 · 6–10s 앰비언트</div>
+          </div>
+          <div style={{ flex: '0 0 auto', display: 'flex', gap: 8 }}>
+            <div>
+              <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--text-dim)', marginBottom: 4 }}>v2 (4s · 고속배속)</div>
+              <video src="/clay/build_v2.mp4?v=1" controls loop muted playsInline
+                style={{ width: 120, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '1px solid var(--border)' }} />
+            </div>
+            <div>
+              <div style={{ fontSize: 11, color: 'var(--text-dim)', marginBottom: 4 }}>v1 (4s · 1회차)</div>
+              <video src="/clay/build_v1.mp4?v=1" controls loop muted playsInline
+                style={{ width: 120, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '1px solid var(--border)', opacity: .6 }} />
+            </div>
+          </div>
+          <div style={{ flex: '1 1 300px', fontSize: 12.5, lineHeight: 1.8, color: 'var(--text-dim)' }}>
+            <b style={{ color: 'var(--text)' }}>버전 이력</b> (누적 스틸 2 + 영상 7+7+17.5 = <b>33.5cr</b>)<br />
+            · <b>v1</b> 4s — build-up 성립·완성본 안착 ✓ / 던지기·미세 드리프트 🔴<br />
+            · <b>v2</b> 4s — 고속배속 모션블러 ✓(인부 잔상), 카메라 안정 ✓ / <b>여전히 던짐</b>·햇살 미반영 🔴<br />
+            · <b style={{ color: '#4CAF50' }}>v3</b> 10s — <b>2단 구조</b>(0–6s 빌드 + 6–10s 앰비언트) · <b style={{ color: '#4CAF50' }}>햇살 연출 성공 ✓</b> (4.5s부터 측면 광선이 데크를 가로지름, 6s에 전면 사광) · 10초라 배치가 차근차근 ✓ · 완성본 안착 ✓<br />
+            <b style={{ color: '#FFB300' }}>🟡 v3 잔존</b>: 6s 부근 일부 제품이 여전히 <b>공중에 뜬 순간</b>이 보임 — start의 &quot;제품 더미&quot;에서 end 위치로 옮길 물량이 많아 Kling이 지름길(순간이동)을 택하는 것으로 보임<br />
+            <b style={{ color: 'var(--text)' }}>교정 후보</b>: ① 첫 프레임을 <b>&quot;절반 배치된 상태&quot;</b>로 바꿔 옮길 물량 자체를 줄이기(스틸 2cr) ② C안 2컷 분할(중간 프레임 게이트) ③ 프롬프트에 &quot;every product touches hands or ground in EVERY frame&quot; 강화 후 재시도
           </div>
         </div>
       </div>
