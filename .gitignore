@@ -121,6 +121,9 @@ yarn-error.log*
 !/public/videoFile.mp4
 !/public/clay/build_v1.mp4
 !/public/clay/build_v4.mp4
+!/public/clay/ambient_v1.mp4
+!/public/clay/build_v4_timelapse.mp4
+!/public/clay/build_v4_fast.mp4
 !/public/clay/build_v3.mp4
 !/public/clay/build_v2.mp4
 

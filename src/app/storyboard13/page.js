@@ -103,6 +103,36 @@ export default function Storyboard13Page() {
         · <b>룩</b>: 클레이/폴리머 점토 아이소메트릭 디오라마 — 키비주얼 그대로 승계 (질감·색·앵글 일치가 성패)
       </div>
 
+      {/* 속도 버전 & 앰비언트 */}
+      <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>▶ 배속 버전 & 햇살 앰비언트 (2026-07-16 추가)</h2>
+      <div className="note" style={{ padding: 14, marginBottom: 8, borderLeft: '3px solid #FFB300' }}>
+        <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+          <div>
+            <div style={{ fontSize: 11.5, fontWeight: 700, color: '#FFB300', marginBottom: 4 }}>A · 전체 1.6배속 (6.3s)</div>
+            <video src="/clay/build_v4_fast.mp4?v=1" controls loop autoPlay muted playsInline
+              style={{ width: 170, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '2px solid #FFB300' }} />
+            <div style={{ fontSize: 10.5, color: 'var(--text-dim)', marginTop: 3 }}>균일 배속 · 무료(ffmpeg)</div>
+          </div>
+          <div>
+            <div style={{ fontSize: 11.5, fontWeight: 700, color: '#FFB300', marginBottom: 4 }}>B · 빌드만 2.2배속 (6.7s)</div>
+            <video src="/clay/build_v4_timelapse.mp4?v=1" controls loop autoPlay muted playsInline
+              style={{ width: 170, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '2px solid #FFB300' }} />
+            <div style={{ fontSize: 10.5, color: 'var(--text-dim)', marginTop: 3 }}>빌드 2.2x + 앰비언트 1x = <b>속도 대비 강조</b> · 무료</div>
+          </div>
+          <div>
+            <div style={{ fontSize: 11.5, fontWeight: 700, color: '#42A5F5', marginBottom: 4 }}>C · 햇살 앰비언트만 (5s · 8.75cr)</div>
+            <video src="/clay/ambient_v1.mp4?v=1" controls loop autoPlay muted playsInline
+              style={{ width: 170, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '2px solid #42A5F5' }} />
+            <div style={{ fontSize: 10.5, color: 'var(--text-dim)', marginTop: 3 }}>원본 키비주얼 기반 시네마그래프 — 인부·빌드 없음</div>
+          </div>
+          <div style={{ flex: '1 1 260px', fontSize: 12.5, lineHeight: 1.8, color: 'var(--text-dim)' }}>
+            <b style={{ color: 'var(--text)' }}>A vs B</b> — 배속은 로컬 ffmpeg라 <b>무료·무제한 조정</b>. A는 전체가 고르게 빨라지고, B는 빌드만 빨라져 <b>&quot;인부는 분주, 세상은 고요&quot;</b> 대비가 살아남 (원래 의도한 고속배속 연출에 더 가까움)<br />
+            <b style={{ color: '#42A5F5' }}>C 앰비언트</b> — <b>원본 키비주얼 그대로 정지</b>, 3s부터 황금 광선이 데크를 훑고 그림자가 길어짐 · 야자수·바다만 미세 모션. 브랜드 무드컷·배경 루프용으로 바로 사용 가능<br />
+            <b style={{ color: 'var(--text)' }}>배속 조정 원하시면</b>: 배수·구간 어떻게든 무료로 다시 뽑습니다
+          </div>
+        </div>
+      </div>
+
       {/* 결과물 */}
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>▶ 결과물 — v4 최종 (10초 · 바다 위 팝업 · 빌드 + 햇살·바다 앰비언트)</h2>
       <div className="note" style={{ padding: 14, marginBottom: 8, borderLeft: '3px solid #4CAF50' }}>
