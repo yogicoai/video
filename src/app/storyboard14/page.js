@@ -75,7 +75,7 @@ const POSE_LIB = [
     ['왼쪽 가리키기', '왼쪽_가리키기', 'pointing to HIS LEFT with one paw, head turned that way, same cheerful energy'],
     ['위 가리키기', '위_가리키기', 'pointing UP with one paw, looking up brightly, mouth open in a small "oh!", tail up'],
     ['아래 가리키기', '아래_가리키기', 'pointing DOWN and slightly forward with one paw, leaning in, inviting expression'],
-    ['엄지척 · 윙크', '엄지척', 'giving a big thumbs up with one paw, winking one eye, proud confident grin'],
+    ['엄지척 · 윙크', '엄지척_윙크', 'giving a big thumbs up with one paw, winking one eye, proud confident grin'],
     ['박수', '박수', 'clapping his paws together, delighted, eyes squeezed happy, tail wagging fast'],
     ['확성기 손 (알림)', '확성기', 'one paw cupped beside his mouth as if announcing something exciting, mouth open in a call, tail up straight'],
     ['하트 손', '하트', 'making a small heart shape with both paws in front of his chest, sweet warm smile, eyes soft'],
