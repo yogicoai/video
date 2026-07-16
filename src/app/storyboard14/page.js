@@ -70,50 +70,50 @@ const POSE_TAIL = `Full body, centred, plain soft off-white studio background, w
 
 const POSE_LIB = [
   { g: '안내 · 소개 (이벤트용)', items: [
-    ['환영', 'standing with both arms open wide in a warm welcome, big happy smile, tail wagging up behind him'],
-    ['오른쪽 가리키기', 'pointing to HIS RIGHT with one paw, head turned that way, cheerful "look at this!" expression, tail up'],
-    ['왼쪽 가리키기', 'pointing to HIS LEFT with one paw, head turned that way, same cheerful energy'],
-    ['위 가리키기', 'pointing UP with one paw, looking up brightly, mouth open in a small "oh!", tail up'],
-    ['아래 가리키기', 'pointing DOWN and slightly forward with one paw, leaning in, inviting expression'],
-    ['엄지척 · 윙크', 'giving a big thumbs up with one paw, winking one eye, proud confident grin'],
-    ['박수', 'clapping his paws together, delighted, eyes squeezed happy, tail wagging fast'],
-    ['확성기 손 (알림)', 'one paw cupped beside his mouth as if announcing something exciting, mouth open in a call, tail up straight'],
-    ['하트 손', 'making a small heart shape with both paws in front of his chest, sweet warm smile, eyes soft'],
-    ['오케이 사인', 'making an OK sign with one paw, other paw on his hip, confident reassuring smile'],
+    ['환영', '환영', 'standing with both arms open wide in a warm welcome, big happy smile, tail wagging up behind him'],
+    ['오른쪽 가리키기', '오른쪽_가리키기', 'pointing to HIS RIGHT with one paw, head turned that way, cheerful "look at this!" expression, tail up'],
+    ['왼쪽 가리키기', '왼쪽_가리키기', 'pointing to HIS LEFT with one paw, head turned that way, same cheerful energy'],
+    ['위 가리키기', '위_가리키기', 'pointing UP with one paw, looking up brightly, mouth open in a small "oh!", tail up'],
+    ['아래 가리키기', '아래_가리키기', 'pointing DOWN and slightly forward with one paw, leaning in, inviting expression'],
+    ['엄지척 · 윙크', '엄지척', 'giving a big thumbs up with one paw, winking one eye, proud confident grin'],
+    ['박수', '박수', 'clapping his paws together, delighted, eyes squeezed happy, tail wagging fast'],
+    ['확성기 손 (알림)', '확성기', 'one paw cupped beside his mouth as if announcing something exciting, mouth open in a call, tail up straight'],
+    ['하트 손', '하트', 'making a small heart shape with both paws in front of his chest, sweet warm smile, eyes soft'],
+    ['오케이 사인', '오케이', 'making an OK sign with one paw, other paw on his hip, confident reassuring smile'],
   ]},
   { g: '감정 표현', items: [
-    ['신남 (점프)', 'jumping up with both arms raised in joy, feet off the ground, huge open smile, tail flying'],
-    ['놀람', 'startled — eyes wide, mouth open in a gasp, leaning back, TAIL PUFFED UP and bushy'],
-    ['졸림', 'yawning with one paw over his mouth, eyes half closed and droopy, TAIL DROOPING down, sleepy'],
-    ['궁금', 'head tilted to one side, one paw touching his chin, curious raised brow, tail curled with a question-mark curve'],
-    ['뿌듯', 'chest puffed out proudly, paws on hips, chin up, satisfied grin, tail standing tall'],
-    ['부끄러움', 'shy — one paw scratching behind his head, other arm behind his back, cheeks flushed, bashful little smile'],
-    ['생각', 'thinking — arms folded, one paw tapping his chin, eyes looking up in thought, tail slowly curling'],
-    ['실망', 'disappointed — shoulders slumped, arms hanging, ears folded back, small frown, tail limp on the floor'],
+    ['신남 (점프)', '신남', 'jumping up with both arms raised in joy, feet off the ground, huge open smile, tail flying'],
+    ['놀람', '놀람', 'startled — eyes wide, mouth open in a gasp, leaning back, TAIL PUFFED UP and bushy'],
+    ['졸림', '졸림', 'yawning with one paw over his mouth, eyes half closed and droopy, TAIL DROOPING down, sleepy'],
+    ['궁금', '궁금', 'head tilted to one side, one paw touching his chin, curious raised brow, tail curled with a question-mark curve'],
+    ['뿌듯', '뿌듯', 'chest puffed out proudly, paws on hips, chin up, satisfied grin, tail standing tall'],
+    ['부끄러움', '부끄러움', 'shy — one paw scratching behind his head, other arm behind his back, cheeks flushed, bashful little smile'],
+    ['생각', '생각', 'thinking — arms folded, one paw tapping his chin, eyes looking up in thought, tail slowly curling'],
+    ['실망', '실망', 'disappointed — shoulders slumped, arms hanging, ears folded back, small frown, tail limp on the floor'],
   ]},
   { g: '동작', items: [
-    ['손 흔들기', 'waving hello with one raised paw, warm smile, weight relaxed on one leg, tail swaying'],
-    ['걷기', 'mid-stride walking forward cheerfully, one foot lifted, arms swinging naturally, tail counterbalancing'],
-    ['뛰기', 'running fast, both feet off the ground, arms pumping, excited determined face, tail streaming behind'],
-    ['앉기', 'sitting on the floor with legs stretched out in front, leaning back on both paws, relaxed content face, tail curled beside him'],
-    ['밀기', 'pushing something heavy with both paws, leaning into it, feet braced, effort on his face'],
-    ['들기', 'carrying something with both arms wrapped around it, hugging it to his chest, cheerful determined face'],
+    ['손 흔들기', '손_흔들기', 'waving hello with one raised paw, warm smile, weight relaxed on one leg, tail swaying'],
+    ['걷기', '걷기', 'mid-stride walking forward cheerfully, one foot lifted, arms swinging naturally, tail counterbalancing'],
+    ['뛰기', '뛰기', 'running fast, both feet off the ground, arms pumping, excited determined face, tail streaming behind'],
+    ['앉기', '앉기', 'sitting on the floor with legs stretched out in front, leaning back on both paws, relaxed content face, tail curled beside him'],
+    ['밀기', '밀기', 'pushing something heavy with both paws, leaning into it, feet braced, effort on his face'],
+    ['들기', '들기', 'carrying something with both arms wrapped around it, hugging it to his chest, cheerful determined face'],
   ]},
   { g: '프레이밍 (후편집 텍스트용)', items: [
-    ['좌측 배치 · 우측 여백', 'standing on the LEFT THIRD of the frame, turned slightly inward, pointing toward the empty space on the right with one paw, cheerful expression. The RIGHT TWO-THIRDS is clean empty background, completely clear, reserved for text. Do not put anything there'],
-    ['상단 배치 · 하단 여백', 'standing in the TOP HALF of the frame, waving with one paw, looking down and forward with a warm smile. The BOTTOM HALF is clean empty background, reserved for text'],
-    ['얼굴 클로즈업', 'head and shoulders close-up, looking straight at camera with a bright warm smile, eyes sparkling, ears up'],
+    ['좌측 배치 · 우측 여백', '우측_여백', 'standing on the LEFT THIRD of the frame, turned slightly inward, pointing toward the empty space on the right with one paw, cheerful expression. The RIGHT TWO-THIRDS is clean empty background, completely clear, reserved for text. Do not put anything there'],
+    ['상단 배치 · 하단 여백', '하단_여백', 'standing in the TOP HALF of the frame, waving with one paw, looking down and forward with a warm smile. The BOTTOM HALF is clean empty background, reserved for text'],
+    ['얼굴 클로즈업', '얼굴_클로즈업', 'head and shoulders close-up, looking straight at camera with a bright warm smile, eyes sparkling, ears up'],
   ]},
 ];
 
 // 제품 × 팍스 조합 — Element 토큰 2개 동시 사용
 const COMBO = [
-  ['맥스 네이비', 'eeddd2d7-32c2-42b7-884e-724f44e3df8d', 'lounging happily on the deep navy Yogibo Max lying flat on the floor, sunk into it, tail draped over the side, blissful expression'],
-  ['맥스 아쿠아', 'c329fc5b-5283-4821-99e6-ddba2bd741c8', 'lying full-length on the aqua blue Yogibo Max, arms behind his head, one leg crossed, totally relaxed'],
-  ['팟 올리브', '8f120498-f4b5-4c18-90d5-fe54a3d7a015', 'sinking deep into the olive green Yogibo Pod, hugged by it, only his head and tail poking out, eyes closed in bliss'],
-  ['서포트 그린', 'fd32ee39-f00e-491c-857b-d132cbb87481', 'sitting inside the lime green U-shaped Yogibo Support, leaning back with both arms resting on the sides, relaxed happy face'],
-  ['문필로우 올리브', '432687a2-bec1-487d-8482-5f522d250fa0', 'hugging the olive green crescent Yogibo Moon Pillow, cheek resting on it, sleepy content smile'],
-  ['메이트 옐리', 'cd0310ab-4858-4aff-b523-d1cfcca12dfe', 'hugging the Yogibo Mate elephant plush cheek to cheek, both happy, tail wagging'],
+  ['맥스 네이비', '맥스_네이비', 'eeddd2d7-32c2-42b7-884e-724f44e3df8d', 'lounging happily on the deep navy Yogibo Max lying flat on the floor, sunk into it, tail draped over the side, blissful expression'],
+  ['맥스 아쿠아', '맥스_아쿠아', 'c329fc5b-5283-4821-99e6-ddba2bd741c8', 'lying full-length on the aqua blue Yogibo Max, arms behind his head, one leg crossed, totally relaxed'],
+  ['팟 올리브', '팟_올리브', '8f120498-f4b5-4c18-90d5-fe54a3d7a015', 'sinking deep into the olive green Yogibo Pod, hugged by it, only his head and tail poking out, eyes closed in bliss'],
+  ['서포트 그린', '서포트', 'fd32ee39-f00e-491c-857b-d132cbb87481', 'sitting inside the lime green U-shaped Yogibo Support, leaning back with both arms resting on the sides, relaxed happy face'],
+  ['문필로우 올리브', '문필로우', '432687a2-bec1-487d-8482-5f522d250fa0', 'hugging the olive green crescent Yogibo Moon Pillow, cheek resting on it, sleepy content smile'],
+  ['메이트 옐리', '옐리', 'cd0310ab-4858-4aff-b523-d1cfcca12dfe', 'hugging the Yogibo Mate elephant plush cheek to cheek, both happy, tail wagging'],
 ];
 
 // 확정 캐릭터 디자인 락 (확정 캐릭터에서 판독)
@@ -134,7 +134,7 @@ const DESIGN_LOCK = [
 const CA_BASE = 'https://yogibo.kr/web/img/video/ca';
 const caUrl = (name) => `${CA_BASE}/${encodeURIComponent(name)}.png`;
 
-function CopyBlock({ label, text, accent = '#FF7043', img }) {
+function CopyBlock({ label, text, accent = '#FF7043', file }) {
   const [copied, setCopied] = useState(false);
   const [hasImg, setHasImg] = useState(true);
   async function copy() {
@@ -149,13 +149,16 @@ function CopyBlock({ label, text, accent = '#FF7043', img }) {
   return (
     <div style={{ border: '1px solid var(--border)', borderLeft: `3px solid ${accent}`, borderRadius: 8, padding: 9, background: 'var(--bg-elev)' }}>
       <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 6 }}>
-        {img && hasImg && (
-          <a href={caUrl(img)} target="_blank" rel="noreferrer" style={{ flex: '0 0 auto' }}>
-            <img src={caUrl(img)} alt={label} onError={() => setHasImg(false)}
+        {file && hasImg && (
+          <a href={caUrl(file)} target="_blank" rel="noreferrer" style={{ flex: '0 0 auto' }}>
+            <img src={caUrl(file)} alt={label} onError={() => setHasImg(false)}
               style={{ width: 44, height: 58, objectFit: 'cover', borderRadius: 5, border: `1px solid ${accent}`, display: 'block', background: '#fff' }} />
           </a>
         )}
-        <b style={{ fontSize: 12.5, flex: 1 }}>{label}</b>
+        <span style={{ flex: 1 }}>
+          <b style={{ fontSize: 12.5, display: 'block' }}>{label}</b>
+          {file && <code style={{ fontSize: 9.5, color: 'var(--text-dim)' }}>{file}.png</code>}
+        </span>
         <button onClick={copy}
           style={{ padding: '3px 10px', borderRadius: 6, border: `1px solid ${copied ? '#4CAF50' : 'var(--border)'}`, background: copied ? '#4CAF50' : 'none', color: copied ? '#fff' : 'var(--text-dim)', cursor: 'pointer', fontSize: 11, fontWeight: 700, flex: '0 0 auto' }}>
           {copied ? '✓ 복사됨' : '📋 복사'}
@@ -294,8 +297,8 @@ export default function Storyboard14Page() {
         <div key={grp.g} style={{ marginBottom: 14 }}>
           <div style={{ fontSize: 13, fontWeight: 700, margin: '10px 0 6px', color: '#FF7043' }}>{grp.g} <span style={{ color: 'var(--text-dim)', fontWeight: 400, fontSize: 11.5 }}>· {grp.items.length}종</span></div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 8 }}>
-            {grp.items.map(([label, pose]) => (
-              <CopyBlock key={label} label={label} text={foxPrompt(pose)} img={label.replace(/[^가-힣A-Za-z0-9]/g, '')} />
+            {grp.items.map(([label, file, pose]) => (
+              <CopyBlock key={label} label={label} file={file} text={foxPrompt(pose)} />
             ))}
           </div>
         </div>
@@ -307,8 +310,8 @@ export default function Storyboard14Page() {
         제품 Element가 이미 락돼 있어 <b>토큰 두 개를 한 프롬프트에</b> 넣으면 캐릭터 정확도 + 제품 정확도가 동시에 잡힙니다. 이벤트 소개는 <b>소개할 제품이 정확해야</b> 하므로 이 방식이 핵심.
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 8, marginBottom: 14 }}>
-        {COMBO.map(([label, pid, desc]) => (
-          <CopyBlock key={label} label={`팍스 × ${label}`} text={comboPrompt(pid, desc)} accent="#4CAF50" img={label.replace(/[^가-힣A-Za-z0-9]/g, '')} />
+        {COMBO.map(([label, file, pid, desc]) => (
+          <CopyBlock key={label} label={`팍스 × ${label}`} file={file} text={comboPrompt(pid, desc)} accent="#4CAF50" />
         ))}
       </div>
 
