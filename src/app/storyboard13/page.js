@@ -12,7 +12,7 @@ const GATES = [
   { stage: 'STAGE 2 · 스토리보드', s: '📝 이 페이지', note: '첫/끝 프레임 설계 + 그 사이 4~5초에 담을 동작' },
   { stage: 'STAGE 3 · 첫 프레임 스틸', s: '✅ v1 완료', note: 'nano_banana_2 2K 편집 2cr 사용 · 구도·질감·바다 요소 전부 보존, 인부 4명 배치 성공 — 컨펌 대기' },
   { stage: 'STAGE 4 · 영상화', s: '🟡 승인 대기', note: 'Kling 3.0 start_image(start_v1) → end_image(완성본) · 4s pro 무음 7cr — 첫 프레임 컨펌 후 실행' },
-  { stage: 'STAGE 5 · 후반', s: '⬜', note: '로고·음원(선택) · 필요 시 업스케일(무료)' },
+  { stage: 'STAGE 5 · 후반', s: '🟡 러프컷 확정', note: '최종 러프컷 9.1s(빌드 v2 + 햇살 앰비언트) 조립 완료 — 남은 작업: 로고·음원(선택)·4K 업스케일(무료)' },
 ];
 
 // 첫/끝 프레임 설계 — 이 방식의 핵심은 A→B가 명확할 것
@@ -103,8 +103,31 @@ export default function Storyboard13Page() {
         · <b>룩</b>: 클레이/폴리머 점토 아이소메트릭 디오라마 — 키비주얼 그대로 승계 (질감·색·앵글 일치가 성패)
       </div>
 
+      {/* ★ 최종 러프컷 */}
+      <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>★ 최종 러프컷 — 빌드 + 햇살 엔딩 (9.1초 · 2026-07-16 확정)</h2>
+      <div className="note" style={{ padding: 14, marginBottom: 8, borderLeft: '4px solid #4CAF50', background: 'rgba(76,175,80,.06)' }}>
+        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+          <div style={{ flex: '0 0 auto' }}>
+            <div style={{ fontSize: 13, fontWeight: 800, color: '#4CAF50', marginBottom: 6 }}>▶ FINAL — 9.1초</div>
+            <video src="/clay/rough_final.mp4?v=1" controls loop autoPlay muted playsInline
+              style={{ width: 250, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '4px solid #4CAF50' }} />
+          </div>
+          <div style={{ flex: '1 1 320px', fontSize: 12.5, lineHeight: 1.9, color: 'var(--text-dim)' }}>
+            <b style={{ color: 'var(--text)', fontSize: 13.5 }}>구성 (사용자 확정)</b><br />
+            · <b>0–4.1s 빌드</b> — build_v2 (고속배속 · 인부들이 제품을 나르고 배치, 모션블러 잔상)<br />
+            · <b>4.1–9.1s 햇살 엔딩</b> — ambient_v1 (완성본 정지 + 황금 광선이 데크를 훑고 그림자가 길어짐)<br />
+            <br />
+            <b style={{ color: '#4CAF50' }}>✅ 이음매 검증 통과</b> — <b>v2의 마지막 프레임 = 완성 키비주얼 = ambient의 첫 프레임</b>이라 두 컷이 픽셀 단위로 이어짐. 컷 전환이 보이지 않고 <b>하나의 연속 테이크</b>로 읽힘.<br />
+            <b style={{ color: 'var(--text)' }}>서사</b>: 미니어처들이 팝업스토어를 짓는다 → 완성 → 아무도 없는 팝업에 햇살이 들어오며 하루가 시작된다<br />
+            <br />
+            <b style={{ color: 'var(--text)' }}>스펙</b>: 1080×1920 · 30fps · crf17 · 무음(음원은 최종 컴펌 후) · 조립 = 로컬 ffmpeg 무료<br />
+            <b style={{ color: 'var(--text)' }}>사용 소재</b>: build_v2(4s·7cr) + ambient_v1(5s·8.75cr) — 둘 다 <b>원본 키비주얼 세계관</b>(바다 좌측)이라 룩이 일치. 바다 확장판(v4 계열)과는 별개 라인.
+          </div>
+        </div>
+      </div>
+
       {/* 속도 버전 & 앰비언트 */}
-      <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>▶ 배속 버전 & 햇살 앰비언트 (2026-07-16 추가)</h2>
+      <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>▶ 배속 버전 & 햇살 앰비언트 (소재)</h2>
       <div className="note" style={{ padding: 14, marginBottom: 8, borderLeft: '3px solid #FFB300' }}>
         <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
           <div>
