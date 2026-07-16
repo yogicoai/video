@@ -141,21 +141,36 @@ export default function Storyboard13Page() {
       <div className="note" style={{ padding: 12, fontSize: 12, lineHeight: 1.6, marginBottom: 8, color: 'var(--text-dim)' }}>
         Kling 3.0은 <b>start_image + end_image</b>를 동시에 받는다. 양끝을 픽셀로 못박으면 모델은 <b>&quot;그 사이를 어떻게 채울까&quot;</b>만 풀면 된다 — 완성본이 이미 있는 이 프로젝트에 최적. 두 프레임은 <b>같은 앵글·같은 조명·같은 클레이 질감</b>이어야 하며, 이는 끝 프레임을 <b>편집</b>해 첫 프레임을 만들어 자동 보장한다.
       </div>
+      {/* v2 확정 프레임 페어 */}
+      <div className="note" style={{ padding: 12, fontSize: 12, lineHeight: 1.7, marginBottom: 10, borderLeft: '3px solid #E53935' }}>
+        <b style={{ color: '#E53935' }}>🔴 v1 프레임 폐기 → v2 페어로 교체 (2026-07-16 사용자 지시)</b><br />
+        · <b>이유 ①</b> 바다가 좌측에만 있어 앞·우측이 빈 배경 → 사용자 요청으로 <b>바다를 데크 앞·우측까지 확장</b><br />
+        · <b>이유 ②</b> 첫 프레임의 <b>제품 더미</b>가 던지기의 근본 원인 — 8개 제품을 먼 거리로 옮겨야 해서 Kling이 지름길(공중 순간이동)을 택했다. 프롬프트로 3회 막아도 안 통한 이유가 이것 → <b>더미 해체, 제품을 각자 자리 옆 바닥에 흩어 배치</b>(인부는 한 발짝만 옮기면 됨)<br />
+        · <b>지오메트리 일치 기법</b>: END를 원본에서 편집하니 데크 형태가 틀어짐(END v2 폐기) → <b>END를 START v2에서 파생</b>(제품 채우고 인부 제거)해 데크·바다·베이스가 픽셀 단위로 일치
+      </div>
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 8 }}>
         <div style={{ flex: '0 0 240px' }}>
-          <img src="/clay/start_v1.png?v=1" alt="첫 프레임 v1 (생성)"
+          <img src="/clay/start_v2.png?v=1" alt="첫 프레임 v2 (확정)"
             style={{ width: 240, borderRadius: 12, border: '3px solid #FF7043', display: 'block' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 5, lineHeight: 1.5 }}>
-            <b style={{ color: '#FF7043' }}>▶ START v1 — 생성 완료 (2cr · 07-16)</b><br />
-            빈 데크(로고 유지) + 인부 4명: 맥스 둘러메기·팟 굴리기·돗자리 안기·대기 중 제품 더미 · 바다/야자수/서프보드/튜브·클레이 질감·앵글 전부 보존 ✓
+            <b style={{ color: '#FF7043' }}>▶ START v2 — 확정 (2cr · 07-16)</b><br />
+            <b>바다 확장</b>(앞·우측 감쌈, 데크가 섬처럼) + <b>제품 더미 해체</b>(각자 자리 옆 바닥에 흩어짐) + 인부가 제품마다 하나씩 붙어 있음 · 데크 비움(로고 유지)
           </div>
         </div>
         <div style={{ flex: '0 0 240px' }}>
-          <img src={KEYVISUAL} alt="완성 키비주얼 (끝 프레임)"
+          <img src="/clay/end_v3.png?v=1" alt="끝 프레임 v3 (확정)"
             style={{ width: 240, borderRadius: 12, border: '3px solid #4CAF50', display: 'block' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 5, lineHeight: 1.5 }}>
-            <b style={{ color: '#4CAF50' }}>END — 완성본 (사용자 제공)</b><br />1792×2400 · 그대로 end_image로 사용
+            <b style={{ color: '#4CAF50' }}>END v3 — 확정 (2cr · 07-16)</b><br />
+            <b>START v2에서 파생</b> → 데크·바다·나무 베이스 <b>완전 일치</b> · 제품 완성 배치 + 인부 전원 퇴장 · 레이아웃은 원본 키비주얼 기준
           </div>
+        </div>
+        <div style={{ flex: '0 0 150px' }}>
+          <img src="/clay/start_v1.png?v=1" alt="START v1 (폐기)"
+            style={{ width: 150, borderRadius: 10, border: '1px solid var(--border)', display: 'block', opacity: .45 }} />
+          <div style={{ fontSize: 11, color: 'var(--text-dim)', marginTop: 4 }}>START v1 — 폐기 (더미·바다 좌측만)</div>
+          <img src={KEYVISUAL} alt="원본 키비주얼" style={{ width: 150, borderRadius: 10, border: '1px solid var(--border)', display: 'block', opacity: .45, marginTop: 8 }} />
+          <div style={{ fontSize: 11, color: 'var(--text-dim)', marginTop: 4 }}>원본 키비주얼 — 레이아웃 기준으로만 사용</div>
         </div>
         <div style={{ flex: '1 1 300px', display: 'grid', gap: 10 }}>
           {FRAMES.map((f) => (
