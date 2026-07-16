@@ -104,34 +104,45 @@ export default function Storyboard13Page() {
       </div>
 
       {/* 결과물 */}
-      <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>▶ 결과물 — v3 최신 (10초 · 빌드 + 햇살·바다 앰비언트)</h2>
+      <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>▶ 결과물 — v4 최종 (10초 · 바다 위 팝업 · 빌드 + 햇살·바다 앰비언트)</h2>
       <div className="note" style={{ padding: 14, marginBottom: 8, borderLeft: '3px solid #4CAF50' }}>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
           <div style={{ flex: '0 0 auto' }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#4CAF50', marginBottom: 6 }}>▶ v3 — 10초 (17.5cr · 검토 대상)</div>
-            <video src="/clay/build_v3.mp4?v=1" controls loop autoPlay muted playsInline
-              style={{ width: 230, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #4CAF50' }} />
-            <div style={{ fontSize: 11, color: 'var(--text-dim)', marginTop: 4 }}>0–6s 빌드 · 6–10s 앰비언트</div>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#4CAF50', marginBottom: 6 }}>▶ v4 — 10초 · 최종 (17.5cr)</div>
+            <video src="/clay/build_v4.mp4?v=1" controls loop autoPlay muted playsInline
+              style={{ width: 240, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #4CAF50' }} />
+            <div style={{ fontSize: 11, color: 'var(--text-dim)', marginTop: 4 }}>START v3 → END v4 · 0–6s 빌드 · 6–10s 앰비언트</div>
           </div>
           <div style={{ flex: '0 0 auto', display: 'flex', gap: 8 }}>
             <div>
-              <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--text-dim)', marginBottom: 4 }}>v2 (4s · 고속배속)</div>
-              <video src="/clay/build_v2.mp4?v=1" controls loop muted playsInline
-                style={{ width: 120, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '1px solid var(--border)' }} />
+              <div style={{ fontSize: 11, color: 'var(--text-dim)', marginBottom: 4 }}>v3 (구프레임)</div>
+              <video src="/clay/build_v3.mp4?v=1" controls loop muted playsInline
+                style={{ width: 110, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '1px solid var(--border)', opacity: .6 }} />
             </div>
             <div>
-              <div style={{ fontSize: 11, color: 'var(--text-dim)', marginBottom: 4 }}>v1 (4s · 1회차)</div>
+              <div style={{ fontSize: 11, color: 'var(--text-dim)', marginBottom: 4 }}>v2 (4s)</div>
+              <video src="/clay/build_v2.mp4?v=1" controls loop muted playsInline
+                style={{ width: 110, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '1px solid var(--border)', opacity: .5 }} />
+            </div>
+            <div>
+              <div style={{ fontSize: 11, color: 'var(--text-dim)', marginBottom: 4 }}>v1 (4s)</div>
               <video src="/clay/build_v1.mp4?v=1" controls loop muted playsInline
-                style={{ width: 120, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '1px solid var(--border)', opacity: .6 }} />
+                style={{ width: 110, aspectRatio: '9 / 16', borderRadius: 10, background: '#000', border: '1px solid var(--border)', opacity: .5 }} />
             </div>
           </div>
           <div style={{ flex: '1 1 300px', fontSize: 12.5, lineHeight: 1.8, color: 'var(--text-dim)' }}>
-            <b style={{ color: 'var(--text)' }}>버전 이력</b> (누적 스틸 2 + 영상 7+7+17.5 = <b>33.5cr</b>)<br />
-            · <b>v1</b> 4s — build-up 성립·완성본 안착 ✓ / 던지기·미세 드리프트 🔴<br />
-            · <b>v2</b> 4s — 고속배속 모션블러 ✓(인부 잔상), 카메라 안정 ✓ / <b>여전히 던짐</b>·햇살 미반영 🔴<br />
-            · <b style={{ color: '#4CAF50' }}>v3</b> 10s — <b>2단 구조</b>(0–6s 빌드 + 6–10s 앰비언트) · <b style={{ color: '#4CAF50' }}>햇살 연출 성공 ✓</b> (4.5s부터 측면 광선이 데크를 가로지름, 6s에 전면 사광) · 10초라 배치가 차근차근 ✓ · 완성본 안착 ✓<br />
-            <b style={{ color: '#FFB300' }}>🟡 v3 잔존</b>: 6s 부근 일부 제품이 여전히 <b>공중에 뜬 순간</b>이 보임 — start의 &quot;제품 더미&quot;에서 end 위치로 옮길 물량이 많아 Kling이 지름길(순간이동)을 택하는 것으로 보임<br />
-            <b style={{ color: 'var(--text)' }}>교정 후보</b>: ① 첫 프레임을 <b>&quot;절반 배치된 상태&quot;</b>로 바꿔 옮길 물량 자체를 줄이기(스틸 2cr) ② C안 2컷 분할(중간 프레임 게이트) ③ 프롬프트에 &quot;every product touches hands or ground in EVERY frame&quot; 강화 후 재시도
+            <b style={{ color: '#4CAF50' }}>✅ v4 — 사용자 요구 3종 전부 반영</b><br />
+            · <b>바다 위 팝업 ✓</b> — 프레임 전체가 바다, 팝업스토어가 탁 트인 바다에 뜬 섬<br />
+            · <b>햇살 ✓✓</b> — 8~10s에 <b>황금빛 태양 기둥이 바다에 반사되며 일렁임</b> (요청하신 &quot;바다 흐르고 햇살 드는&quot; 앰비언트 완성)<br />
+            · <b>차근차근 배치 ✓</b> — 제품이 자기 자리 옆에서 시작해 짧게 이동 (던지기·끌고나가기의 근본 원인 제거)<br />
+            <br />
+            <b style={{ color: 'var(--text)' }}>버전 이력</b> — 영상 4회 49cr + 스틸 6장 12cr = <b>61cr</b><br />
+            · <b>v1</b> 4s 7cr — build-up 성립 / 던지기·드리프트 🔴<br />
+            · <b>v2</b> 4s 7cr — 고속배속 모션블러 ✓ / 던지기·햇살 미반영 🔴<br />
+            · <b>v3</b> 10s 17.5cr — 2단 구조·측면 햇살 ✓ / <b>구 프레임</b>이라 던지기·끌고나가기 잔존 🔴<br />
+            · <b style={{ color: '#4CAF50' }}>v4</b> 10s 17.5cr — <b>새 프레임 페어(바다 위 섬 + 제품 자리옆 배치)</b> 적용 = 최종<br />
+            <br />
+            <b style={{ color: 'var(--text)' }}>핵심 교훈</b>: 던지기는 <b>프롬프트로 못 고친다</b>(3회 실패) — <b>첫 프레임 설계</b>로 고친다. 제품 더미 + 먼 거리 = 모델이 순간이동을 택함. 제품을 자기 자리 옆에 두면 그럴 이유가 사라짐.
           </div>
         </div>
       </div>
