@@ -7,11 +7,11 @@
 const KEYVISUAL = '/clay/base.png';
 
 const GATES = [
-  { stage: 'STAGE 0 · 정의', s: '🟡 컨펌 대기', note: '컨셉·길이·A안/B안 구조 확정 — 이 페이지에서 논의 중' },
+  { stage: 'STAGE 0 · 정의', s: '✅ A안 확정', note: '4초 원컷 · 스틸 2cr + 영상 7cr = 9cr (2026-07-16 사용자 확정)' },
   { stage: 'STAGE 1 · 에셋', s: '✅ 끝 프레임 확보', note: '완성 디오라마 키비주얼(사용자 제공) = end_image로 확정 · 첫 프레임은 이 이미지를 편집해 생성' },
   { stage: 'STAGE 2 · 스토리보드', s: '📝 이 페이지', note: '첫/끝 프레임 설계 + 그 사이 4~5초에 담을 동작' },
-  { stage: 'STAGE 3 · 첫 프레임 스틸', s: '⬜', note: 'nano_banana_2 2K 편집(2cr) — 키비주얼에서 제품을 비우고 미니어처 인부 배치' },
-  { stage: 'STAGE 4 · 영상화', s: '⬜', note: 'Kling 3.0 start_image(빈 팝업) → end_image(완성본) · 실측 4s pro 무음 7cr' },
+  { stage: 'STAGE 3 · 첫 프레임 스틸', s: '✅ v1 완료', note: 'nano_banana_2 2K 편집 2cr 사용 · 구도·질감·바다 요소 전부 보존, 인부 4명 배치 성공 — 컨펌 대기' },
+  { stage: 'STAGE 4 · 영상화', s: '🟡 승인 대기', note: 'Kling 3.0 start_image(start_v1) → end_image(완성본) · 4s pro 무음 7cr — 첫 프레임 컨펌 후 실행' },
   { stage: 'STAGE 5 · 후반', s: '⬜', note: '로고·음원(선택) · 필요 시 업스케일(무료)' },
 ];
 
@@ -109,14 +109,22 @@ export default function Storyboard13Page() {
         Kling 3.0은 <b>start_image + end_image</b>를 동시에 받는다. 양끝을 픽셀로 못박으면 모델은 <b>&quot;그 사이를 어떻게 채울까&quot;</b>만 풀면 된다 — 완성본이 이미 있는 이 프로젝트에 최적. 두 프레임은 <b>같은 앵글·같은 조명·같은 클레이 질감</b>이어야 하며, 이는 끝 프레임을 <b>편집</b>해 첫 프레임을 만들어 자동 보장한다.
       </div>
       <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 8 }}>
-        <div style={{ flex: '0 0 260px' }}>
+        <div style={{ flex: '0 0 240px' }}>
+          <img src="/clay/start_v1.png?v=1" alt="첫 프레임 v1 (생성)"
+            style={{ width: 240, borderRadius: 12, border: '3px solid #FF7043', display: 'block' }} />
+          <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 5, lineHeight: 1.5 }}>
+            <b style={{ color: '#FF7043' }}>▶ START v1 — 생성 완료 (2cr · 07-16)</b><br />
+            빈 데크(로고 유지) + 인부 4명: 맥스 둘러메기·팟 굴리기·돗자리 안기·대기 중 제품 더미 · 바다/야자수/서프보드/튜브·클레이 질감·앵글 전부 보존 ✓
+          </div>
+        </div>
+        <div style={{ flex: '0 0 240px' }}>
           <img src={KEYVISUAL} alt="완성 키비주얼 (끝 프레임)"
-            style={{ width: 260, borderRadius: 12, border: '3px solid #4CAF50', display: 'block' }} />
+            style={{ width: 240, borderRadius: 12, border: '3px solid #4CAF50', display: 'block' }} />
           <div style={{ fontSize: 11.5, color: 'var(--text-dim)', marginTop: 5, lineHeight: 1.5 }}>
             <b style={{ color: '#4CAF50' }}>END — 완성본 (사용자 제공)</b><br />1792×2400 · 그대로 end_image로 사용
           </div>
         </div>
-        <div style={{ flex: '1 1 320px', display: 'grid', gap: 10 }}>
+        <div style={{ flex: '1 1 300px', display: 'grid', gap: 10 }}>
           {FRAMES.map((f) => (
             <div key={f.k} className="note" style={{ padding: 12, fontSize: 12.5, lineHeight: 1.7, borderLeft: `3px solid ${f.color}` }}>
               <b style={{ color: f.color }}>{f.k}</b> — <b>{f.title}</b>
