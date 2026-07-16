@@ -230,6 +230,24 @@ export default function HomePage() {
       </a>
       )}
 
+      {/* 고정 — 14차 프로젝트 (팍스 캐릭터 파일럿) */}
+      <a
+        href="/storyboard14"
+        className="card"
+        style={{ display: 'block', borderColor: '#FF7043', marginBottom: 20 }}
+      >
+        <div className="card-title">🦊 팍스 캐릭터 파일럿 — 캐릭터부터 영상까지</div>
+        <div className="card-meta">
+          14차 · 메이트 팍스를 캐릭터화 → Element 락 → 장면별 컷 → 영상 조립까지 전 파이프라인 1회 완주 테스트 · 이미지는 웹 UI Unlimited(무료), 영상만 크레딧
+          <br />
+          스타일 탐색 3회(실사털→평면→벨벳) · 디자인 락 확정 · 캐릭터 후보 대기. 진행상황을 확인하세요.
+        </div>
+        <div className="card-foot">
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="kling" /><span className="badge badge-generating">STAGE 0 · 캐릭터 후보 대기</span></span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
       {/* 고정 — 13차 프로젝트 (클레이 미니어처 팝업스토어) */}
       <a
         href="/storyboard13"
