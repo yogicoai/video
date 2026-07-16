@@ -111,7 +111,7 @@ const COMBO = [
   ['맥스 네이비', '팍스_맥스_네이비', 'eeddd2d7-32c2-42b7-884e-724f44e3df8d', 'lounging happily on the deep navy Yogibo Max lying flat on the floor, sunk into it, tail draped over the side, blissful expression'],
   ['맥스 아쿠아', '팍스_맥스_아쿠아', 'c329fc5b-5283-4821-99e6-ddba2bd741c8', 'lying full-length on the aqua blue Yogibo Max, arms behind his head, one leg crossed, totally relaxed'],
   ['팟 올리브', '팍스_팟_올리브', '8f120498-f4b5-4c18-90d5-fe54a3d7a015', 'sinking deep into the olive green Yogibo Pod, hugged by it, only his head and tail poking out, eyes closed in bliss'],
-  ['서포트 그린', '팍스_서포트', 'fd32ee39-f00e-491c-857b-d132cbb87481', 'sitting inside the lime green U-shaped Yogibo Support, leaning back with both arms resting on the sides, relaxed happy face'],
+  ['서포트 그린', '팍스_서포트_그린', 'fd32ee39-f00e-491c-857b-d132cbb87481', 'sitting inside the lime green U-shaped Yogibo Support, leaning back with both arms resting on the sides, relaxed happy face'],
   ['문필로우 올리브', '팍스_문필로우', '432687a2-bec1-487d-8482-5f522d250fa0', 'hugging the olive green crescent Yogibo Moon Pillow, cheek resting on it, sleepy content smile'],
   ['메이트 옐리', '팍스_옐리', 'cd0310ab-4858-4aff-b523-d1cfcca12dfe', 'hugging the Yogibo Mate elephant plush cheek to cheek, both happy, tail wagging'],
 ];
