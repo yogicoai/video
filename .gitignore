@@ -119,6 +119,7 @@ yarn-error.log*
 !/public/fam4/rough_v1_4k.mp4
 !/public/pat/reveal.mp4
 !/public/videoFile.mp4
+!/public/clay/build_v1.mp4
 
 # backup files
 *.zip

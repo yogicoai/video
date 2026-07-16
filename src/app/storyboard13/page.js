@@ -103,6 +103,25 @@ export default function Storyboard13Page() {
         · <b>룩</b>: 클레이/폴리머 점토 아이소메트릭 디오라마 — 키비주얼 그대로 승계 (질감·색·앵글 일치가 성패)
       </div>
 
+      {/* 결과물 */}
+      <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>▶ 1회차 결과 — A안 4초 원컷 (Kling 3.0 · pro · 7cr · 2026-07-16)</h2>
+      <div className="note" style={{ padding: 14, marginBottom: 8, borderLeft: '3px solid #4CAF50' }}>
+        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+          <video src="/clay/build_v1.mp4?v=1" controls loop autoPlay muted playsInline
+            style={{ width: 240, aspectRatio: '9 / 16', borderRadius: 12, background: '#000', border: '3px solid #4CAF50', flex: '0 0 auto' }} />
+          <div style={{ flex: '1 1 320px', fontSize: 12.5, lineHeight: 1.8, color: 'var(--text-dim)' }}>
+            <b style={{ color: '#4CAF50' }}>✅ 1회 생성 성공</b> — start_v1(빈 데크+인부) → end(완성본) 사이를 Kling이 채움. 총 <b>9cr</b>(스틸 2 + 영상 7).<br />
+            <b style={{ color: 'var(--text)' }}>QC</b>:<br />
+            · 빈 데크 → 완성 build-up 성립 ✓ · 마지막 프레임이 <b>완성 키비주얼로 정확히 안착</b> ✓<br />
+            · 인부들이 실제로 나르고 놓음 — 맥스 둘러메기·팟 굴리기·돗자리 펴기 ✓<br />
+            · 클레이 질감·색·아이소메트릭 앵글 전 구간 유지 ✓ · 야자수·바다 은은한 모션 ✓<br />
+            · 메이트(티렉스·유니콘)·간식 세팅까지 재현 ✓<br />
+            <b style={{ color: '#FFB300' }}>🟡 아쉬운 점</b>: ① &quot;LOCKED OFF&quot; 지시에도 <b>미세한 푸시인/드리프트</b>가 있음(디오라마가 점점 커짐) ② 2.4s 부근 제품이 <b>공중에 뜬 채 이동</b>하는 순간이 있어 클레이 물리가 잠깐 깨짐 ③ 4초라 배치 3비트가 다소 급함<br />
+            <b style={{ color: 'var(--text)' }}>다음 선택지</b>: 현재본 채택 / B안 5초 재생성(8.75cr · 여유 확보) / 프롬프트에 &quot;products never float, always carried or slid&quot; 추가 후 재시도(7cr)
+          </div>
+        </div>
+      </div>
+
       {/* 첫/끝 프레임 */}
       <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>2. 첫 / 끝 프레임 설계 ★ 이 방식의 핵심</h2>
       <div className="note" style={{ padding: 12, fontSize: 12, lineHeight: 1.6, marginBottom: 8, color: 'var(--text-dim)' }}>
