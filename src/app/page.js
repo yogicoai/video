@@ -230,6 +230,24 @@ export default function HomePage() {
       </a>
       )}
 
+      {/* 고정 — 13차 프로젝트 (클레이 미니어처 팝업스토어) */}
+      <a
+        href="/storyboard13"
+        className="card"
+        style={{ display: 'block', borderColor: '#FF7043', marginBottom: 20 }}
+      >
+        <div className="card-title">🏖 클레이 미니어처 — 바다 팝업스토어 메이킹</div>
+        <div className="card-meta">
+          13차 · 9:16 · 4~5초 · 첫/끝 프레임 방식 · 미니어처 인부들이 요기보 제품을 배치해 바다 컨셉 팝업스토어를 완성하는 과정 · 완성 키비주얼 = 끝 프레임
+          <br />
+          컨셉 정의 완료 · 구조 시안 A/B/C 컨펌 대기. 진행상황을 확인하세요.
+        </div>
+        <div className="card-foot">
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="kling" /><span className="badge badge-generating">STAGE 0 · 구조 컨펌 대기</span></span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
       {/* 고정 — 12차 프로젝트 (엔진 비교) */}
       <a
         href="/storyboard12"
