@@ -101,7 +101,7 @@ const POSE_LIB = [
   ]},
   { g: '프레이밍 (후편집 텍스트용)', items: [
     ['좌측 배치 · 우측 여백', '우측_여백', 'standing on the LEFT THIRD of the frame, turned slightly inward, pointing toward the empty space on the right with one paw, cheerful expression. The RIGHT TWO-THIRDS is clean empty background, completely clear, reserved for text. Do not put anything there'],
-    ['상단 배치 · 하단 여백', '하단_여백', 'standing in the TOP HALF of the frame, waving with one paw, looking down and forward with a warm smile. The BOTTOM HALF is clean empty background, reserved for text'],
+    ['상단 배치 · 하단 여백', '상단배치', 'standing in the TOP HALF of the frame, waving with one paw, looking down and forward with a warm smile. The BOTTOM HALF is clean empty background, reserved for text'],
     ['얼굴 클로즈업', '얼굴_클로즈업', 'head and shoulders close-up, looking straight at camera with a bright warm smile, eyes sparkling, ears up'],
   ]},
 ];
