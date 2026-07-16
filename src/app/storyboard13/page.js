@@ -6,6 +6,91 @@
 
 const KEYVISUAL = '/clay/base.png';
 
+// ★ 키프레임 시트 (2026-07-16) — "한 컷 = 한 동작" 원칙으로 잘게 분할
+// 이미지는 웹 UI Unlimited(무료)로 생성 → 연속 페어를 Kling start/end로 물려 컷 생성
+// 세계 기준 레퍼런스 = START v3 (바다 위 섬)
+const REF_URL = 'https://d8j0ntlcm91z4.cloudfront.net/user_3FWrSdFH0VITbqcbxBmMqiSOYx0/hf_20260716_021449_7cd35ac2-531e-4740-a4f6-e303690dd6c6.png';
+
+const WORLD_BLOCK = `The same clay miniature diorama as the reference image — identical isometric camera angle, identical soft lighting, identical polymer-clay texture and colour palette, the identical tiled pool deck with its wooden base and yogibo logo, the identical sand corner with the palm tree, surfboard and life ring, and the identical open ocean filling the whole frame with its waves and foam. The island, deck shape, deck size, sand and water do not change at all.`;
+
+const TAIL_BLOCK = `Same handmade polymer-clay miniature style, same isometric perspective, same soft lighting. No text, no lettering, no logos anywhere except the yogibo logo already on the deck.`;
+
+const KEYFRAMES = [
+  {
+    id: 'K0', have: true, title: '공사 시작 — 데크는 비어 있고 제품은 자리 옆 바닥에',
+    placed: '없음 — 데크는 타일과 로고만',
+    step: '(시작점)',
+    remain: '전 제품이 각자 놓일 자리 바로 옆 바닥/모래에 흩어져 있음. 아무것도 쌓여 있지 않음',
+    workers: '인부들이 제품마다 1:1로 붙어 손을 얹고 있음',
+    note: '✅ start_v3.png 이미 확보',
+  },
+  {
+    id: 'K1', have: false, title: '브라운 롤 안착 (맨 뒤)',
+    placed: '브라운 롤 쿠션 — 데크 뒤쪽, 모래와 맞닿은 가장자리',
+    step: '인부 둘이 롤을 들어 데크 뒤쪽에 살포시 내려놓음',
+    remain: '네이비 맥스 · 크림 라운저 · 노란 돗자리(접힌 채) · 블루/오렌지/레드 팟 · 퍼플 피라미드 — 각자 자리 옆 바닥에',
+    workers: '롤 옆 인부 둘은 방금 손을 뗀 자세, 나머지는 각자 다음 물건에 손을 얹고 대기',
+  },
+  {
+    id: 'K2', have: false, title: '네이비 맥스 안착 (롤 앞)',
+    placed: '브라운 롤(뒤) + 네이비 맥스 — 롤 바로 앞에 나란히',
+    step: '인부 둘이 긴 네이비 맥스를 함께 들어 롤 앞에 눕힘',
+    remain: '크림 라운저 · 노란 돗자리 · 팟 3개 · 퍼플 피라미드',
+    workers: '맥스 양끝 인부 둘이 방금 내려놓은 자세',
+  },
+  {
+    id: 'K3', have: false, title: '크림 라운저 안착 (왼쪽)',
+    placed: '브라운 롤 · 네이비 맥스 · 크림 라운저 — 데크 왼쪽',
+    step: '인부가 크림 라운저를 밀어 데크 왼쪽 자리에 앉힘',
+    remain: '노란 돗자리(접힌 채) · 팟 3개 · 퍼플 피라미드',
+    workers: '라운저 옆 인부는 손을 뗀 자세, 다른 인부가 접힌 돗자리를 들고 중앙으로 향함',
+  },
+  {
+    id: 'K4', have: false, title: '노란 돗자리 펼침 (중앙)',
+    placed: '롤 · 맥스 · 라운저 + 노란 깅엄 돗자리 2장이 데크 중앙에 나란히 펼쳐짐',
+    step: '인부 둘이 돗자리 모서리를 잡고 착 펼쳐 바닥에 깖',
+    remain: '블루/오렌지/레드 팟 · 퍼플 피라미드',
+    workers: '돗자리 양끝 인부 둘이 방금 편 자세, 나머지는 팟에 손을 얹고 대기',
+  },
+  {
+    id: 'K5', have: false, title: '블루·오렌지 팟 안착 (오른쪽)',
+    placed: '롤 · 맥스 · 라운저 · 돗자리 + 블루 팟과 오렌지 팟 — 데크 오른쪽',
+    step: '인부들이 둥근 팟을 바닥으로 굴려 오른쪽 자리에 세움',
+    remain: '레드 팟 · 퍼플 피라미드',
+    workers: '팟 옆 인부들이 발로 위치를 미세 조정하는 자세',
+  },
+  {
+    id: 'K6', have: false, title: '레드 팟 · 퍼플 피라미드 안착 — 배치 완료',
+    placed: '전 제품이 최종 위치에 — 롤·맥스(뒤) · 라운저(왼쪽) · 돗자리(중앙) · 블루/오렌지 팟(오른쪽) · 레드 팟(그 뒤) · 퍼플 피라미드(앞)',
+    step: '레드 팟이 오른쪽 뒤에, 퍼플 피라미드가 데크 앞쪽에 놓임. 데크 주변 바닥과 물은 이제 깨끗함',
+    remain: '돗자리 위가 비어 있음 — 인형도 간식도 아직 없음',
+    workers: '인부들이 돗자리 근처에 모여 티렉스·유니콘 인형과 간식을 손에 들고 있음',
+  },
+  {
+    id: 'K7', have: false, title: '메이트 인형 세팅',
+    placed: '전 제품 + 돗자리 위에 빨간 티렉스와 보라 유니콘 인형이 나란히 앉음',
+    step: '인부들이 인형을 돗자리에 살포시 앉힘',
+    remain: '간식(작은 음식 소품)만 남음',
+    workers: '인형 옆 인부들이 손을 뗀 자세, 한 인부가 간식을 들고 다가옴',
+  },
+  {
+    id: 'K8', have: true, title: '완성 — 간식 세팅 + 인부 전원 퇴장',
+    placed: '완성된 팝업스토어 — 전 제품 + 인형 + 간식이 돗자리 위에',
+    step: '마지막 간식이 놓이고 인부들이 프레임 밖으로 사라짐',
+    remain: '없음',
+    workers: '아무도 없음 — 완전히 빈 씬',
+    note: '✅ end_v4.png 이미 확보',
+  },
+  {
+    id: 'K9', have: true, title: '앰비언트 — 햇살·바다만 (동일 프레임)',
+    placed: 'K8과 완전히 동일',
+    step: '(정지 — 빛과 물만 움직임)',
+    remain: '—',
+    workers: '없음',
+    note: '✅ K8을 start_image로 재사용 · 프레임 추가 생성 불필요',
+  },
+];
+
 const GATES = [
   { stage: 'STAGE 0 · 정의', s: '✅ A안 확정', note: '4초 원컷 · 스틸 2cr + 영상 7cr = 9cr (2026-07-16 사용자 확정)' },
   { stage: 'STAGE 1 · 에셋', s: '✅ 끝 프레임 확보', note: '완성 디오라마 키비주얼(사용자 제공) = end_image로 확정 · 첫 프레임은 이 이미지를 편집해 생성' },
@@ -101,6 +186,61 @@ export default function Storyboard13Page() {
         · <b>주인공</b>: 미니어처 인부들 (인물 얼굴 클로즈업 없음 → 정체성 락 불필요, 캐스팅 부담 0)<br />
         · <b>동작</b>: 요기보 제품을 나르고 배치하고 완성<br />
         · <b>룩</b>: 클레이/폴리머 점토 아이소메트릭 디오라마 — 키비주얼 그대로 승계 (질감·색·앵글 일치가 성패)
+      </div>
+
+      {/* ★ 키프레임 시트 */}
+      <h2 style={{ fontSize: 16, margin: '22px 0 10px' }}>★ 키프레임 시트 — 컷별 분할 제작 (2026-07-16 설계)</h2>
+      <div className="note" style={{ padding: 14, marginBottom: 8, borderLeft: '3px solid #FF7043' }}>
+        <div style={{ fontSize: 12.5, lineHeight: 1.8 }}>
+          <b style={{ color: '#FF7043' }}>원리 — 이미지가 곧 통제력</b>: Kling은 두 프레임 <b>사이만 채웁니다</b>. 키프레임이 촘촘할수록 모델이 채울 게 줄어 지름길(순간이동·던지기)이 사라집니다. 전통 애니메이션의 <b>키프레임 + 인비트윈</b>과 같은 구조 — 다만 <b>이미지가 웹 UI Unlimited라 키프레임이 공짜</b>입니다.<br />
+          <b>밀도 기준</b>: 두 프레임 사이 = <b>4초 안에 자연스럽게 일어날 한 가지 동작</b>. 너무 촘촘하면 늘어지고, 너무 멀면 왜곡됩니다.<br />
+          <b>구성</b>: 키프레임 10장 → <b>8컷 × 4초 = 32초</b> + 앰비언트 5초 ≈ <b>37초 숏츠</b> · 이미 2장(K0·K8) 확보 → <b>새로 뽑을 건 6장</b><br />
+          <b>비용</b>: 이미지 0원 · 영상 8컷 × 7cr = <b>56cr</b> (+앰비언트 8.75cr) · 컷 단위 재생성이라 실패해도 7cr
+        </div>
+        <div style={{ marginTop: 10, fontSize: 12, color: 'var(--text-dim)' }}>
+          <b>세계 기준 레퍼런스</b> — 모든 키프레임 생성 시 이 이미지를 첨부:{' '}
+          <a href={REF_URL} target="_blank" rel="noreferrer" style={{ color: 'var(--accent)' }}>START v3 (바다 위 섬) 열기 ↗</a>
+        </div>
+      </div>
+
+      <div style={{ display: 'grid', gap: 6, marginBottom: 8 }}>
+        {KEYFRAMES.map((k) => (
+          <details key={k.id} className="note" style={{ padding: 11, fontSize: 12.5, borderLeft: k.have ? '3px solid #4CAF50' : '3px solid var(--border)' }}>
+            <summary style={{ cursor: 'pointer', display: 'flex', gap: 10, alignItems: 'baseline', flexWrap: 'wrap' }}>
+              <b style={{ fontSize: 13.5, color: k.have ? '#4CAF50' : '#FF7043', flex: '0 0 34px' }}>{k.id}</b>
+              <b style={{ flex: '1 1 0' }}>{k.title}</b>
+              <span style={{ fontSize: 11, fontWeight: 700, color: k.have ? '#4CAF50' : 'var(--text-dim)' }}>
+                {k.have ? '✅ 확보됨' : '🆕 생성 필요'}
+              </span>
+            </summary>
+            <div style={{ marginTop: 8, fontSize: 12, lineHeight: 1.7, color: 'var(--text-dim)' }}>
+              <div><b style={{ color: 'var(--text)' }}>놓인 것</b> — {k.placed}</div>
+              <div><b style={{ color: 'var(--text)' }}>이번 동작</b> — {k.step}</div>
+              <div><b style={{ color: 'var(--text)' }}>남은 것</b> — {k.remain}</div>
+              <div><b style={{ color: 'var(--text)' }}>인부</b> — {k.workers}</div>
+              {k.note && <div style={{ color: '#4CAF50', marginTop: 3 }}>{k.note}</div>}
+            </div>
+            {!k.have && (
+              <pre style={{ marginTop: 8, padding: 10, borderRadius: 8, background: 'rgba(0,0,0,.22)', border: '1px solid var(--border)', fontSize: 10.5, lineHeight: 1.55, whiteSpace: 'pre-wrap', color: 'var(--text-dim)' }}>
+{WORLD_BLOCK}
+
+{`PLACED ON THE DECK: ${k.placed}`}
+
+{`THIS STEP: ${k.step}`}
+
+{`STILL ON THE GROUND, WAITING: ${k.remain}`}
+
+{`WORKERS: ${k.workers}`}
+
+{TAIL_BLOCK}
+              </pre>
+            )}
+          </details>
+        ))}
+      </div>
+      <div className="note" style={{ padding: 12, fontSize: 12, lineHeight: 1.7, marginBottom: 8, color: 'var(--text-dim)' }}>
+        <b style={{ color: 'var(--text)' }}>프롬프트 3분할의 의도</b>: <b>PLACED</b>(누적 상태) / <b>THIS STEP</b>(이번 변화) / <b>STILL WAITING</b>(남은 것) 로 나눠 <b>두 키프레임 사이의 변화량을 정확히 못박습니다</b>. 이게 &quot;한 컷 = 한 동작&quot;의 실체이고, 13차 v1~v3에서 던지기가 반복된 원인(변화량 과다)을 구조적으로 차단합니다.<br />
+        <b style={{ color: 'var(--text)' }}>인부 자세 규칙</b>: 매 키프레임에서 인부는 <b>다음 물건에 이미 손을 얹은 채</b> 대기 — 다음 컷의 동작이 자연스럽게 시작되게 하는 연결 장치.
       </div>
 
       {/* ★ 최종 러프컷 */}
