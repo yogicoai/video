@@ -40,6 +40,7 @@ export default function HomePage() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
+  const [tab, setTab] = useState('seedance'); // 엔진 탭 — Seedance 우선 노출
 
   async function load() {
     setLoading(true);
@@ -92,12 +93,36 @@ export default function HomePage() {
         </a>
       </div>
 
+      {/* 엔진 탭 — Seedance 작업물 우선 노출 */}
+      <div style={{ display: 'flex', gap: 8, marginBottom: 18, borderBottom: '1px solid var(--border)' }}>
+        {[
+          { k: 'seedance', label: '🎥 Seedance 작업물', bg: '#FF7043' },
+          { k: 'kling', label: '⚙ Kling 3.0 작업물', bg: '#3F51B5' },
+        ].map((t) => {
+          const active = tab === t.k;
+          return (
+            <button
+              key={t.k}
+              onClick={() => setTab(t.k)}
+              style={{
+                appearance: 'none', border: 'none', cursor: 'pointer', background: 'transparent',
+                padding: '10px 16px', fontSize: 14, fontWeight: 700,
+                color: active ? '#fff' : 'var(--text-dim)',
+                borderBottom: active ? `3px solid ${t.bg}` : '3px solid transparent',
+                marginBottom: -1,
+              }}
+            >
+              {t.label}
+            </button>
+          );
+        })}
+      </div>
+
       {/* 엔진 태그 범례 */}
       <div className="note" style={{ padding: '8px 12px', marginBottom: 16, display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap', fontSize: 12 }}>
-        <b style={{ fontSize: 12 }}>엔진 구분</b>
-        <EngineChip e="kling" /><span style={{ color: 'var(--text-dim)' }}>컷 단위 · 얼굴 픽셀 락 · 시리즈물</span>
         <EngineChip e="seedance" /><span style={{ color: 'var(--text-dim)' }}>원테이크 · 카메라 안무 · 네이티브 오디오</span>
-        <EngineChip e="both" /><span style={{ color: 'var(--text-dim)' }}>동일 원작 비교</span>
+        <EngineChip e="kling" /><span style={{ color: 'var(--text-dim)' }}>컷 단위 · 얼굴 픽셀 락 · 시리즈물</span>
+        <EngineChip e="both" /><span style={{ color: 'var(--text-dim)' }}>비교 프로젝트 — 양쪽 탭에 표시</span>
       </div>
 
       {/* 고정 — 제품 데이터 레지스트리 */}
@@ -117,6 +142,29 @@ export default function HomePage() {
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
+
+      {/* ===== Seedance 작업물 ===== */}
+      {tab === 'seedance' && (
+      <a
+        href="/storyboard17"
+        className="card"
+        style={{ display: 'block', borderColor: '#FF7043', marginBottom: 20 }}
+      >
+        <div className="card-title">🆚 가족 요기보 3탄 비교 — Seedance 30초 리메이크</div>
+        <div className="card-meta">
+          17차 · 16:9 · 30초 · 5컷 · Seedance 2.0 · 원작 10차(Kling)를 동일 캐스팅(엄마+딸)으로 하루 아크 풀리메이크 · 엔진 비교 완성본
+          <br />
+          ♻️ 힉스필드 유실 → 로컬 복원 · 러프2 편집 진행중(로고 인트로·S3 펀치인·S1 완만화). 진행상황을 확인하세요.
+        </div>
+        <div className="card-foot">
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="seedance" /><span className="badge badge-done">STAGE 5 · 러프2 편집중</span></span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+      )}
+
+      {/* ===== Kling 3.0 작업물 (그룹 시작) ===== */}
+      {tab === 'kling' && (<>
 
       {/* 고정 — 완성 스토리보드 프로젝트 */}
       <a
@@ -230,6 +278,42 @@ export default function HomePage() {
       </a>
       )}
 
+      {/* 고정 — 17차 프로젝트 (가족 3탄 비교 · Seedance 30초) — 복원 완료 */}
+      <a
+        href="/storyboard17"
+        className="card"
+        style={{ display: 'block', borderColor: '#66BB6A', marginBottom: 20 }}
+      >
+        <div className="card-title">🆚 가족 요기보 3탄 비교 — Seedance 30초 리메이크</div>
+        <div className="card-meta">
+          17차 · 16:9 · 30초 · 5컷×6초 · Seedance 2.0 · 원작 10차(Kling)를 동일 캐스팅(엄마+딸)으로 하루 아크(기상→놀이×3→취침) 풀리메이크 · 엔진 비교 완성본
+          <br />
+          ♻️ 힉스필드 클라우드 유실 → 로컬 자산(public/fam3s)으로 복원 완료 · 러프컷 v3_final(33.9s)+4K+BGM. 진행상황을 확인하세요.
+        </div>
+        <div className="card-foot">
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="seedance" /><span className="badge badge-done">STAGE 5 · 러프컷 완성 · 복원</span></span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
+      {/* 고정 — 16차 프로젝트 (팍스 홈캉스) */}
+      <a
+        href="/storyboard16"
+        className="card"
+        style={{ display: 'block', borderColor: '#FF7043', marginBottom: 20 }}
+      >
+        <div className="card-title">🏖 팍스 홈캉스 — 집에서 즐기는 여름휴가</div>
+        <div className="card-meta">
+          16차 · 9:16 · 9초 · Kling 3.0 · 팍스가 맥스 네이비 + 서포트에서 즐기는 홈캉스 · 모토 &quot;집에서 즐기는 편안한 라이프스타일&quot;
+          <br />
+          컨셉 확정 · 키프레임 프롬프트 완료 · 구조 A/B 컨펌 대기. 진행상황을 확인하세요.
+        </div>
+        <div className="card-foot">
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="kling" /><span className="badge badge-generating">STAGE 0 · 구조 컨펌 대기</span></span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
       {/* 고정 — 14차 프로젝트 (팍스 캐릭터 파일럿) */}
       <a
         href="/storyboard14"
@@ -266,7 +350,10 @@ export default function HomePage() {
         </div>
       </a>
 
-      {/* 고정 — 12차 프로젝트 (엔진 비교) */}
+      {/* ===== Kling 그룹 종료 (12차 both는 양쪽 표시) ===== */}
+      </>)}
+
+      {/* 고정 — 12차 프로젝트 (엔진 비교) — both · 양쪽 탭 노출 */}
       <a
         href="/storyboard12"
         className="card"
@@ -283,6 +370,9 @@ export default function HomePage() {
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
+
+      {/* ===== Kling 3.0 작업물 (그룹 재개) ===== */}
+      {tab === 'kling' && (<>
 
       {/* 고정 — 11차 프로젝트 (가족 4탄 · 무비나잇) */}
       <a
@@ -378,6 +468,9 @@ export default function HomePage() {
       </a>
       )}
       */}
+
+      {/* ===== Kling 3.0 작업물 (그룹 끝) ===== */}
+      </>)}
 
       {loading ? (
         <div className="empty">불러오는 중…</div>

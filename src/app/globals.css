@@ -201,6 +201,11 @@ a {
 .badge-draft {
   color: var(--accent);
 }
+.badge-done {
+  color: #66BB6A;
+  border-color: #33502a;
+  background: #16241490;
+}
 
 .empty {
   text-align: center;

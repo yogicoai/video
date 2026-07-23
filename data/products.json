@@ -71,12 +71,16 @@
       "weight": "1.7"
     },
     "scalePrompt": "a U-shaped armrest cushion that wraps around an adult's lower back, armrests about hip-height when seated",
-    "notes": "U자 팔걸이. 육아 서포트 — 엄마가 안에 앉아 아기 안는 구도(가족 CF CUT6). 360 스프라이트 44프레임. · SUPPORT · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: U-shaped body pillow wrapping around a seated person's lower back, sides and arms; used alone or paired with a bean bag sofa; proven for parenting scenes (nursing, holding a baby)",
+    "notes": "U자 팔걸이. 육아 서포트 — 엄마가 안에 앉아 아기 안는 구도(가족 CF CUT6). 360 스프라이트 44프레임. · SUPPORT · 겉커버 면 89%/스판덱스 11% · 이너 폴리에스터 87%/스판덱스 13% · 충전재 EPS·HRF·Mixed Foam · 연출: U-shaped body pillow wrapping around a seated person's lower back, sides and arms; used alone or paired with a bean bag sofa; proven for parenting scenes (nursing, holding a baby) · [2026-07-21] 맥스+서포트 조합 크기 기준 = usage.on_max 실사(사람이 상체를 U자에 감싸 기댐). 서포트는 맥스 위에 올려 등받이로 쓰며 상체를 통째로 감쌈 — Element+텍스트만으론 목베개로 축소 렌더되니 이 실사를 image_reference로 동봉할 것",
     "usedIn": [
       "가족 CF CUT6"
     ],
     "createdAt": "2026-07-06T03:23:04.701Z",
-    "updatedAt": "2026-07-15T01:30:50.086Z"
+    "updatedAt": "2026-07-21T00:55:42.732Z",
+    "usage": {
+      "on_max": "https://yogibo.openhost.cafe24.com/web/img/ai/usage/support_on_max.png",
+      "sitting": "https://yogibo.openhost.cafe24.com/web/img/ai/usage/support_on_max.png"
+    }
   },
   {
     "id": "moonpillow",
@@ -1841,11 +1845,11 @@
       "h": "4.5",
       "weight": ""
     },
-    "scalePrompt": "a tiny palm-sized squishy toy (5.5cm — about the size of a golf ball or a macaron); fits entirely inside one closed hand",
+    "scalePrompt": "a tiny 5.5cm soft KNIT-FABRIC squishy CUBE (rounded cube / marshmallow shape) with a cute animal face embroidered on the FRONT face and two small fabric ears at the top corners; solid bright color body; palm-sized (golf-ball / macaron), fits inside one hand. NOT a 3D sculpted animal figure, NOT a plush with legs or tail — just a soft fabric cube with an embroidered face, easy to stack.",
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-07T05:35:49.500Z",
-    "updatedAt": "2026-07-15T01:31:01.708Z"
+    "updatedAt": "2026-07-23T02:00:00.000Z"
   },
   {
     "id": "743c2f25",
@@ -1871,11 +1875,11 @@
       "h": "4.5",
       "weight": ""
     },
-    "scalePrompt": "a tiny palm-sized squishy toy (5.5cm — about the size of a golf ball or a macaron); fits entirely inside one closed hand",
+    "scalePrompt": "a tiny 5.5cm soft KNIT-FABRIC squishy CUBE (rounded cube / marshmallow shape) with a cute animal face embroidered on the FRONT face and two small fabric ears at the top corners; solid bright color body; palm-sized (golf-ball / macaron), fits inside one hand. NOT a 3D sculpted animal figure, NOT a plush with legs or tail — just a soft fabric cube with an embroidered face, easy to stack.",
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-07T05:36:44.611Z",
-    "updatedAt": "2026-07-15T01:31:01.893Z"
+    "updatedAt": "2026-07-23T02:00:00.000Z"
   },
   {
     "id": "dd3b3acc",
@@ -1901,11 +1905,11 @@
       "h": "4.5",
       "weight": ""
     },
-    "scalePrompt": "a tiny palm-sized squishy toy (5.5cm — about the size of a golf ball or a macaron); fits entirely inside one closed hand",
+    "scalePrompt": "a tiny 5.5cm soft KNIT-FABRIC squishy CUBE (rounded cube / marshmallow shape) with a cute animal face embroidered on the FRONT face and two small fabric ears at the top corners; solid bright color body; palm-sized (golf-ball / macaron), fits inside one hand. NOT a 3D sculpted animal figure, NOT a plush with legs or tail — just a soft fabric cube with an embroidered face, easy to stack.",
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-07T05:37:22.130Z",
-    "updatedAt": "2026-07-15T01:31:02.090Z"
+    "updatedAt": "2026-07-23T02:00:00.000Z"
   },
   {
     "id": "d64b56ca",
@@ -1931,11 +1935,11 @@
       "h": "4.5",
       "weight": ""
     },
-    "scalePrompt": "a tiny palm-sized squishy toy (5.5cm — about the size of a golf ball or a macaron); fits entirely inside one closed hand",
+    "scalePrompt": "a tiny 5.5cm soft KNIT-FABRIC squishy CUBE (rounded cube / marshmallow shape) with a cute animal face embroidered on the FRONT face and two small fabric ears at the top corners; solid bright color body; palm-sized (golf-ball / macaron), fits inside one hand. NOT a 3D sculpted animal figure, NOT a plush with legs or tail — just a soft fabric cube with an embroidered face, easy to stack.",
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-07T05:37:51.890Z",
-    "updatedAt": "2026-07-15T01:31:02.309Z"
+    "updatedAt": "2026-07-23T02:00:00.000Z"
   },
   {
     "id": "18ce4f74",
@@ -1961,11 +1965,11 @@
       "h": "4.5",
       "weight": ""
     },
-    "scalePrompt": "a tiny palm-sized squishy toy (5.5cm — about the size of a golf ball or a macaron); fits entirely inside one closed hand",
+    "scalePrompt": "a tiny 5.5cm soft KNIT-FABRIC squishy CUBE (rounded cube / marshmallow shape) with a cute animal face embroidered on the FRONT face and two small fabric ears at the top corners; solid bright color body; palm-sized (golf-ball / macaron), fits inside one hand. NOT a 3D sculpted animal figure, NOT a plush with legs or tail — just a soft fabric cube with an embroidered face, easy to stack.",
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-07T05:38:14.387Z",
-    "updatedAt": "2026-07-15T01:31:02.510Z"
+    "updatedAt": "2026-07-23T02:00:00.000Z"
   },
   {
     "id": "b097fc3c",
@@ -1991,11 +1995,11 @@
       "h": "4.5",
       "weight": ""
     },
-    "scalePrompt": "a tiny palm-sized squishy toy (5.5cm — about the size of a golf ball or a macaron); fits entirely inside one closed hand",
+    "scalePrompt": "a tiny 5.5cm soft KNIT-FABRIC squishy CUBE (rounded cube / marshmallow shape) with a cute animal face embroidered on the FRONT face and two small fabric ears at the top corners; solid bright color body; palm-sized (golf-ball / macaron), fits inside one hand. NOT a 3D sculpted animal figure, NOT a plush with legs or tail — just a soft fabric cube with an embroidered face, easy to stack.",
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-07T05:38:32.835Z",
-    "updatedAt": "2026-07-15T01:31:02.719Z"
+    "updatedAt": "2026-07-23T02:00:00.000Z"
   },
   {
     "id": "47fea49b",
@@ -2141,11 +2145,11 @@
       "h": "4.5",
       "weight": ""
     },
-    "scalePrompt": "a tiny palm-sized squishy toy (5.5cm — about the size of a golf ball or a macaron); fits entirely inside one closed hand",
+    "scalePrompt": "a tiny 5.5cm soft KNIT-FABRIC squishy CUBE (rounded cube / marshmallow shape) with a cute animal face embroidered on the FRONT face and two small fabric ears at the top corners; solid bright color body; palm-sized (golf-ball / macaron), fits inside one hand. NOT a 3D sculpted animal figure, NOT a plush with legs or tail — just a soft fabric cube with an embroidered face, easy to stack.",
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-08T01:55:01.675Z",
-    "updatedAt": "2026-07-15T01:31:03.792Z"
+    "updatedAt": "2026-07-23T02:00:00.000Z"
   },
   {
     "id": "a614c1e5",
@@ -2171,11 +2175,11 @@
       "h": "4.5",
       "weight": ""
     },
-    "scalePrompt": "a tiny palm-sized squishy toy (5.5cm — about the size of a golf ball or a macaron); fits entirely inside one closed hand",
+    "scalePrompt": "a tiny 5.5cm soft KNIT-FABRIC squishy CUBE (rounded cube / marshmallow shape) with a cute animal face embroidered on the FRONT face and two small fabric ears at the top corners; solid bright color body; palm-sized (golf-ball / macaron), fits inside one hand. NOT a 3D sculpted animal figure, NOT a plush with legs or tail — just a soft fabric cube with an embroidered face, easy to stack.",
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-08T01:55:59.962Z",
-    "updatedAt": "2026-07-15T01:31:04.032Z"
+    "updatedAt": "2026-07-23T02:00:00.000Z"
   },
   {
     "id": "ebf4a241",
@@ -2201,11 +2205,11 @@
       "h": "4.5",
       "weight": ""
     },
-    "scalePrompt": "a tiny palm-sized squishy toy (5.5cm — about the size of a golf ball or a macaron); fits entirely inside one closed hand",
+    "scalePrompt": "a tiny 5.5cm soft KNIT-FABRIC squishy CUBE (rounded cube / marshmallow shape) with a cute animal face embroidered on the FRONT face and two small fabric ears at the top corners; solid bright color body; palm-sized (golf-ball / macaron), fits inside one hand. NOT a 3D sculpted animal figure, NOT a plush with legs or tail — just a soft fabric cube with an embroidered face, easy to stack.",
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-08T01:56:35.905Z",
-    "updatedAt": "2026-07-15T01:31:04.250Z"
+    "updatedAt": "2026-07-23T02:00:00.000Z"
   },
   {
     "id": "56739f21",
@@ -2231,11 +2235,11 @@
       "h": "4.5",
       "weight": ""
     },
-    "scalePrompt": "a tiny palm-sized squishy toy (5.5cm — about the size of a golf ball or a macaron); fits entirely inside one closed hand",
+    "scalePrompt": "a tiny 5.5cm soft KNIT-FABRIC squishy CUBE (rounded cube / marshmallow shape) with a cute animal face embroidered on the FRONT face and two small fabric ears at the top corners; solid bright color body; palm-sized (golf-ball / macaron), fits inside one hand. NOT a 3D sculpted animal figure, NOT a plush with legs or tail — just a soft fabric cube with an embroidered face, easy to stack.",
     "notes": "SQUEEZIBO · 겉커버 면 89%/스판덱스 11% · 충전재 플라스틱 고무 99%/폴리에틸렌 1% · 연출: palm-sized squishy character cushion (plant, animal, solid designs); held and squeezed in one hand, or placed as a cute accent on a desk, sofa, or bedside; soft stretch fabric over a squishy malleable core",
     "usedIn": [],
     "createdAt": "2026-07-08T01:57:08.461Z",
-    "updatedAt": "2026-07-15T01:31:04.533Z"
+    "updatedAt": "2026-07-23T02:00:00.000Z"
   },
   {
     "id": "09ad4c18",

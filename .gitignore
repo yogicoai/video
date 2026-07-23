@@ -122,11 +122,31 @@ yarn-error.log*
 !/public/clay/build_v1.mp4
 !/public/clay/build_v4.mp4
 !/public/clay/rough_final.mp4
+!/public/homecance/homecance_v1.mp4
+!/public/homecance/combo_ref.png
+!/public/homecance/homecance_v1_crop.mp4
 !/public/clay/ambient_v1.mp4
 !/public/clay/build_v4_timelapse.mp4
 !/public/clay/build_v4_fast.mp4
 !/public/clay/build_v3.mp4
 !/public/clay/build_v2.mp4
+
+# 17차 가족 3탄 비교(Seedance 30초) — 복원 자산 · Vercel 재생 예외
+!/public/fam3s/rough2.mp4
+!/public/fam3s/rough2_music.mp4
+!/public/fam3s/rough_v3_final_v2_clean.mp4
+!/public/fam3s/rough_v3_final_v2_clean_music.mp4
+!/public/fam3s/rough_v3_final_v2.mp4
+!/public/fam3s/rough_v3_final_v2_music.mp4
+!/public/fam3s/rough_v3_final.mp4
+!/public/fam3s/rough_v3_final_music.mp4
+!/public/fam3s/rough_v2.mp4
+!/public/fam3s/rough_v1.mp4
+!/public/fam3s/s1_v1.mp4
+!/public/fam3s/s2_v1.mp4
+!/public/fam3s/s3_v1.mp4
+!/public/fam3s/s4_v1.mp4
+!/public/fam3s/s5_v1.mp4
 
 # backup files
 *.zip

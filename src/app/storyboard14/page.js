@@ -78,31 +78,24 @@ const POSE_LIB = [
     ['엄지척 · 윙크', '엄지척_윙크', 'giving a big thumbs up with one paw, winking one eye, proud confident grin'],
     ['박수', '박수', 'clapping his paws together, delighted, eyes squeezed happy, tail wagging fast'],
     ['확성기 손 (알림)', '확성기', 'one paw cupped beside his mouth as if announcing something exciting, mouth open in a call, tail up straight'],
-    ['하트 손', '하트', 'making a small heart shape with both paws in front of his chest, sweet warm smile, eyes soft'],
-    ['오케이 사인', '오케이', 'making an OK sign with one paw, other paw on his hip, confident reassuring smile'],
+    ['하트 손', '하트_손', 'making a small heart shape with both paws in front of his chest, sweet warm smile, eyes soft'],
   ]},
   { g: '감정 표현', items: [
-    ['신남 (점프)', '신남', 'jumping up with both arms raised in joy, feet off the ground, huge open smile, tail flying'],
     ['놀람', '놀람', 'startled — eyes wide, mouth open in a gasp, leaning back, TAIL PUFFED UP and bushy'],
     ['졸림', '졸림', 'yawning with one paw over his mouth, eyes half closed and droopy, TAIL DROOPING down, sleepy'],
-    ['궁금', '궁금', 'head tilted to one side, one paw touching his chin, curious raised brow, tail curled with a question-mark curve'],
     ['뿌듯', '뿌듯', 'chest puffed out proudly, paws on hips, chin up, satisfied grin, tail standing tall'],
-    ['부끄러움', '부끄러움', 'shy — one paw scratching behind his head, other arm behind his back, cheeks flushed, bashful little smile'],
-    ['생각', '생각', 'thinking — arms folded, one paw tapping his chin, eyes looking up in thought, tail slowly curling'],
     ['실망', '실망', 'disappointed — shoulders slumped, arms hanging, ears folded back, small frown, tail limp on the floor'],
   ]},
   { g: '동작', items: [
     ['손 흔들기', '손_흔들기', 'waving hello with one raised paw, warm smile, weight relaxed on one leg, tail swaying'],
     ['걷기', '걷기', 'mid-stride walking forward cheerfully, one foot lifted, arms swinging naturally, tail counterbalancing'],
-    ['뛰기', '뛰기', 'running fast, both feet off the ground, arms pumping, excited determined face, tail streaming behind'],
     ['앉기', '앉기', 'sitting on the floor with legs stretched out in front, leaning back on both paws, relaxed content face, tail curled beside him'],
     ['밀기', '밀기', 'pushing something heavy with both paws, leaning into it, feet braced, effort on his face'],
     ['들기', '들기', 'carrying something with both arms wrapped around it, hugging it to his chest, cheerful determined face'],
   ]},
   { g: '프레이밍 (후편집 텍스트용)', items: [
-    ['좌측 배치 · 우측 여백', '우측_여백', 'standing on the LEFT THIRD of the frame, turned slightly inward, pointing toward the empty space on the right with one paw, cheerful expression. The RIGHT TWO-THIRDS is clean empty background, completely clear, reserved for text. Do not put anything there'],
+    ['좌측 배치 · 우측 여백', '좌측배치_우측여백', 'standing on the LEFT THIRD of the frame, turned slightly inward, pointing toward the empty space on the right with one paw, cheerful expression. The RIGHT TWO-THIRDS is clean empty background, completely clear, reserved for text. Do not put anything there'],
     ['상단 배치 · 하단 여백', '상단배치', 'standing in the TOP HALF of the frame, waving with one paw, looking down and forward with a warm smile. The BOTTOM HALF is clean empty background, reserved for text'],
-    ['얼굴 클로즈업', '얼굴_클로즈업', 'head and shoulders close-up, looking straight at camera with a bright warm smile, eyes sparkling, ears up'],
   ]},
 ];
 
@@ -110,7 +103,7 @@ const POSE_LIB = [
 const COMBO = [
   ['맥스 네이비', '팍스_맥스_네이비', 'eeddd2d7-32c2-42b7-884e-724f44e3df8d', 'lounging happily on the deep navy Yogibo Max lying flat on the floor, sunk into it, tail draped over the side, blissful expression'],
   ['맥스 아쿠아', '팍스_맥스_아쿠아', 'c329fc5b-5283-4821-99e6-ddba2bd741c8', 'lying full-length on the aqua blue Yogibo Max, arms behind his head, one leg crossed, totally relaxed'],
-  ['팟 올리브', '팍스_팟_올리브', '8f120498-f4b5-4c18-90d5-fe54a3d7a015', 'sinking deep into the olive green Yogibo Pod, hugged by it, only his head and tail poking out, eyes closed in bliss'],
+  ['라운드필로우', '팍스_라운드필로우', '', 'standing proudly on top of a round cream-beige Yogibo floor cushion — a low, flat, doughnut-shaped round pillow about 60cm across and 20cm thick, soft matte fabric, dimpled in the centre where he stands. He is balanced on it with one paw raised cheerfully, tail up'],
   ['서포트 그린', '팍스_서포트_그린', 'fd32ee39-f00e-491c-857b-d132cbb87481', 'sitting inside the lime green U-shaped Yogibo Support, leaning back with both arms resting on the sides, relaxed happy face'],
   ['문필로우 올리브', '팍스_문필로우_올리브', '432687a2-bec1-487d-8482-5f522d250fa0', 'hugging the olive green crescent Yogibo Moon Pillow, cheek resting on it, sleepy content smile'],
   ['메이트 옐리', '팍스_메이트_엘리', 'cd0310ab-4858-4aff-b523-d1cfcca12dfe', 'hugging the Yogibo Mate elephant plush cheek to cheek, both happy, tail wagging'],
@@ -178,9 +171,13 @@ ${POSE_TAIL}`;
 }
 
 function comboPrompt(prodId, desc) {
-  return `<<<${FOX_EL}>>> the fox character ${desc}, with <<<${prodId}>>>.
+  const prod = prodId ? ` with <<<${prodId}>>>` : '';
+  const lock = prodId
+    ? 'Same character, same design, same colours, same proportions as the reference. The Yogibo product must match its reference exactly in shape and colour.'
+    : 'Same character, same design, same colours, same proportions as the reference — only the pose and the setting change.';
+  return `<<<${FOX_EL}>>> the fox character ${desc}${prod}.
 
-Same character, same design, same colours, same proportions as the reference. The Yogibo product must match its reference exactly in shape and colour.
+${lock}
 
 Cosy modern living room, warm afternoon light, shallow depth of field, soft cinematic look. 9:16 vertical. No text, no lettering, no logos.`;
 }
