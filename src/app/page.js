@@ -144,7 +144,27 @@ export default function HomePage() {
       </a>
 
       {/* ===== Seedance 작업물 ===== */}
-      {tab === 'seedance' && (
+      {tab === 'seedance' && (<>
+
+      {/* 고정 — 18차 프로젝트 (스티커 peel) */}
+      <a
+        href="/storyboard18"
+        className="card"
+        style={{ display: 'block', borderColor: '#FF7043', marginBottom: 20 }}
+      >
+        <div className="card-title">🩹 스티커 peel — 인물을 뜯어 붙이는 효과</div>
+        <div className="card-meta">
+          18차 · ~5초 · SNS · 시작 이미지 속 인물(+빈백+고양이)을 스티커처럼 &quot;촤악&quot; 뜯어내 새 배경에 붙이기 · 엔진 후보 Seedance/합성
+          <br />
+          STAGE 0 정의 · 대상범위·새배경·방식(합성 vs Seedance) 컨펌 대기 · 크레딧은 get_cost 확인 후 사용. 진행상황을 확인하세요.
+        </div>
+        <div className="card-foot">
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="seedance" /><span className="badge badge-generating">STAGE 0 · 방식 컨펌 대기</span></span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
+      {/* 고정 — 17차 프로젝트 (가족 3탄 비교) */}
       <a
         href="/storyboard17"
         className="card"
@@ -161,7 +181,8 @@ export default function HomePage() {
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
-      )}
+
+      </>)}
 
       {/* ===== Kling 3.0 작업물 (그룹 시작) ===== */}
       {tab === 'kling' && (<>
