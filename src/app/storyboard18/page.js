@@ -34,8 +34,8 @@ const APPROACHES = [
 const QUESTIONS = [
   ['✅ 뜯어낼 대상', '인물 + 빈백 (확정) · 고양이는 제외(컷아웃 때 경계 처리)'],
   ['붙일 새 배경', '⬜ 어떤 배경에 붙일지 (URL로 제공) — "붙이기" 완성에 필수'],
-  ['방식 선택', '⬜ 🅐 합성 / 🅑 Seedance / 🅒 Kling 하이브리드(start+end·추천)'],
-  ['비율', '⬜ 9:16 세로 SNS? / 원본 4:5 유지?'],
+  ['방식 선택', '⬜ 🅐 합성(사용자 컷아웃 제공·추천) / 🅑 Seedance / 🅒 Kling 하이브리드'],
+  ['✅ 비율', '9:16 세로 (숏츠/SNS) 확정'],
 ];
 
 export default function Storyboard18() {
@@ -45,7 +45,7 @@ export default function Storyboard18() {
 
       <h1 style={{ fontSize: 26, margin: '14px 0 6px' }}>🩹 스티커 peel — 인물을 뜯어 붙이는 효과</h1>
       <p style={{ color: '#aaa', fontSize: 14, lineHeight: 1.7, margin: '0 0 8px' }}>
-        18차 · ~5초 · SNS용 · 시작 이미지 속 <b>인물(+빈백+고양이)을 스티커처럼 “촤악” 뜯어내 새 배경에 붙이는</b> 효과.
+        18차 · ~5초 · <b>9:16 세로(숏츠/SNS)</b> · 시작 이미지 속 <b>인물+빈백을 스티커처럼 “촤악” 뜯어내 새 배경에 붙이는</b> 효과.
         엔진 후보 = <b>Seedance 2.0</b>(네이티브 오디오) vs <b>합성</b>(정밀). <b style={{ color: '#e6c86a' }}>크레딧은 get_cost로 금액 확인 후에만 사용.</b>
       </p>
 
