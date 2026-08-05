@@ -29,7 +29,7 @@ const STORY = {
 
 // 섹션별 제작 — 각 파트를 따로 만들어 컴펌 후 러프컷으로 이어붙임
 const SECTIONS = [
-  { id: 'S1', title: '인물 스티커 peel (합성 · 인물만 떠짐 + 손가락)', dur: '4s', dep: '합성 0원 · 러프 초안', status: '완료', file: '/sticker18/s1_peel_composite.mp4' },
+  { id: 'S1', title: '인물 스티커 peel (합성 · 인물만 떠짐 + 손가락 + 들어올림)', dur: '5s', dep: '합성 0원 · 러프 초안', status: '완료', file: '/sticker18/s1_peel_composite.mp4' },
   { id: 'S2', title: '장소 ① — 이동 → 탁 착지 → 어울림', dur: '~2.5s', dep: '배경① 필요', status: '대기', file: null },
   { id: 'S3', title: '장소 ② — 이동 → 착지 → 어울림', dur: '~2.5s', dep: '배경② 필요', status: '대기', file: null },
   { id: 'S4', title: '장소 ③ — 이동 → 착지 → 어울림', dur: '~2.5s', dep: '배경③ 필요', status: '대기', file: null },
