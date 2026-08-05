@@ -1,13 +1,29 @@
 'use client';
 
-import { useState } from 'react';
-
 // 18차 프로젝트 — 스티커 peel (인물을 뜯어 다른 배경에 붙이는 효과) (2026-08-04)
 // 컨셉: 시작 이미지 속 특정 인물(+빈백+고양이)을 스티커처럼 "촤악" 뜯어내 → 새 배경에 탁 붙이기 · ~5초 · SNS용
 // 엔진 후보: Seedance 2.0(네이티브 오디오 촤악) vs 합성(정밀). 크레딧은 get_cost 확인 후에만 사용.
 
 const START_IMG = '/sticker18/original.jpg';
 const CUTOUT_IMG = '/sticker18/cutout.png';
+
+// 스토리보드 — 손가락이 캐릭터를 스티커처럼 뜯어 다른 장소에 붙여도 어울린다
+const STORY = {
+  concept: '어디에 붙여도 어울리는 요기보 — 손가락이 캐릭터(인물+빈백)를 스티커처럼 “촤악” 뜯어, 다른 장소에 붙여도 자연스럽게 어울린다는 걸 보여주는 5초 세로 숏츠.',
+  beats: [
+    { t: '0.0–1.0s', title: '원본 + 손가락 등장', screen: '거실 원본 풀샷. 손가락이 프레임 밖에서 쑥 들어와 캐릭터(빈백) 모서리를 집는다.', sound: '잔잔한 BGM 인', how: '원본 이미지 + 손가락 PNG 인' },
+    { t: '1.0–2.3s', title: '촤악 — 스티커 뜯기', screen: '손가락이 캐릭터를 스티커처럼 들어올림. 가장자리가 살짝 말리며(curl) 기울어져 들린다. 밑엔 원래 자리.', sound: '★ “촤악” peel 효과음', how: '컷아웃 스티커에 peel/curl 변형 + 손가락 동반 이동' },
+    { t: '2.3–3.2s', title: '이동 (장소 전환)', screen: '뜯긴 스티커가 화면을 가로질러 이동. 배경이 새 장소로 스르륵 전환.', sound: '휙 스와이프', how: '스티커 이동 애니메이션 + 배경 크로스 전환' },
+    { t: '3.2–4.4s', title: '탁 — 새 장소에 붙기', screen: '새 장소(야외 잔디/카페/파스텔 룸 등)에 스티커가 탁 안착. 그 배경에도 완벽히 어울림.', sound: '탁 붙는 효과음 + BGM', how: '새 배경 + 스티커 착지 + 살짝 바운스' },
+    { t: '4.4–5.0s', title: '태그라인 (선택)', screen: '“어디든 어울리는 요기보” 문구/로고 페이드인.', sound: 'BGM 아웃', how: '텍스트/로고 오버레이' },
+  ],
+  assets: [
+    ['① 원본', '✅ 확보 (co_bon_06)'],
+    ['② 캐릭터 컷아웃 스티커', '🟡 진행 — 머리/얼굴 영역 정밀화 중 (원본이 상체 가림+배경 잡다해서 자동컷 난이도 ↑)'],
+    ['③ 새 배경 (9:16)', '⬜ 미정 — 어디에 붙일지 (야외/카페/파스텔/다른 요기보 공간…)'],
+    ['④ 손가락 PNG', '⬜ 소싱 필요 — peel 제스처(집는 손). 스톡/생성 후보'],
+  ],
+};
 
 const GATES = [
   { stage: 'STAGE 0 · 정의', s: '✅ 확정', note: '~5초 · 9:16 세로(숏츠) · 인물+빈백 스티커 peel → 새 배경 붙이기 · 방식 🅐 합성' },
@@ -67,6 +83,36 @@ export default function Storyboard18() {
           <br /><br />
           <b style={{ color: '#e6c86a' }}>남은 것 = ③ 새 배경(9:16)</b> 하나. 받으면 바로 합성 초안.
         </div>
+      </div>
+
+      {/* 스토리보드 */}
+      <h2 style={{ fontSize: 19, margin: '30px 0 10px', borderLeft: '3px solid #FF7043', paddingLeft: 10 }}>스토리보드 (컷 구성 · 5초)</h2>
+      <div style={{ background: '#1b2430', border: '1px solid #2b3a4a', borderRadius: 10, padding: '12px 14px', marginBottom: 14, fontSize: 13.5, lineHeight: 1.7, color: '#cfe' }}>
+        🎯 <b>컨셉:</b> {STORY.concept}
+      </div>
+      <div style={{ display: 'grid', gap: 8 }}>
+        {STORY.beats.map((b, i) => (
+          <div key={i} style={{ background: '#161616', border: '1px solid #2a2a2a', borderRadius: 10, padding: '12px 14px' }}>
+            <div style={{ display: 'flex', gap: 10, alignItems: 'baseline', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: 12, fontWeight: 700, color: '#FF7043', background: '#2a1a12', padding: '2px 8px', borderRadius: 6 }}>{b.t}</span>
+              <b style={{ fontSize: 15 }}>{b.title}</b>
+            </div>
+            <p style={{ color: '#ccc', fontSize: 13, lineHeight: 1.6, margin: '8px 0 4px' }}>{b.screen}</p>
+            <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', fontSize: 12, color: '#999' }}>
+              <span>🔊 {b.sound}</span>
+              <span>🛠 {b.how}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      {/* 필요 에셋 */}
+      <h3 style={{ fontSize: 15, margin: '18px 0 8px', color: '#ddd' }}>필요 에셋</h3>
+      <div style={{ display: 'grid', gap: 6 }}>
+        {STORY.assets.map(([a, st], i) => (
+          <div key={i} style={{ display: 'grid', gridTemplateColumns: '190px 1fr', gap: 10, fontSize: 12.5, padding: '8px 10px', background: '#161616', borderRadius: 8 }}>
+            <b>{a}</b><span style={{ color: '#aaa' }}>{st}</span>
+          </div>
+        ))}
       </div>
 
       {/* 게이트 */}
