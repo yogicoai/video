@@ -36,6 +36,12 @@ const SECTIONS = [
   { id: 'S5', title: '엔딩 — “어디든 어울리는 요기보” + 로고', dur: '~2s', dep: '문구·로고(있음)', status: '대기', file: null },
 ];
 
+// AI 생성 참고본 (비교용) — 크레딧 소모분
+const REF_GENS = [
+  { file: '/sticker18/s1_peel.mp4', label: 'STICKER PEEL 프리셋 (Seedance)', cost: '28cr', note: '❌ 인물이 아니라 엉뚱한 흰 스티커/전체 사진을 뗌 (타겟 실패)' },
+  { file: '/sticker18/s1_kling.mp4', label: 'Kling start+end 전환본', cost: '10cr', note: '△ 거실→로프트 morph 전환 (peel 아님)' },
+];
+
 const GATES = [
   { stage: 'STAGE 0 · 정의', s: '✅ 확정', note: '최대 15초 · 9:16 세로(숏츠) · 인물+빈백 스티커 peel → 새 배경 붙이기 · 방식 🅐 합성' },
   { stage: 'STAGE 1 · 에셋', s: '🟡 진행', note: '✅ 컷아웃 완료(사용자 제공 normal+sticky·머리까지 crisp) · ⬜ 새 배경(9:16) · ⬜ 손가락 PNG' },
@@ -148,6 +154,21 @@ export default function Storyboard18() {
             {s.file && (
               <video controls src={`${s.file}?v=1`} style={{ width: 220, borderRadius: 8, marginTop: 8, background: '#000', aspectRatio: '9/16' }} />
             )}
+          </div>
+        ))}
+      </div>
+
+      {/* AI 생성 참고본 (비교) */}
+      <h2 style={{ fontSize: 19, margin: '30px 0 10px', borderLeft: '3px solid #9575CD', paddingLeft: 10 }}>AI 생성 참고본 (비교 · 크레딧 소모분)</h2>
+      <p style={{ color: '#999', fontSize: 12.5, margin: '0 0 10px' }}>
+        AI로도 시도했으나 인물 타겟이 안 잡힘 → <b style={{ color: '#66BB6A' }}>합성(S1·0원)이 유일하게 인물만 정확히 떼어냄.</b>
+      </p>
+      <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+        {REF_GENS.map((r) => (
+          <div key={r.file} style={{ textAlign: 'center' }}>
+            <video controls src={`${r.file}?v=1`} style={{ width: 200, borderRadius: 10, background: '#000', aspectRatio: '9/16', border: '1px solid #333' }} />
+            <div style={{ fontSize: 12, color: '#ccc', marginTop: 4 }}>{r.label} <span style={{ color: '#e6c86a' }}>({r.cost})</span></div>
+            <div style={{ fontSize: 11, color: '#888', maxWidth: 200 }}>{r.note}</div>
           </div>
         ))}
       </div>

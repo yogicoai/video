@@ -154,3 +154,5 @@ yarn-error.log*
 
 # 18차 스티커 peel 러프컷(합성 0원) — Vercel 재생 예외
 !/public/sticker18/s1_peel_composite.mp4
+!/public/sticker18/s1_peel.mp4
+!/public/sticker18/s1_kling.mp4
