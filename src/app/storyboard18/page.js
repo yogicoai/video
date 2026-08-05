@@ -5,7 +5,8 @@
 // 엔진 후보: Seedance 2.0(네이티브 오디오 촤악) vs 합성(정밀). 크레딧은 get_cost 확인 후에만 사용.
 
 const START_IMG = '/sticker18/original.jpg';
-const CUTOUT_IMG = '/sticker18/cutout.png';
+const NORMAL_IMG = '/sticker18/normal.png';   // 분할 — 깔끔 컷아웃(사용자 제공)
+const STICKY_IMG = '/sticker18/sticky.png';   // 스티커 연출 — 흰 테두리 die-cut(사용자 제공)
 
 // 스토리보드 — 손가락이 캐릭터를 스티커처럼 뜯어 다른 장소에 붙여도 어울린다
 const STORY = {
@@ -19,7 +20,7 @@ const STORY = {
   ],
   assets: [
     ['① 원본', '✅ 확보 (co_bon_06)'],
-    ['② 캐릭터 컷아웃 스티커', '🟡 진행 — 머리/얼굴 영역 정밀화 중 (원본이 상체 가림+배경 잡다해서 자동컷 난이도 ↑)'],
+    ['② 캐릭터 컷아웃 스티커', '✅ 완료 — 사용자 제공 (normal=분할 / sticky=흰테두리 die-cut), 머리까지 crisp'],
     ['③ 새 배경 (9:16)', '⬜ 미정 — 어디에 붙일지 (야외/카페/파스텔/다른 요기보 공간…)'],
     ['④ 손가락 PNG', '⬜ 소싱 필요 — peel 제스처(집는 손). 스톡/생성 후보'],
   ],
@@ -27,7 +28,7 @@ const STORY = {
 
 const GATES = [
   { stage: 'STAGE 0 · 정의', s: '✅ 확정', note: '~5초 · 9:16 세로(숏츠) · 인물+빈백 스티커 peel → 새 배경 붙이기 · 방식 🅐 합성' },
-  { stage: 'STAGE 1 · 에셋', s: '🟡 진행', note: '✅ 컷아웃 로컬 완료(rembg·0원, 인물+빈백+고양이) · ⬜ 배경3(새 배경 9:16) 필요' },
+  { stage: 'STAGE 1 · 에셋', s: '🟡 진행', note: '✅ 컷아웃 완료(사용자 제공 normal+sticky·머리까지 crisp) · ⬜ 새 배경(9:16) · ⬜ 손가락 PNG' },
   { stage: 'STAGE 2 · 방식 결정', s: '✅ 확정', note: '🅐 합성 — 컷아웃을 제가 로컬에서 뽑음(0원). AI 영상 불필요·크레딧 0' },
   { stage: 'STAGE 3 · 제작', s: '⬜ 대기', note: '배경3 받으면 → peel 애니메이션 + 새 배경 착지 합성 (로컬·0원)' },
   { stage: 'STAGE 4 · 사운드/후반', s: '⬜ 대기', note: '"촤악" peel SFX 싱크(무료 효과음) · 9:16 마스터 · 조립' },
@@ -68,20 +69,23 @@ export default function Storyboard18() {
 
       {/* 시작 이미지 */}
       <h2 style={{ fontSize: 19, margin: '26px 0 10px', borderLeft: '3px solid #FF7043', paddingLeft: 10 }}>시작 이미지</h2>
-      <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'flex-start' }}>
-        <div style={{ textAlign: 'center' }}>
-          <img src={START_IMG} alt="원본" style={{ width: 240, borderRadius: 12, border: '1px solid #333' }} />
-          <div style={{ fontSize: 12, color: '#888', marginTop: 4 }}>① 원본</div>
-        </div>
-        <div style={{ textAlign: 'center' }}>
-          <img src={CUTOUT_IMG} alt="컷아웃 스티커" style={{ width: 240, borderRadius: 12, border: '1px solid #FF7043', background: 'repeating-conic-gradient(#444 0% 25%, #333 0% 50%) 50% / 20px 20px' }} />
-          <div style={{ fontSize: 12, color: '#FF7043', marginTop: 4 }}>② 스티커(컷아웃·rembg 0원)</div>
-        </div>
+      <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'flex-start' }}>
+        {[
+          [START_IMG, '① 원본', '#888', false],
+          [NORMAL_IMG, '② 분할 (깔끔 컷아웃)', '#66BB6A', true],
+          [STICKY_IMG, '③ 스티커 연출 (die-cut)', '#FF7043', true],
+        ].map(([src, lab, col, chk]) => (
+          <div key={lab} style={{ textAlign: 'center' }}>
+            <img src={src} alt={lab} style={{ width: 210, borderRadius: 12, border: `1px solid ${col}`, background: chk ? 'repeating-conic-gradient(#444 0% 25%, #333 0% 50%) 50% / 18px 18px' : '#222' }} />
+            <div style={{ fontSize: 12, color: col, marginTop: 4 }}>{lab}</div>
+          </div>
+        ))}
         <div style={{ flex: 1, minWidth: 220, color: '#bbb', fontSize: 13.5, lineHeight: 1.7 }}>
-          <b>다크브라운 요기보 빈백에 기대 누운 인물 + 회색 고양이</b>가 한 덩어리 스티커로 분리됨.
-          스티커 영역 <b>477×435</b>, 캔버스(1080×1349) 하단중앙 위치 → peel 시작점 확보.
+          <b>사용자 제공 컷아웃</b> (머리까지 crisp · rembg 자동본 대체).
+          <br />• <b style={{ color: '#66BB6A' }}>분할</b> = 배경 투명 인물+빈백+고양이
+          <br />• <b style={{ color: '#FF7043' }}>스티커</b> = 흰 테두리 die-cut → peel 연출용
           <br /><br />
-          <b style={{ color: '#e6c86a' }}>남은 것 = ③ 새 배경(9:16)</b> 하나. 받으면 바로 합성 초안.
+          <b style={{ color: '#e6c86a' }}>남은 것 = ④ 새 배경(9:16) · ⑤ 손가락 PNG</b>
         </div>
       </div>
 
