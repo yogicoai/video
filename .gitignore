@@ -151,3 +151,6 @@ yarn-error.log*
 # backup files
 *.zip
 /my-video/
+
+# 18차 스티커 peel 러프컷(합성 0원) — Vercel 재생 예외
+!/public/sticker18/s1_peel_composite.mp4

@@ -29,7 +29,7 @@ const STORY = {
 
 // 섹션별 제작 — 각 파트를 따로 만들어 컴펌 후 러프컷으로 이어붙임
 const SECTIONS = [
-  { id: 'S1', title: '인트로 — 원본 + 손가락 “촤악” peel', dur: '~2.5s', dep: '손가락 방식 확정', status: '대기', file: null },
+  { id: 'S1', title: '인물 스티커 peel (합성 · 인물만 떠짐 + 손가락)', dur: '4s', dep: '합성 0원 · 러프 초안', status: '완료', file: '/sticker18/s1_peel_composite.mp4' },
   { id: 'S2', title: '장소 ① — 이동 → 탁 착지 → 어울림', dur: '~2.5s', dep: '배경① 필요', status: '대기', file: null },
   { id: 'S3', title: '장소 ② — 이동 → 착지 → 어울림', dur: '~2.5s', dep: '배경② 필요', status: '대기', file: null },
   { id: 'S4', title: '장소 ③ — 이동 → 착지 → 어울림', dur: '~2.5s', dep: '배경③ 필요', status: '대기', file: null },
@@ -136,13 +136,18 @@ export default function Storyboard18() {
       </p>
       <div style={{ display: 'grid', gap: 6 }}>
         {SECTIONS.map((s) => (
-          <div key={s.id} style={{ display: 'grid', gridTemplateColumns: '48px 1fr 70px 90px', gap: 10, alignItems: 'center', fontSize: 13, padding: '9px 10px', background: '#161616', borderRadius: 8 }}>
-            <b style={{ color: '#FF7043' }}>{s.id}</b>
-            <span>{s.title}<span style={{ color: '#777', fontSize: 11.5 }}> · {s.dep}</span></span>
-            <span style={{ color: '#888', fontSize: 12 }}>{s.dur}</span>
-            <span style={{ fontSize: 11.5, fontWeight: 700, color: s.status === '완료' ? '#66BB6A' : s.status === '제작' ? '#e6c86a' : '#777', textAlign: 'right' }}>
-              {s.file ? '✅ 완료' : `⬜ ${s.status}`}
-            </span>
+          <div key={s.id} style={{ background: '#161616', borderRadius: 8, padding: '9px 10px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '48px 1fr 60px 70px', gap: 10, alignItems: 'center', fontSize: 13 }}>
+              <b style={{ color: '#FF7043' }}>{s.id}</b>
+              <span>{s.title}<span style={{ color: '#777', fontSize: 11.5 }}> · {s.dep}</span></span>
+              <span style={{ color: '#888', fontSize: 12 }}>{s.dur}</span>
+              <span style={{ fontSize: 11.5, fontWeight: 700, color: s.file ? '#66BB6A' : '#777', textAlign: 'right' }}>
+                {s.file ? '✅ 완료' : `⬜ ${s.status}`}
+              </span>
+            </div>
+            {s.file && (
+              <video controls src={`${s.file}?v=1`} style={{ width: 220, borderRadius: 8, marginTop: 8, background: '#000', aspectRatio: '9/16' }} />
+            )}
           </div>
         ))}
       </div>
