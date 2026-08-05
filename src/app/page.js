@@ -152,14 +152,23 @@ export default function HomePage() {
         className="card"
         style={{ display: 'block', borderColor: '#FF7043', marginBottom: 20 }}
       >
-        <div className="card-title">🩹 스티커 peel — 인물을 뜯어 붙이는 효과</div>
-        <div className="card-meta">
-          18차 · ~5초 · SNS · 시작 이미지 속 인물(+빈백+고양이)을 스티커처럼 &quot;촤악&quot; 뜯어내 새 배경에 붙이기 · 엔진 후보 Seedance/합성
-          <br />
-          STAGE 0 정의 · 대상범위·새배경·방식(합성 vs Seedance) 컨펌 대기 · 크레딧은 get_cost 확인 후 사용. 진행상황을 확인하세요.
+        <div style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div className="card-title">🩹 스티커 peel — 인물을 뜯어 붙이는 효과</div>
+            <div className="card-meta">
+              18차 · ~5초 · 9:16 세로(숏츠) · 손가락이 인물+빈백을 스티커처럼 &quot;촤악&quot; 뜯어 다른 장소에 붙여도 어울리는 &quot;어디든 어울리는 요기보&quot;
+              <br />
+              스토리보드·컷아웃(rembg 0원) 완료 · 합성 방식 확정 · 새 배경/손가락 대기. 진행상황을 확인하세요.
+            </div>
+          </div>
+          <img
+            src="/sticker18/cutout.png"
+            alt="컷아웃 스티커"
+            style={{ width: 92, height: 115, objectFit: 'contain', borderRadius: 8, flexShrink: 0, background: 'repeating-conic-gradient(#3a3a3a 0% 25%, #2e2e2e 0% 50%) 50% / 14px 14px', border: '1px solid #FF7043' }}
+          />
         </div>
-        <div className="card-foot">
-          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="seedance" /><span className="badge badge-generating">STAGE 0 · 방식 컨펌 대기</span></span>
+        <div className="card-foot" style={{ marginTop: 12 }}>
+          <span style={{ display: 'flex', gap: 6, alignItems: 'center' }}><EngineChip e="seedance" /><span className="badge badge-generating">STAGE 2 · 새 배경 대기</span></span>
           <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
         </div>
       </a>
