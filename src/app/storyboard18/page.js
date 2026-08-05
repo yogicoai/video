@@ -6,14 +6,15 @@ import { useState } from 'react';
 // 컨셉: 시작 이미지 속 특정 인물(+빈백+고양이)을 스티커처럼 "촤악" 뜯어내 → 새 배경에 탁 붙이기 · ~5초 · SNS용
 // 엔진 후보: Seedance 2.0(네이티브 오디오 촤악) vs 합성(정밀). 크레딧은 get_cost 확인 후에만 사용.
 
-const START_IMG = 'https://yogibo.openhost.cafe24.com/yogico/co_bon_06.jpg';
+const START_IMG = '/sticker18/original.jpg';
+const CUTOUT_IMG = '/sticker18/cutout.png';
 
 const GATES = [
-  { stage: 'STAGE 0 · 정의', s: '🟡 진행', note: '컨셉·길이(~5초)·비율 확정 · 대상 범위/새 배경/엔진 3가지 컨펌 대기' },
-  { stage: 'STAGE 1 · 에셋', s: '⬜ 대기', note: '시작 이미지 확보(아래) · 새 배경 이미지 URL 필요 · (합성 시)인물 컷아웃' },
-  { stage: 'STAGE 2 · 방식 결정', s: '⬜ 대기', note: '🅰 합성(0원·정밀) / 🅑 Seedance(AI·네이티브오디오) 중 택1' },
-  { stage: 'STAGE 3 · 제작', s: '⬜ 대기', note: '크레딧 사용 시 get_cost로 금액 확인 → 사용자 승인 후에만 생성' },
-  { stage: 'STAGE 4 · 사운드/후반', s: '⬜ 대기', note: '"촤악" peel SFX 싱크(무료 효과음) · 새 배경 합성 · 조립' },
+  { stage: 'STAGE 0 · 정의', s: '✅ 확정', note: '~5초 · 9:16 세로(숏츠) · 인물+빈백 스티커 peel → 새 배경 붙이기 · 방식 🅐 합성' },
+  { stage: 'STAGE 1 · 에셋', s: '🟡 진행', note: '✅ 컷아웃 로컬 완료(rembg·0원, 인물+빈백+고양이) · ⬜ 배경3(새 배경 9:16) 필요' },
+  { stage: 'STAGE 2 · 방식 결정', s: '✅ 확정', note: '🅐 합성 — 컷아웃을 제가 로컬에서 뽑음(0원). AI 영상 불필요·크레딧 0' },
+  { stage: 'STAGE 3 · 제작', s: '⬜ 대기', note: '배경3 받으면 → peel 애니메이션 + 새 배경 착지 합성 (로컬·0원)' },
+  { stage: 'STAGE 4 · 사운드/후반', s: '⬜ 대기', note: '"촤악" peel SFX 싱크(무료 효과음) · 9:16 마스터 · 조립' },
 ];
 
 const APPROACHES = [
@@ -52,11 +53,19 @@ export default function Storyboard18() {
       {/* 시작 이미지 */}
       <h2 style={{ fontSize: 19, margin: '26px 0 10px', borderLeft: '3px solid #FF7043', paddingLeft: 10 }}>시작 이미지</h2>
       <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'flex-start' }}>
-        <img src={START_IMG} alt="시작 이미지" style={{ width: 300, borderRadius: 12, border: '1px solid #333' }} />
-        <div style={{ flex: 1, minWidth: 260, color: '#bbb', fontSize: 13.5, lineHeight: 1.7 }}>
-          플랜테리어 거실, 가운데 <b>다크브라운 요기보 빈백에 기대 누운 인물</b> + 다리 위 <b>회색 고양이</b>.
-          이 대상을 스티커처럼 뜯어내는 게 핵심 오브젝트.
-          <div style={{ marginTop: 8, fontSize: 12, color: '#777', wordBreak: 'break-all' }}>{START_IMG}</div>
+        <div style={{ textAlign: 'center' }}>
+          <img src={START_IMG} alt="원본" style={{ width: 240, borderRadius: 12, border: '1px solid #333' }} />
+          <div style={{ fontSize: 12, color: '#888', marginTop: 4 }}>① 원본</div>
+        </div>
+        <div style={{ textAlign: 'center' }}>
+          <img src={CUTOUT_IMG} alt="컷아웃 스티커" style={{ width: 240, borderRadius: 12, border: '1px solid #FF7043', background: 'repeating-conic-gradient(#444 0% 25%, #333 0% 50%) 50% / 20px 20px' }} />
+          <div style={{ fontSize: 12, color: '#FF7043', marginTop: 4 }}>② 스티커(컷아웃·rembg 0원)</div>
+        </div>
+        <div style={{ flex: 1, minWidth: 220, color: '#bbb', fontSize: 13.5, lineHeight: 1.7 }}>
+          <b>다크브라운 요기보 빈백에 기대 누운 인물 + 회색 고양이</b>가 한 덩어리 스티커로 분리됨.
+          스티커 영역 <b>477×435</b>, 캔버스(1080×1349) 하단중앙 위치 → peel 시작점 확보.
+          <br /><br />
+          <b style={{ color: '#e6c86a' }}>남은 것 = ③ 새 배경(9:16)</b> 하나. 받으면 바로 합성 초안.
         </div>
       </div>
 
