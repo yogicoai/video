@@ -27,6 +27,15 @@ const STORY = {
   ],
 };
 
+// 섹션별 제작 — 각 파트를 따로 만들어 컴펌 후 러프컷으로 이어붙임
+const SECTIONS = [
+  { id: 'S1', title: '인트로 — 원본 + 손가락 “촤악” peel', dur: '~2.5s', dep: '손가락 방식 확정', status: '대기', file: null },
+  { id: 'S2', title: '장소 ① — 이동 → 탁 착지 → 어울림', dur: '~2.5s', dep: '배경① 필요', status: '대기', file: null },
+  { id: 'S3', title: '장소 ② — 이동 → 착지 → 어울림', dur: '~2.5s', dep: '배경② 필요', status: '대기', file: null },
+  { id: 'S4', title: '장소 ③ — 이동 → 착지 → 어울림', dur: '~2.5s', dep: '배경③ 필요', status: '대기', file: null },
+  { id: 'S5', title: '엔딩 — “어디든 어울리는 요기보” + 로고', dur: '~2s', dep: '문구·로고(있음)', status: '대기', file: null },
+];
+
 const GATES = [
   { stage: 'STAGE 0 · 정의', s: '✅ 확정', note: '최대 15초 · 9:16 세로(숏츠) · 인물+빈백 스티커 peel → 새 배경 붙이기 · 방식 🅐 합성' },
   { stage: 'STAGE 1 · 에셋', s: '🟡 진행', note: '✅ 컷아웃 완료(사용자 제공 normal+sticky·머리까지 crisp) · ⬜ 새 배경(9:16) · ⬜ 손가락 PNG' },
@@ -116,6 +125,24 @@ export default function Storyboard18() {
         {STORY.assets.map(([a, st], i) => (
           <div key={i} style={{ display: 'grid', gridTemplateColumns: '190px 1fr', gap: 10, fontSize: 12.5, padding: '8px 10px', background: '#161616', borderRadius: 8 }}>
             <b>{a}</b><span style={{ color: '#aaa' }}>{st}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* 섹션별 제작 */}
+      <h2 style={{ fontSize: 19, margin: '30px 0 10px', borderLeft: '3px solid #FF7043', paddingLeft: 10 }}>섹션별 제작 → 러프컷 조립</h2>
+      <p style={{ color: '#999', fontSize: 12.5, margin: '0 0 10px' }}>
+        한 번에 만들지 않고 <b>파트별로 각각 제작 → 컴펌 → 러프컷으로 이어붙임.</b> 첫 검증 = <b style={{ color: '#e6c86a' }}>배경 1개로 [원본에서 띄우기 → 새 배경에 붙이기]</b>.
+      </p>
+      <div style={{ display: 'grid', gap: 6 }}>
+        {SECTIONS.map((s) => (
+          <div key={s.id} style={{ display: 'grid', gridTemplateColumns: '48px 1fr 70px 90px', gap: 10, alignItems: 'center', fontSize: 13, padding: '9px 10px', background: '#161616', borderRadius: 8 }}>
+            <b style={{ color: '#FF7043' }}>{s.id}</b>
+            <span>{s.title}<span style={{ color: '#777', fontSize: 11.5 }}> · {s.dep}</span></span>
+            <span style={{ color: '#888', fontSize: 12 }}>{s.dur}</span>
+            <span style={{ fontSize: 11.5, fontWeight: 700, color: s.status === '완료' ? '#66BB6A' : s.status === '제작' ? '#e6c86a' : '#777', textAlign: 'right' }}>
+              {s.file ? '✅ 완료' : `⬜ ${s.status}`}
+            </span>
           </div>
         ))}
       </div>
