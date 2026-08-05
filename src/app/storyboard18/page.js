@@ -38,7 +38,8 @@ const SECTIONS = [
 
 // AI 생성 참고본 (비교용) — 크레딧 소모분
 const REF_GENS = [
-  { file: '/sticker18/s1_peel.mp4', label: 'STICKER PEEL 프리셋 (Seedance)', cost: '28cr', note: '❌ 인물이 아니라 엉뚱한 흰 스티커/전체 사진을 뗌 (타겟 실패)' },
+  { file: '/sticker18/s1_peel.mp4', label: '프리셋 1차 (원본 전체 입력)', cost: '28cr', note: '❌ 공간 전체를 뗌 (인물 타겟 실패)' },
+  { file: '/sticker18/s1_peel2.mp4', label: '프리셋 2차 (인물 크롭 입력)', cost: '28cr', note: '❌ 발 근처 조각만 뜯고 인물은 남음 (누운 인물 인식 실패)' },
   { file: '/sticker18/s1_kling.mp4', label: 'Kling start+end 전환본', cost: '10cr', note: '△ 거실→로프트 morph 전환 (peel 아님)' },
 ];
 
