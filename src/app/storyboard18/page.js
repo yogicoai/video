@@ -8,7 +8,10 @@ const START_IMG = '/sticker18/original.jpg';
 const NORMAL_IMG = '/sticker18/normal.png';   // 분할 — 깔끔 컷아웃(사용자 제공)
 const STICKY_IMG = '/sticker18/sticky.png';   // 스티커 연출 — 흰 테두리 die-cut(사용자 제공)
 
-// 스토리보드 — 손가락이 캐릭터를 스티커처럼 뜯어 다른 장소에 붙여도 어울린다
+// 변경 배경(장소) 목록 — 스티커가 옮겨 붙는 장소들. 사용자 제공분을 순서대로 등록.
+const BG_SCENES = [
+  // { img: '/sticker18/bg1.jpg', place: '장소 이름', note: '' },
+];
 const STORY = {
   concept: '어디에 붙여도 어울리는 요기보 — 손가락이 캐릭터(인물+빈백)를 스티커처럼 “촤악” 뜯어, 다른 장소에 붙여도 자연스럽게 어울린다는 걸 보여주는 5초 세로 숏츠.',
   beats: [
@@ -118,6 +121,30 @@ export default function Storyboard18() {
           </div>
         ))}
       </div>
+
+      {/* 변경 배경 (장소들) */}
+      <h2 style={{ fontSize: 19, margin: '30px 0 10px', borderLeft: '3px solid #66BB6A', paddingLeft: 10 }}>변경 배경 (장소들) — 스티커가 옮겨 붙는 곳</h2>
+      <p style={{ color: '#999', fontSize: 12.5, margin: '0 0 10px' }}>
+        “어디든 어울리는 요기보” 몽타주 — 상황(장소)이 바뀔 때마다 배경을 여기 등록. <b style={{ color: '#e6c86a' }}>9:16 세로 · 원본과 대비되는 장소일수록 효과 ↑</b>
+      </p>
+      {BG_SCENES.length === 0 ? (
+        <div style={{ border: '1px dashed #444', borderRadius: 10, padding: '20px', textAlign: 'center', color: '#777', fontSize: 13 }}>
+          ⬜ 배경 대기 — 장소 이미지(9:16)를 주시는 대로 순서대로 채웁니다. (1개=심플 / 2~3개=몽타주)
+        </div>
+      ) : (
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          {BG_SCENES.map((b, i) => (
+            <div key={i} style={{ textAlign: 'center' }}>
+              <div style={{ position: 'relative', width: 150 }}>
+                <img src={b.img} alt={b.place} style={{ width: 150, aspectRatio: '9/16', objectFit: 'cover', borderRadius: 10, border: '1px solid #333' }} />
+                <span style={{ position: 'absolute', top: 6, left: 6, fontSize: 11, fontWeight: 700, background: '#000a', color: '#fff', padding: '2px 7px', borderRadius: 6 }}>{i + 1}</span>
+              </div>
+              <div style={{ fontSize: 12, color: '#bbb', marginTop: 4 }}>{b.place}</div>
+              {b.note && <div style={{ fontSize: 11, color: '#777' }}>{b.note}</div>}
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* 게이트 */}
       <h2 style={{ fontSize: 19, margin: '30px 0 10px', borderLeft: '3px solid #FF7043', paddingLeft: 10 }}>파이프라인 상태</h2>
