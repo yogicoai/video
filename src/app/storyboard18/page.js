@@ -140,6 +140,11 @@ export default function Storyboard18() {
       <p style={{ color: '#999', fontSize: 12.5, margin: '0 0 10px' }}>
         한 번에 만들지 않고 <b>파트별로 각각 제작 → 컴펌 → 러프컷으로 이어붙임.</b> 첫 검증 = <b style={{ color: '#e6c86a' }}>배경 1개로 [원본에서 띄우기 → 새 배경에 붙이기]</b>.
       </p>
+      <div style={{ background: '#161616', border: '1px solid #FF7043', borderRadius: 10, padding: '12px 14px', marginBottom: 12 }}>
+        <div style={{ fontSize: 13.5, fontWeight: 700, color: '#FF7043', marginBottom: 8 }}>🎬 전체 흐름 러프컷 (초안 · 0원) — peel → 빈 방 리빌 → 로프트 전환 → 붙여넣기</div>
+        <video controls src="/sticker18/rough_flow.mp4?v=1" style={{ width: 240, borderRadius: 8, background: '#000', aspectRatio: '9/16' }} />
+        <div style={{ fontSize: 12, color: '#999', marginTop: 6 }}>1~5 단계 한 컷. 손가락 그립·모션·톤 그레이딩 다듬기 예정.</div>
+      </div>
       <div style={{ display: 'grid', gap: 6 }}>
         {SECTIONS.map((s) => (
           <div key={s.id} style={{ background: '#161616', borderRadius: 8, padding: '9px 10px' }}>
