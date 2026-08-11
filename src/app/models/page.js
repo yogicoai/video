@@ -45,6 +45,7 @@ const CATEGORIES = [
         identity: '유럽계 성인 여성 20대 초반 · 부드러운 타원형 · 밝은 체스트넛 브라운 롱 웨이브 · 옅은 주근깨 · 청순·내추럴 · 라이트 톤 차분한 눈',
         ref: `${FTP}/B_B_rep.jpg?v=e2`,
         sheets: { face: `${FTP}/B_B_face.png?v=v2`, expr: `${FTP}/B_B_expr.png?v=v2`, body: `${FTP}/B_B_body.png?v=v1`, pose: `${FTP}/B_B_pose.png?v=v1r` },
+        video: '/models/B_vidtest_kling.mp4?v=1', videoNote: '영상 테스트 · Kling 3.0 · 5초 (착석 미세 모션·표정 연출)',
         soulId: null, status: '얼굴 시트 ✅ · 표정/바디/포즈 대기',
       },
       {
@@ -209,6 +210,13 @@ export default function ModelsPage() {
                       </div>
                     ))}
                   </div>
+                  {m.video && (
+                    <div style={{ marginTop: 12, paddingTop: 10, borderTop: `1px dashed ${C.line}` }}>
+                      <div style={{ fontSize: 11, color: C.ok, fontWeight: 700, marginBottom: 6 }}>🎬 {m.videoNote || '영상 테스트'}</div>
+                      <video src={m.video} controls playsInline loop preload="metadata"
+                        style={{ width: 240, maxWidth: '100%', aspectRatio: '16/9', borderRadius: 8, border: `1px solid ${C.accent}`, background: '#000', display: 'block' }} />
+                    </div>
+                  )}
                   {m.soulId && <div style={{ fontSize: 11, color: C.ok, marginTop: 8 }}>🔒 Soul: {m.soulId}</div>}
                 </div>
               ))}
