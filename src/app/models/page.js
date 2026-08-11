@@ -84,7 +84,7 @@ const CATEGORIES = [
         size: '키 약 120cm · 유아~저학년 (아동 비례)',
         identity: '유럽계 여아 6~7세 · 금발 곱슬 중단발 · 둥근 볼 · 밝고 명랑 · 자연 피부',
         ref: `${FTP}/K_A_rep.jpg?v=e2`,
-        sheets: { face: `${FTP}/K_A_face.png?v=v1`, expr: `${FTP}/K_A_expr.png?v=v1`, body: `${FTP}/K_A_body.png?v=v1`, pose: `${FTP}/K_A_pose.png?v=v3` },
+        sheets: { face: `${FTP}/K_A_face.png?v=v1`, expr: `${FTP}/K_A_expr.png?v=v1`, body: `${FTP}/K_A_body.png?v=v1`, pose: `${FTP}/K_A_pose.png?v=v4` },
         soulId: null, status: '4종 완성 ✅ (착석=미니 라이트그레이 85cm)',
       },
       {
