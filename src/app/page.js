@@ -143,6 +143,24 @@ export default function HomePage() {
         </div>
       </a>
 
+      {/* 고정 — 요기보 전속 모델 */}
+      <a
+        href="/models"
+        className="card"
+        style={{ display: 'block', borderColor: '#7E57C2', marginBottom: 20 }}
+      >
+        <div className="card-title">🌟 요기보 전속 모델 — 고정형 베이스</div>
+        <div className="card-meta">
+          외국인 남/여/아동 <strong>모델 A·B·C</strong> — 얼굴 아이덴티티 고정형 전속 모델. <strong>레퍼런스 시트 4종</strong>(얼굴 턴어라운드·표정·바디·포즈)으로 락 → 요기보 제품·공간 스틸 컷에 <strong>통일성 있게 반복 활용</strong>.
+          <br />
+          실존인물 복제 X(인상만 참고). 레퍼런스 → 아이덴티티 서술 → 시트 생성 → Soul 락 순서.
+        </div>
+        <div className="card-foot">
+          <span className="badge badge-review">레퍼런스 대기 · 파이프라인 구축</span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
       {/* ===== Seedance 작업물 ===== */}
       {tab === 'seedance' && (<>
 
