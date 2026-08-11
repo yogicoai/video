@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+
 // 요기보 전속 모델 — 고정형 모델 베이스 (2026-08-06)
 // 목적: 외국인 남/여/아동 3종의 "얼굴 아이덴티티 고정" 전속 모델을 만들어 모델 A/B/C로 지정 →
 //       향후 요기보 제품·공간 스틸 컷에 반복 활용(통일성). 실존인물 복제 X, 레퍼런스의 인상만 참고.
@@ -49,16 +51,16 @@ const CATEGORIES = [
         code: 'C', name: '유럽계 · 애쉬 숏보브 · 쿨/미니멀',
         size: '키 169cm · 슬림 (Max 170 기준 살짝 작게)',
         identity: '유럽계 성인 여성 20대 중후반 · 슬림 타원형 · 애쉬 브라운 숏 보브(턱선) · 쿨·미니멀·앤드로지너스 · 자연 피부질감',
-        ref: `${FTP}/B_C_rep.jpg?v=e2`,
-        sheets: { face: `${FTP}/B_C_face.png?v=v2`, expr: `${FTP}/B_C_expr.png?v=v1`, body: `${FTP}/B_C_body.png?v=v1`, pose: `${FTP}/B_C_pose.png?v=v3` },
+        ref: `${FTP}/B_C_rep.jpg?v=40`,
+        sheets: { face: `${FTP}/B_C_face.png?v=40`, expr: `${FTP}/B_C_expr.png?v=v1`, body: `${FTP}/B_C_body.png?v=v1`, pose: `${FTP}/B_C_pose.png?v=v3` },
         soulId: null, status: '얼굴 시트 ✅ · 표정/바디/포즈 대기',
       },
       {
         code: 'D', name: '동아시아계 · 롱 블랙 스트레이트 · 쿨/에디토리얼',
         size: '키 173cm · 슬림 장신 (Max 170 기준 살짝 크게)',
         identity: '동아시아계 성인 여성 20대 초중반 · 슬림 타원형 · 롱 블랙 스트레이트(중앙 가르마) · 쿨·에디토리얼 · 자연 피부질감',
-        ref: `${FTP}/B_D_rep.jpg?v=e2`,
-        sheets: { face: `${FTP}/B_D_face.png?v=v2`, expr: `${FTP}/B_D_expr.png?v=v1`, body: `${FTP}/B_D_body.png?v=v1`, pose: `${FTP}/B_D_pose.png?v=v3` },
+        ref: `${FTP}/B_D_rep.jpg?v=40`,
+        sheets: { face: `${FTP}/B_D_face.png?v=40`, expr: `${FTP}/B_D_expr.png?v=v1`, body: `${FTP}/B_D_body.png?v=v1`, pose: `${FTP}/B_D_pose.png?v=v3` },
         soulId: null, status: '얼굴 시트 ✅ · 표정/바디/포즈 대기',
       },
     ],
@@ -70,8 +72,8 @@ const CATEGORIES = [
         code: 'A', name: '유럽계 · 짧은 다크브라운 · 클린컷/캐주얼',
         size: '키 180cm · 슬림 애슬레틱 (Max 170 이상)',
         identity: '유럽계 성인 남성 20대 후반~30대 · 클린컷 · 짧은 다크브라운 · 정돈된 캐주얼 · 자연 피부질감',
-        ref: `${FTP}/M_A_rep.jpg?v=e2`,
-        sheets: { face: `${FTP}/M_A_face.png?v=v1`, expr: `${FTP}/M_A_expr.png?v=v1`, body: `${FTP}/M_A_body.png?v=v1`, pose: `${FTP}/M_A_pose.png?v=v2` },
+        ref: `${FTP}/M_A_rep.jpg?v=40`,
+        sheets: { face: `${FTP}/M_A_face.png?v=40`, expr: `${FTP}/M_A_expr.png?v=v1`, body: `${FTP}/M_A_body.png?v=v1`, pose: `${FTP}/M_A_pose.png?v=v2` },
         soulId: null, status: '4종 완성 ✅ (착석=네이비 Max)',
       },
     ],
@@ -83,16 +85,16 @@ const CATEGORIES = [
         code: 'A', name: '유럽계 여아 · 금발 곱슬 · 밝음',
         size: '키 약 120cm · 유아~저학년 (아동 비례)',
         identity: '유럽계 여아 6~7세 · 금발 곱슬 중단발 · 둥근 볼 · 밝고 명랑 · 자연 피부',
-        ref: `${FTP}/K_A_rep.jpg?v=e2`,
-        sheets: { face: `${FTP}/K_A_face.png?v=v1`, expr: `${FTP}/K_A_expr.png?v=v1`, body: `${FTP}/K_A_body.png?v=v1`, pose: `${FTP}/K_A_pose.png?v=v4` },
+        ref: `${FTP}/K_A_rep.jpg?v=40`,
+        sheets: { face: `${FTP}/K_A_face.png?v=40`, expr: `${FTP}/K_A_expr.png?v=v1`, body: `${FTP}/K_A_body.png?v=v1`, pose: `${FTP}/K_A_pose.png?v=v4` },
         soulId: null, status: '4종 완성 ✅ (착석=미니 라이트그레이 85cm)',
       },
       {
         code: 'B', name: '유럽계 여아 · 레디시브라운 롱웨이브 · 청순(주근깨)',
         size: '키 약 150cm · 초등 고학년/틴 (아동 비례)',
         identity: '유럽계 여아 10~12세 · 레디시브라운 롱 웨이브 · 옅은 주근깨 · 따뜻한 미소 · 자연 피부',
-        ref: `${FTP}/K_B_rep.jpg?v=e2`,
-        sheets: { face: `${FTP}/K_B_face.png?v=v1`, expr: `${FTP}/K_B_expr.png?v=v1`, body: `${FTP}/K_B_body.png?v=v1`, pose: `${FTP}/K_B_pose.png?v=v1` },
+        ref: `${FTP}/K_B_rep.jpg?v=40`,
+        sheets: { face: `${FTP}/K_B_face.png?v=40`, expr: `${FTP}/K_B_expr.png?v=v1`, body: `${FTP}/K_B_body.png?v=v1`, pose: `${FTP}/K_B_pose.png?v=v1` },
         soulId: null, status: '4종 완성 ✅ (착석=올리브 Max)',
       },
     ],
@@ -112,6 +114,7 @@ const PIPE = [
 const C = { accent: '#7E57C2', ok: '#66BB6A', wait: '#e6c86a', card: '#161616', line: '#2a2a2a' };
 
 export default function ModelsPage() {
+  const [zoom, setZoom] = useState(null); // 클릭 시 확대할 이미지 URL
   return (
     <div style={{ maxWidth: 1020, margin: '0 auto', padding: '32px 20px 80px', color: '#e8e8e8', fontFamily: 'system-ui, "Malgun Gothic", sans-serif' }}>
       <a href="/" style={{ color: '#888', fontSize: 13, textDecoration: 'none' }}>← 홈</a>
@@ -193,14 +196,14 @@ export default function ModelsPage() {
                   <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'flex-start', marginTop: 10 }}>
                     <div style={{ textAlign: 'center' }}>
                       {m.ref
-                        ? <img src={m.ref} alt="ref" style={{ width: 118, aspectRatio: '3/4', objectFit: 'cover', borderRadius: 8, border: '1px solid #555' }} />
+                        ? <img src={m.ref} alt="ref" onClick={() => setZoom(m.ref)} title="클릭하면 크게 보기" style={{ width: 118, aspectRatio: '3/4', objectFit: 'cover', borderRadius: 8, border: '1px solid #555', cursor: 'zoom-in' }} />
                         : <div style={{ width: 118, aspectRatio: '3/4', border: '1px dashed #555', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#666', fontSize: 10.5, textAlign: 'center', lineHeight: 1.5, padding: 6 }}>원본<br />비공개<br /><span style={{ fontSize: 9, color: '#555' }}>(초상권·내부보관)</span></div>}
                       <div style={{ fontSize: 10.5, color: '#888', marginTop: 3 }}>대표 컷(AI)</div>
                     </div>
                     {SHEETS.map((s) => (
                       <div key={s.key} style={{ textAlign: 'center' }}>
                         {m.sheets[s.key]
-                          ? <img src={m.sheets[s.key]} alt={s.key} style={{ width: 118, aspectRatio: '16/9', objectFit: 'cover', borderRadius: 8, border: `1px solid ${C.accent}` }} />
+                          ? <img src={m.sheets[s.key]} alt={s.key} onClick={() => setZoom(m.sheets[s.key])} title="클릭하면 크게 보기" style={{ width: 118, aspectRatio: '16/9', objectFit: 'cover', borderRadius: 8, border: `1px solid ${C.accent}`, cursor: 'zoom-in' }} />
                           : <div style={{ width: 118, aspectRatio: '16/9', border: '1px dashed #3a3350', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#5a4d78', fontSize: 10, textAlign: 'center', padding: 4 }}>{s.label.replace(/^[①②③④]\s/, '')}</div>}
                         <div style={{ fontSize: 10, color: '#888', marginTop: 3 }}>{s.label.slice(0, 2)}</div>
                       </div>
@@ -218,6 +221,21 @@ export default function ModelsPage() {
         정의 2026-08-06 · 모델 베이스 라인(CF/스티커와 별개) · 크레딧 사용 전 금액 확인·승인.
         레퍼런스 주시면 → 아이덴티티 서술 확정 → 시트 4종부터 생성합니다.
       </p>
+
+      {/* 라이트박스 — 컷 클릭 시 크게 보기 */}
+      {zoom && (
+        <div
+          onClick={() => setZoom(null)}
+          style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(0,0,0,.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24, cursor: 'zoom-out' }}
+        >
+          <img src={zoom} alt="확대" style={{ maxWidth: '96vw', maxHeight: '92vh', width: 'auto', height: 'auto', objectFit: 'contain', borderRadius: 8, boxShadow: '0 8px 40px rgba(0,0,0,.6)' }} />
+          <button
+            onClick={(e) => { e.stopPropagation(); setZoom(null); }}
+            style={{ position: 'fixed', top: 18, right: 22, width: 40, height: 40, borderRadius: '50%', border: 'none', background: 'rgba(255,255,255,.15)', color: '#fff', fontSize: 22, cursor: 'pointer', lineHeight: 1 }}
+            aria-label="닫기"
+          >✕</button>
+        </div>
+      )}
     </div>
   );
 }
