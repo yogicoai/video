@@ -45,7 +45,7 @@ const CATEGORIES = [
         identity: '유럽계 성인 여성 20대 초반 · 부드러운 타원형 · 밝은 체스트넛 브라운 롱 웨이브 · 옅은 주근깨 · 청순·내추럴 · 라이트 톤 차분한 눈',
         ref: `${FTP}/B_B_rep.jpg?v=e2`,
         sheets: { face: `${FTP}/B_B_face.png?v=v2`, expr: `${FTP}/B_B_expr.png?v=v2`, body: `${FTP}/B_B_body.png?v=v1`, pose: `${FTP}/B_B_pose.png?v=v1r` },
-        video: '/models/B_vidtest_kling.mp4', videoPoster: '/models/B_vidtest_kling_poster.jpg', videoNote: '영상 테스트 · Kling 3.0 · 5초 (착석 미세 모션·표정 연출)',
+        video: '/api/video/models/B_vidtest_kling.jpg', videoPoster: `${FTP}/B_vidtest_kling_poster.jpg`, videoNote: '영상 테스트 · Kling 3.0 · 5초 (착석 미세 모션·표정 연출)',
         soulId: null, status: '얼굴 시트 ✅ · 표정/바디/포즈 대기',
       },
       {
@@ -96,6 +96,7 @@ const CATEGORIES = [
         identity: '유럽계 여아 10~12세 · 레디시브라운 롱 웨이브 · 옅은 주근깨 · 따뜻한 미소 · 자연 피부',
         ref: `${FTP}/K_B_rep.jpg?v=40`,
         sheets: { face: `${FTP}/K_B_face.png?v=40`, expr: `${FTP}/K_B_expr.png?v=v1`, body: `${FTP}/K_B_body.png?v=v1`, pose: `${FTP}/K_B_pose.png?v=v1` },
+        video: '/api/video/models/K_B_vidtest_kling.jpg', videoPoster: `${FTP}/K_B_vidtest_kling_poster.jpg`, videoNote: '영상 테스트 · Kling 3.0 · 5초 (올리브 Max 착석·미세 모션)',
         soulId: null, status: '4종 완성 ✅ (착석=올리브 Max)',
       },
     ],
