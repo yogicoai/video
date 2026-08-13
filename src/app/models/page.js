@@ -60,7 +60,7 @@ const CATEGORIES = [
         code: 'D', name: '동아시아계 · 롱 블랙 스트레이트 · 쿨/에디토리얼',
         size: '키 173cm · 슬림 장신 (Max 170 기준 살짝 크게)',
         identity: '동아시아계 성인 여성 20대 초중반 · 슬림 타원형 · 롱 블랙 스트레이트(중앙 가르마) · 쿨·에디토리얼 · 자연 피부질감',
-        ref: `${FTP}/B_D_rep.jpg?v=neutral`,
+        ref: `${FTP}/B_D_rep.jpg?v=smile2`,
         sheets: { face: `${FTP}/B_D_face.png?v=hairD3`, expr: `${FTP}/B_D_expr.png?v=hair`, body: `${FTP}/B_D_body.png?v=hair`, pose: `${FTP}/B_D_pose.png?v=v3` },
         soulId: null, status: '얼굴 시트 ✅ · 표정/바디/포즈 대기',
       },
