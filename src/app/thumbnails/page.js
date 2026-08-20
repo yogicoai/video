@@ -25,10 +25,14 @@ const CANDIDATES = [
   { key: 'aqua_b_p4', name: 'B · 아쿠아블루 · 포즈4 (¾측면)', url: `${CAND}/cand_max_aqua_b_p4.png?v=1`, note: '플랫 데이베드 · 낮은 플로어 라운징 · B의상(그레이티+데님쇼츠) · 맨발' },
   { key: 'aqua_b_p4_front', name: 'B · 아쿠아블루 · 포즈4 (정면 연출)', url: `${CAND}/cand_max_aqua_b_p4_front.png?v=2`, note: '플랫 라운저 정면 · 빈백 확대(v2) · B_W_C_02(크림 오버셔츠+와이드) · 맨발' },
   { key: 'darkgrey_ma_p5', name: '남A · 다크그레이 · 포즈5 (게이밍)', url: `${CAND}/cand_max_darkgrey_ma_p5.png?v=2`, note: '게이밍 체어 · 양반다리 정면 · 미소+빈백확대(v2) · 공식다크그레이#353B3E · A_M_C_02' },
+  { key: 'blossom_a_pose', name: 'A · 블라썸핑크 · 포즈레퍼(미소)', url: `${CAND}/cand_max_blossom_a_pose.png?v=1`, note: 'test01 포즈·앵글·표정만 차용 · 환한 미소 · A_W_C_01 · 비례 168↔170' },
+  { key: 'cherry_b_pose', name: 'B · 체리레드 · 포즈레퍼(미소)', url: `${CAND}/cand_max_cherry_b_pose.png?v=1`, note: 'test02 포즈 차용 · 은은한 미소(눈감음) · B_W_C_02 · 비례 172↔170' },
+  { key: 'choco_c_pose', name: 'C · 초코브라운 · 포즈레퍼(랩탑·미소)', url: `${CAND}/cand_max_choco_c_pose.png?v=1`, note: 'test03 포즈 차용 · 밝은 표정 · 무브랜드 랩탑 · C_W_C_01 · 비례 169↔170' },
 ];
 
 // 생성 주의사항 — 실측 피드백으로 도출된 표준 체크리스트(모든 생성에 반영)
 const CAUTIONS = [
+  '★ 모델 표정은 기본 "자연스러운 미소"(은은하게 웃는 표정) — 무표정 금지(전 컷 공통)',
   '등받이 top은 프롬프트로 모양을 말로 덧씌우지 말고 "베이스프레임 그대로 복사"가 원칙(내가 둥근돔/뾰족 등으로 묘사하면 오히려 망가짐). 포즈3=뒤로 말리는 둥근 크레스트(파도 마루/쉼표, 둥근 공·뾰족 삼각 아님) / 포즈2=뒤로 접힘 / 포즈1=길고 낮은 테이퍼',
   '각도·구도·앉는 연출이 중요한 포즈는 "형태 레퍼"가 아니라 "원본 포즈 프레임(모델 포함)"을 베이스로 넣어 각도락 후 얼굴/의상/색/배경만 교체',
   '실제 Max엔 없는 지퍼/봉제선 넣지 않기(원단 매끈·연속)',
@@ -91,14 +95,14 @@ const PRODUCTS = [
       { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, url: `${FTP}/cand_max_olive_a_p1.png?v=1`, spec: 'A모델 · 포즈1(눕듯 리클라이너) · A_W_C_01 · 2048' },
       { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, url: `${FTP}/cand_max_darkgrey_ma_p5.png?v=2`, spec: '남A · 포즈5(게이밍·미소) · A_M_C_02 · 2048' },
       { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3' },
-      { key: 'chocobrown', name: '초코브라운', hex: '#5D4131' },
-      { key: 'cherryred', name: '체리레드', hex: '#980224' },
+      { key: 'chocobrown', name: '초코브라운', hex: '#583E30', el: true, url: `${FTP}/cand_max_choco_c_pose.png?v=1`, spec: 'C모델(169) · test03 포즈(랩탑·미소) · C_W_C_01 · 2048' },
+      { key: 'cherryred', name: '체리레드', hex: '#790619', el: true, url: `${FTP}/cand_max_cherry_b_pose.png?v=1`, spec: 'B모델(172) · test02 포즈(리클라이너·미소) · B_W_C_02 · 2048' },
       { key: 'wineburgundy', name: '와인버건디', hex: '#7A031F' },
       { key: 'livingcoral', name: '리빙코랄', hex: '#EA3D19' },
       { key: 'sweetorange', name: '스위트오렌지', hex: '#EE780C', el: true, url: `${FTP}/cand_max_orange_d_p3.png?v=4`, spec: 'D모델 · 포즈3(리클라이너) · D_W_C_01 · 2048' },
       { key: 'brightyellow', name: '브라이트옐로우', hex: '#EBCD00' },
       { key: 'rosepink', name: '로즈핑크', hex: '#EF0066' },
-      { key: 'blossompink', name: '블라썸핑크', hex: '#E2A8BE' },
+      { key: 'blossompink', name: '블라썸핑크', hex: '#E5B9C8', el: true, url: `${FTP}/cand_max_blossom_a_pose.png?v=1`, spec: 'A모델(168) · test01 포즈(리클라이너·미소) · A_W_C_01 · 2048' },
       { key: 'brightpurple', name: '브라이트퍼플', hex: '#644D9A' },
       { key: 'deeppurple', name: '딥퍼플', hex: '#5F2A38' },
       { key: 'lavender', name: '라벤더퍼플', hex: '#CDA7DB' },
