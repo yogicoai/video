@@ -24,7 +24,7 @@ const CANDIDATES = [
   { key: 'orange_d_p3', name: 'D · 스위트오렌지 · 포즈3 (각도락)', url: `${CAND}/cand_max_orange_d_p3.png?v=4`, note: '흰스튜디오 리클라이너 · 크레스트 top · 비례보정 v4(모델 173≈Max170) · 맨발 · D의상' },
   { key: 'aqua_b_p4', name: 'B · 아쿠아블루 · 포즈4 (¾측면)', url: `${CAND}/cand_max_aqua_b_p4.png?v=1`, note: '플랫 데이베드 · 낮은 플로어 라운징 · B의상(그레이티+데님쇼츠) · 맨발' },
   { key: 'aqua_b_p4_front', name: 'B · 아쿠아블루 · 포즈4 (정면 연출)', url: `${CAND}/cand_max_aqua_b_p4_front.png?v=2`, note: '플랫 라운저 정면 · 빈백 확대(v2) · B_W_C_02(크림 오버셔츠+와이드) · 맨발' },
-  { key: 'darkgrey_ma_p5', name: '남A · 다크그레이 · 포즈5 (게이밍)', url: `${CAND}/cand_max_darkgrey_ma_p5.png?v=1`, note: '게이밍 체어 · 양반다리 정면 게이밍 연출 · A_M_C_02(화이트티+블랙슬랙스) · 맨발' },
+  { key: 'darkgrey_ma_p5', name: '남A · 다크그레이 · 포즈5 (게이밍)', url: `${CAND}/cand_max_darkgrey_ma_p5.png?v=2`, note: '게이밍 체어 · 양반다리 정면 · 미소+빈백확대(v2) · 공식다크그레이#353B3E · A_M_C_02' },
 ];
 
 // 생성 주의사항 — 실측 피드백으로 도출된 표준 체크리스트(모든 생성에 반영)
@@ -86,16 +86,16 @@ const PRODUCTS = [
   {
     product: 'Max', emoji: '🛋️', spec: '대표 빈백 소파 · 170cm · 18색', ratio: '1:1', bg: '화이트',
     colors: [
-      { key: 'aqua', name: '아쿠아블루', hex: '#0075BD', el: true, url: `${FTP}/thumb_max_aqua.jpg?v=1` },
+      { key: 'aqua', name: '아쿠아블루', hex: '#0075BD', el: true, url: `${FTP}/cand_max_aqua_b_p4.png?v=1`, spec: 'B모델 · 포즈4(플랫라운저) · B_W_C_01 · 2048' },
       { key: 'navy', name: '네이비블루', hex: '#1D395D', el: true, url: `${FTP}/thumb_max_navy.png?v=5`, spec: 'C모델 · 포즈2(각도락) · C_W_C_01 · 2048' },
-      { key: 'olive', name: '올리브그린', hex: '#668B01' },
-      { key: 'darkgrey', name: '다크그레이', hex: '#615F5F' },
+      { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, url: `${FTP}/cand_max_olive_a_p1.png?v=1`, spec: 'A모델 · 포즈1(눕듯 리클라이너) · A_W_C_01 · 2048' },
+      { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, url: `${FTP}/cand_max_darkgrey_ma_p5.png?v=2`, spec: '남A · 포즈5(게이밍·미소) · A_M_C_02 · 2048' },
       { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3' },
       { key: 'chocobrown', name: '초코브라운', hex: '#5D4131' },
       { key: 'cherryred', name: '체리레드', hex: '#980224' },
       { key: 'wineburgundy', name: '와인버건디', hex: '#7A031F' },
       { key: 'livingcoral', name: '리빙코랄', hex: '#EA3D19' },
-      { key: 'sweetorange', name: '스위트오렌지', hex: '#EE780C' },
+      { key: 'sweetorange', name: '스위트오렌지', hex: '#EE780C', el: true, url: `${FTP}/cand_max_orange_d_p3.png?v=4`, spec: 'D모델 · 포즈3(리클라이너) · D_W_C_01 · 2048' },
       { key: 'brightyellow', name: '브라이트옐로우', hex: '#EBCD00' },
       { key: 'rosepink', name: '로즈핑크', hex: '#EF0066' },
       { key: 'blossompink', name: '블라썸핑크', hex: '#E2A8BE' },
