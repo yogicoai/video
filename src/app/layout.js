@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
             </a>
             <nav className="topnav">
               <a href="/">프로젝트</a>
+              <a href="/thumbnails">자사몰 썸네일 작업</a>
               <a href="/models">요기보 모델</a>
               {/* 제작 플로우(/create) 내비 숨김 — CF 제작 프로세스에서 설명 */}
               <a href="/products">제품 데이터</a>

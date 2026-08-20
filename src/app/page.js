@@ -161,6 +161,24 @@ export default function HomePage() {
         </div>
       </a>
 
+      {/* 고정 — 자사몰 썸네일 작업 */}
+      <a
+        href="/thumbnails"
+        className="card"
+        style={{ display: 'block', borderColor: '#26A69A', marginBottom: 20 }}
+      >
+        <div className="card-title">🛍️ 자사몰 썸네일 작업</div>
+        <div className="card-meta">
+          자사몰(cafe24) 상품 <strong>리스트·상세·배너 썸네일</strong>을 제품 레지스트리 + 전속 모델 + <strong>빈백 눌림(구김) 레퍼</strong>로 일관성 있게 제작·관리.
+          <br />
+          착석 컷은 <strong>사람 지운 눌림 레퍼</strong>(인물 오염 0)로 리얼리티 확보 → 제품별로 정리해 재사용.
+        </div>
+        <div className="card-foot">
+          <span className="badge badge-review">워크스페이스 구축 · 눌림 레퍼 수집 중</span>
+          <span className="card-meta" style={{ fontSize: 12 }}>열기 →</span>
+        </div>
+      </a>
+
       {/* ===== Seedance 작업물 ===== */}
       {tab === 'seedance' && (<>
 
