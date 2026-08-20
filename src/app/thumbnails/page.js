@@ -54,6 +54,14 @@ const PRESS_REFS = [
   // 추가 예정: Max 컬러별 / Pod · Support · Mini 등
 ];
 
+// Slim 실사 포즈 레퍼 (모델포함=orig / 모델제거=url) — Slim 정확한 형태·비례용
+const SLIM = 'https://yogibo.openhost.cafe24.com/web/img/none/slim';
+const SLIM_REFS = [
+  { key: 'slim_p1', name: 'Slim 업라이트 체어 (포즈1)', url: `${SLIM}/slim_01_off.png`, orig: `${SLIM}/slim_01_on.png`, note: '실사·모델제거 · 양반다리 정면 게이밍(업라이트 체어형) · 블랙', tag: '실사' },
+  { key: 'slim_p2', name: 'Slim 보트 리클라이너 (포즈2)', url: `${SLIM}/slim_02_off.png`, orig: `${SLIM}/slim_02_on.jpg`, note: '실사·모델제거 · 낮은 보트형 리클라이너·기대어 눕기(¾측면) · 차콜', tag: '실사' },
+  { key: 'slim_p3', name: 'Slim 업라이트 리클라이너 (포즈3)', url: `${SLIM}/slim_03_off.png`, orig: `${SLIM}/slim_03_on.jpg`, note: '실사·모델제거 · 업라이트 리클라이너·책읽기(¾정면) · 차콜', tag: '실사' },
+];
+
 // 썸네일용 전속 모델 (1차: 여성·남성) — 착석/라이프스타일 썸네일에 지정 사용. 헤어 업데이트 반영.
 // outfits = MD 의상 컨셉 레퍼(제품컷 때 이 옷 입힘). 파일 = web/img/none/clothes/<name>.jpg
 const CLOTHES = 'https://yogibo.openhost.cafe24.com/web/img/none/clothes';
@@ -136,20 +144,62 @@ const PRODUCTS = [
       { key: 'freshmint', name: '프레시민트', hex: '#B0EEE7' },
     ],
   },
-  { product: 'Slim',    emoji: '📏', spec: 'Max 동일 형태 · 130×65×45cm 4.4kg · 폭 슬림(세로형) · 눌림레퍼 공유', ratio: '1:1', soon: true, sameLine: 'Max', size: 'h130 × w65 × d45 · 4.4kg', scale: 'a narrow vertical bean bag about chest height of a standing adult (130cm); one adult reclines against it with legs extended', colors: [] },
-  { product: 'Midi',    emoji: '🟦', spec: 'Max 동일 형태 · 125×70×45cm 4.8kg · 가슴 높이 · 눌림레퍼 공유', ratio: '1:1', soon: true, sameLine: 'Max', size: 'h125 × w70 × d45 · 4.8kg', scale: 'a mid-size bean bag reaching an adult chest when stood upright (125cm); one adult can curl up on it lying down, or sit with full back support', colors: [] },
-  { product: 'Mini',    emoji: '🔹', spec: 'Max 동일 형태 · 85×70×45cm 3.2kg · 엉덩이 높이·1인 시트 · 눌림레퍼 공유', ratio: '1:1', soon: true, sameLine: 'Max', size: 'h85 × w70 × d45 · 3.2kg', scale: 'a compact bean bag about hip-height of a standing adult (85cm); a single seat where an adult sits with knees bent, child-friendly size', colors: [] },
-  { product: 'Drop',    emoji: '💧', spec: '라운드 물방울형 · 75×85×85cm 3.7kg · 착석/랩탑 연출', ratio: '1:1', size: 'h75 × w85 × d85 · 3.7kg', scale: 'a round droplet-shaped bean bag about the height of a seated adult shoulders (75cm); one adult sinks into it with knees bent', colors: [
-    { key: 'chocobrown', name: '초코브라운', hex: '#583E30', el: true, url: `${FTP}/cand_max_choco_c_pose.png?v=1`, spec: 'C모델(169) · 랩탑·미소 연출 · C_W_C_01 · 2048 (Max→Drop 이동)' },
+  { product: 'Slim',    emoji: '📏', spec: 'Max 동일 형태 · 130×65×45cm 4.4kg · 폭 슬림(세로형) · Slim 전용 실사레퍼', ratio: '1:1', sameLine: 'Max', size: 'h130 × w65 × d45 · 4.4kg', models: '여성A · 여성B · 여성D · 남성A', refs: SLIM_REFS, scale: 'a narrow vertical bean bag about chest height of a standing adult (130cm); one adult reclines against it with legs extended', colors: [
+    { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_slim_lightgrey_b_p1_v2.png?v=2`, spec: 'B · 포즈1(업라이트 체어·양반다리·게이밍) · 슬림폭 보정 · 그레이티+데님쇼츠 · 중앙 · #f2f2f4' },
+      { url: `${FTP}/cand_slim_lightgrey_b_p2_v2.png?v=2`, spec: 'B · 포즈2(보트 리클라이너) · 배경정리·그레이티+데님쇼츠 · 중앙 · #f2f2f4' },
+      { url: `${FTP}/cand_slim_lightgrey_b_p3.png?v=1`, spec: 'B · 포즈3(업라이트 리클라이너) · 그레이티+데님쇼츠 · 중앙 · 실사레퍼 · #f2f2f4' },
+    ] },
+    { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, rep: true, cuts: [] },
+    { key: 'livingcoral', name: '리빙코랄', hex: '#EA3D19', el: true, rep: true, cuts: [] },
   ] },
-  { product: 'Lounger', emoji: '🏖️', spec: '낮은 라운지체어 · 60×65×80cm 4.4kg', ratio: '1:1', soon: true, size: 'h60 × w65 × d80 · 4.4kg', scale: 'a low lounge chair bean bag about knee-height of a standing adult (60cm); a one-person seat whose backrest reaches a seated adult mid-back', colors: [] },
-  { product: 'Pyramid', emoji: '🔺', spec: '삼각 플로어쿠션 · 66×75×75cm 2.2kg', ratio: '1:1', soon: true, size: 'h66 × w75 × d75 · 2.2kg', scale: 'a triangular floor cushion about knee-height of a standing adult (66cm); one adult sits against its slope, a child can climb onto it', colors: [] },
-  { product: 'Pod',     emoji: '🥚', spec: '라운드 에그형 · 95×85×85cm 4.7kg', ratio: '1:1', soon: true, size: 'h95 × w85 × d85 · 4.7kg', scale: 'a round egg-shaped bean bag about waist-height of a standing adult (95cm), as wide as an adult shoulder span; one person sinks deeply into it', colors: [] },
-  { product: 'Double',  emoji: '🛏️', spec: '초대형 2인 · 170×120×45cm 13.2kg · Max 2배 폭', ratio: '1:1', soon: true, size: 'h170 × w120 × d45 · 13.2kg', scale: 'an extra-large bean bag sofa as long as an adult is tall (170cm) and nearly twice the width of a single-person bean bag; two adults can lie or sit side by side', colors: [] },
-  { product: 'Support', emoji: '🌙', spec: 'U형 등받이 쿠션 · 94×76×30cm 1.7kg', ratio: '1:1', soon: true, size: 'h94 × w76 × d30 · 1.7kg', scale: 'a U-shaped armrest cushion that wraps around an adult lower back, armrests about hip-height when seated', colors: [] },
+  { product: 'Midi',    emoji: '🟦', spec: 'Max 동일 형태 · 125×70×45cm 4.8kg · 가슴 높이 · 눌림레퍼 공유', ratio: '1:1', sameLine: 'Max', size: 'h125 × w70 × d45 · 4.8kg', models: '여성A · 여성B · 여성D · 남성A', scale: 'a mid-size bean bag reaching an adult chest when stood upright (125cm); one adult can curl up on it lying down, or sit with full back support', colors: [
+    { key: 'lavender', name: '라벤더퍼플', hex: '#CDA7DB', el: true, rep: true, cuts: [] },
+    { key: 'navy', name: '네이비블루', hex: '#1D395D', el: true, rep: true, cuts: [] },
+    { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, rep: true, cuts: [] },
+  ] },
+  { product: 'Mini',    emoji: '🔹', spec: 'Max 동일 형태 · 85×70×45cm 3.2kg · 엉덩이 높이·1인 시트 · 눌림레퍼 공유', ratio: '1:1', sameLine: 'Max', size: 'h85 × w70 × d45 · 3.2kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a compact bean bag about hip-height of a standing adult (85cm); a single seat where an adult sits with knees bent, child-friendly size', colors: [
+    { key: 'chocobrown', name: '초코브라운', hex: '#583E30', el: true, rep: true, cuts: [] },
+    { key: 'cherryred', name: '체리레드', hex: '#790619', el: true, rep: true, cuts: [] },
+    { key: 'avocadogreen', name: '아보카도그린', hex: '#7AA991', el: true, rep: true, cuts: [] },
+  ] },
+  { product: 'Drop',    emoji: '💧', spec: '라운드 물방울형 · 75×85×85cm 3.7kg · 착석/랩탑 연출', ratio: '1:1', size: 'h75 × w85 × d85 · 3.7kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a round droplet-shaped bean bag about the height of a seated adult shoulders (75cm); one adult sinks into it with knees bent', colors: [
+    { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, rep: true, cuts: [] },
+    { key: 'livingcoral', name: '리빙코랄', hex: '#EA3D19', el: true, rep: true, cuts: [] },
+    { key: 'aqua', name: '아쿠아블루', hex: '#0075BD', el: true, rep: true, cuts: [] },
+    { key: 'chocobrown', name: '초코브라운', hex: '#583E30', el: true, url: `${FTP}/cand_max_choco_c_pose.png?v=1`, spec: 'C모델 · 랩탑연출 · C_W_C_01 (실험컷, 매트릭스 외)' },
+  ] },
+  { product: 'Lounger', emoji: '🏖️', spec: '낮은 라운지체어 · 60×65×80cm 4.4kg', ratio: '1:1', size: 'h60 × w65 × d80 · 4.4kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a low lounge chair bean bag about knee-height of a standing adult (60cm); a one-person seat whose backrest reaches a seated adult mid-back', colors: [
+    { key: 'pastelblue', name: '파스텔블루', hex: '#BEDDEF', el: true, rep: true, cuts: [] },
+    { key: 'freshmint', name: '프레시민트', hex: '#B0EEE7', el: true, rep: true, cuts: [] },
+    { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, rep: true, cuts: [] },
+  ] },
+  { product: 'Pyramid', emoji: '🔺', spec: '삼각 플로어쿠션 · 66×75×75cm 2.2kg', ratio: '1:1', size: 'h66 × w75 × d75 · 2.2kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a triangular floor cushion about knee-height of a standing adult (66cm); one adult sits against its slope, a child can climb onto it', colors: [
+    { key: 'blossompink', name: '블라썸핑크', hex: '#E5B9C8', el: true, rep: true, cuts: [] },
+    { key: 'pastelblue', name: '파스텔블루', hex: '#BEDDEF', el: true, rep: true, cuts: [] },
+    { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3', el: true, rep: true, cuts: [] },
+  ] },
+  { product: 'Pod',     emoji: '🥚', spec: '라운드 에그형 · 95×85×85cm 4.7kg', ratio: '1:1', size: 'h95 × w85 × d85 · 4.7kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a round egg-shaped bean bag about waist-height of a standing adult (95cm), as wide as an adult shoulder span; one person sinks deeply into it', colors: [
+    { key: 'freshmint', name: '프레시민트', hex: '#B0EEE7', el: true, rep: true, cuts: [] },
+    { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, rep: true, cuts: [] },
+    { key: 'pastelblue', name: '파스텔블루', hex: '#BEDDEF', el: true, rep: true, cuts: [] },
+  ] },
+  { product: 'Double',  emoji: '🛏️', spec: '초대형 2인 · 170×120×45cm 13.2kg · Max 2배 폭', ratio: '1:1', size: 'h170 × w120 × d45 · 13.2kg', models: '여성B + 남성A (함께)', scale: 'an extra-large bean bag sofa as long as an adult is tall (170cm) and nearly twice the width of a single-person bean bag; two adults can lie or sit side by side', colors: [
+    { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, rep: true, cuts: [] },
+    { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3', el: true, rep: true, cuts: [] },
+    { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, rep: true, cuts: [] },
+  ] },
+  { product: 'Support', emoji: '🌙', spec: 'U형 등받이 쿠션 · 94×76×30cm 1.7kg', ratio: '1:1', size: 'h94 × w76 × d30 · 1.7kg', models: '여성B · 남성A', scale: 'a U-shaped armrest cushion that wraps around an adult lower back, armrests about hip-height when seated', colors: [
+    { key: 'navy', name: '네이비블루', hex: '#1D395D', el: true, rep: true, cuts: [] },
+    { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3', el: true, rep: true, cuts: [] },
+    { key: 'sweetorange', name: '스위트오렌지', hex: '#EE780C', el: true, rep: true, cuts: [] },
+  ] },
 ];
 
 const C = { accent: '#26A69A', ok: '#66BB6A', wait: '#e6c86a', card: '#161616', line: '#2a2a2a', sub: '#9aa' };
+
+// 일반(비대표) 컬러칩 그리드 표시 여부 — false면 숨김(데이터는 PRODUCTS에 그대로 보존). 대표 컬러 갤러리는 항상 표시.
+const SHOW_REGULAR_COLORS = false;
 
 export default function ThumbnailsPage() {
   const [zoom, setZoom] = useState(null);
@@ -293,7 +343,7 @@ export default function ThumbnailsPage() {
       <p style={{ color: '#999', fontSize: 12.5, margin: '0 0 12px' }}>컬러별 슬롯. 제작되면 썸네일이 채워지고, 그 전엔 <b style={{ color: C.wait }}>대기</b>. 규격 = 상품 리스트용 <b>1:1 화이트</b> 기준(추후 모델 착석 변형 추가 가능).</p>
       {PRODUCTS.map((p) => {
         const reps = p.colors.filter((c) => c.rep);
-        const rest = p.colors.filter((c) => !c.rep);
+        const rest = SHOW_REGULAR_COLORS ? p.colors.filter((c) => !c.rep) : [];
         const done = p.colors.filter((c) => c.url || (c.cuts && c.cuts.length)).length;
         return (
           <div key={p.product} style={{ marginBottom: 22 }}>
@@ -304,6 +354,31 @@ export default function ThumbnailsPage() {
                 ? <span style={{ fontSize: 11, fontWeight: 700, color: C.wait, border: `1px solid ${C.wait}`, borderRadius: 6, padding: '1px 8px' }}>준비중</span>
                 : <span style={{ fontSize: 12, color: done ? C.ok : C.wait }}>{done}/{p.colors.length} 제작</span>}
             </div>
+            {p.models && (
+              <div style={{ fontSize: 11.5, color: '#8a9', margin: '-4px 0 9px', fontWeight: 600 }}>👤 배정 모델: <span style={{ color: '#aab', fontWeight: 400 }}>{p.models}</span></div>
+            )}
+            {p.refs && (
+              <div style={{ marginBottom: 12, border: `1px solid ${C.line}`, borderRadius: 10, padding: '9px 11px', background: '#0f1512' }}>
+                <div style={{ fontSize: 11.5, fontWeight: 800, color: C.accent, marginBottom: 7 }}>📐 {p.product} 전용 실사 포즈 레퍼 <span style={{ color: '#778', fontWeight: 400 }}>(모델포함=포즈/비례 · 모델제거=형태 · 각도락용)</span></div>
+                <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+                  {p.refs.map((r) => (
+                    <div key={r.key} style={{ width: 150, textAlign: 'center' }}>
+                      <img src={r.url} alt={r.name} onClick={() => setZoom(r.url)} title="모델제거(형태) · 클릭 확대"
+                        style={{ width: 150, aspectRatio: '1/1', objectFit: 'cover', borderRadius: 8, border: `1px solid ${C.accent}`, cursor: 'zoom-in', background: '#fff', display: 'block' }} />
+                      <div style={{ fontSize: 10.5, color: '#ddd', marginTop: 4, fontWeight: 700 }}>{r.name}</div>
+                      <div style={{ fontSize: 9.5, color: '#889', lineHeight: 1.35 }}>{r.note}</div>
+                      {r.orig && (
+                        <div style={{ marginTop: 4, display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                          <img src={r.orig} alt="원본" onClick={() => setZoom(r.orig)} title="원본(모델 착석) 포즈 가이드"
+                            style={{ width: 44, aspectRatio: '1/1', objectFit: 'cover', borderRadius: 5, border: '1px solid #456', cursor: 'zoom-in', background: '#fff' }} />
+                          <span style={{ fontSize: 9, color: '#8a9' }}>모델포함</span>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
             {p.soon && (
               <div style={{ border: `1px dashed ${C.line}`, borderRadius: 10, padding: '20px 16px', color: '#778', fontSize: 12.5, background: '#101010', textAlign: 'center' }}>
                 색상 슬롯 준비중 — 포즈·컬러 배정 후 채워집니다
