@@ -86,7 +86,7 @@ const PRODUCTS = [
   {
     product: 'Max', emoji: '🛋️', spec: '대표 빈백 소파 · 170cm · 18색', ratio: '1:1', bg: '화이트',
     colors: [
-      { key: 'aqua', name: '아쿠아블루', hex: '#0075BD', el: true, url: `${FTP}/cand_max_aqua_b_p4.png?v=1`, spec: 'B모델 · 포즈4(플랫라운저) · B_W_C_01 · 2048' },
+      { key: 'aqua', name: '아쿠아블루', hex: '#0075BD', el: true, url: `${FTP}/cand_max_aqua_b_p4_front.png?v=2`, spec: 'B모델 · 포즈4(정면 연출·빈백확대) · B_W_C_02 · 2048' },
       { key: 'navy', name: '네이비블루', hex: '#1D395D', el: true, url: `${FTP}/thumb_max_navy.png?v=5`, spec: 'C모델 · 포즈2(각도락) · C_W_C_01 · 2048' },
       { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, url: `${FTP}/cand_max_olive_a_p1.png?v=1`, spec: 'A모델 · 포즈1(눕듯 리클라이너) · A_W_C_01 · 2048' },
       { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, url: `${FTP}/cand_max_darkgrey_ma_p5.png?v=2`, spec: '남A · 포즈5(게이밍·미소) · A_M_C_02 · 2048' },
