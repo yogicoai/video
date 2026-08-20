@@ -112,6 +112,7 @@ const PRODUCTS = [
         { url: `${FTP}/cand_max_olive_a_pose1.png?v=1`, spec: 'A · 포즈1(눕듯·밝은미소) · A_W_C_01 · 색스와치락 · #f2f2f4' },
         { url: `${FTP}/cand_max_olive_a_poseref.png?v=1`, spec: 'A · 포즈레퍼(낮은크레스트·은은한미소) · A_W_C_01 · #f2f2f4' },
         { url: `${FTP}/cand_max_olive_a_pose2.png?v=1`, spec: 'A · 포즈2(체어·곁눈질미소) · A_W_C_01 · 색스와치락 · #f2f2f4' },
+        { url: `${FTP}/cand_max_olive_a_pose4.png?v=1`, spec: 'A · 포즈4(플랫라운저·따뜻한미소) · A_W_C_01 · 색스와치락 · #f2f2f4' },
       ] },
       { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, url: `${FTP}/cand_max_darkgrey_ma_p5.png?v=2`, spec: '남A · 포즈5(게이밍·미소) · A_M_C_02 · 2048' },
       { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3' },
