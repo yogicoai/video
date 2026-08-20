@@ -1,0 +1,32 @@
+맥스	h=170cm  w=70  d=45  kg=6.6
+    scalePrompt: a large bean bag sofa as long as an adult is tall (170cm) - long enough for a grown-up to lie down on fully; stood upright it stands taller than a 160cm woman, topping her head by about 10cm
+맥스_프레시민트	h=170cm  w=70  d=45  kg=6.6
+    scalePrompt: a large bean bag sofa as long as an adult is tall (170cm) - long enough for a grown-up to lie down on fully; stood upright it stands taller than a 160cm woman, topping her head by about 10cm
+더블	h=170cm  w=120  d=45  kg=13.2
+    scalePrompt: an extra-large bean bag sofa as long as an adult is tall (170cm) and nearly twice the width of a single-person bean bag — two adults can lie or sit side by side
+럭스	h=170cm  w=70  d=45  kg=6.6
+    scalePrompt: a large bean bag sofa as long as an adult is tall (170cm) - long enough for a grown-up to lie down on fully; stood upright it stands taller than a 160cm woman, topping her head by about 10cm
+미디	h=125cm  w=70  d=45  kg=4.8
+    scalePrompt: a mid-size bean bag reaching an adult's chest when stood upright (125cm); one adult can curl up on it lying down, or sit with full back support
+슬림	h=120cm  w=65  d=45  kg=4.4
+    scalePrompt: a narrow vertical bean bag about waist-to-chest height of a standing adult (120cm); one adult reclines against it with legs extended
+럭스	h=120cm  w=65  d=45  kg=4.4
+    scalePrompt: a narrow vertical bean bag about waist-to-chest height of a standing adult (120cm); one adult reclines against it with legs extended
+허기보	h=110cm  w=60  d=50  kg=
+    scalePrompt: a huggable pillar-shaped bean bag about chest-height of a standing adult (110cm) — roughly the size of a person you can wrap both arms around
+팟	h=95cm  w=85  d=85  kg=4.7
+    scalePrompt: a round egg-shaped bean bag about waist-height of a standing adult (95cm), as wide as an adult's shoulder span — one person sinks deeply into it
+서포트	h=94cm  w=76  d=30  kg=1.7
+    scalePrompt: a U-shaped armrest cushion that wraps around an adult's lower back, armrests about hip-height when seated
+럭스	h=94cm  w=76  d=30  kg=1.7
+    scalePrompt: a U-shaped armrest cushion that wraps around an adult's lower back; its armrests reach about hip-height when the person is seated (94cm tall when upright)
+미니	h=85cm  w=70  d=45  kg=3.2
+    scalePrompt: a compact bean bag about hip-height of a standing adult (85cm); a single seat where an adult sits with knees bent, child-friendly size
+드롭	h=75cm  w=85  d=85  kg=3.7
+    scalePrompt: a round droplet-shaped bean bag about the height of a seated adult's shoulders (75cm); one adult sinks into it with knees bent
+피라미드	h=66cm  w=75  d=75  kg=2.2
+    scalePrompt: a triangular floor cushion about knee-height of a standing adult (66cm); one adult sits against its slope, a child can climb onto it
+라운저	h=60cm  w=65  d=80  kg=4.4
+    scalePrompt: a low lounge chair bean bag about knee-height of a standing adult (60cm); a one-person seat whose backrest reaches a seated adult's mid-back
+럭스	h=60cm  w=65  d=80  kg=4.4
+    scalePrompt: a low lounge chair bean bag about knee-height of a standing adult (60cm); a one-person seat whose backrest reaches a seated adult's mid-back

@@ -25,19 +25,20 @@ const CANDIDATES = [
   { key: 'aqua_b_p4', name: 'B · 아쿠아블루 · 포즈4 (¾측면)', url: `${CAND}/cand_max_aqua_b_p4.png?v=1`, note: '플랫 데이베드 · 낮은 플로어 라운징 · B의상(그레이티+데님쇼츠) · 맨발' },
   { key: 'aqua_b_p4_front', name: 'B · 아쿠아블루 · 포즈4 (정면 연출)', url: `${CAND}/cand_max_aqua_b_p4_front.png?v=2`, note: '플랫 라운저 정면 · 빈백 확대(v2) · B_W_C_02(크림 오버셔츠+와이드) · 맨발' },
   { key: 'darkgrey_ma_p5', name: '남A · 다크그레이 · 포즈5 (게이밍)', url: `${CAND}/cand_max_darkgrey_ma_p5.png?v=2`, note: '게이밍 체어 · 양반다리 정면 · 미소+빈백확대(v2) · 공식다크그레이#353B3E · A_M_C_02' },
-  { key: 'blossom_a_pose', name: 'A · 블라썸핑크 · 포즈레퍼(미소)', url: `${CAND}/cand_max_blossom_a_pose.png?v=1`, note: 'test01 포즈·앵글·표정만 차용 · 환한 미소 · A_W_C_01 · 비례 168↔170' },
   { key: 'cherry_b_pose', name: 'B · 체리레드 · 포즈레퍼(미소)', url: `${CAND}/cand_max_cherry_b_pose.png?v=1`, note: 'test02 포즈 차용 · 은은한 미소(눈감음) · B_W_C_02 · 비례 172↔170' },
-  { key: 'choco_c_pose', name: 'C · 초코브라운 · 포즈레퍼(랩탑·미소)', url: `${CAND}/cand_max_choco_c_pose.png?v=1`, note: 'test03 포즈 차용 · 밝은 표정 · 무브랜드 랩탑 · C_W_C_01 · 비례 169↔170' },
+  { key: 'choco_c_pose', name: 'C · 초코브라운 · 랩탑연출 → Drop 배치', url: `${CAND}/cand_max_choco_c_pose.png?v=1`, note: 'test03 포즈 차용 · 라운드형=Drop 제품으로 이동됨 · 무브랜드 랩탑 · C_W_C_01' },
 ];
 
 // 생성 주의사항 — 실측 피드백으로 도출된 표준 체크리스트(모든 생성에 반영)
 const CAUTIONS = [
   '★ 모델 표정은 기본 "자연스러운 미소"(은은하게 웃는 표정) — 무표정 금지(전 컷 공통)',
+  '★ 얼굴 드리프트 방지: 모델별 "표정 시트(expr, /models·8표정)"를 identity+표정 앵커로 함께 투입하고 원하는 패널(옅은미소/밝은미소/놀람 등) 지정. 얼굴 턴어라운드만+프롬프트"smile"는 얼굴 흔들림 위험. expr시트 파일=B_A_expr/B_B_expr/B_C_expr/B_D_expr/M_A_expr',
   '등받이 top은 프롬프트로 모양을 말로 덧씌우지 말고 "베이스프레임 그대로 복사"가 원칙(내가 둥근돔/뾰족 등으로 묘사하면 오히려 망가짐). 포즈3=뒤로 말리는 둥근 크레스트(파도 마루/쉼표, 둥근 공·뾰족 삼각 아님) / 포즈2=뒤로 접힘 / 포즈1=길고 낮은 테이퍼',
   '각도·구도·앉는 연출이 중요한 포즈는 "형태 레퍼"가 아니라 "원본 포즈 프레임(모델 포함)"을 베이스로 넣어 각도락 후 얼굴/의상/색/배경만 교체',
   '실제 Max엔 없는 지퍼/봉제선 넣지 않기(원단 매끈·연속)',
   '실제 Max 비례(약 170×70×45cm) ↔ 모델 신체 사이즈 반영 — "넓적"하게 크지 않게',
   '모델별 의상 매핑 정확히(A의상을 D에 쓰는 식 오사용 금지)',
+  '★ 배경색은 순백이 아니라 #f2f2f4 (연한 라이트그레이 스튜디오) — 이제부터 전 컷 공통',
   '2048 무손실 업로드 — 일부러 사이즈 줄이지 않기',
   '생성 전 스펙(색+포즈+모델+의상) 재확인 + 크레딧(잔액·차감) 고지 후 진행',
 ];
@@ -59,23 +60,28 @@ const CLOTHES = 'https://yogibo.openhost.cafe24.com/web/img/none/clothes';
 const THUMB_MODELS = [
   {
     cat: '여성', emoji: '👩', items: [
-      { code: 'A', rep: `${FTP}/B_A_rep.jpg?v=smile`, desc: '유럽계 · 다크 텍스처 보브 · 키168 슬림 · 차분/미니멀',
+      { code: 'A', rep: `${FTP}/B_A_rep.jpg?v=smile`, expr: `${FTP}/B_A_expr.png?v=hair`, desc: '유럽계 · 다크 텍스처 보브 · 키168 슬림 · 차분/미니멀',
         outfits: [{ f: 'A_W_C_01', t: '브라운 티+그레이 스웻' }] },
-      { code: 'B', rep: `${FTP}/B_B_rep.jpg?v=e2`, desc: '유럽계 · 롱 체스트넛 웨이브(주근깨) · 키172 · 청순/내추럴',
+      { code: 'B', rep: `${FTP}/B_B_rep.jpg?v=e2`, expr: `${FTP}/B_B_expr.png?v=v2`, desc: '유럽계 · 롱 체스트넛 웨이브(주근깨) · 키172 · 청순/내추럴',
         outfits: [{ f: 'B_W_C_01', t: '그레이 티+데님 쇼츠' }, { f: 'B_W_C_02', t: '크림 오버셔츠+와이드' }] },
-      { code: 'C', rep: `${FTP}/B_C_rep.jpg?v=smile`, desc: '유럽계 · 블론드 레이어드 롭+커튼뱅 · 키169 · 쿨/미니멀',
+      { code: 'C', rep: `${FTP}/B_C_rep.jpg?v=smile`, expr: `${FTP}/B_C_expr.png?v=hair`, desc: '유럽계 · 블론드 레이어드 롭+커튼뱅 · 키169 · 쿨/미니멀',
         outfits: [{ f: 'C_W_C_01', t: '화이트 티+네이비 슬랙스' }] },
-      { code: 'D', rep: `${FTP}/B_D_rep.jpg?v=smile2`, desc: '동아시아계 · 롱 흑발+시스루뱅 · 키173 · 쿨/에디토리얼',
+      { code: 'D', rep: `${FTP}/B_D_rep.jpg?v=smile2`, expr: `${FTP}/B_D_expr.png?v=hair`, desc: '동아시아계 · 롱 흑발+시스루뱅 · 키173 · 쿨/에디토리얼',
         outfits: [{ f: 'D_W_C_01', t: '그레이 티+라이트 배기진' }, { f: 'D_W_C_02', t: '네이비 스트라이프 니트' }] },
     ],
   },
   {
     cat: '남성', emoji: '👨', items: [
-      { code: 'A', rep: `${FTP}/M_A_rep.jpg?v=smile`, desc: '유럽계 · 미디엄 터슬드 웨이브 · 키180 · 클린컷/애슬레틱',
+      { code: 'A', rep: `${FTP}/M_A_rep.jpg?v=smile`, expr: `${FTP}/M_A_expr.png?v=hair`, desc: '유럽계 · 미디엄 터슬드 웨이브 · 키180 · 클린컷/애슬레틱',
         outfits: [{ f: 'A_M_C_01', t: '그레이 티+스웻' }, { f: 'A_M_C_02', t: '화이트 티+블랙 슬랙스' }, { f: 'A_M_C_03', t: '올리브 후디+차콜' }] },
     ],
   },
-  // 2차: 아동(K_A·K_B) 추가 예정
+  {
+    cat: '아동', emoji: '🧒', items: [
+      { code: 'K_A', rep: `${FTP}/K_A_rep_new.png?v=smile`, expr: `${FTP}/K_A_expr.png?v=braid`, desc: '유럽계 여아 6~7세 · 라이트브라운 양갈래 땋은머리(핀) · 밝고 명랑 · 키~120 · ①얼굴②표정 완료' },
+      { code: 'K_B', rep: `${FTP}/K_B_rep_new.png?v=smile`, expr: `${FTP}/K_B_expr.png?v=straight`, desc: '유럽계 여아 10~12세 · 오번 롱 생머리(센터파트)·주근깨 · 청순 · 키~150 · ①얼굴②표정 완료' },
+    ],
+  },
 ];
 
 // 썸네일 규격 프리셋
@@ -88,21 +94,40 @@ const SPECS = [
 // 제품별 썸네일 작업 — 컬러별 슬롯. 제작되면 url 채움(그전엔 null=대기), key로 FTP 파일명(thumb_<product>_<key>.jpg)
 const PRODUCTS = [
   {
-    product: 'Max', emoji: '🛋️', spec: '대표 빈백 소파 · 170cm · 18색', ratio: '1:1', bg: '화이트',
+    product: 'Max', emoji: '🛋️', spec: '대표 빈백 소파 · 170×70×45cm 6.6kg · Slim/Midi/Mini 동일 형태(사이즈만 다름)', ratio: '1:1', bg: '화이트', size: 'h170 × w70 × d45 · 6.6kg', scale: 'a large bean bag sofa as long as an adult is tall (170cm) - long enough for a grown-up to lie down on fully; stood upright it stands taller than a 160cm woman, topping her head by about 10cm',
     colors: [
-      { key: 'aqua', name: '아쿠아블루', hex: '#0075BD', el: true, url: `${FTP}/cand_max_aqua_b_p4_front.png?v=2`, spec: 'B모델 · 포즈4(정면 연출·빈백확대) · B_W_C_02 · 2048' },
-      { key: 'navy', name: '네이비블루', hex: '#1D395D', el: true, url: `${FTP}/thumb_max_navy.png?v=5`, spec: 'C모델 · 포즈2(각도락) · C_W_C_01 · 2048' },
-      { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, url: `${FTP}/cand_max_olive_a_p1.png?v=1`, spec: 'A모델 · 포즈1(눕듯 리클라이너) · A_W_C_01 · 2048' },
+      { key: 'aqua', name: '아쿠아블루', hex: '#0075BD', el: true, rep: true, cuts: [
+        { url: `${FTP}/cand_max_aqua_b_p4_front.png?v=4`, spec: 'B · 포즈4 정면(플랫라운저·확대) · 미소 · 색보정 · #f2f2f4' },
+        { url: `${FTP}/cand_max_aqua_b_pose2.png?v=2`, spec: 'B · 포즈2(체어·미소) · 색보정 · #f2f2f4' },
+        { url: `${FTP}/cand_max_aqua_b_poseref.png?v=3`, spec: 'B · 포즈레퍼(리클라이너·은은한미소) · 색보정 · #f2f2f4' },
+        { url: `${FTP}/cand_max_aqua_b_pose1.png?v=2`, spec: 'B · 포즈1(눕듯·곁눈질 미소) · Max확대·색스와치락 · #f2f2f4' },
+      ] },
+      { key: 'navy', name: '네이비블루', hex: '#1D395D', el: true, rep: true, cuts: [
+        { url: `${FTP}/cand_max_navy_c_pose1.png?v=2`, spec: 'C · 포즈1(눕듯·밝은미소) · 아쿠아연출 비례·얼굴C재락 · #f2f2f4' },
+        { url: `${FTP}/cand_max_navy_c_pose3.png?v=1`, spec: 'C · 포즈3(리클라이너·은은한미소) · 색스와치락 · #f2f2f4' },
+        { url: `${FTP}/cand_max_navy_c_pose4.png?v=1`, spec: 'C · 포즈4(플랫라운저·곁눈질미소) · 색스와치락 · #f2f2f4' },
+        { url: `${FTP}/cand_max_navy_c_pose2_smile.png?v=1`, spec: 'C · 포즈2(체어·밝은미소) · 표정변화컷 · #f2f2f4' },
+      ] },
+      { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, rep: true, cuts: [
+        { url: `${FTP}/cand_max_olive_a_pose1.png?v=1`, spec: 'A · 포즈1(눕듯·밝은미소) · A_W_C_01 · 색스와치락 · #f2f2f4' },
+        { url: `${FTP}/cand_max_olive_a_poseref.png?v=1`, spec: 'A · 포즈레퍼(낮은크레스트·은은한미소) · A_W_C_01 · #f2f2f4' },
+        { url: `${FTP}/cand_max_olive_a_pose2.png?v=1`, spec: 'A · 포즈2(체어·곁눈질미소) · A_W_C_01 · 색스와치락 · #f2f2f4' },
+      ] },
       { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, url: `${FTP}/cand_max_darkgrey_ma_p5.png?v=2`, spec: '남A · 포즈5(게이밍·미소) · A_M_C_02 · 2048' },
       { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3' },
-      { key: 'chocobrown', name: '초코브라운', hex: '#583E30', el: true, url: `${FTP}/cand_max_choco_c_pose.png?v=1`, spec: 'C모델(169) · test03 포즈(랩탑·미소) · C_W_C_01 · 2048' },
+      { key: 'chocobrown', name: '초코브라운', hex: '#583E30' },
       { key: 'cherryred', name: '체리레드', hex: '#790619', el: true, url: `${FTP}/cand_max_cherry_b_pose.png?v=1`, spec: 'B모델(172) · test02 포즈(리클라이너·미소) · B_W_C_02 · 2048' },
       { key: 'wineburgundy', name: '와인버건디', hex: '#7A031F' },
       { key: 'livingcoral', name: '리빙코랄', hex: '#EA3D19' },
-      { key: 'sweetorange', name: '스위트오렌지', hex: '#EE780C', el: true, url: `${FTP}/cand_max_orange_d_p3.png?v=4`, spec: 'D모델 · 포즈3(리클라이너) · D_W_C_01 · 2048' },
+      { key: 'sweetorange', name: '스위트오렌지', hex: '#EE780C', el: true, rep: true, cuts: [
+        { url: `${FTP}/cand_max_sweetorange_d_pose1.png?v=1`, spec: 'D · 포즈1(눕듯·밝은미소) · D_W_C_01 · 색스와치락 · #f2f2f4' },
+        { url: `${FTP}/cand_max_sweetorange_d_pose2.png?v=1`, spec: 'D · 포즈2(체어·은은한미소) · D_W_C_01 · 색스와치락 · #f2f2f4' },
+        { url: `${FTP}/cand_max_sweetorange_d_pose3.png?v=1`, spec: 'D · 포즈3(리클라이너·곁눈질미소) · D_W_C_01 · 색스와치락 · #f2f2f4' },
+        { url: `${FTP}/cand_max_sweetorange_d_pose4.png?v=1`, spec: 'D · 포즈4(플랫라운저·따뜻한미소) · D_W_C_01 · 색스와치락 · #f2f2f4' },
+      ] },
       { key: 'brightyellow', name: '브라이트옐로우', hex: '#EBCD00' },
       { key: 'rosepink', name: '로즈핑크', hex: '#EF0066' },
-      { key: 'blossompink', name: '블라썸핑크', hex: '#E5B9C8', el: true, url: `${FTP}/cand_max_blossom_a_pose.png?v=1`, spec: 'A모델(168) · test01 포즈(리클라이너·미소) · A_W_C_01 · 2048' },
+      { key: 'blossompink', name: '블라썸핑크', hex: '#E5B9C8' },
       { key: 'brightpurple', name: '브라이트퍼플', hex: '#644D9A' },
       { key: 'deeppurple', name: '딥퍼플', hex: '#5F2A38' },
       { key: 'lavender', name: '라벤더퍼플', hex: '#CDA7DB' },
@@ -110,7 +135,17 @@ const PRODUCTS = [
       { key: 'freshmint', name: '프레시민트', hex: '#B0EEE7' },
     ],
   },
-  // 추후: Pod · Support · Mini · Double 등
+  { product: 'Slim',    emoji: '📏', spec: 'Max 동일 형태 · 130×65×45cm 4.4kg · 폭 슬림(세로형) · 눌림레퍼 공유', ratio: '1:1', soon: true, sameLine: 'Max', size: 'h130 × w65 × d45 · 4.4kg', scale: 'a narrow vertical bean bag about chest height of a standing adult (130cm); one adult reclines against it with legs extended', colors: [] },
+  { product: 'Midi',    emoji: '🟦', spec: 'Max 동일 형태 · 125×70×45cm 4.8kg · 가슴 높이 · 눌림레퍼 공유', ratio: '1:1', soon: true, sameLine: 'Max', size: 'h125 × w70 × d45 · 4.8kg', scale: 'a mid-size bean bag reaching an adult chest when stood upright (125cm); one adult can curl up on it lying down, or sit with full back support', colors: [] },
+  { product: 'Mini',    emoji: '🔹', spec: 'Max 동일 형태 · 85×70×45cm 3.2kg · 엉덩이 높이·1인 시트 · 눌림레퍼 공유', ratio: '1:1', soon: true, sameLine: 'Max', size: 'h85 × w70 × d45 · 3.2kg', scale: 'a compact bean bag about hip-height of a standing adult (85cm); a single seat where an adult sits with knees bent, child-friendly size', colors: [] },
+  { product: 'Drop',    emoji: '💧', spec: '라운드 물방울형 · 75×85×85cm 3.7kg · 착석/랩탑 연출', ratio: '1:1', size: 'h75 × w85 × d85 · 3.7kg', scale: 'a round droplet-shaped bean bag about the height of a seated adult shoulders (75cm); one adult sinks into it with knees bent', colors: [
+    { key: 'chocobrown', name: '초코브라운', hex: '#583E30', el: true, url: `${FTP}/cand_max_choco_c_pose.png?v=1`, spec: 'C모델(169) · 랩탑·미소 연출 · C_W_C_01 · 2048 (Max→Drop 이동)' },
+  ] },
+  { product: 'Lounger', emoji: '🏖️', spec: '낮은 라운지체어 · 60×65×80cm 4.4kg', ratio: '1:1', soon: true, size: 'h60 × w65 × d80 · 4.4kg', scale: 'a low lounge chair bean bag about knee-height of a standing adult (60cm); a one-person seat whose backrest reaches a seated adult mid-back', colors: [] },
+  { product: 'Pyramid', emoji: '🔺', spec: '삼각 플로어쿠션 · 66×75×75cm 2.2kg', ratio: '1:1', soon: true, size: 'h66 × w75 × d75 · 2.2kg', scale: 'a triangular floor cushion about knee-height of a standing adult (66cm); one adult sits against its slope, a child can climb onto it', colors: [] },
+  { product: 'Pod',     emoji: '🥚', spec: '라운드 에그형 · 95×85×85cm 4.7kg', ratio: '1:1', soon: true, size: 'h95 × w85 × d85 · 4.7kg', scale: 'a round egg-shaped bean bag about waist-height of a standing adult (95cm), as wide as an adult shoulder span; one person sinks deeply into it', colors: [] },
+  { product: 'Double',  emoji: '🛏️', spec: '초대형 2인 · 170×120×45cm 13.2kg · Max 2배 폭', ratio: '1:1', soon: true, size: 'h170 × w120 × d45 · 13.2kg', scale: 'an extra-large bean bag sofa as long as an adult is tall (170cm) and nearly twice the width of a single-person bean bag; two adults can lie or sit side by side', colors: [] },
+  { product: 'Support', emoji: '🌙', spec: 'U형 등받이 쿠션 · 94×76×30cm 1.7kg', ratio: '1:1', soon: true, size: 'h94 × w76 × d30 · 1.7kg', scale: 'a U-shaped armrest cushion that wraps around an adult lower back, armrests about hip-height when seated', colors: [] },
 ];
 
 const C = { accent: '#26A69A', ok: '#66BB6A', wait: '#e6c86a', card: '#161616', line: '#2a2a2a', sub: '#9aa' };
@@ -168,7 +203,7 @@ export default function ThumbnailsPage() {
 
       {/* 눌림 레퍼 자산 */}
       <h2 style={{ fontSize: 19, margin: '26px 0 6px', borderLeft: `3px solid ${C.accent}`, paddingLeft: 10 }}>눌림(구김) 형태 레퍼 자산</h2>
-      <p style={{ color: '#999', fontSize: 12.5, margin: '0 0 10px' }}>한 번 만들면 모든 착석 썸네일에 무료 재사용. 제품·자세별로 확장 예정.</p>
+      <p style={{ color: '#999', fontSize: 12.5, margin: '0 0 10px' }}>한 번 만들면 모든 착석 썸네일에 무료 재사용. <b style={{ color: C.accent }}>Max·Slim·Midi·Mini는 같은 형태 라인</b>이라 눌림 레퍼 공유(사이즈만 다름). Drop·Lounger·Pyramid·Pod·Double·Support는 별도 형태 레퍼 필요.</p>
       <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
         {PRESS_REFS.map((p) => (
           <div key={p.key} style={{ textAlign: 'center', width: 200 }}>
@@ -227,6 +262,13 @@ export default function ThumbnailsPage() {
                     </div>
                   </div>
                 )}
+                {m.expr && (
+                  <div style={{ marginTop: 8, borderTop: `1px dashed ${C.line}`, paddingTop: 7 }}>
+                    <div style={{ fontSize: 10, color: C.wait, fontWeight: 700, marginBottom: 4 }}>😊 표정 시트 <span style={{ color: '#778', fontWeight: 400 }}>(얼굴락+표정 앵커)</span></div>
+                    <img src={m.expr} alt={`${g.cat} ${m.code} 표정 시트`} onClick={() => setZoom(m.expr)} title="표정 시트 — 생성 시 identity+표정 앵커로 함께 투입"
+                      style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover', borderRadius: 6, border: `1px solid ${C.wait}`, cursor: 'zoom-in', background: '#fff', display: 'block' }} />
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -249,16 +291,52 @@ export default function ThumbnailsPage() {
       <h2 style={{ fontSize: 19, margin: '28px 0 6px', borderLeft: `3px solid ${C.accent}`, paddingLeft: 10 }}>제작 썸네일 (제품별)</h2>
       <p style={{ color: '#999', fontSize: 12.5, margin: '0 0 12px' }}>컬러별 슬롯. 제작되면 썸네일이 채워지고, 그 전엔 <b style={{ color: C.wait }}>대기</b>. 규격 = 상품 리스트용 <b>1:1 화이트</b> 기준(추후 모델 착석 변형 추가 가능).</p>
       {PRODUCTS.map((p) => {
-        const done = p.colors.filter((c) => c.url).length;
+        const reps = p.colors.filter((c) => c.rep);
+        const rest = p.colors.filter((c) => !c.rep);
+        const done = p.colors.filter((c) => c.url || (c.cuts && c.cuts.length)).length;
         return (
           <div key={p.product} style={{ marginBottom: 22 }}>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, margin: '4px 0 10px', flexWrap: 'wrap' }}>
               <b style={{ fontSize: 15.5 }}>{p.emoji} {p.product}</b>
               <span style={{ fontSize: 11.5, color: '#888' }}>· {p.spec}</span>
-              <span style={{ fontSize: 12, color: done ? C.ok : C.wait }}>{done}/{p.colors.length} 제작</span>
+              {p.soon
+                ? <span style={{ fontSize: 11, fontWeight: 700, color: C.wait, border: `1px solid ${C.wait}`, borderRadius: 6, padding: '1px 8px' }}>준비중</span>
+                : <span style={{ fontSize: 12, color: done ? C.ok : C.wait }}>{done}/{p.colors.length} 제작</span>}
             </div>
+            {p.soon && (
+              <div style={{ border: `1px dashed ${C.line}`, borderRadius: 10, padding: '20px 16px', color: '#778', fontSize: 12.5, background: '#101010', textAlign: 'center' }}>
+                색상 슬롯 준비중 — 포즈·컬러 배정 후 채워집니다
+              </div>
+            )}
+            {reps.length > 0 && (
+              <div style={{ marginBottom: 14 }}>
+                <div style={{ fontSize: 12, fontWeight: 800, color: C.wait, margin: '0 0 8px' }}>🌟 대표 컬러 <span style={{ color: '#778', fontWeight: 400 }}>(모델·포즈 다중 컷)</span></div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  {reps.map((c) => (
+                    <div key={c.key} style={{ background: C.card, border: `1px solid ${C.wait}`, borderRadius: 12, padding: 10 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 8, flexWrap: 'wrap' }}>
+                        <span style={{ width: 14, height: 14, borderRadius: 4, background: c.hex, border: '1px solid rgba(255,255,255,.25)', flex: '0 0 auto' }} />
+                        <span style={{ fontSize: 13.5, fontWeight: 800, color: '#fff' }}>{c.name}</span>
+                        <span style={{ fontSize: 10.5, color: C.sub }}>{c.hex}{c.el ? ' · 🔒Element' : ''}</span>
+                        <span style={{ fontSize: 10.5, fontWeight: 700, color: C.ok }}>{c.cuts.length}컷</span>
+                      </div>
+                      <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+                        {c.cuts.map((cut, i) => (
+                          <div key={i} style={{ width: 150 }}>
+                            <img src={cut.url} alt={`${c.name} 컷${i + 1}`} onClick={() => setZoom(cut.url)} title="클릭하면 크게 보기"
+                              style={{ width: 150, aspectRatio: '1/1', objectFit: 'cover', borderRadius: 8, border: `1px solid ${C.accent}`, cursor: 'zoom-in', background: '#fff', display: 'block' }} />
+                            <div style={{ fontSize: 9.5, color: C.accent, marginTop: 3, lineHeight: 1.35 }}>{cut.spec}</div>
+                          </div>
+                        ))}
+                        <div style={{ width: 150, aspectRatio: '1/1', border: `1px dashed ${C.line}`, borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#5a6', fontSize: 11, textAlign: 'center', background: '#101010' }}>+ 컷 추가</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 12 }}>
-              {p.colors.map((c) => (
+              {rest.map((c) => (
                 <div key={c.key} style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 12, padding: 9 }}>
                   {c.url
                     ? <img src={c.url} alt={`${p.product} ${c.name}`} onClick={() => setZoom(c.url)} title="클릭하면 크게 보기"
