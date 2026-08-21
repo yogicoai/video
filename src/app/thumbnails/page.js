@@ -316,7 +316,7 @@ const PRODUCTS = [
     { key: 'aqua', name: '아쿠아블루', hex: '#0075BD', el: true, rep: true, cuts: [
       { url: `${FTP}/cand_drop_aqua_kb_p2.png?v=1`, spec: '아동B(12세·150cm) · 포즈2(옆으로 기대 턱괴고 릴랙스·측면) · KID_B_01 고정의상 · 아쿠아블루 #0075BD · 75×85×85 실측비례 · #f2f2f4' },
       { url: `${FTP}/cand_drop_aqua_kb_p5.png?v=3`, spec: '아동B(12세·150cm) · 포즈5(다리 접고 앉아 독서·¾측면) · KID_B_01 고정의상 · 아쿠아블루 #0075BD(얼굴 재생성) · #f2f2f4' },
-      { url: `${FTP}/cand_drop_aqua_kb_p6.png?v=1`, spec: '아동B(12세·150cm) · 포즈6(깊게 파묻혀 릴랙스·¾정면) · KID_B_01 고정의상 · 아쿠아블루 #0075BD · #f2f2f4' },
+      { url: `${FTP}/cand_drop_aqua_kb_p6.png?v=2`, spec: '아동B(12세·150cm) · 포즈6(깊게 파묻혀 릴랙스·¾정면·얼굴/배경 재생성) · KID_B_01 고정의상 · 아쿠아블루 #0075BD · #f2f2f4' },
       { url: `${FTP}/cand_drop_aqua_ma_p1.png?v=1`, spec: '남성A(180cm) · 포즈1(책상다리 착석·머그·¾정면) · 화이트티+블랙와이드(A_M_C_02) · 아쿠아블루 #0075BD · #f2f2f4' },
       { url: `${FTP}/cand_drop_aqua_ma_p5.png?v=1`, spec: '남성A(180cm) · 포즈5(다리 접고 앉아 독서·¾측면) · 화이트티+블랙와이드(A_M_C_02) · 아쿠아블루 #0075BD · #f2f2f4' },
       { url: `${FTP}/cand_drop_aqua_ma_p8.png?v=1`, spec: '남성A(180cm) · 포즈8(비스듬히 기대 다리 뻗고 독서·¾측면) · 화이트티+블랙와이드(A_M_C_02) · 아쿠아블루 #0075BD · #f2f2f4' },
