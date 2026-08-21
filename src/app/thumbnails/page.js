@@ -57,9 +57,106 @@ const PRESS_REFS = [
 // Slim 실사 포즈 레퍼 (모델포함=orig / 모델제거=url) — Slim 정확한 형태·비례용
 const SLIM = 'https://yogibo.openhost.cafe24.com/web/img/none/slim';
 const SLIM_REFS = [
-  { key: 'slim_p1', name: 'Slim 업라이트 체어 (포즈1)', url: `${SLIM}/slim_01_off.png`, orig: `${SLIM}/slim_01_on.png`, note: '실사·모델제거 · 양반다리 정면 게이밍(업라이트 체어형) · 블랙', tag: '실사' },
+  // 포즈1(업라이트 체어·게이밍) 숨김 — 생성 잘 안돼 제외(데이터 보존): { key: 'slim_p1', name: 'Slim 업라이트 체어 (포즈1)', url: `${SLIM}/slim_01_off.png`, orig: `${SLIM}/slim_01_on.png`, note: '실사·모델제거 · 양반다리 정면 게이밍(업라이트 체어형) · 블랙', tag: '실사' },
   { key: 'slim_p2', name: 'Slim 보트 리클라이너 (포즈2)', url: `${SLIM}/slim_02_off.png`, orig: `${SLIM}/slim_02_on.jpg`, note: '실사·모델제거 · 낮은 보트형 리클라이너·기대어 눕기(¾측면) · 차콜', tag: '실사' },
   { key: 'slim_p3', name: 'Slim 업라이트 리클라이너 (포즈3)', url: `${SLIM}/slim_03_off.png`, orig: `${SLIM}/slim_03_on.jpg`, note: '실사·모델제거 · 업라이트 리클라이너·책읽기(¾정면) · 차콜', tag: '실사' },
+  { key: 'slim_p4', name: 'Slim 플랫 로우 라운저 (포즈4)', url: `${SLIM}/slim_04_off.png`, orig: `${SLIM}/slim_04_on.png`, note: '실사·모델제거 · 바닥에 낮게 눕힌 플랫 라운저 · 엎드려 팔꿈치 괴고 릴랙스(¾측면) · 차콜', tag: '실사' },
+  { key: 'slim_p6', name: 'Slim 업라이트 체어·게이밍 (포즈6)', url: `${SLIM}/slim_06_off.png`, orig: `${SLIM}/slim_06_on.png`, note: '실사·모델제거 · 업라이트 체어형 착석 게이밍(¾측면) · 남성 · 올리브', tag: '실사·남성' },
+  { key: 'slim_p7', name: 'Slim 세로 업라이트·옆 기대기 (포즈7)', url: `${SLIM}/slim_07_off.png`, orig: `${SLIM}/slim_07_on.png`, note: '실사·모델제거 · 세로로 세운 Slim 옆에 서서 손 얹고 기대기(제품 높이 강조·바닥지지) · 라이트그레이', tag: '실사' },
+  { key: 'slim_p8', name: 'Slim 허그·옆 감싸안기 (포즈8)', url: `${SLIM}/slim_08_off.png`, orig: `${SLIM}/slim_08_on.png`, note: '실사·모델제거 · 세로 Slim 옆에서 감싸안기·볼 기대기·팔 끝까지 안감김 · 남성 · 오렌지', tag: '실사·남성' },
+  { key: 'slim_p9', name: 'Slim 업라이트 체어 정면 착석·게이밍 (포즈9)', url: `${SLIM}/slim_09_off.png`, orig: `${SLIM}/slim_09_on.png`, note: '실사·모델제거 · 정면 착석 게이밍(업라이트 체어형) · 남성 · 블루/퍼플', tag: '실사·남성' },
+];
+
+// Midi 전용 실사 포즈 레퍼 (모델포함=포즈/비례 · 모델제거=형태 · 각도락용)
+const MIDI = 'https://yogibo.openhost.cafe24.com/web/img/none/midi';
+const MIDI_REFS = [
+  { key: 'midi_p1', name: 'Midi 플랫 라운저·누워 스트레칭 (포즈1)', url: `${MIDI}/midi_01_off.png`, orig: `${MIDI}/midi_01_on.jpg`, note: '실사·모델제거 · 낮게 눕힌 롱 웨지형 · 등받이 슬로프에 거의 눕듯 기대어 양팔 머리 위 스트레칭·다리 뻗기(¾측면) · 차콜', tag: '실사' },
+];
+
+// Mini 전용 실사 포즈 레퍼 (모델포함=포즈/비례 · 모델제거=형태 · 각도락용) — on 확장자 01~05=.jpg / 06~07=.png, off는 전부 .png
+const MINI_R = 'https://yogibo.openhost.cafe24.com/web/img/none/mini';
+const MINI_REFS = [
+  { key: 'mini_p1', name: 'Mini 사이드 리클라인 (포즈1)', url: `${MINI_R}/mini_01_off.png`, orig: `${MINI_R}/mini_01_on.jpg`, note: '실사·모델제거 · 성인 여성이 옆으로 기대 앉기(¾측면·다리 뻗기) · 차콜', tag: '실사' },
+  { key: 'mini_p2', name: 'Mini 바닥 라운지·체스 (포즈2)', url: `${MINI_R}/mini_02_off.png`, orig: `${MINI_R}/mini_02_on.jpg`, note: '실사·모델제거 · 바닥에 앉아 Mini에 기대어 놀이/체스(¾측면) · 베이지', tag: '실사' },
+  { key: 'mini_p3', name: 'Mini 아동 기대 책읽기 (포즈3)', url: `${MINI_R}/mini_03_off.png`, orig: `${MINI_R}/mini_03_on.jpg`, note: '실사·모델제거 · 아동이 Mini에 기대 앉아 책읽기(¾정면) · 그린', tag: '실사·아동' },
+  { key: 'mini_p4', name: 'Mini 아동 2인 함께 (포즈4)', url: `${MINI_R}/mini_04_off.png`, orig: `${MINI_R}/mini_04_on.jpg`, note: '실사·모델제거 · 아동 두 명이 낮은 Mini에 함께 앉기(자매 연출) · 레드', tag: '실사·아동' },
+  { key: 'mini_p5', name: 'Mini 앉아 공부·트레이 (포즈5)', url: `${MINI_R}/mini_05_off.png`, orig: `${MINI_R}/mini_05_on.jpg`, note: '실사·모델제거 · 남아가 Mini에 앉아 무릎 트레이로 공부/그리기(¾측면) · 모카', tag: '실사·아동' },
+  { key: 'mini_p6', name: 'Mini 아동 앉아 책읽기 (포즈6)', url: `${MINI_R}/mini_06_off.png`, orig: `${MINI_R}/mini_06_on.png`, note: '실사·모델제거 · 아동이 Mini에 폭 안겨 앉아 책읽기(책장 앞·측면) · 브라운', tag: '실사·아동' },
+  { key: 'mini_p7', name: 'Mini 아동 착석 독서 (포즈7)', url: `${MINI_R}/mini_07_off.png`, orig: `${MINI_R}/mini_07_on.png`, note: '실사·모델제거 · 아동이 Mini에 앉아 무릎에 책 놓고 읽기(¾측면·방 연출) · 모카', tag: '실사·아동' },
+];
+
+// Lounger 전용 실사 포즈 레퍼 — 확장자 혼재(on: 01·02·05·06=.png / 03·04·07=.jpg, off: 05=.jpg 나머지=.png)
+const LG = 'https://yogibo.openhost.cafe24.com/web/img/none/lounger';
+const LOUNGER_REFS = [
+  { key: 'lg_p1', name: 'Lounger 포즈1', url: `${LG}/lounger_off_01.png`, orig: `${LG}/lounger_on_01.png`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'lg_p2', name: 'Lounger 포즈2', url: `${LG}/lounger_off_02.png`, orig: `${LG}/lounger_on_02.png`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'lg_p3', name: 'Lounger 포즈3', url: `${LG}/lounger_off_03.png`, orig: `${LG}/lounger_on_03.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'lg_p4', name: 'Lounger 포즈4', url: `${LG}/lounger_off_04.png`, orig: `${LG}/lounger_on_04.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'lg_p5', name: 'Lounger 포즈5', url: `${LG}/lounger_off_05.jpg`, orig: `${LG}/lounger_on_05.png`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'lg_p6', name: 'Lounger 포즈6', url: `${LG}/lounger_off_06.png`, orig: `${LG}/lounger_on_06.png`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'lg_p7', name: 'Lounger 포즈7', url: `${LG}/lounger_off_07.png`, orig: `${LG}/lounger_on_07.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+];
+
+// Drop 전용 실사 포즈 레퍼 — 확장자 혼재(on: 01·07=.png 나머지=.jpg / off: 전부 .png)
+const DR = 'https://yogibo.openhost.cafe24.com/web/img/none/drop';
+const DROP_REFS = [
+  { key: 'dr_p1', name: 'Drop 포즈1', url: `${DR}/drop_off_01.png`, orig: `${DR}/drop_on_01.png`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'dr_p2', name: 'Drop 포즈2', url: `${DR}/drop_off_02.png`, orig: `${DR}/drop_on_02.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'dr_p3', name: 'Drop 포즈3', url: `${DR}/drop_off_03.png`, orig: `${DR}/drop_on_03.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'dr_p4', name: 'Drop 포즈4', url: `${DR}/drop_off_04.png`, orig: `${DR}/drop_on_04.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'dr_p5', name: 'Drop 포즈5', url: `${DR}/drop_off_05.png`, orig: `${DR}/drop_on_05.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'dr_p6', name: 'Drop 포즈6', url: `${DR}/drop_off_06.png`, orig: `${DR}/drop_on_06.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'dr_p7', name: 'Drop 포즈7', url: `${DR}/drop_off_07.png`, orig: `${DR}/drop_on_07.png`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'dr_p8', name: 'Drop 포즈8', url: `${DR}/drop_off_08.png`, orig: `${DR}/drop_on_08.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+];
+
+// Pyramid 전용 실사 포즈 레퍼 — on: 01·04·06=.png / 02·03·05=.jpg, off: 전부 .png
+const PY_ = 'https://yogibo.openhost.cafe24.com/web/img/none/pyramid';
+const PYRAMID_REFS = [
+  { key: 'py_p1', name: 'Pyramid 포즈1', url: `${PY_}/pyramid_off_01.png`, orig: `${PY_}/pyramid_on_01.png`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'py_p2', name: 'Pyramid 포즈2', url: `${PY_}/pyramid_off_02.png`, orig: `${PY_}/pyramid_on_02.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'py_p3', name: 'Pyramid 포즈3', url: `${PY_}/pyramid_off_03.png`, orig: `${PY_}/pyramid_on_03.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'py_p4', name: 'Pyramid 포즈4', url: `${PY_}/pyramid_off_04.png`, orig: `${PY_}/pyramid_on_04.png`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'py_p5', name: 'Pyramid 포즈5', url: `${PY_}/pyramid_off_05.png`, orig: `${PY_}/pyramid_on_05.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'py_p6', name: 'Pyramid 포즈6', url: `${PY_}/pyramid_off_06.png`, orig: `${PY_}/pyramid_on_06.png`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+];
+
+// Pod 전용 실사 포즈 레퍼 — on: 01~04=.jpg / 05·06=.png, off: 전부 .png
+const PD = 'https://yogibo.openhost.cafe24.com/web/img/none/pod';
+const POD_REFS = [
+  { key: 'pd_p1', name: 'Pod 포즈1', url: `${PD}/pod_off_01.png`, orig: `${PD}/pod_on_01.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'pd_p2', name: 'Pod 포즈2', url: `${PD}/pod_off_02.png`, orig: `${PD}/pod_on_02.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'pd_p3', name: 'Pod 포즈3', url: `${PD}/pod_off_03.png`, orig: `${PD}/pod_on_03.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'pd_p4', name: 'Pod 포즈4', url: `${PD}/pod_off_04.png`, orig: `${PD}/pod_on_04.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'pd_p5', name: 'Pod 포즈5', url: `${PD}/pod_off_05.png`, orig: `${PD}/pod_on_05.png`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'pd_p6', name: 'Pod 포즈6', url: `${PD}/pod_off_06.png`, orig: `${PD}/pod_on_06.png`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+];
+
+// Double 전용 실사 포즈 레퍼 — on: 전부 .jpg / off: 전부 .png
+const DB = 'https://yogibo.openhost.cafe24.com/web/img/none/double';
+const DOUBLE_REFS = [
+  { key: 'db_p1', name: 'Double 포즈1', url: `${DB}/double_off_01.png`, orig: `${DB}/double_on_01.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'db_p2', name: 'Double 포즈2', url: `${DB}/double_off_02.png`, orig: `${DB}/double_on_02.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'db_p3', name: 'Double 포즈3', url: `${DB}/double_off_03.png`, orig: `${DB}/double_on_03.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+];
+
+// Support 전용 실사 포즈 레퍼 — on: 01=.png / 02=.jpg, off: 전부 .png
+const SP = 'https://yogibo.openhost.cafe24.com/web/img/none/support';
+const SUPPORT_REFS = [
+  { key: 'sp_p1', name: 'Support 포즈1', url: `${SP}/support_off_01.png`, orig: `${SP}/support_on_01.png`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+  { key: 'sp_p2', name: 'Support 포즈2', url: `${SP}/support_off_02.png`, orig: `${SP}/support_on_02.jpg`, note: '실사 · 모델포함=자세/각도 · 모델제거=형태', tag: '실사' },
+];
+
+// 참고 포즈(타사) — 포즈/앵글/분위기만 참고, 제품·인물 복사 X. 생성 시 우리 제품 형태(off레퍼)로 락.
+const TEST = 'https://yogibo.openhost.cafe24.com/web/img/none/test';
+const MIDI_POSEREFS = [
+  { key: 'tp01', name: '착석·다리 뻗고 릴랙스', url: `${TEST}/test_01.jpg`,  note: '¾ 착석 · 다리 뻗고 릴랙스' },
+  { key: 'tp02', name: '보트 리클라이너·기대 눕기', url: `${TEST}/test_02.jpg`,  note: '¾측면 · 무릎 세우고 기대 눕기' },
+  { key: 'tp03', name: '라운드 착석·랩탑', url: `${TEST}/test_03.jpg`,  note: '앉아서 랩탑 사용' },
+  { key: 'tp04', name: '깊게 앉기·거실 세팅', url: `${TEST}/test_04.webp`, note: '¾정면 · 깊게 파묻혀 앉기' },
+  { key: 'tp05', name: '사이드 리클라인', url: `${TEST}/test_05.jpg`,  note: '옆으로 기대 눕기' },
+  { key: 'tp06', name: '플랫 리클라인(남성)', url: `${TEST}/test_06.jpg`,  note: '뒤로 기대 평평하게 눕기' },
+  { key: 'tp07', name: '리클라인·헤드폰 릴랙스', url: `${TEST}/test_07.jpg`,  note: '¾ · 헤드폰 음악 릴랙스' },
 ];
 
 // 썸네일용 전속 모델 (1차: 여성·남성) — 착석/라이프스타일 썸네일에 지정 사용. 헤어 업데이트 반영.
@@ -86,8 +183,10 @@ const THUMB_MODELS = [
   },
   {
     cat: '아동', emoji: '🧒', items: [
-      { code: 'K_A', rep: `${FTP}/K_A_rep_new.png?v=smile`, expr: `${FTP}/K_A_expr.png?v=braid`, desc: '유럽계 여아 6~7세 · 라이트브라운 양갈래 땋은머리(핀) · 밝고 명랑 · 키~120 · ①얼굴②표정 완료' },
-      { code: 'K_B', rep: `${FTP}/K_B_rep_new.png?v=smile`, expr: `${FTP}/K_B_expr.png?v=straight`, desc: '유럽계 여아 10~12세 · 오번 롱 생머리(센터파트)·주근깨 · 청순 · 키~150 · ①얼굴②표정 완료' },
+      { code: 'K_A', rep: `${FTP}/K_A_rep_new.png?v=smile`, expr: `${FTP}/K_A_expr.png?v=braid`, desc: '유럽계 여아 6~7세 · 라이트브라운 양갈래 땋은머리(핀) · 밝고 명랑 · 키~120 · ①얼굴②표정 완료',
+        outfits: [{ f: 'KID_A_01', t: '그레이 프린트 티+크림 반바지' }] },
+      { code: 'K_B', rep: `${FTP}/K_B_rep_new.png?v=smile`, expr: `${FTP}/K_B_expr.png?v=straight`, desc: '유럽계 여아 10~12세 · 오번 롱 생머리(센터파트)·주근깨 · 청순 · 키~150 · ①얼굴②표정 완료',
+        outfits: [{ f: 'KID_B_01', t: '아이보리 링거 티+그레이 숏팬츠' }] },
     ],
   },
 ];
@@ -146,50 +245,97 @@ const PRODUCTS = [
   },
   { product: 'Slim',    emoji: '📏', spec: 'Max 동일 형태 · 130×65×45cm 4.4kg · 폭 슬림(세로형) · Slim 전용 실사레퍼', ratio: '1:1', sameLine: 'Max', size: 'h130 × w65 × d45 · 4.4kg', models: '여성A · 여성B · 여성D · 남성A', refs: SLIM_REFS, scale: 'a narrow vertical bean bag about chest height of a standing adult (130cm); one adult reclines against it with legs extended', colors: [
     { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3', el: true, rep: true, cuts: [
-      { url: `${FTP}/cand_slim_lightgrey_b_p1_v2.png?v=2`, spec: 'B · 포즈1(업라이트 체어·양반다리·게이밍) · 슬림폭 보정 · 그레이티+데님쇼츠 · 중앙 · #f2f2f4' },
-      { url: `${FTP}/cand_slim_lightgrey_b_p2_v2.png?v=2`, spec: 'B · 포즈2(보트 리클라이너) · 배경정리·그레이티+데님쇼츠 · 중앙 · #f2f2f4' },
-      { url: `${FTP}/cand_slim_lightgrey_b_p3.png?v=1`, spec: 'B · 포즈3(업라이트 리클라이너) · 그레이티+데님쇼츠 · 중앙 · 실사레퍼 · #f2f2f4' },
+      { url: `${FTP}/cand_slim_lightgrey_b_p4.png?v=2`, spec: 'B · 포즈4(로우 라운저·엎드려 릴랙스) · 볼륨보정(통통) · 그레이티+데님쇼츠 · 중앙 · #f2f2f4' },
+      { url: `${FTP}/cand_slim_lightgrey_b_p2_v2.png?v=2`, spec: 'B · 포즈2(보트 리클라이너) · 그레이티+데님쇼츠 · 중앙 · #f2f2f4' },
+      { url: `${FTP}/cand_slim_lightgrey_b_p3.png?v=1`, spec: 'B · 포즈3(업라이트 리클라이너) · 그레이티+데님쇼츠 · 중앙 · #f2f2f4' },
+      { url: `${FTP}/cand_slim_lightgrey_b_hug.png?v=5`, spec: 'B · 허그 연출(실물 slim_05 on/off 레퍼락·두께면 보임·팔 끝까지 안감김·바닥~머리 스케일) · 그레이티+데님쇼츠 · #f2f2f4' },
+      { url: `${FTP}/cand_slim_lightgrey_ma_p6.png?v=1`, spec: '남성A(180cm) · 포즈6(업라이트 체어·게이밍·¾측면) · 화이트티+블랙슬랙스 · 라이트그레이 · #f2f2f4' },
+      { url: `${FTP}/cand_slim_lightgrey_duo_p9.png?v=3`, spec: '여성A + 남성A 2인 · 포즈9(게이밍·자연스러운 연출) · 실물 slim_09 on/off 형태락(체어형·130 사이즈·유령머리 해결) · 그레이티+롱와이드데님 / 화이트티+블랙슬랙스 · 라이트그레이+리빙코랄 · #f2f2f4' },
+      { url: `${FTP}/cand_slim_lightgrey_ma_p3.png?v=1`, spec: '남성A(180cm) · 포즈3(업라이트 리클라이너) · 올리브후디+차콜조거 · 라이트그레이 · #f2f2f4' },
+      { url: `${FTP}/cand_slim_lightgrey_ma_p3_white.png?v=1`, spec: '남성A(180cm) · 포즈3(업라이트 리클라이너) · 화이트티+블랙슬랙스 · 라이트그레이 · #f2f2f4' },
+      // 숨김(들고있기 포기): { url: `${FTP}/cand_slim_lightgrey_b_hold.png?v=2`, spec: 'B · 살짝 들고 있는 연출(firm 유지·밑단만 바닥에서 띄움·바람빠짐 없음) · 그레이티+데님쇼츠 · #f2f2f4' },
     ] },
-    { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, rep: true, cuts: [] },
-    { key: 'livingcoral', name: '리빙코랄', hex: '#EA3D19', el: true, rep: true, cuts: [] },
+    { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_slim_olive_d_p2.png?v=1`, spec: 'D · 포즈2(보트 리클라이너) · 네이비 스트라이프 니트(긴팔)+데님쇼츠 · 올리브 #668B01 · #f2f2f4' },
+      { url: `${FTP}/cand_slim_olive_d_p3.png?v=1`, spec: 'D · 포즈3(업라이트 리클라이너) · 네이비 스트라이프 니트(반팔)+데님쇼츠 · 올리브 #668B01 · #f2f2f4' },
+      { url: `${FTP}/cand_slim_olive_d_p2b.png?v=2`, spec: 'D · 보트 리클라이너(포즈 변화·팔 젖혀 릴랙스·다리 교차) · 네이비 스트라이프 니트+데님쇼츠 · 올리브 #668B01(색보정: 밝게) · #f2f2f4' },
+    ] },
+    { key: 'livingcoral', name: '리빙코랄', hex: '#EA3D19', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_slim_coral_a_p4.png?v=1`, spec: 'A · 포즈4(로우 라운저·엎드려 릴랙스) · 브라운 티+그레이 스웻팬츠 · 리빙코랄 #EA3D19 · #f2f2f4' },
+      { url: `${FTP}/cand_slim_coral_a_p3.png?v=1`, spec: 'A · 포즈3(업라이트 리클라이너) · 브라운 티+그레이 스웻팬츠 · 리빙코랄 #EA3D19 · #f2f2f4' },
+      { url: `${FTP}/cand_slim_coral_a_p2.png?v=1`, spec: 'A · 포즈2(보트 리클라이너) · 브라운 티+그레이 스웻팬츠 · 리빙코랄 #EA3D19 · #f2f2f4' },
+    ] },
   ] },
-  { product: 'Midi',    emoji: '🟦', spec: 'Max 동일 형태 · 125×70×45cm 4.8kg · 가슴 높이 · 눌림레퍼 공유', ratio: '1:1', sameLine: 'Max', size: 'h125 × w70 × d45 · 4.8kg', models: '여성A · 여성B · 여성D · 남성A', scale: 'a mid-size bean bag reaching an adult chest when stood upright (125cm); one adult can curl up on it lying down, or sit with full back support', colors: [
-    { key: 'lavender', name: '라벤더퍼플', hex: '#CDA7DB', el: true, rep: true, cuts: [] },
-    { key: 'navy', name: '네이비블루', hex: '#1D395D', el: true, rep: true, cuts: [] },
-    { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, rep: true, cuts: [] },
+  { product: 'Midi',    emoji: '🟦', spec: 'Max 동일 형태 · 125×70×45cm 4.8kg · 가슴 높이 · 눌림레퍼 공유', ratio: '1:1', sameLine: 'Max', size: 'h125 × w70 × d45 · 4.8kg', models: '여성A · 여성B · 여성D · 남성A', refs: MIDI_REFS, scale: 'a mid-size bean bag reaching an adult chest when stood upright (125cm); one adult can curl up on it lying down, or sit with full back support', colors: [
+    { key: 'lavender', name: '라벤더퍼플', hex: '#CDA7DB', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_midi_lavender_b_p2.png?v=1`, spec: 'B · 포즈2 실사레퍼 형태락(보트 리클라이너) + 사이드 리클라인 연출 · 크림 오버셔츠+와이드(B_W_C_02 의상레퍼) · 라벤더퍼플 #CDA7DB · #f2f2f4' },
+      { url: `${FTP}/cand_midi_lavender_b_p3.png?v=2`, spec: 'B · 포즈3(업라이트 리클라이너·책읽기 ¾정면·slim_03 on/off 자세각도락·소프트 빈백폼) · 크림 오버셔츠+와이드(B_W_C_02 의상레퍼) · 라벤더퍼플 #CDA7DB · #f2f2f4' },
+      { url: `${FTP}/cand_midi_lavender_b_p8.png?v=1`, spec: 'B · 포즈8(허그·옆 감싸안기·팔 끝까지 안감김) · 크림 오버셔츠+와이드(B_W_C_02 의상레퍼) · 라벤더퍼플 #CDA7DB · #f2f2f4' },
+    ] },
+    { key: 'navy', name: '네이비블루', hex: '#1D395D', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_midi_navy_a_p3.png?v=1`, spec: '여성A(168cm) · 포즈3(업라이트 리클라이너·책읽기 ¾정면·소프트 빈백폼) · 브라운티+그레이스웻(A_W_C_01 의상레퍼) · 네이비블루 #1D395D · #f2f2f4' },
+      // 숨김: { url: `${FTP}/cand_midi_navy_a_p2.png?v=1`, spec: '여성A(168cm) · 포즈2(보트 리클라이너·소프트 빈백폼) · 브라운티+그레이스웻(A_W_C_01 의상레퍼) · 네이비블루 #1D395D · #f2f2f4' },
+      { url: `${FTP}/cand_midi_navy_a_m01.png?v=1`, spec: '여성A(168cm) · Midi포즈1(플랫 라운저·누워 양팔 스트레칭·midi_01 on/off 각도락) · 브라운티+그레이스웻(A_W_C_01 의상레퍼) · 네이비블루 #1D395D · #f2f2f4' },
+    ] },
+    { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_midi_darkgrey_ma_p2.png?v=2`, spec: '남성A(180cm) · 포즈2(보트 리클라이너) · 그레이티+그레이와이드팬츠(A_M_C_01 의상레퍼) · 다크그레이 #353B3E(색보정 통일) · #f2f2f4' },
+      { url: `${FTP}/cand_midi_darkgrey_ma_t06.png?v=2`, spec: '남성A(180cm) · test06 참고포즈(플랫 리클라인·뒤로 기대 눕기·타사포즈+우리제품 형태락) · 화이트티+블랙와이드(A_M_C_02 의상레퍼) · 다크그레이 #353B3E(색보정 통일) · #f2f2f4' },
+      { url: `${FTP}/cand_midi_darkgrey_ma_p3.png?v=2`, spec: '남성A(180cm) · 포즈3(업라이트 리클라이너·소프트라운드) · 올리브후디+차콜와이드(A_M_C_03 의상레퍼) · 다크그레이 #353B3E(색보정 통일) · #f2f2f4' },
+    ] },
   ] },
-  { product: 'Mini',    emoji: '🔹', spec: 'Max 동일 형태 · 85×70×45cm 3.2kg · 엉덩이 높이·1인 시트 · 눌림레퍼 공유', ratio: '1:1', sameLine: 'Max', size: 'h85 × w70 × d45 · 3.2kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a compact bean bag about hip-height of a standing adult (85cm); a single seat where an adult sits with knees bent, child-friendly size', colors: [
-    { key: 'chocobrown', name: '초코브라운', hex: '#583E30', el: true, rep: true, cuts: [] },
-    { key: 'cherryred', name: '체리레드', hex: '#790619', el: true, rep: true, cuts: [] },
-    { key: 'avocadogreen', name: '아보카도그린', hex: '#7AA991', el: true, rep: true, cuts: [] },
+  { product: 'Mini',    emoji: '🔹', spec: 'Max 동일 형태 · 85×70×45cm 3.2kg · 엉덩이 높이·1인 시트 · 눌림레퍼 공유', ratio: '1:1', sameLine: 'Max', size: 'h85 × w70 × d45 · 3.2kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', refs: MINI_REFS, scale: 'a compact bean bag about hip-height of a standing adult (85cm); a single seat where an adult sits with knees bent, child-friendly size', colors: [
+    { key: 'chocobrown', name: '초코브라운', hex: '#583E30', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_mini_choco_ka_p5.png?v=1`, spec: '아동A(~120cm) · 포즈5(앉아 공부·무릎 트레이·mini_05 on/off 각도락) · KID_A_01 고정의상(그레이 프린트티+크림 반바지) · 초코브라운 #583E30 · #f2f2f4' },
+      { url: `${FTP}/cand_mini_choco_ka_p7.png?v=2`, spec: '아동A(~120cm) · 포즈7(착석 독서·무릎에 책·mini_07 on/off 각도락) · KID_A_01 고정의상 · 초코브라운 #583E30 · #f2f2f4' },
+      { url: `${FTP}/cand_mini_choco_duo_p4.png?v=1`, spec: '아동A + 아동B 2인 · 포즈4(자매 함께 앉기·mini_04 on/off 각도락) · KID_A_01 / KID_B_01 고정의상 · 초코브라운 #583E30 · #f2f2f4' },
+    ] },
+    { key: 'cherryred', name: '체리레드', hex: '#790619', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_mini_cherry_kb_p7.png?v=1`, spec: '아동B(~150cm) · 포즈7(착석 독서·둥근 빈백폼) · KID_B_01 고정의상(아이보리 링거티+그레이 숏팬츠) · 체리레드 #790619 · #f2f2f4' },
+      // 숨김: { url: `${FTP}/cand_mini_cherry_kb_p5.png?v=2`, spec: '아동B(~150cm) · 포즈5(앉아 공부·무릎 트레이·티어드롭 형태·실측 비례) · KID_B_01 고정의상 · 체리레드 #790619 · #f2f2f4' },
+      // 숨김: { url: `${FTP}/cand_mini_cherry_kb_p2.png?v=2`, spec: '아동B(~150cm) · 포즈2(바닥 라운지·체스·티어드롭 형태·실측 비례) · KID_B_01 고정의상 · 체리레드 #790619 · #f2f2f4' },
+    ] },
+    { key: 'avocadogreen', name: '아보카도그린', hex: '#7AA991', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_mini_avo_c_p1.png?v=1`, spec: '여성C(169cm) · 포즈1(사이드 리클라인·티어드롭 형태·실측 비례) · 화이트티+네이비 와이드(C_W_C_01 의상레퍼) · 아보카도그린 #7AA991 · #f2f2f4' },
+      { url: `${FTP}/cand_mini_avo_c_p6.png?v=1`, spec: '여성C(169cm) · 포즈6(폭 안겨 앉아 독서·측면·티어드롭 형태·실측 비례) · 화이트티+네이비 와이드(C_W_C_01 의상레퍼) · 아보카도그린 #7AA991 · #f2f2f4' },
+    ] },
   ] },
-  { product: 'Drop',    emoji: '💧', spec: '라운드 물방울형 · 75×85×85cm 3.7kg · 착석/랩탑 연출', ratio: '1:1', size: 'h75 × w85 × d85 · 3.7kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a round droplet-shaped bean bag about the height of a seated adult shoulders (75cm); one adult sinks into it with knees bent', colors: [
-    { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, rep: true, cuts: [] },
-    { key: 'livingcoral', name: '리빙코랄', hex: '#EA3D19', el: true, rep: true, cuts: [] },
+  { product: 'Drop',    emoji: '💧', spec: '라운드 물방울형 · 75×85×85cm 3.7kg · 착석/랩탑 연출', ratio: '1:1', size: 'h75 × w85 × d85 · 3.7kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a round droplet-shaped bean bag about the height of a seated adult shoulders (75cm); one adult sinks into it with knees bent', refs: DROP_REFS, colors: [
+    { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_drop_olive_b_p1.png?v=1`, spec: 'B(172cm) · 포즈1(책상다리 착석·머그·¾정면) · 크림 오버셔츠+와이드(B_W_C_02) · 올리브그린 #668B01 · 75×85×85 실측비례 · #f2f2f4' },
+      { url: `${FTP}/cand_drop_olive_b_p4.png?v=1`, spec: 'B(172cm) · 포즈4(뒤로 기대 스트레칭·측면) · 크림 오버셔츠+와이드(B_W_C_02) · 올리브그린 #668B01 · #f2f2f4' },
+      { url: `${FTP}/cand_drop_olive_b_p5.png?v=1`, spec: 'B(172cm) · 포즈5(다리 접고 앉아 독서·¾측면) · 크림 오버셔츠+와이드(B_W_C_02) · 올리브그린 #668B01 · #f2f2f4' },
+    ] },
+    { key: 'livingcoral', name: '리빙코랄', hex: '#EA3D19', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_drop_coral_c_p1.png?v=1`, spec: 'C(169cm) · 포즈1(책상다리 착석·머그·¾정면) · 화이트티+네이비 와이드(C_W_C_01) · 리빙코랄 #EA3D19 · 75×85×85 실측비례 · #f2f2f4' },
+      { url: `${FTP}/cand_drop_coral_c_p3.png?v=1`, spec: 'C(169cm) · 포즈3(기대 릴랙스·팔 올린 활기 연출) · 화이트티+네이비 와이드(C_W_C_01) · 리빙코랄 #EA3D19 · #f2f2f4' },
+      { url: `${FTP}/cand_drop_coral_c_p5.png?v=1`, spec: 'C(169cm) · 포즈5(다리 접고 앉아 독서·¾측면) · 화이트티+네이비 와이드(C_W_C_01) · 리빙코랄 #EA3D19 · #f2f2f4' },
+    ] },
     { key: 'aqua', name: '아쿠아블루', hex: '#0075BD', el: true, rep: true, cuts: [] },
     { key: 'chocobrown', name: '초코브라운', hex: '#583E30', el: true, url: `${FTP}/cand_max_choco_c_pose.png?v=1`, spec: 'C모델 · 랩탑연출 · C_W_C_01 (실험컷, 매트릭스 외)' },
   ] },
-  { product: 'Lounger', emoji: '🏖️', spec: '낮은 라운지체어 · 60×65×80cm 4.4kg', ratio: '1:1', size: 'h60 × w65 × d80 · 4.4kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a low lounge chair bean bag about knee-height of a standing adult (60cm); a one-person seat whose backrest reaches a seated adult mid-back', colors: [
+  { product: 'Lounger', emoji: '🏖️', spec: '낮은 라운지체어 · 60×65×80cm 4.4kg', ratio: '1:1', size: 'h60 × w65 × d80 · 4.4kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a low lounge chair bean bag about knee-height of a standing adult (60cm); a one-person seat whose backrest reaches a seated adult mid-back', refs: LOUNGER_REFS, colors: [
     { key: 'pastelblue', name: '파스텔블루', hex: '#BEDDEF', el: true, rep: true, cuts: [] },
     { key: 'freshmint', name: '프레시민트', hex: '#B0EEE7', el: true, rep: true, cuts: [] },
     { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, rep: true, cuts: [] },
   ] },
-  { product: 'Pyramid', emoji: '🔺', spec: '삼각 플로어쿠션 · 66×75×75cm 2.2kg', ratio: '1:1', size: 'h66 × w75 × d75 · 2.2kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a triangular floor cushion about knee-height of a standing adult (66cm); one adult sits against its slope, a child can climb onto it', colors: [
+  { product: 'Pyramid', emoji: '🔺', spec: '삼각 플로어쿠션 · 66×75×75cm 2.2kg', ratio: '1:1', size: 'h66 × w75 × d75 · 2.2kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a triangular floor cushion about knee-height of a standing adult (66cm); one adult sits against its slope, a child can climb onto it', refs: PYRAMID_REFS, colors: [
     { key: 'blossompink', name: '블라썸핑크', hex: '#E5B9C8', el: true, rep: true, cuts: [] },
     { key: 'pastelblue', name: '파스텔블루', hex: '#BEDDEF', el: true, rep: true, cuts: [] },
-    { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3', el: true, rep: true, cuts: [] },
+    { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_pyramid_duo_p9.png?v=1`, spec: '여성A + 남성A 2인 · 게이밍(서로 보며 자연스러운 연출) · 그레이티+롱와이드데님 / 화이트티+블랙슬랙스 · 라이트그레이+리빙코랄 · #f2f2f4 · ⚠형태=체어형(Slim에서 이관, Pyramid 실형태 아님)' },
+    ] },
   ] },
-  { product: 'Pod',     emoji: '🥚', spec: '라운드 에그형 · 95×85×85cm 4.7kg', ratio: '1:1', size: 'h95 × w85 × d85 · 4.7kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a round egg-shaped bean bag about waist-height of a standing adult (95cm), as wide as an adult shoulder span; one person sinks deeply into it', colors: [
+  { product: 'Pod',     emoji: '🥚', spec: '라운드 에그형 · 95×85×85cm 4.7kg', ratio: '1:1', size: 'h95 × w85 × d85 · 4.7kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a round egg-shaped bean bag about waist-height of a standing adult (95cm), as wide as an adult shoulder span; one person sinks deeply into it', refs: POD_REFS, colors: [
     { key: 'freshmint', name: '프레시민트', hex: '#B0EEE7', el: true, rep: true, cuts: [] },
     { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, rep: true, cuts: [] },
     { key: 'pastelblue', name: '파스텔블루', hex: '#BEDDEF', el: true, rep: true, cuts: [] },
   ] },
-  { product: 'Double',  emoji: '🛏️', spec: '초대형 2인 · 170×120×45cm 13.2kg · Max 2배 폭', ratio: '1:1', size: 'h170 × w120 × d45 · 13.2kg', models: '여성B + 남성A (함께)', scale: 'an extra-large bean bag sofa as long as an adult is tall (170cm) and nearly twice the width of a single-person bean bag; two adults can lie or sit side by side', colors: [
+  { product: 'Double',  emoji: '🛏️', spec: '초대형 2인 · 170×120×45cm 13.2kg · Max 2배 폭', ratio: '1:1', size: 'h170 × w120 × d45 · 13.2kg', models: '여성B + 남성A (함께)', scale: 'an extra-large bean bag sofa as long as an adult is tall (170cm) and nearly twice the width of a single-person bean bag; two adults can lie or sit side by side', refs: DOUBLE_REFS, colors: [
     { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, rep: true, cuts: [] },
     { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3', el: true, rep: true, cuts: [] },
     { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, rep: true, cuts: [] },
   ] },
-  { product: 'Support', emoji: '🌙', spec: 'U형 등받이 쿠션 · 94×76×30cm 1.7kg', ratio: '1:1', size: 'h94 × w76 × d30 · 1.7kg', models: '여성B · 남성A', scale: 'a U-shaped armrest cushion that wraps around an adult lower back, armrests about hip-height when seated', colors: [
+  { product: 'Support', emoji: '🌙', spec: 'U형 등받이 쿠션 · 94×76×30cm 1.7kg', ratio: '1:1', size: 'h94 × w76 × d30 · 1.7kg', models: '여성B · 남성A', scale: 'a U-shaped armrest cushion that wraps around an adult lower back, armrests about hip-height when seated', refs: SUPPORT_REFS, colors: [
     { key: 'navy', name: '네이비블루', hex: '#1D395D', el: true, rep: true, cuts: [] },
     { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3', el: true, rep: true, cuts: [] },
     { key: 'sweetorange', name: '스위트오렌지', hex: '#EE780C', el: true, rep: true, cuts: [] },
@@ -374,6 +520,21 @@ export default function ThumbnailsPage() {
                           <span style={{ fontSize: 9, color: '#8a9' }}>모델포함</span>
                         </div>
                       )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {p.poseRefs && (
+              <div style={{ marginBottom: 12, border: `1px solid ${C.line}`, borderRadius: 10, padding: '9px 11px', background: '#0f1512' }}>
+                <div style={{ fontSize: 11.5, fontWeight: 800, color: C.accent, marginBottom: 7 }}>🎬 참고 포즈 <span style={{ color: '#778', fontWeight: 400 }}>(타사 참고 · 포즈/앵글/분위기만 · 제품·인물 복사 X → 우리 제품 형태락으로 생성)</span></div>
+                <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+                  {p.poseRefs.map((r) => (
+                    <div key={r.key} style={{ width: 132, textAlign: 'center' }}>
+                      <img src={r.url} alt={r.name} onClick={() => setZoom(r.url)} title="참고 포즈 · 클릭 확대"
+                        style={{ width: 132, aspectRatio: '1/1', objectFit: 'cover', borderRadius: 8, border: '1px solid #345', cursor: 'zoom-in', background: '#fff', display: 'block' }} />
+                      <div style={{ fontSize: 10.5, color: '#ddd', marginTop: 4, fontWeight: 700 }}>{r.name}</div>
+                      <div style={{ fontSize: 9.5, color: '#889', lineHeight: 1.35 }}>{r.note}</div>
                     </div>
                   ))}
                 </div>
