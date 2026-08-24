@@ -449,7 +449,7 @@ const PRODUCTS = [
       // 숨김(2026-08-23 검수 · 얼굴 변형): { url: `${FTP}/cand_double_lightgrey_kids_p2.png?v=2`, spec: '아동A+아동B · Double 포즈2(눕혀 환호) · 라이트그레이 v2' },
       // 숨김(2026-08-23 검수 · 소파 이음새/크기 미표현 → 여성A+D로 교체): { url: `${FTP}/cand_double_lightgrey_kids_p3.png?v=1`, spec: '아동A(6~7세·120cm) + 아동B(10~12세·150cm) 2인 · Double 포즈3(세워 소파형·나란히 앉아 인형 놀이·double_03 on/off 각도락) · KID_A_01 / KID_B_01 고정의상 · 라이트그레이 #E5DED3 · 170×120×45 고정크기(아이들 작게) · 얼굴 고정 강화 · 2샘플 중 선택 · 1회생성(미검수) · #f2f2f4' },
       { url: `${FTP}/cand_double_lightgrey_fad_p3.png?v=3`, spec: '여성A(168) + 여성D(173) 2인 · Double 포즈3(등부분 세워 앉기·나란히 담소·double_03 on/off 각도락) · 브라운티+그레이스웻(A_W_C_01) / 그레이티+라이트배기진(D_W_C_01) · 라이트그레이 #E5DED3 · 170×120×45(Max 2개 합친 빈백) · v2 소파 구조 금지·Max 질감 레퍼 앵커로 푹신한 빈백 덩어리 표현 · 2샘플 중 선택 · 1회생성(미검수) · #f2f2f4 · v3 올리브 B+남성A p3 컷(앵글 확정) 베이스 포토에딧 → 라이트그레이 리컬러+여성A/D 교체(2샘플 중 b)' },
-      { url: `${FTP}/cand_double_lightgrey_bc_p1.png?v=1`, spec: '여성B(172) + 여성C(169) 2인 · Double 포즈1(눕혀 나란히 기대기·double_01 각도) · 올리브 B+남성A p1 컷 베이스 포토에딧 → 라이트그레이 리컬러 + 남성→여성C(C_W_C_01 화이트티+네이비 슬랙스) 교체·B 유지(B_W_C_01) · 라이트그레이 #E5DED3 · 170×120×45 · 2샘플 중 a · 1회생성(미검수) · #f2f2f4' },
+      // 숨김(사용자 제외 지시): { url: `${FTP}/cand_double_lightgrey_bc_p1.png?v=1`, spec: '여성B(172) + 여성C(169) 2인 · Double 포즈1(눕혀 나란히 기대기·double_01 각도) · 올리브 B+남성A p1 컷 베이스 포토에딧 → 라이트그레이 리컬러 + 남성→여성C(C_W_C_01 화이트티+네이비 슬랙스) 교체·B 유지(B_W_C_01) · 라이트그레이 #E5DED3 · 170×120×45 · 2샘플 중 a · 1회생성(미검수) · #f2f2f4' },
     ] },
     { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, rep: true, cuts: [
       { url: `${FTP}/cand_double_darkgrey_duo_p2.png?v=1`, spec: '남성A(180cm) + 여성A(168cm) 2인 · Double 포즈2(바닥에 눕힌 더블 위에 나란히 누워 환호·double_02 on/off 각도락) · 화이트티+블랙슬랙스(A_M_C_02) / 브라운티+그레이스웻(A_W_C_01) · 다크그레이 #353B3E · 170×120×45 실측비례 · 1회생성(미검수) · #f2f2f4' },
@@ -490,8 +490,65 @@ const C = { accent: '#26A69A', ok: '#66BB6A', wait: '#e6c86a', card: '#161616', 
 // 일반(비대표) 컬러칩 그리드 표시 여부 — false면 숨김(데이터는 PRODUCTS에 그대로 보존). 대표 컬러 갤러리는 항상 표시.
 const SHOW_REGULAR_COLORS = false;
 
+// ZIP 다운로드용 한글 상품명 (폴더명으로 사용)
+const KO_NAME = {
+  Max: '맥스', Slim: '슬림', Midi: '미디', Mini: '미니', Drop: '드롭',
+  Lounger: '라운저', Pyramid: '피라미드', Pod: '팟', Double: '더블', Support: '서포트',
+};
+
+// 파일명에 못 쓰는 문자 제거
+const safe = (s) => String(s).replace(/[\/:*?"<>|]/g, '').trim();
+
+// PRODUCTS에서 생성 컷만 모아 { path, url, color, spec } 목록으로 만든다.
+// 폴더 = 상품 한글명, 파일명 = 상품_컬러_번호.확장자 (실사 레퍼는 제외)
+function collectThumbnails() {
+  const items = [];
+  PRODUCTS.forEach((p, pi) => {
+    const folder = `${String(pi + 1).padStart(2, '0')}_${safe(KO_NAME[p.product] || p.product)}`;
+    (p.colors || []).forEach((c) => {
+      const cuts = c.cuts && c.cuts.length ? c.cuts : (c.url ? [{ url: c.url, spec: c.spec }] : []);
+      cuts.forEach((cut, i) => {
+        if (!cut || !cut.url) return;
+        const clean = cut.url.split('?')[0];
+        const ext = (clean.match(/\.(png|jpe?g|webp)$/i) || ['.png'])[0];
+        const name = `${safe(KO_NAME[p.product] || p.product)}_${safe(c.name)}_${String(i + 1).padStart(2, '0')}${ext}`;
+        items.push({ path: `${folder}/${name}`, url: cut.url, color: c.name, spec: cut.spec || '' });
+      });
+    });
+  });
+  return items;
+}
+
 export default function ThumbnailsPage() {
   const [zoom, setZoom] = useState(null);
+  const [dl, setDl] = useState(null); // null | 'working' | {error}
+
+  const items = collectThumbnails();
+
+  async function downloadZip() {
+    if (dl === 'working') return;
+    setDl('working');
+    try {
+      const res = await fetch('/api/thumbnails/zip', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items }),
+      });
+      if (!res.ok) throw new Error(`서버 오류 ${res.status}`);
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `yogibo_thumbnails_${new Date().toISOString().slice(0, 10).replace(/-/g, '')}.zip`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 60000);
+      setDl(null);
+    } catch (e) {
+      setDl({ error: e.message });
+    }
+  }
   return (
     <div style={{ maxWidth: 1020, margin: '0 auto', padding: '32px 20px 80px', color: '#e8e8e8', fontFamily: 'system-ui, "Malgun Gothic", sans-serif' }}>
       <a href="/" style={{ color: '#888', fontSize: 13, textDecoration: 'none' }}>← 홈</a>
@@ -501,6 +558,30 @@ export default function ThumbnailsPage() {
         요기보 자사몰(cafe24) 상품 <b>리스트·상세·배너</b>용 썸네일을 <b style={{ color: C.accent }}>제품 레지스트리 + 전속 모델 + 빈백 눌림(구김) 레퍼</b>로
         일관성 있게 제작·관리합니다. 제작한 썸네일은 아래에 등록되고 FTP로 올라갑니다.
       </p>
+
+      {/* 전체 ZIP 다운로드 — 상품명 폴더로 정리해서 내려받기 */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, padding: '12px 16px', margin: '0 0 4px' }}>
+        <button
+          onClick={downloadZip}
+          disabled={dl === 'working'}
+          style={{
+            background: dl === 'working' ? '#2a3a38' : C.accent,
+            color: dl === 'working' ? '#8aa' : '#04201c',
+            border: 'none', borderRadius: 8, padding: '10px 18px',
+            fontSize: 13.5, fontWeight: 800, cursor: dl === 'working' ? 'default' : 'pointer',
+            fontFamily: 'inherit',
+          }}
+        >
+          {dl === 'working' ? '⏳ ZIP 만드는 중…' : '📦 전체 썸네일 ZIP 다운로드'}
+        </button>
+        <div style={{ fontSize: 12, color: '#9aa', lineHeight: 1.5 }}>
+          총 <b style={{ color: '#ddd' }}>{items.length}장</b> · <b style={{ color: C.accent }}>상품명 폴더</b>로 정리됨
+          (예: <code style={{ color: '#bbb' }}>01_맥스/맥스_아쿠아블루_01.png</code>) · 목록.txt 동봉
+        </div>
+        {dl && dl.error && (
+          <div style={{ fontSize: 12, color: '#ff8a80' }}>실패: {dl.error}</div>
+        )}
+      </div>
 
       {/* 제작 레시피 */}
       <h2 style={{ fontSize: 19, margin: '26px 0 6px', borderLeft: `3px solid ${C.accent}`, paddingLeft: 10 }}>제작 레시피 (착석·제품 썸네일)</h2>
