@@ -521,34 +521,41 @@ function collectThumbnails() {
 
 export default function ThumbnailsPage() {
   const [zoom, setZoom] = useState(null);
-  const [dl, setDl] = useState(null); // null | 'working' | {error}
+  const [dl, setDl] = useState(null); // null | 'working'
 
   const items = collectThumbnails();
 
-  async function downloadZip() {
-    if (dl === 'working') return;
+  // 브라우저가 응답을 그대로 디스크에 스트리밍 저장하도록 '폼 전송'으로 내려받는다.
+  // (fetch+blob 방식은 수백MB를 메모리에 담다가 중간에 끊겨 일부만 받아지는 문제가 있었음)
+  function downloadZip(list, label) {
+    if (dl) return;
+    const payload = label ? list.map((it, i) => (i === 0 ? { ...it, zipLabel: label } : it)) : list;
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = '/api/thumbnails/zip';
+    form.style.display = 'none';
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'payload';
+    input.value = JSON.stringify({ items: payload });
+    form.appendChild(input);
+    document.body.appendChild(form);
+    form.submit();
+    form.remove();
+    // 서버가 zip을 만드는 동안(수십 초) 버튼을 잠가 중복 요청을 막는다
     setDl('working');
-    try {
-      const res = await fetch('/api/thumbnails/zip', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items }),
-      });
-      if (!res.ok) throw new Error(`서버 오류 ${res.status}`);
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `yogibo_thumbnails_${new Date().toISOString().slice(0, 10).replace(/-/g, '')}.zip`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 60000);
-      setDl(null);
-    } catch (e) {
-      setDl({ error: e.message });
-    }
+    setTimeout(() => setDl(null), 8000);
   }
+
+  // 제품별 묶음 (상품명 폴더 기준)
+  const groups = [];
+  items.forEach((it) => {
+    const folder = it.path.split('/')[0];
+    let g = groups.find((x) => x.folder === folder);
+    if (!g) { g = { folder, label: folder.replace(/^\d+_/, ''), list: [] }; groups.push(g); }
+    g.list.push(it);
+  });
+
   return (
     <div style={{ maxWidth: 1020, margin: '0 auto', padding: '32px 20px 80px', color: '#e8e8e8', fontFamily: 'system-ui, "Malgun Gothic", sans-serif' }}>
       <a href="/" style={{ color: '#888', fontSize: 13, textDecoration: 'none' }}>← 홈</a>
@@ -560,27 +567,44 @@ export default function ThumbnailsPage() {
       </p>
 
       {/* 전체 ZIP 다운로드 — 상품명 폴더로 정리해서 내려받기 */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, padding: '12px 16px', margin: '0 0 4px' }}>
-        <button
-          onClick={downloadZip}
-          disabled={dl === 'working'}
-          style={{
-            background: dl === 'working' ? '#2a3a38' : C.accent,
-            color: dl === 'working' ? '#8aa' : '#04201c',
-            border: 'none', borderRadius: 8, padding: '10px 18px',
-            fontSize: 13.5, fontWeight: 800, cursor: dl === 'working' ? 'default' : 'pointer',
-            fontFamily: 'inherit',
-          }}
-        >
-          {dl === 'working' ? '⏳ ZIP 만드는 중…' : '📦 전체 썸네일 ZIP 다운로드'}
-        </button>
-        <div style={{ fontSize: 12, color: '#9aa', lineHeight: 1.5 }}>
-          총 <b style={{ color: '#ddd' }}>{items.length}장</b> · <b style={{ color: C.accent }}>상품명 폴더</b>로 정리됨
-          (예: <code style={{ color: '#bbb' }}>01_맥스/맥스_아쿠아블루_01.png</code>) · 목록.txt 동봉
+      <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, padding: '12px 16px', margin: '0 0 4px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+          <button
+            onClick={() => downloadZip(items)}
+            disabled={!!dl}
+            style={{
+              background: dl ? '#2a3a38' : C.accent,
+              color: dl ? '#8aa' : '#04201c',
+              border: 'none', borderRadius: 8, padding: '10px 18px',
+              fontSize: 13.5, fontWeight: 800, cursor: dl ? 'default' : 'pointer', fontFamily: 'inherit',
+            }}
+          >
+            {dl ? '⏳ ZIP 생성 요청됨…' : `📦 전체 ZIP 다운로드 (${items.length}장)`}
+          </button>
+          <div style={{ fontSize: 12, color: '#9aa', lineHeight: 1.5 }}>
+            <b style={{ color: C.accent }}>상품명 폴더</b>로 정리 (예: <code style={{ color: '#bbb' }}>01_맥스/맥스_아쿠아블루_01.png</code>) · 목록.txt 동봉
+            <br />전체는 <b style={{ color: '#ddd' }}>약 400MB</b>라 완료까지 1~2분 걸립니다. 브라우저 다운로드 목록에서 진행률을 확인하세요.
+          </div>
         </div>
-        {dl && dl.error && (
-          <div style={{ fontSize: 12, color: '#ff8a80' }}>실패: {dl.error}</div>
-        )}
+        <div style={{ marginTop: 10, paddingTop: 10, borderTop: `1px solid ${C.line}` }}>
+          <div style={{ fontSize: 11.5, color: '#8a9', fontWeight: 700, marginBottom: 6 }}>제품별로 나눠 받기 (용량 부담 없이 권장)</div>
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+            {groups.map((g) => (
+              <button
+                key={g.folder}
+                onClick={() => downloadZip(g.list, g.label)}
+                disabled={!!dl}
+                style={{
+                  background: '#1c2422', color: dl ? '#667' : '#cde', border: `1px solid ${C.line}`,
+                  borderRadius: 7, padding: '6px 11px', fontSize: 11.5, fontWeight: 700,
+                  cursor: dl ? 'default' : 'pointer', fontFamily: 'inherit',
+                }}
+              >
+                {g.label} <span style={{ color: '#7a8', fontWeight: 400 }}>{g.list.length}</span>
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* 제작 레시피 */}

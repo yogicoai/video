@@ -19,12 +19,23 @@ async function fetchImage(url, tries = 3) {
 }
 
 export async function POST(req) {
+  // JSON(fetch) 과 form-urlencoded(브라우저 폼 전송) 둘 다 받는다.
+  // 폼 전송이면 브라우저가 응답을 그대로 디스크에 스트리밍 저장하므로
+  // 대용량(수백MB)에서도 메모리에 얹히지 않는다.
   let items;
   try {
-    ({ items } = await req.json());
-  } catch {
-    return new Response('bad json', { status: 400 });
+    const ct = (req.headers.get('content-type') || '').toLowerCase();
+    const raw = await req.text();
+    if (ct.includes('application/x-www-form-urlencoded')) {
+      const params = new URLSearchParams(raw);
+      ({ items } = JSON.parse(params.get('payload') || '{}'));
+    } else {
+      ({ items } = JSON.parse(raw));
+    }
+  } catch (e) {
+    return new Response(`bad payload: ${e.message}`, { status: 400 });
   }
+
   if (!Array.isArray(items) || items.length === 0) {
     return new Response('items required', { status: 400 });
   }
@@ -69,12 +80,16 @@ export async function POST(req) {
   }
 
   const stamp = new Date().toISOString().slice(0, 10).replace(/-/g, '');
-  const filename = `yogibo_thumbnails_${stamp}.zip`;
+  const label = items[0]?.zipLabel ? `_${items[0].zipLabel}` : '';
+  const filename = `yogibo_thumbnails${label}_${stamp}.zip`;
+  // HTTP 헤더는 ASCII만 허용 → 한글은 filename* 에만 넣고,
+  // 구형 대비 filename= 에는 ASCII로 치환한 이름을 넣는다.
+  const asciiName = filename.replace(/[^ -~]/g, '_');
 
   return new Response(createZipStream(entries()), {
     headers: {
       'Content-Type': 'application/zip',
-      'Content-Disposition': `attachment; filename="${filename}"; filename*=UTF-8''${encodeURIComponent(filename)}`,
+      'Content-Disposition': `attachment; filename="${asciiName}"; filename*=UTF-8''${encodeURIComponent(filename)}`,
       'Cache-Control': 'no-store',
     },
   });
