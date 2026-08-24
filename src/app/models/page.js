@@ -158,7 +158,7 @@ export default function ModelsPage() {
       <h2 style={{ fontSize: 19, margin: '26px 0 10px', borderLeft: `3px solid ${C.accent}`, paddingLeft: 10 }}>파이프라인 (게이트형)</h2>
       <div style={{ display: 'grid', gap: 6 }}>
         {PIPE.map((g) => (
-          <div key={g.s} style={{ display: 'grid', gridTemplateColumns: '160px 40px 1fr', gap: 10, alignItems: 'center', fontSize: 13, padding: '8px 10px', background: C.card, borderRadius: 8 }}>
+          <div key={g.s} style={{ display: 'grid', gridTemplateColumns: 'minmax(110px, 160px) 40px minmax(0, 1fr)', gap: 10, alignItems: 'center', fontSize: 13, padding: '8px 10px', background: C.card, borderRadius: 8 }}>
             <b>{g.s}</b><span>{g.st}</span><span style={{ color: '#aaa' }}>{g.note}</span>
           </div>
         ))}

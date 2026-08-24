@@ -682,3 +682,192 @@ a {
 .note strong {
   color: var(--text);
 }
+
+/* ==========================================================================
+   반응형 레이어 (모바일·태블릿) — 2026-08-21 추가
+   페이지 대부분이 인라인 style로 고정 px를 쓰므로, 전역에서 안전한 축소 규칙을 건다.
+   ========================================================================== */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  overflow-x: hidden; /* 인라인 고정폭 요소가 삐져나와도 가로 스크롤바가 생기지 않게 */
+}
+/* 미디어는 컨테이너보다 커지지 않게 (인라인 width:240 등은 max-width로 자연 축소) */
+img,
+video,
+canvas,
+iframe,
+svg {
+  max-width: 100%;
+}
+img,
+video {
+  height: auto;
+}
+/* 폼 요소는 컨테이너 폭을 넘지 않게 */
+input,
+textarea,
+select,
+button {
+  max-width: 100%;
+}
+pre,
+code {
+  overflow-wrap: anywhere;
+}
+pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+/* 상단 내비: 좁은 화면에서 브랜드/메뉴 두 줄 + 메뉴 가로 스크롤 */
+.topnav {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  max-width: 100%;
+}
+.topnav::-webkit-scrollbar {
+  display: none;
+}
+.topnav a {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    padding: 24px 20px 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    flex-wrap: wrap;
+    padding: 10px 16px;
+    gap: 6px 12px;
+  }
+  .topnav {
+    gap: 14px;
+    width: 100%;
+    padding: 4px 0 2px;
+  }
+  .topnav a {
+    font-size: 13px;
+  }
+  .content {
+    padding: 18px 14px 56px;
+  }
+  .page-head {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .page-title {
+    font-size: 22px;
+  }
+  .section {
+    padding: 16px;
+  }
+  .section-head {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .card {
+    padding: 16px;
+  }
+  .card-foot {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .modal {
+    padding: 20px 16px;
+    max-height: 92vh;
+    overflow-y: auto;
+  }
+  .field-row {
+    grid-template-columns: 1fr !important; /* 페이지 인라인(1fr 1fr 1fr) 포함 1열로 */
+  }
+  .shot {
+    grid-template-columns: 1fr; /* 썸네일 위, 본문 아래 */
+  }
+  .shot-thumb {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-width: 320px;
+  }
+  .shot-actions,
+  .flow {
+    flex-wrap: wrap;
+  }
+  .step {
+    grid-template-columns: 36px 1fr;
+    gap: 12px;
+    padding: 14px;
+  }
+  .step-num {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+  }
+  .glossary,
+  .meta-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dropzone {
+    padding: 22px 14px;
+  }
+  /* 표는 가로 스크롤 */
+  table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* 인라인 style로 만든 flex 행(가로 나열)은 모바일에서 줄바꿈 — 명시적 nowrap/overflowX(가로 스크롤 스트립)는 제외 */
+  .content [style*="display:flex"]:not([style*="nowrap"]):not([style*="overflow-x"]):not([style*="flex-direction:column"]):not([style*="flex-direction: column"]),
+  .content [style*="display: flex"]:not([style*="nowrap"]):not([style*="overflow-x"]):not([style*="flex-direction:column"]):not([style*="flex-direction: column"]) {
+    flex-wrap: wrap;
+  }
+  /* flex 자식이 컨테이너보다 넓어지지 않게 (flex:0 0 auto 텍스트 블록·고정폭 미디어) */
+  .content [style*="display:flex"] > *,
+  .content [style*="display: flex"] > * {
+    max-width: 100%;
+  }
+  /* 인라인 grid 중 고정 px 컬럼이 남아있더라도 최소한 셀이 삐져나오지 않게 */
+  .content [style*="display:grid"] > *,
+  .content [style*="display: grid"] > * {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 14px 12px 48px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .glossary,
+  .meta-grid {
+    grid-template-columns: 1fr;
+  }
+  .page-title {
+    font-size: 20px;
+  }
+  .btn {
+    padding: 9px 13px;
+    font-size: 13px;
+  }
+  .modal-actions {
+    flex-wrap: wrap;
+  }
+  .modal-actions .btn {
+    flex: 1 1 auto;
+  }
+  .asset-grid {
+    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  }
+}

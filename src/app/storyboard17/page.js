@@ -149,7 +149,7 @@ export default function Storyboard17() {
       <h2 style={{ fontSize: 19, margin: '32px 0 12px', borderLeft: '3px solid #66BB6A', paddingLeft: 10 }}>파이프라인 상태</h2>
       <div style={{ display: 'grid', gap: 6 }}>
         {GATES.map((g) => (
-          <div key={g.stage} style={{ display: 'grid', gridTemplateColumns: '150px 66px 1fr', gap: 10, alignItems: 'center', fontSize: 13, padding: '8px 10px', background: '#161616', borderRadius: 8 }}>
+          <div key={g.stage} style={{ display: 'grid', gridTemplateColumns: 'minmax(100px, 150px) 66px minmax(0, 1fr)', gap: 10, alignItems: 'center', fontSize: 13, padding: '8px 10px', background: '#161616', borderRadius: 8 }}>
             <b>{g.stage}</b><span>{g.s}</span><span style={{ color: '#aaa' }}>{g.note}</span>
           </div>
         ))}
@@ -190,7 +190,7 @@ export default function Storyboard17() {
       <h2 style={{ fontSize: 19, margin: '32px 0 12px', borderLeft: '3px solid #66BB6A', paddingLeft: 10 }}>Element 락 (재생성용)</h2>
       <div style={{ display: 'grid', gap: 6 }}>
         {ELEMENTS.map(([name, id, note]) => (
-          <div key={id} style={{ display: 'grid', gridTemplateColumns: '160px 1fr', gap: 10, fontSize: 12.5, padding: '8px 10px', background: '#161616', borderRadius: 8 }}>
+          <div key={id} style={{ display: 'grid', gridTemplateColumns: 'minmax(110px, 160px) minmax(0, 1fr)', gap: 10, fontSize: 12.5, padding: '8px 10px', background: '#161616', borderRadius: 8 }}>
             <b>{name}</b>
             <span style={{ color: '#aaa' }}><code style={{ color: '#9CCC65' }}>{id}</code><br />{note}</span>
           </div>

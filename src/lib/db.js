@@ -9,8 +9,16 @@ if (!cached) {
   cached = global._videogenMongo = { client: null, promise: null };
 }
 
+// MONGODB_URI가 비었거나 견본(<cluster> 등)이면 DNS 오류 대신 바로 안내 메시지로 실패시킨다.
+export function mongoConfigured() {
+  return (uri.startsWith('mongodb://') || uri.startsWith('mongodb+srv://')) && !uri.includes('<');
+}
+
 export async function getDb() {
   if (cached.client) return cached.client.db(dbName);
+  if (!mongoConfigured()) {
+    throw new Error('MONGODB_URI가 설정되지 않았습니다. .env.local에 실제 MongoDB(Atlas) 주소를 넣어주세요.');
+  }
 
   if (!cached.promise) {
     cached.promise = new MongoClient(uri, {

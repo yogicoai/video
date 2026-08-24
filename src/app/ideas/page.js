@@ -166,7 +166,7 @@ export default function IdeasPage() {
 
       {/* 생성 패널 */}
       <div className="section">
-        <div className="field-row" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
+        <div className="field-row" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))' }}>
           <div className="field">
             <label>시즌 (선택)</label>
             <input value={season} onChange={(e) => setSeason(e.target.value)} placeholder="여름, 장마, 연말…" />

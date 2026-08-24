@@ -1,0 +1,98 @@
+[
+ {
+  "cut_id": "pod_c_pastelblue_p1",
+  "file": "cand_pod_pastelblue_c_p1",
+  "kor": "여성C(169cm) · Pod 포즈1(착석·랩탑·¾정면·pod_01 on/off 각도락) · 화이트티+네이비 슬랙스(C_W_C_01 의상레퍼) · 파스텔블루 #BEDDEF · 95×85×85 고정크기 · 넓은 돔 · 1회생성(미검수) · #f2f2f4",
+  "medias": [
+   {
+    "role": "image_references",
+    "value": "2a61f705-7936-4ba9-b11e-ef2382c21257"
+   },
+   {
+    "role": "image_references",
+    "value": "97d66dcf-bb4c-4e9b-a8f1-891935cf2a8a"
+   },
+   {
+    "role": "image_references",
+    "value": "b44666ed-4e0d-45ef-b584-42edd99305e1"
+   },
+   {
+    "role": "image_references",
+    "value": "ae2fad6a-3eb3-47b3-8158-9930526016d5"
+   },
+   {
+    "role": "image_references",
+    "value": "bd1bb025-1b7d-4a53-968b-a2f423003308"
+   },
+   {
+    "role": "image_references",
+    "value": "65a5a62a-1365-4870-b358-5b1fd4bb193d"
+   }
+  ],
+  "prompt": "SHAPE / SIZE OVERRIDE (highest priority): the Yogibo Pod must look EXACTLY like the empty shape reference #1 - a big soft bead-filled bag whose back rises into a WIDE, LOW, ROUNDED DOME (broad and smooth like a boulder), never a narrow tall peak or pointed hood; smooth seamless cover with no piping, zipper or tag. SIZE is fixed at 95 cm tall x 85 cm wide x 85 cm deep: for this 169 cm woman seated in it, the top of the dome reaches about the height of her head (not far above it) and the bag is about 1.3 times her shoulder width - a generous adult bean bag chair, neither a tiny chair nor a giant one.\n\nPhotorealistic e-commerce lifestyle thumbnail, square 1:1, 2048px. EXACTLY ONE person, appearing once; no ghost faces, no text, no watermark.\n\nREFERENCES: #1 = the product EMPTY (SHAPE reference - the bean bag must look exactly like this, only recoloured). #2 = pose reference with a model (POSE/ANGLE BASE only - ignore its room, its colour and its person). #3 = Model C face reference. #4 = Model C expression sheet (8 panels: 1 neutral, 2 soft smile, 3 bright smile, 4 surprised, 5 sad, 6 frown, 7 serious, 8 side-glance smile). #5 = outfit reference C_W_C_01. #6 = colour swatch.\n\nPOSE LOCK (from #2 - pose and camera only): the woman sits sunk into the Pod seen from a front three-quarter angle (from her left side) at eye level; legs stretched forward and relaxed with ankles crossed; a compact plain unbranded laptop open on the lap, both hands resting on it; torso leaning back into the high rounded back of the Pod which rises behind the shoulders; head turned slightly toward the camera with a gentle natural smile.\n\nPRODUCT - Yogibo Pod (pastel blue): 95 cm tall x 85 cm wide x 85 cm deep, a big pear / egg-shaped bead-filled bean bag chair: a deep rounded seat that rises into a wide, low, rounded dome behind the back. Smooth seamless stretch cover, NO piping, NO zipper, NO visible brand tag. COLOR: pastel blue #BEDDEF - see colour swatch #6: the exact same soft pastel sky-blue over the whole cover, never shifting toward aqua, mint, navy, grey or lavender. FABRIC: soft matte stretch cotton-spandex cover; it dents and bulges softly under her weight.\n\nPERSON (Model C - face reference #3 and expression sheet #4, panel 2 'soft smile' / panel 3 'bright smile' for the joyful pose): European woman in her early-to-mid 20s, soft oval face, light grey-green eyes, natural no-makeup look, 169 cm slim build, cool minimal vibe. HAIR: golden-blonde shoulder-length layered lob, centre-parted soft curtain bangs framing the face, ends curling slightly inward; no other hairstyle, not long, not dark. Her face must match #3 feature by feature - do not change the face or hair.\n\nOUTFIT (reference #5 - C_W_C_01): plain white short-sleeve fitted crop T-shirt (crew neck, cropped at the waist) + navy wide-leg trousers with fine pinstripes (high-waisted, full length, relaxed straight wide leg). Bare feet - no socks, no shoes. No accessories, no logos.\n\nSCENE / LIGHT: clean studio, seamless background and floor in very light grey #f2f2f4 (NOT pure white; no room, no wooden floor, no furniture, no window, no plants), soft diffused daylight from the front-left, natural soft contact shadow under the bean bag, no props other than the compact plain unbranded laptop, no text, no watermark.\n\nCAMERA: 50 mm look, same front three-quarter view and eye level as the pose reference, the whole Pod and the woman fully in frame with comfortable margin, centered, square crop."
+ },
+ {
+  "cut_id": "pod_c_pastelblue_p2",
+  "file": "cand_pod_pastelblue_c_p2",
+  "kor": "여성C(169cm) · Pod 포즈2(옆으로 기대 태블릿·¾측면·pod_02 on/off 각도락) · 화이트티+네이비 슬랙스(C_W_C_01 의상레퍼) · 파스텔블루 #BEDDEF · 95×85×85 고정크기 · 넓은 돔 · 1회생성(미검수) · #f2f2f4",
+  "medias": [
+   {
+    "role": "image_references",
+    "value": "441732e5-ee32-4277-bf6d-2727b1bffeaa"
+   },
+   {
+    "role": "image_references",
+    "value": "a2f74061-b993-4272-8cb5-0bb049c44676"
+   },
+   {
+    "role": "image_references",
+    "value": "b44666ed-4e0d-45ef-b584-42edd99305e1"
+   },
+   {
+    "role": "image_references",
+    "value": "ae2fad6a-3eb3-47b3-8158-9930526016d5"
+   },
+   {
+    "role": "image_references",
+    "value": "bd1bb025-1b7d-4a53-968b-a2f423003308"
+   },
+   {
+    "role": "image_references",
+    "value": "65a5a62a-1365-4870-b358-5b1fd4bb193d"
+   }
+  ],
+  "prompt": "SHAPE / SIZE OVERRIDE (highest priority): the Yogibo Pod must look EXACTLY like the empty shape reference #1 - a big soft bead-filled bag whose back rises into a WIDE, LOW, ROUNDED DOME (broad and smooth like a boulder), never a narrow tall peak or pointed hood; smooth seamless cover with no piping, zipper or tag. SIZE is fixed at 95 cm tall x 85 cm wide x 85 cm deep: for this 169 cm woman seated in it, the top of the dome reaches about the height of her head (not far above it) and the bag is about 1.3 times her shoulder width - a generous adult bean bag chair, neither a tiny chair nor a giant one.\n\nPhotorealistic e-commerce lifestyle thumbnail, square 1:1, 2048px. EXACTLY ONE person, appearing once; no ghost faces, no text, no watermark.\n\nREFERENCES: #1 = the product EMPTY (SHAPE reference - the bean bag must look exactly like this, only recoloured). #2 = pose reference with a model (POSE/ANGLE BASE only - ignore its room, its colour and its person). #3 = Model C face reference. #4 = Model C expression sheet (8 panels: 1 neutral, 2 soft smile, 3 bright smile, 4 surprised, 5 sad, 6 frown, 7 serious, 8 side-glance smile). #5 = outfit reference C_W_C_01. #6 = colour swatch.\n\nPOSE LOCK (from #2 - pose and camera only): the woman reclines sideways in the Pod seen from a three-quarter side angle; upper body leaning back against the high rounded back of the Pod, holding a plain unbranded tablet with both hands at chest height and looking at it with a relaxed smile; one knee bent up with the foot on the seat/floor, the other leg extended forward along the floor.\n\nPRODUCT - Yogibo Pod (pastel blue): 95 cm tall x 85 cm wide x 85 cm deep, a big pear / egg-shaped bead-filled bean bag chair: a deep rounded seat that rises into a wide, low, rounded dome behind the back. Smooth seamless stretch cover, NO piping, NO zipper, NO visible brand tag. COLOR: pastel blue #BEDDEF - see colour swatch #6: the exact same soft pastel sky-blue over the whole cover, never shifting toward aqua, mint, navy, grey or lavender. FABRIC: soft matte stretch cotton-spandex cover; it dents and bulges softly under her weight.\n\nPERSON (Model C - face reference #3 and expression sheet #4, panel 2 'soft smile' / panel 3 'bright smile' for the joyful pose): European woman in her early-to-mid 20s, soft oval face, light grey-green eyes, natural no-makeup look, 169 cm slim build, cool minimal vibe. HAIR: golden-blonde shoulder-length layered lob, centre-parted soft curtain bangs framing the face, ends curling slightly inward; no other hairstyle, not long, not dark. Her face must match #3 feature by feature - do not change the face or hair.\n\nOUTFIT (reference #5 - C_W_C_01): plain white short-sleeve fitted crop T-shirt (crew neck, cropped at the waist) + navy wide-leg trousers with fine pinstripes (high-waisted, full length, relaxed straight wide leg). Bare feet - no socks, no shoes. No accessories, no logos.\n\nSCENE / LIGHT: clean studio, seamless background and floor in very light grey #f2f2f4 (NOT pure white; no room, no wooden floor, no furniture, no window, no plants), soft diffused daylight from the front-left, natural soft contact shadow under the bean bag, no props other than the plain unbranded tablet, no text, no watermark.\n\nCAMERA: 50 mm look, same three-quarter side view and eye level as the pose reference, the whole Pod and the woman fully in frame with comfortable margin, centered, square crop."
+ },
+ {
+  "cut_id": "pod_c_pastelblue_p4",
+  "file": "cand_pod_pastelblue_c_p4",
+  "kor": "여성C(169cm) · Pod 포즈4(착석·손가락 포인팅·밝은 미소·¾정면·pod_04 on/off 각도락) · 화이트티+네이비 슬랙스(C_W_C_01 의상레퍼) · 파스텔블루 #BEDDEF · 95×85×85 고정크기 · 넓은 돔 · 1회생성(미검수) · #f2f2f4",
+  "medias": [
+   {
+    "role": "image_references",
+    "value": "8c658b7b-586c-4cb2-977a-64546bb17953"
+   },
+   {
+    "role": "image_references",
+    "value": "4c1805ab-db82-473b-a816-589194e057a2"
+   },
+   {
+    "role": "image_references",
+    "value": "b44666ed-4e0d-45ef-b584-42edd99305e1"
+   },
+   {
+    "role": "image_references",
+    "value": "ae2fad6a-3eb3-47b3-8158-9930526016d5"
+   },
+   {
+    "role": "image_references",
+    "value": "bd1bb025-1b7d-4a53-968b-a2f423003308"
+   },
+   {
+    "role": "image_references",
+    "value": "65a5a62a-1365-4870-b358-5b1fd4bb193d"
+   }
+  ],
+  "prompt": "SHAPE / SIZE OVERRIDE (highest priority): the Yogibo Pod must look EXACTLY like the empty shape reference #1 - a big soft bead-filled bag whose back rises into a WIDE, LOW, ROUNDED DOME (broad and smooth like a boulder), never a narrow tall peak or pointed hood; smooth seamless cover with no piping, zipper or tag. SIZE is fixed at 95 cm tall x 85 cm wide x 85 cm deep: for this 169 cm woman seated in it, the top of the dome reaches about the height of her head (not far above it) and the bag is about 1.3 times her shoulder width - a generous adult bean bag chair, neither a tiny chair nor a giant one.\n\nPhotorealistic e-commerce lifestyle thumbnail, square 1:1, 2048px. EXACTLY ONE person, appearing once; no ghost faces, no text, no watermark.\n\nREFERENCES: #1 = the product EMPTY (SHAPE reference - the bean bag must look exactly like this, only recoloured). #2 = pose reference with a model (POSE/ANGLE BASE only - ignore its room, its colour and its person). #3 = Model C face reference. #4 = Model C expression sheet (8 panels: 1 neutral, 2 soft smile, 3 bright smile, 4 surprised, 5 sad, 6 frown, 7 serious, 8 side-glance smile). #5 = outfit reference C_W_C_01. #6 = colour swatch.\n\nPOSE LOCK (from #2 - pose and camera only): the woman sits deep in the Pod seen from a front three-quarter angle; knees bent with feet on the floor, one hand pointing playfully toward the camera, the other hand raised relaxed near the shoulder, back enveloped by the high rounded back of the Pod; head toward the camera with a bright happy smile.\n\nPRODUCT - Yogibo Pod (pastel blue): 95 cm tall x 85 cm wide x 85 cm deep, a big pear / egg-shaped bead-filled bean bag chair: a deep rounded seat that rises into a wide, low, rounded dome behind the back. Smooth seamless stretch cover, NO piping, NO zipper, NO visible brand tag. COLOR: pastel blue #BEDDEF - see colour swatch #6: the exact same soft pastel sky-blue over the whole cover, never shifting toward aqua, mint, navy, grey or lavender. FABRIC: soft matte stretch cotton-spandex cover; it dents and bulges softly under her weight.\n\nPERSON (Model C - face reference #3 and expression sheet #4, panel 2 'soft smile' / panel 3 'bright smile' for the joyful pose): European woman in her early-to-mid 20s, soft oval face, light grey-green eyes, natural no-makeup look, 169 cm slim build, cool minimal vibe. HAIR: golden-blonde shoulder-length layered lob, centre-parted soft curtain bangs framing the face, ends curling slightly inward; no other hairstyle, not long, not dark. Her face must match #3 feature by feature - do not change the face or hair.\n\nOUTFIT (reference #5 - C_W_C_01): plain white short-sleeve fitted crop T-shirt (crew neck, cropped at the waist) + navy wide-leg trousers with fine pinstripes (high-waisted, full length, relaxed straight wide leg). Bare feet - no socks, no shoes. No accessories, no logos.\n\nSCENE / LIGHT: clean studio, seamless background and floor in very light grey #f2f2f4 (NOT pure white; no room, no wooden floor, no furniture, no window, no plants), soft diffused daylight from the front-left, natural soft contact shadow under the bean bag, no props other than nothing, no text, no watermark.\n\nCAMERA: 50 mm look, same front three-quarter view and eye level as the pose reference, the whole Pod and the woman fully in frame with comfortable margin, centered, square crop."
+ }
+]

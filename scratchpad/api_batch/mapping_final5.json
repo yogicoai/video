@@ -1,0 +1,27 @@
+[
+ {
+  "index": 1,
+  "cut_id": "lg_ka_olive_p4_v2",
+  "file": "cand_lounger_olive_ka_p4"
+ },
+ {
+  "index": 2,
+  "cut_id": "lg_ka_olive_p7_v2",
+  "file": "cand_lounger_olive_ka_p7"
+ },
+ {
+  "index": 3,
+  "cut_id": "dbl_olive_bma_p1",
+  "file": "cand_double_olive_bma_p1"
+ },
+ {
+  "index": 4,
+  "cut_id": "dbl_olive_bma_p2",
+  "file": "cand_double_olive_bma_p2"
+ },
+ {
+  "index": 5,
+  "cut_id": "dbl_olive_bma_p3",
+  "file": "cand_double_olive_bma_p3"
+ }
+]

@@ -227,7 +227,12 @@ const PRODUCTS = [
       { key: 'cherryred', name: '체리레드', hex: '#790619', el: true, url: `${FTP}/cand_max_cherry_b_pose.png?v=1`, spec: 'B모델(172) · test02 포즈(리클라이너·미소) · B_W_C_02 · 2048' },
       { key: 'wineburgundy', name: '와인버건디', hex: '#7A031F' },
       { key: 'livingcoral', name: '리빙코랄', hex: '#EA3D19' },
-      { key: 'sweetorange', name: '스위트오렌지', hex: '#EE780C', el: true, rep: true, cuts: [
+      { key: 'livingcoral', name: '리빙코랄', hex: '#EA3D19', el: true, rep: true, cuts: [
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_support_coral_b_jp2_floral.png?v=1`, spec: 'B(172cm) · yogibo.jp 레퍼 원본 그대로(측면 프로필·턱 괴기·코랄 Support·그레이 빈백·플로럴 톱·방 배경 유지) + 얼굴/헤어만 모델B 교체(포토 에딧) · 리빙코랄 · 원본 의상 버전' },
+      { url: `${FTP}/cand_support_sweetorange_b_jp2.png?v=2`, spec: 'B(172cm) · yogibo.jp 레퍼 원본 그대로(측면 프로필·턱 괴기·코랄 Support·그레이 빈백·플로럴 톱·방 배경 유지) + 얼굴/헤어만 모델B 교체(포토 에딧) · 컬러명 코랄로 등록 · 2샘플 중 선택 · 1회생성(미검수) · v2 의상 크림 오버셔츠+와이드(B_W_C_02)로 교체(포토 에딧·2샘플 중 1)' },
+      { url: `${FTP}/cand_support_coral_ma_jp2.png?v=1`, spec: '남성A(180cm) · yogibo.jp 레퍼 원본 그대로(측면 프로필·턱 괴기·코랄 Support·그레이 빈백·방 배경 유지) + 인물을 남성A로 교체 + 흰 반팔티·청바지(포토 에딧) · 2샘플 중 선택 · 1회생성(미검수)' },
+    ] },
+    { key: 'sweetorange', name: '스위트오렌지', hex: '#EE780C', el: true, rep: true, cuts: [
         { url: `${FTP}/cand_max_sweetorange_d_pose1.png?v=1`, spec: 'D · 포즈1(눕듯·밝은미소) · D_W_C_01 · 색스와치락 · #f2f2f4' },
         { url: `${FTP}/cand_max_sweetorange_d_pose2.png?v=1`, spec: 'D · 포즈2(체어·은은한미소) · D_W_C_01 · 색스와치락 · #f2f2f4' },
         { url: `${FTP}/cand_max_sweetorange_d_pose3.png?v=1`, spec: 'D · 포즈3(리클라이너·곁눈질미소) · D_W_C_01 · 색스와치락 · #f2f2f4' },
@@ -268,6 +273,7 @@ const PRODUCTS = [
   ] },
   { product: 'Midi',    emoji: '🟦', spec: 'Max 동일 형태 · 125×70×45cm 4.8kg · 가슴 높이 · 눌림레퍼 공유', ratio: '1:1', sameLine: 'Max', size: 'h125 × w70 × d45 · 4.8kg', models: '여성A · 여성B · 여성D · 남성A', refs: MIDI_REFS, scale: 'a mid-size bean bag reaching an adult chest when stood upright (125cm); one adult can curl up on it lying down, or sit with full back support', colors: [
     { key: 'lavender', name: '라벤더퍼플', hex: '#CDA7DB', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_midi_lavender_d_m01.png?v=1`, spec: '여성D(173cm) · Midi포즈1(플랫 라운저·누워 양팔 스트레칭·midi_01 on/off 각도락) · 그레이티+라이트배기진(D_W_C_01 의상레퍼) · 라벤더퍼플 #CDA7DB · 125×70×45 실측비례 · 1회생성(미검수) · #f2f2f4' },
       { url: `${FTP}/cand_midi_lavender_b_p2.png?v=1`, spec: 'B · 포즈2 실사레퍼 형태락(보트 리클라이너) + 사이드 리클라인 연출 · 크림 오버셔츠+와이드(B_W_C_02 의상레퍼) · 라벤더퍼플 #CDA7DB · #f2f2f4' },
       { url: `${FTP}/cand_midi_lavender_b_p3.png?v=2`, spec: 'B · 포즈3(업라이트 리클라이너·책읽기 ¾정면·slim_03 on/off 자세각도락·소프트 빈백폼) · 크림 오버셔츠+와이드(B_W_C_02 의상레퍼) · 라벤더퍼플 #CDA7DB · #f2f2f4' },
       { url: `${FTP}/cand_midi_lavender_b_p8.png?v=1`, spec: 'B · 포즈8(허그·옆 감싸안기·팔 끝까지 안감김) · 크림 오버셔츠+와이드(B_W_C_02 의상레퍼) · 라벤더퍼플 #CDA7DB · #f2f2f4' },
@@ -278,9 +284,14 @@ const PRODUCTS = [
       { url: `${FTP}/cand_midi_navy_a_m01.png?v=1`, spec: '여성A(168cm) · Midi포즈1(플랫 라운저·누워 양팔 스트레칭·midi_01 on/off 각도락) · 브라운티+그레이스웻(A_W_C_01 의상레퍼) · 네이비블루 #1D395D · #f2f2f4' },
     ] },
     { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_midi_darkgrey_d_m01.png?v=2`, spec: '여성D(173cm) · Midi포즈1(플랫 라운저·누워 양팔 스트레칭·midi_01 on/off 각도락) · 그레이티+라이트배기진(D_W_C_01 의상레퍼) · 다크그레이 #353B3E · 125×70×45 실측비례 · 1회생성(미검수) · #f2f2f4 · v2 형태(낮은 롱 웨지)+포즈+얼굴 3중 잠금 재생성(2샘플 중 fix2)' },
+      { url: `${FTP}/cand_midi_darkgrey_d_p3.png?v=1`, spec: '여성D(173cm) · 포즈3(업라이트 리클라이너·책읽기 ¾정면·소프트 빈백폼) · 그레이티+라이트배기진(D_W_C_01 의상레퍼) · 다크그레이 #353B3E · 네이비 여성A p3 컷 베이스 포토에딧(리컬러+얼굴/의상 교체·2샘플 중 a) · 1회생성(미검수) · #f2f2f4' },
       { url: `${FTP}/cand_midi_darkgrey_ma_p2.png?v=2`, spec: '남성A(180cm) · 포즈2(보트 리클라이너) · 그레이티+그레이와이드팬츠(A_M_C_01 의상레퍼) · 다크그레이 #353B3E(색보정 통일) · #f2f2f4' },
       { url: `${FTP}/cand_midi_darkgrey_ma_t06.png?v=2`, spec: '남성A(180cm) · test06 참고포즈(플랫 리클라인·뒤로 기대 눕기·타사포즈+우리제품 형태락) · 화이트티+블랙와이드(A_M_C_02 의상레퍼) · 다크그레이 #353B3E(색보정 통일) · #f2f2f4' },
       { url: `${FTP}/cand_midi_darkgrey_ma_p3.png?v=2`, spec: '남성A(180cm) · 포즈3(업라이트 리클라이너·소프트라운드) · 올리브후디+차콜와이드(A_M_C_03 의상레퍼) · 다크그레이 #353B3E(색보정 통일) · #f2f2f4' },
+    ] },
+    { key: 'cherryred', name: '체리레드', hex: '#790619', el: true, rep: true, cuts: [
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_midi_cherry_duo_p4.png?v=1`, spec: '아동A(6~7세) + 아동B(10~12세) 2인 · Mini 포즈4 모델 레퍼(mini_04_on·자매 함께 앉기) 원본 그대로(의상·포즈·흰 배경 유지) + 체리레드 리컬러·태그 제거 + 두 아이 얼굴/헤어만 아동A·아동B로 교체(포토 에딧) · 체리레드 #790619 · 2샘플 중 b · 1회생성(미검수)' },
     ] },
   ] },
   { product: 'Mini',    emoji: '🔹', spec: 'Max 동일 형태 · 85×70×45cm 3.2kg · 엉덩이 높이·1인 시트 · 눌림레퍼 공유', ratio: '1:1', sameLine: 'Max', size: 'h85 × w70 × d45 · 3.2kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', refs: MINI_REFS, scale: 'a compact bean bag about hip-height of a standing adult (85cm); a single seat where an adult sits with knees bent, child-friendly size', colors: [
@@ -291,12 +302,18 @@ const PRODUCTS = [
     ] },
     { key: 'cherryred', name: '체리레드', hex: '#790619', el: true, rep: true, cuts: [
       { url: `${FTP}/cand_mini_cherry_kb_p7.png?v=1`, spec: '아동B(~150cm) · 포즈7(착석 독서·둥근 빈백폼) · KID_B_01 고정의상(아이보리 링거티+그레이 숏팬츠) · 체리레드 #790619 · #f2f2f4' },
+      { url: `${FTP}/cand_mini_cherry_kb_p6.png?v=1`, spec: '아동B(~150cm) · 포즈6(티어드롭 Mini 안에 폭 앉아 태블릿·측면·mini_06 형태락+승인 p7 컷 비례/컬러 레퍼) · KID_B_01 고정의상 · 체리레드 #790619 · 85×70×45 실측비례 · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_mini_cherry_kb_p1.png?v=1`, spec: '아동B(~150cm) · 포즈1(사이드 리클라인·턱 괴기·¾측면·mini_01 on/off 각도락+승인 p7 컷 비례/컬러 레퍼) · KID_B_01 고정의상 · 체리레드 #790619 · 85×70×45 실측비례 · 2샘플 중 b(둥근 티어드롭) · 1회생성(미검수) · #f2f2f4' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_mini_cherry_duo_p4jp.png?v=1`, spec: '아동A(6~7세) + 아동B(10~12세) 2인 · Mini 포즈4 모델 레퍼(mini_04_on·자매 함께 앉기) 원본 그대로(의상·포즈·흰 배경 유지) + 체리레드 리컬러·태그 제거 + 두 아이 얼굴/헤어만 아동A·아동B로 교체(포토 에딧) · 체리레드 #790619 · 2샘플 중 a · 1회생성(미검수)' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_mini_cherry_duo_p4.png?v=1`, spec: '아동A + 아동B 2인 · 포즈4(자매 함께 앉기·mini_04 on/off 각도락) · KID_A_01 / KID_B_01 고정의상 · 체리레드 #790619 · 85×70×45 실측비례 · 1회생성(미검수) · #f2f2f4' },
       // 숨김: { url: `${FTP}/cand_mini_cherry_kb_p5.png?v=2`, spec: '아동B(~150cm) · 포즈5(앉아 공부·무릎 트레이·티어드롭 형태·실측 비례) · KID_B_01 고정의상 · 체리레드 #790619 · #f2f2f4' },
       // 숨김: { url: `${FTP}/cand_mini_cherry_kb_p2.png?v=2`, spec: '아동B(~150cm) · 포즈2(바닥 라운지·체스·티어드롭 형태·실측 비례) · KID_B_01 고정의상 · 체리레드 #790619 · #f2f2f4' },
     ] },
     { key: 'avocadogreen', name: '아보카도그린', hex: '#7AA991', el: true, rep: true, cuts: [
       { url: `${FTP}/cand_mini_avo_c_p1.png?v=1`, spec: '여성C(169cm) · 포즈1(사이드 리클라인·티어드롭 형태·실측 비례) · 화이트티+네이비 와이드(C_W_C_01 의상레퍼) · 아보카도그린 #7AA991 · #f2f2f4' },
-      { url: `${FTP}/cand_mini_avo_c_p6.png?v=1`, spec: '여성C(169cm) · 포즈6(폭 안겨 앉아 독서·측면·티어드롭 형태·실측 비례) · 화이트티+네이비 와이드(C_W_C_01 의상레퍼) · 아보카도그린 #7AA991 · #f2f2f4' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_mini_avo_c_p6.png?v=1`, spec: '여성C(169cm) · 포즈6(폭 안겨 앉아 독서·측면·티어드롭 형태·실측 비례) · 화이트티+네이비 와이드(C_W_C_01 의상레퍼) · 아보카도그린 #7AA991 · #f2f2f4' },
+      { url: `${FTP}/cand_mini_avo_b_p2.png?v=1`, spec: '여성B(172cm) · 포즈2(바닥 착석·Mini에 옆으로 기대기·¾측면·mini_02 on/off 각도락·소품 제거) · 크림 오버셔츠+와이드(B_W_C_02 의상레퍼) · 아보카도그린 #7AA991(승인 C p1 컷 컬러 레퍼) · 85×70×45 실측비례 · 1회생성(미검수) · #f2f2f4' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_mini_avo_b_p3.png?v=1`, spec: '여성B(172cm) · 포즈3(세운 Mini 앞 바닥 착석·독서·¾정면·mini_03 형태락) · 크림 오버셔츠+와이드(B_W_C_02 의상레퍼) · 아보카도그린 #7AA991(승인 C p1 컷 컬러 레퍼) · 85×70×45 실측비례 · 1회생성(미검수) · #f2f2f4' },
     ] },
   ] },
   { product: 'Drop',    emoji: '💧', spec: '라운드 물방울형 · 75×85×85cm 3.7kg · 착석/랩탑 연출', ratio: '1:1', size: 'h75 × w85 × d85 · 3.7kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a round droplet-shaped bean bag about the height of a seated adult shoulders (75cm); one adult sinks into it with knees bent', refs: DROP_REFS, colors: [
@@ -314,41 +331,157 @@ const PRODUCTS = [
       { url: `${FTP}/cand_drop_coral_c_p5.png?v=1`, spec: 'C(169cm) · 포즈5(다리 접고 앉아 독서·¾측면) · 화이트티+네이비 와이드(C_W_C_01) · 리빙코랄 #EA3D19 · #f2f2f4' },
     ] },
     { key: 'aqua', name: '아쿠아블루', hex: '#0075BD', el: true, rep: true, cuts: [
-      { url: `${FTP}/cand_drop_aqua_kb_p2.png?v=1`, spec: '아동B(12세·150cm) · 포즈2(옆으로 기대 턱괴고 릴랙스·측면) · KID_B_01 고정의상 · 아쿠아블루 #0075BD · 75×85×85 실측비례 · #f2f2f4' },
+      { url: `${FTP}/cand_drop_aqua_kb_p2.png?v=2`, spec: '아동B(12세·150cm) · 포즈2(옆으로 기대 턱괴고 릴랙스·측면) · KID_B_01 고정의상 · 아쿠아블루 #0075BD · 75×85×85 실측비례 · 좌하단 꽁지 제거(v2·원본=_orig) · #f2f2f4' },
       { url: `${FTP}/cand_drop_aqua_kb_p5.png?v=3`, spec: '아동B(12세·150cm) · 포즈5(다리 접고 앉아 독서·¾측면) · KID_B_01 고정의상 · 아쿠아블루 #0075BD(얼굴 재생성) · #f2f2f4' },
       { url: `${FTP}/cand_drop_aqua_kb_p6.png?v=2`, spec: '아동B(12세·150cm) · 포즈6(깊게 파묻혀 릴랙스·¾정면·얼굴/배경 재생성) · KID_B_01 고정의상 · 아쿠아블루 #0075BD · #f2f2f4' },
-      { url: `${FTP}/cand_drop_aqua_ma_p1.png?v=1`, spec: '남성A(180cm) · 포즈1(책상다리 착석·머그·¾정면) · 화이트티+블랙와이드(A_M_C_02) · 아쿠아블루 #0075BD · #f2f2f4' },
-      { url: `${FTP}/cand_drop_aqua_ma_p5.png?v=1`, spec: '남성A(180cm) · 포즈5(다리 접고 앉아 독서·¾측면) · 화이트티+블랙와이드(A_M_C_02) · 아쿠아블루 #0075BD · #f2f2f4' },
-      { url: `${FTP}/cand_drop_aqua_ma_p8.png?v=1`, spec: '남성A(180cm) · 포즈8(비스듬히 기대 다리 뻗고 독서·¾측면) · 화이트티+블랙와이드(A_M_C_02) · 아쿠아블루 #0075BD · #f2f2f4' },
+      // 숨김(2026-08-23 검수 · 남성A Drop p1): { url: `${FTP}/cand_drop_aqua_ma_p1.png?v=1`, spec: '남성A(180cm) · 포즈1(책상다리 착석·머그·¾정면) · 화이트티+블랙와이드(A_M_C_02) · 아쿠아블루 #0075BD · #f2f2f4' },
+      // 숨김(2026-08-23 검수 · 남성A Drop p5): { url: `${FTP}/cand_drop_aqua_ma_p5.png?v=2`, spec: '남성A(180cm) · 포즈5(다리 접고 앉아 독서·¾측면) · 화이트티+블랙와이드(A_M_C_02) · 아쿠아블루 #0075BD · 좌하단 꽁지 제거(v2·원본=_orig) · #f2f2f4' },
+      { url: `${FTP}/cand_drop_aqua_ma_p8.png?v=2`, spec: '남성A(180cm) · 포즈8(비스듬히 기대 다리 뻗고 독서·¾측면) · 화이트티+블랙와이드(A_M_C_02) · 아쿠아블루 #0075BD · 좌하단 꽁지 제거(v2·원본=_orig) · #f2f2f4' },
     ] },
     { key: 'chocobrown', name: '초코브라운', hex: '#583E30', el: true, url: `${FTP}/cand_max_choco_c_pose.png?v=1`, spec: 'C모델 · 랩탑연출 · C_W_C_01 (실험컷, 매트릭스 외)' },
   ] },
   { product: 'Lounger', emoji: '🏖️', spec: '낮은 라운지체어 · 60×65×80cm 4.4kg', ratio: '1:1', size: 'h60 × w65 × d80 · 4.4kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a low lounge chair bean bag about knee-height of a standing adult (60cm); a one-person seat whose backrest reaches a seated adult mid-back', refs: LOUNGER_REFS, colors: [
-    { key: 'pastelblue', name: '파스텔블루', hex: '#BEDDEF', el: true, rep: true, cuts: [] },
-    { key: 'freshmint', name: '프레시민트', hex: '#B0EEE7', el: true, rep: true, cuts: [] },
-    { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, rep: true, cuts: [] },
+    { key: 'pastelblue', name: '파스텔블루', hex: '#BEDDEF', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_lounger_pastelblue_c_p5.png?v=2`, spec: '여성C(169cm) · Lounger 포즈5(무릎 안고 깊게 착석·¾정면·lounger_05 on/off 각도락) · 화이트티+네이비 슬랙스(C_W_C_01) · 파스텔블루 #BEDDEF · v2 검정 파이핑 라인(포즈6 레퍼 제품선) · 크기 보정 · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_lounger_pastelblue_c_p2.png?v=4`, spec: '여성C(169cm) · Lounger 포즈2(등받이에 팔꿈치·턱괴고 다리 교차 릴랙스·¾정면·lounger_02 on/off 각도락) · 화이트티+네이비 슬랙스(C_W_C_01) · 파스텔블루 #BEDDEF · 검정 파이핑 라인 · v5 얼굴+포즈+형태 3중 잠금 재생성 · 1회생성(미검수) · #f2f2f4' },
+      // 숨김(2026-08-22 검수 · 모델 상이+형태 불량, 재생성 대기): { url: `${FTP}/cand_lounger_pastelblue_c_p4.png?v=4`, spec: '여성C(169cm) · Lounger 포즈4(업라이트 착석·화이트 게임패드·다리 뻗기·¾정면·lounger_04 on/off 각도락) · 화이트티+네이비 슬랙스(C_W_C_01) · 파스텔블루 #BEDDEF · v2 검정 파이핑 라인 · 1회생성(미검수) · #f2f2f4 · v4 얼굴 고정+소프트 빈백 형태 보정' },
+      { url: `${FTP}/cand_lounger_pastelblue_b_p1.png?v=2`, spec: 'B(172cm) · Lounger 포즈1(착석·머그·¾정면·lounger_01 on/off 각도락) · 그레이티+데님쇼츠(B_W_C_01) · 파스텔블루 #BEDDEF · 검정 파이핑 라인 · v2 소프트 형태 3중잠금 · 1회생성(미검수) · #f2f2f4' },
+      // 제외(2026-08-22): cand_lounger_pastelblue_c_p2_alt — 파이핑 없는 구버전(미재생성)
+    ] },
+    { key: 'freshmint', name: '프레시민트', hex: '#B0EEE7', el: true, rep: true, cuts: [
+      // 숨김(2026-08-23 검수 · B Lounger 민트 p4): { url: `${FTP}/cand_lounger_freshmint_b_p4.png?v=2`, spec: 'B(172cm) · Lounger 포즈4(업라이트 착석·화이트 게임패드·다리 뻗기·¾정면·lounger_04 on/off 각도락) · 그레이티+데님쇼츠(B_W_C_01) · 프레시민트 #B0EEE7 · 검정 파이핑 라인(포즈2 레퍼) · 1회생성(미검수) · #f2f2f4 · v2 배경 제거 재생성' },
+      { url: `${FTP}/cand_lounger_freshmint_b_p5.png?v=1`, spec: 'B(172cm) · Lounger 포즈5(무릎 안고 깊게 착석·¾정면·lounger_05 on/off 각도락) · 그레이티+데님쇼츠(B_W_C_01) · 프레시민트 #B0EEE7 · 검정 파이핑 라인 · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_lounger_freshmint_b_p1.png?v=1`, spec: 'B(172cm) · Lounger 포즈1(착석·머그·¾정면·lounger_01 on/off 각도락) · 그레이티+데님쇼츠(B_W_C_01) · 프레시민트 #B0EEE7 · 검정 파이핑 라인 · 1회생성(미검수) · #f2f2f4' },
+    ] },
+    { key: 'navy', name: '네이비블루', hex: '#1D395D', el: true, rep: true, cuts: [
+      // 삭제(2026-08-22 검수): cand_lounger_navy_ma_p5
+      { url: `${FTP}/cand_lounger_navy_ma_p2.png?v=1`, spec: '남성A(180cm) · Lounger 포즈2(등받이에 팔꿈치·턱괴고 다리 교차 릴랙스·¾정면·lounger_02 on/off 각도락) · 화이트티+블랙슬랙스(A_M_C_02) · 네이비블루 #1D395D · 라이트그레이 파이핑 라인 · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_lounger_navy_ma_p1.png?v=1`, spec: '남성A(180cm) · Lounger 포즈1(착석·머그·¾정면·lounger_01 on/off 각도락) · 화이트티+블랙슬랙스(A_M_C_02) · 네이비블루 #1D395D · 라이트그레이 파이핑 라인 · 1회생성(미검수) · #f2f2f4' },
+    ] },
+    { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_lounger_olive_ka_p3.png?v=1`, spec: '아동A(6~7세·120cm) · Lounger 포즈3(정면 착석·팔짱·다리 뻗기·lounger_03 on/off 각도락) · KID_A_01 고정의상 · 올리브그린 #668B01 · 검정 파이핑 라인 · 60×65×80 고정크기(아이 작게) · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_lounger_olive_ka_p7.png?v=2`, spec: '아동A(6~7세·120cm) · Lounger 포즈7(착석·인형 들고 놀이·¾정면·lounger_07 on/off 각도락) · KID_A_01 고정의상 · 올리브그린 #668B01 · 검정 파이핑 라인 · v2 승인된 p3 컷과 동일 비례 잠금(사이즈 레퍼 첨부) · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_lounger_olive_ka_p4.png?v=2`, spec: '아동A(6~7세·120cm) · Lounger 포즈4(업라이트 착석·화이트 게임패드·다리 뻗기·¾정면·lounger_04 on/off 각도락) · KID_A_01 고정의상 · 올리브그린 #668B01 · 검정 파이핑 라인 · v2 승인된 p3 컷과 동일 비례 잠금(사이즈 레퍼 첨부) · 1회생성(미검수) · #f2f2f4' },
+      // 교체(2026-08-22 검수): cand_lounger_olive_ka_p4/p7 v1 → v2(승인 p3 비례 잠금)
+    ] },
   ] },
   { product: 'Pyramid', emoji: '🔺', spec: '삼각 플로어쿠션 · 66×75×75cm 2.2kg', ratio: '1:1', size: 'h66 × w75 × d75 · 2.2kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a triangular floor cushion about knee-height of a standing adult (66cm); one adult sits against its slope, a child can climb onto it', refs: PYRAMID_REFS, colors: [
-    { key: 'blossompink', name: '블라썸핑크', hex: '#E5B9C8', el: true, rep: true, cuts: [] },
-    { key: 'pastelblue', name: '파스텔블루', hex: '#BEDDEF', el: true, rep: true, cuts: [] },
+    { key: 'blossompink', name: '블라썸핑크', hex: '#E5B9C8', el: true, rep: true, cuts: [
+      // 숨김(2026-08-23 검수): { url: `${FTP}/cand_pyramid_blossompink_b_p1.png?v=3`, spec: 'B(172cm) · Pyramid 포즈1(바닥 착석·세운 피라미드에 기대기·¾측면·pyramid_01 on/off 각도락) · 그레이티+데님쇼츠(B_W_C_01) · 블라썸핑크 #E5B9C8 · 66×75×75 실측비례 · 1회생성(미검수) · #f2f2f4 · v2 하단 볼륨감(둥근감) 보정 · v3 둥근 눌림 재생성(눌림 레퍼 첨부)' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_pyramid_blossompink_b_p5.png?v=2`, spec: 'B(172cm) · Pyramid 포즈5(눕힌 피라미드에 착석·랩탑·환호·¾정면·pyramid_05 on/off 각도락) · 그레이티+데님쇼츠(B_W_C_01) · 블라썸핑크 #E5B9C8 · 1회생성(미검수) · #f2f2f4 · v2 둥근 눌림 재생성(눌림 레퍼 첨부)' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_pyramid_blossompink_b_p2.png?v=1`, spec: '여성B(172cm) · Pyramid 포즈2(눕힌 피라미드 착석·머그·¾정면·pyramid_02 on/off 각도락) · 그레이티+데님쇼츠(B_W_C_01 의상레퍼) · 블라썸핑크 #E5B9C8 · 66×75×75 고정크기 · 둥근 눌림 레퍼 첨부 · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_pyramid_blossompink_b_p3.png?v=1`, spec: '여성B(172cm) · Pyramid 포즈3(세운 피라미드 앞 바닥 착석·독서·정면·pyramid_03 on/off 각도락) · 그레이티+데님쇼츠(B_W_C_01 의상레퍼) · 블라썸핑크 #E5B9C8 · 66×75×75 고정크기 · 1차 과대 → SIZE+눌림 오버라이드 재생성(2샘플 중 fix2) · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_pyramid_blossompink_b_jp5.png?v=2`, spec: '여성B(172cm) · pyramid_05 모델 레퍼(Premium+) 원본 그대로(눕힌 피라미드 형태·랩탑·환호·흰 배경) + 텍스트 제거 + 블라썸핑크 리컬러 + 얼굴/헤어 B·의상 B_W_C_01 교체(포토 에딧) · 블라썸핑크 #E5B9C8 · 2샘플 중 a · 1회생성(미검수) · v2 오른쪽 헤어 뒤 핑크 얼룩 리터치(해당 영역만 합성)' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_pyramid_blossompink_fa_jp5.png?v=1`, spec: '여성A(168cm) · pyramid_05 모델 레퍼(Premium+) 원본 그대로(눕힌 피라미드 형태·랩탑·환호·흰 배경) + 텍스트 제거 + 블라썸핑크 리컬러 + 얼굴/헤어 여성A·기본 의상 A_W_C_01(브라운티+그레이스웻) 교체(포토 에딧) · 블라썸핑크 #E5B9C8 · 2샘플 중 a · 1회생성(미검수)' },
+      { url: `${FTP}/cand_pyramid_blossompink_b_jp7.png?v=1`, spec: '여성B(172cm) · yogibo.jp 레퍼(prm_7) 원본 그대로(눕힌 피라미드 착석·다리 꼬기·흰 배경) + 블라썸핑크 리컬러 + 얼굴/헤어 B·의상 B_W_C_01 교체(포토 에딧) · 블라썸핑크 #E5B9C8 · 2샘플 중 b · 1회생성(미검수)' },
+      { url: `${FTP}/cand_pyramid_blossompink_b_jp4.png?v=1`, spec: '여성B(172cm) · Pyramid 포즈4 모델 레퍼(pyramid_on_04) 원본 그대로(방 배경·노란 테이블·랩탑·캡+헤드폰·눕힌 피라미드 착석) + 블라썸핑크 컬러 + 얼굴/헤어만 B 교체(포토 에딧) · 블라썸핑크 #E5B9C8 · 2샘플 중 a · 1회생성(미검수)' },
+      { url: `${FTP}/cand_pyramid_blossompink_d_jp4.png?v=1`, spec: '여성D(173cm) · Pyramid 포즈4 모델 레퍼(pyramid_on_04) 원본 그대로(방 배경·노란 테이블·랩탑·캡+헤드폰·눕힌 피라미드 착석) + 블라썸핑크 컬러 + 얼굴/헤어만 D 교체(포토 에딧) · 블라썸핑크 #E5B9C8 · 2샘플 중 a · 1회생성(미검수)' },
+      { url: `${FTP}/cand_pyramid_blossompink_b_jp1.png?v=1`, spec: '여성B(172cm) · Pyramid 포즈1 모델 레퍼(pyramid_on_01·Premium) 원본 그대로(세운 피라미드 기대 앉기·어깨너머 시선·블라썸핑크) + 배경 #f2f2f4 정리·텍스트 제거 + 얼굴/헤어 B·의상 B_W_C_01 교체(포토 에딧) · 블라썸핑크 #E5B9C8 · 2샘플 중 b · 1회생성(미검수)' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_pyramid_blossompink_kb_p2.png?v=5`, spec: '아동B(10~12세·150cm) · Pyramid 포즈2(눕힌 피라미드에 착석·인형 안기·¾정면·pyramid_02 on/off 각도락) · KID_B_01 고정의상 · 블라썸핑크 #E5B9C8 · 66×75×75 고정크기 · 1회생성(미검수) · #f2f2f4 · v2 하단 길이 축소(원형 비례) · v3 둥근 눌림 재생성(눌림 레퍼 첨부) · v4 피라미드 크기 축소 · v5 얼굴만 아동B로 재교체(포토 에딧)' },
+      // 숨김(2026-08-23 v4 얼굴 고정 재생성 잘못나옴): { url: `${FTP}/cand_pyramid_blossompink_kb_p3.png?v=4`, spec: '아동B(10~12세·150cm) · Pyramid 포즈3(세운 피라미드 앞 바닥 착석·인형·정면·pyramid_03 on/off 각도락) · KID_B_01 고정의상 · 블라썸핑크 #E5B9C8 · v2 꼭짓점 완만하게 보정 · 1회생성(미검수) · #f2f2f4 · v3 둥근 눌림 재생성(눌림 레퍼 첨부) · v4 얼굴 고정 재생성' },
+    ] },
+    { key: 'pastelblue', name: '파스텔블루', hex: '#BEDDEF', el: true, rep: true, cuts: [
+      // 숨김(2026-08-23 검수): { url: `${FTP}/cand_pyramid_pastelblue_ka_p2.png?v=2`, spec: '아동A(6~7세·120cm) · Pyramid 포즈2(눕힌 피라미드에 착석·인형 안기·¾정면·pyramid_02 on/off 각도락) · KID_A_01 고정의상 · 파스텔블루 #BEDDEF · 66×75×75 고정크기(아이 작게) · 1회생성(미검수) · #f2f2f4 · v2 하단 길이 축소(원형 비례)' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_pyramid_pastelblue_ka_p3.png?v=4`, spec: '아동A(6~7세·120cm) · Pyramid 포즈3(세운 피라미드 앞 바닥 착석·인형·정면·pyramid_03 on/off 각도락) · KID_A_01 고정의상 · 파스텔블루 #BEDDEF · v2 피라미드 약간 축소(꼭짓점 머리 조금 위) · 1회생성(미검수) · #f2f2f4 · v3 레퍼 느낌(앞에 걸터앉기·꼭짓점 머리 바로 위·둥근 눌림) 크기 축소 · v4 얼굴만 아동A로 재교체(포토 에딧)' },
+      { url: `${FTP}/cand_pyramid_pastelblue_ka_jp1.png?v=1`, spec: '아동A(6~7세·120cm) · yogibo.jp 레퍼(pre-prm-rd) 원본 그대로(눕힌 피라미드 착석·핑크 돼지 인형·흰 배경) + 배지/텍스트/태그 제거 + 파스텔블루 리컬러 + 얼굴/헤어 아동A·의상 KID_A_01 교체(포토 에딧) · 파스텔블루 #BEDDEF · 2샘플 중 a · 1회생성(미검수)' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_pyramid_pastelblue_ka_p3jp.png?v=1`, spec: '아동A(6~7세·120cm) · Pyramid 포즈3 모델 레퍼(pyramid_on_03) 원본 그대로(세운 피라미드 앞 착석·원숭이 인형·흰 배경) + 파스텔블루 리컬러·태그 제거 + 얼굴/헤어 아동A·의상 KID_A_01 교체(포토 에딧) · 파스텔블루 #BEDDEF · 2샘플 중 a · 1회생성(미검수)' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_pyramid_pastelblue_fa_jp5.png?v=1`, spec: '여성A(168cm) · pyramid_05 모델 레퍼(Premium+) 원본 그대로(눕힌 피라미드 형태·랩탑·환호·흰 배경) + 텍스트 제거 + 파스텔블루 리컬러 + 얼굴/헤어 여성A·기본 의상 A_W_C_01 교체(포토 에딧) · 파스텔블루 #BEDDEF · 2샘플 중 a · 1회생성(미검수)' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_pyramid_pastelblue_fa_jp7.png?v=1`, spec: '여성A(168cm) · yogibo.jp 레퍼(prm_7) 원본 그대로(눕힌 피라미드 착석·다리 꼬기·그린 니트+카키팬츠+스니커즈·흰 배경) + 파스텔블루 리컬러 + 얼굴/헤어만 여성A 교체(포토 에딧) · 파스텔블루 #BEDDEF · 2샘플 중 a · 1회생성(미검수)' },
+      { url: `${FTP}/cand_pyramid_pastelblue_b_jp7.png?v=1`, spec: '여성B(172cm) · yogibo.jp 레퍼(prm_7) 원본 그대로(눕힌 피라미드 착석·다리 꼬기·흰 배경) + 파스텔블루 리컬러 + 얼굴/헤어 B·의상 B_W_C_01 교체(포토 에딧) · 파스텔블루 #BEDDEF · 2샘플 중 a · 1회생성(미검수)' },
+      { url: `${FTP}/cand_pyramid_pastelblue_b_jp4.png?v=1`, spec: '여성B(172cm) · Pyramid 포즈4 모델 레퍼(pyramid_on_04) 원본 그대로(방 배경·노란 테이블·랩탑·캡+헤드폰·눕힌 피라미드 착석) + 파스텔블루 리컬러 + 얼굴/헤어만 B 교체(포토 에딧) · 파스텔블루 #BEDDEF · 2샘플 중 a · 1회생성(미검수)' },
+      { url: `${FTP}/cand_pyramid_pastelblue_c_jp7.png?v=1`, spec: '여성C(169cm) · yogibo.jp 레퍼(prm_7) 원본 그대로(눕힌 피라미드 착석·다리 꼬기·흰 배경) + 파스텔블루 리컬러 + 얼굴/헤어 C·의상 C_W_C_01 교체(포토 에딧) · 파스텔블루 #BEDDEF · 2샘플 중 b · 1회생성(미검수)' },
+      { url: `${FTP}/cand_pyramid_pastelblue_c_jp5.png?v=1`, spec: '여성C(169cm) · pyramid_05 모델 레퍼(Premium+) 원본 그대로(눕힌 피라미드·랩탑·환호·흰 배경) + 텍스트 제거 + 파스텔블루 리컬러 + 얼굴/헤어 C·의상 C_W_C_01 교체(포토 에딧) · 파스텔블루 #BEDDEF · 2샘플 중 a · 1회생성(미검수)' },
+    ] },
+    { key: 'cherryred', name: '체리레드', hex: '#790619', el: true, rep: true, cuts: [
+      // 숨김(2026-08-23 사용자 지시·jp 레퍼 스타일로 대체): { url: `${FTP}/cand_pyramid_cherry_kb_read.png?v=2`, spec: '아동B(10~12세·150cm) · Pyramid 세운 피라미드 앞 바닥 착석·독서(Mini 포즈7 느낌·pyramid_03 각도락) · KID_B_01 고정의상 · 체리레드 #790619 · 66×75×75 고정크기 · 둥근 눌림 레퍼 첨부 · 1회생성(미검수) · #f2f2f4 · v2 얼굴 고정+크기 축소 재생성(2샘플 중 fix1)' },
+      // 숨김(2026-08-23 사용자 지시·jp 레퍼 스타일로 대체): { url: `${FTP}/cand_pyramid_cherry_kb_p1.png?v=1`, spec: '아동B(10~12세·150cm) · Pyramid 포즈1(세운 피라미드 기대 앉기·어깨너머 시선·pyramid_01 on/off 각도락) · KID_B_01 고정의상 · 체리레드 #790619 · 66×75×75 고정크기 · 둥근 눌림 레퍼 첨부 · 1회생성(미검수) · #f2f2f4' },
+      // 숨김(2026-08-23 사용자 지시·jp 레퍼 스타일로 대체): { url: `${FTP}/cand_pyramid_cherry_kb_p5.png?v=1`, spec: '아동B(10~12세·150cm) · Pyramid 포즈5(눕힌 피라미드 착석·랩탑·pyramid_05 on/off 각도락) · KID_B_01 고정의상 · 체리레드 #790619 · 66×75×75 고정크기 · 둥근 눌림 레퍼 첨부 · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_pyramid_cherry_kb_jp1.png?v=1`, spec: '아동B(10~12세·150cm) · yogibo.jp 레퍼(pre-prm-rd) 원본 그대로(눕힌 피라미드 착석·핑크 돼지 인형·흰 배경) + PREMIUM 배지/텍스트/태그 제거 + 얼굴/헤어 아동B·의상 KID_B_01 교체(포토 에딧) · 체리레드 #790619 · 2샘플 중 a · 1회생성(미검수)' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_pyramid_cherry_kb_jp2.png?v=1`, spec: '아동B(10~12세·150cm) · yogibo.jp 레퍼(pre-prm-rd) 빈백 형태/컬러/배경 그대로 + 배지/텍스트/태그 제거 + 얼굴/헤어 아동B·의상 KID_B_01 (포토 에딧·포즈만 변경) · 포즈: 기대 앉아 그림책 읽기·인형 옆에 · 체리레드 #790619 · 2샘플 중 b · 1회생성(미검수)' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_pyramid_cherry_kb_jp3.png?v=2`, spec: '아동B(10~12세·150cm) · yogibo.jp 레퍼(pre-prm-rd) 빈백 형태/컬러/배경 그대로 + 배지/텍스트/태그 제거 + 얼굴/헤어 아동B·의상 KID_B_01 (포토 에딧·포즈만 변경) · 포즈: 경사면에 누워 인형 안기·다리 뻗기 · 체리레드 #790619 · 2샘플 중 a · 1회생성(미검수) · v2 피라미드 길이 과대 → SIZE LOCK 재생성(2샘플 중 a)' },
+      { url: `${FTP}/cand_pyramid_cherry_kb_p3jp.png?v=2`, spec: '아동B(10~12세·150cm) · Pyramid 포즈3 모델 레퍼(pyramid_on_03) 원본 그대로(세운 피라미드 앞 착석·원숭이 인형·흰 배경) + 체리레드 리컬러·태그 제거 + 얼굴/헤어 아동B·의상 KID_B_01 교체(포토 에딧) · 체리레드 #790619 · 2샘플 중 a · 1회생성(미검수) · v2 컬러를 기존 체리레드 컷(jp1)에 맞춰 보정(Lab 매칭)' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_pyramid_cherry_kb_jp4.png?v=1`, spec: '아동B(10~12세·150cm) · yogibo.jp 레퍼(pre-prm-rd) 빈백 형태/컬러/배경 그대로 + 배지/텍스트/태그 제거 + 얼굴/헤어 아동B·의상 KID_B_01 (포토 에딧·포즈만 변경) · 포즈: 옆으로 앉아 인형 안고 어깨너머 시선 · 체리레드 #790619 · 1회생성(미검수)' },
+    ] },
     { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3', el: true, rep: true, cuts: [
+      // 삭제(2026-08-22 검수): cand_pyramid_lightgrey_ma_p1 — "모델A"=여성A로 정정 → 여성A 포즈5로 대체
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_pyramid_lightgrey_fa_p5.png?v=1`, spec: '여성A(168cm) · Pyramid 포즈5(눕힌 피라미드에 착석·랩탑·환호·¾정면·pyramid_05 on/off 각도락) · 브라운티+그레이스웻(A_W_C_01) · 라이트그레이 #E5DED3 · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_pyramid_lightgrey_fa_jp7.png?v=1`, spec: '여성A(168cm) · yogibo.jp 레퍼(prm_7) 원본 그대로(눕힌 피라미드 착석·다리 꼬기·그린 니트+카키팬츠+스니커즈·흰 배경) + 라이트그레이 리컬러 + 얼굴/헤어만 여성A 교체(포토 에딧) · 라이트그레이 #E5DED3 · 2샘플 중 a · 1회생성(미검수)' },
+      { url: `${FTP}/cand_pyramid_lightgrey_ma_jp1.png?v=1`, spec: '남성A(180cm) · Pyramid 포즈1 모델 레퍼(pyramid_on_01·Premium) 원본 그대로(세운 피라미드 기대 앉기·어깨너머 시선) + 라이트그레이 리컬러·배경 #f2f2f4 정리·텍스트 제거 + 인물 남성A(A_M_C_02 화이트티+블랙슬랙스) 교체(포토 에딧) · 라이트그레이 #E5DED3 · 2샘플 중 a · 1회생성(미검수)' },
+      { url: `${FTP}/cand_pyramid_lightgrey_ma_jp7.png?v=2`, spec: '남성A(180cm) · yogibo.jp 레퍼(prm_7) 원본 그대로(눕힌 피라미드 착석·다리 꼬기·그린 니트+카키팬츠+스니커즈·흰 배경) + 라이트그레이 리컬러 + 인물 남성A 교체·책 들기 추가(포토 에딧) · 라이트그레이 #E5DED3 · 2샘플 중 b · 1회생성(미검수) · v2 의상 A_M_C_02(화이트티+블랙슬랙스·맨발)로 교체 재생성(2샘플 중 b)' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_pyramid_lightgrey_ma_p5.png?v=1`, spec: '남성A(180cm) · Pyramid 포즈5(눕힌 피라미드에 착석·랩탑·환호·¾정면·pyramid_05 on/off 각도락) · 화이트티+블랙슬랙스(A_M_C_02) · 라이트그레이 #E5DED3 · 1회생성(미검수) · #f2f2f4' },
       { url: `${FTP}/cand_pyramid_duo_p9.png?v=1`, spec: '여성A + 남성A 2인 · 게이밍(서로 보며 자연스러운 연출) · 그레이티+롱와이드데님 / 화이트티+블랙슬랙스 · 라이트그레이+리빙코랄 · #f2f2f4 · ⚠형태=체어형(Slim에서 이관, Pyramid 실형태 아님)' },
     ] },
   ] },
   { product: 'Pod',     emoji: '🥚', spec: '라운드 에그형 · 95×85×85cm 4.7kg', ratio: '1:1', size: 'h95 × w85 × d85 · 4.7kg', models: '아동A · 아동B · 여성B · 여성C · 남성A', scale: 'a round egg-shaped bean bag about waist-height of a standing adult (95cm), as wide as an adult shoulder span; one person sinks deeply into it', refs: POD_REFS, colors: [
-    { key: 'freshmint', name: '프레시민트', hex: '#B0EEE7', el: true, rep: true, cuts: [] },
-    { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, rep: true, cuts: [] },
-    { key: 'pastelblue', name: '파스텔블루', hex: '#BEDDEF', el: true, rep: true, cuts: [] },
+    { key: 'freshmint', name: '프레시민트', hex: '#B0EEE7', el: true, rep: true, cuts: [
+      // 삭제(2026-08-22 검수): cand_pod_freshmint_b_p1 — 모델 얼굴 상이
+      { url: `${FTP}/cand_pod_freshmint_b_p2.png?v=1`, spec: 'B(172cm) · Pod 포즈2(옆으로 기대 태블릿·¾측면·pod_02 on/off 각도락) · 그레이티+데님쇼츠(B_W_C_01) · 프레시민트 #B0EEE7 · 1회생성(미검수) · #f2f2f4' },
+      // 숨김(2026-08-22 검수): { url: `${FTP}/cand_pod_freshmint_b_p3.png?v=2`, spec: 'B(172cm) · Pod 포즈3(정면 착석·양팔 활짝·밝은미소·pod_03 on/off 각도락) · 그레이티+데님쇼츠(B_W_C_01) · 프레시민트 #B0EEE7 · v2 크기보정(상단=머리높이·폭≈어깨1.3배) · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_pod_freshmint_b_p5.png?v=1`, spec: 'B(172cm) · Pod 포즈5(기대어 독서·¾측면·pod_05 on/off 각도락) · 그레이티+데님쇼츠(B_W_C_01) · 프레시민트 #B0EEE7 · 1회생성(미검수) · #f2f2f4' },
+      // 숨김(2026-08-22 검수): { url: `${FTP}/cand_pod_freshmint_kb_p3.png?v=1`, spec: '아동B(10~12세·150cm) · Pod 포즈3(정면 착석·양팔 활짝·밝은미소·pod_03 on/off 각도락) · KID_B_01 고정의상 · 프레시민트 #B0EEE7 · 95×85×85 고정크기(아이 작게) · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_pod_freshmint_kb_p4.png?v=1`, spec: '아동B(10~12세·150cm) · Pod 포즈4(착석·손가락 포인팅·밝은미소·¾정면·pod_04 on/off 각도락) · KID_B_01 고정의상 · 프레시민트 #B0EEE7 · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_pod_freshmint_kb_p6.png?v=1`, spec: '아동B(10~12세·150cm) · Pod 포즈6(옆모습 기대 게임패드·다리 뻗기·pod_06 on/off 각도락) · KID_B_01 고정의상 · 프레시민트 #B0EEE7 · 1회생성(미검수) · #f2f2f4' },
+    ] },
+    { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, rep: true, cuts: [
+      // 삭제(2026-08-22 검수): cand_pod_darkgrey_c_p5 · cand_pod_darkgrey_c_p1 · cand_pod_darkgrey_ma_p2
+      { url: `${FTP}/cand_pod_darkgrey_c_p6.png?v=1`, spec: '여성C(169cm) · Pod 포즈6(옆모습 기대 게임패드·다리 뻗기·pod_06 on/off 각도락) · 화이트티+네이비 슬랙스(C_W_C_01) · 다크그레이 #353B3E · 1회생성(미검수) · #f2f2f4' },
+      // 숨김(2026-08-22 검수): { url: `${FTP}/cand_pod_darkgrey_ma_p4.png?v=1`, spec: '남성A(180cm) · Pod 포즈4(착석·손가락 포인팅·밝은미소·¾정면·pod_04 on/off 각도락) · 화이트티+블랙슬랙스(A_M_C_02) · 다크그레이 #353B3E · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_pod_darkgrey_ma_p6.png?v=1`, spec: '남성A(180cm) · Pod 포즈6(옆모습 기대 게임패드·다리 뻗기·pod_06 on/off 각도락) · 화이트티+블랙슬랙스(A_M_C_02) · 다크그레이 #353B3E · 1회생성(미검수) · #f2f2f4' },
+    ] },
+    { key: 'pastelblue', name: '파스텔블루', hex: '#BEDDEF', el: true, rep: true, cuts: [
+      // 숨김(2026-08-22 검수): { url: `${FTP}/cand_pod_pastelblue_ka_p1.png?v=2`, spec: '아동A(6~7세·120cm) · Pod 포즈1(착석·랩탑·¾정면·pod_01 on/off 각도락) · KID_A_01 고정의상 · 파스텔블루 #BEDDEF · 95×85×85 고정크기(아이 작게) · v2 뒷부분 넓은 돔 형태보정 · 1회생성(미검수) · #f2f2f4' },
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_pod_pastelblue_ka_p3.png?v=3`, spec: '아동A(6~7세·120cm) · Pod 포즈3(정면 착석·양팔 활짝·밝은미소·pod_03 on/off 각도락) · KID_A_01 고정의상 · 파스텔블루 #BEDDEF · v2 뒷부분 넓은 돔 형태보정 · 1회생성(미검수) · #f2f2f4 · v3 크기 적정화(상단=머리 약간 위)' },
+      { url: `${FTP}/cand_pod_pastelblue_ka_p2.png?v=1`, spec: '아동A(6~7세·120cm) · Pod 포즈2(옆으로 기대 태블릿·¾측면·pod_02 on/off 각도락) · KID_A_01 고정의상 · 파스텔블루 #BEDDEF · 95×85×85 고정크기(승인 p3 컷 비례 레퍼) · 넓은 돔 · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_pod_pastelblue_ka_p5.png?v=1`, spec: '아동A(6~7세·120cm) · Pod 포즈5(기대어 독서·¾측면·pod_05 on/off 각도락) · KID_A_01 고정의상 · 파스텔블루 #BEDDEF · 95×85×85 고정크기(승인 p3 컷 비례 레퍼) · 넓은 돔 · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_pod_pastelblue_c_p1.png?v=1`, spec: '여성C(169cm) · Pod 포즈1(착석·랩탑·¾정면·pod_01 on/off 각도락) · 화이트티+네이비 슬랙스(C_W_C_01 의상레퍼) · 파스텔블루 #BEDDEF · 95×85×85 고정크기 · 넓은 돔 · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_pod_pastelblue_c_p2.png?v=1`, spec: '여성C(169cm) · Pod 포즈2(옆으로 기대 태블릿·¾측면·pod_02 on/off 각도락) · 화이트티+네이비 슬랙스(C_W_C_01 의상레퍼) · 파스텔블루 #BEDDEF · 95×85×85 고정크기 · 넓은 돔 · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_pod_pastelblue_c_p4.png?v=1`, spec: '여성C(169cm) · Pod 포즈4(착석·손가락 포인팅·밝은 미소·¾정면·pod_04 on/off 각도락) · 화이트티+네이비 슬랙스(C_W_C_01 의상레퍼) · 파스텔블루 #BEDDEF · 95×85×85 고정크기 · 넓은 돔 · 1회생성(미검수) · #f2f2f4' },
+      // 숨김(2026-08-22 검수): { url: `${FTP}/cand_pod_pastelblue_ka_p4.png?v=2`, spec: '아동A(6~7세·120cm) · Pod 포즈4(착석·손가락 포인팅·밝은미소·¾정면·pod_04 on/off 각도락) · KID_A_01 고정의상 · 파스텔블루 #BEDDEF · v2 뒷부분 넓은 돔 형태보정 · 1회생성(미검수) · #f2f2f4' },
+    ] },
   ] },
   { product: 'Double',  emoji: '🛏️', spec: '초대형 2인 · 170×120×45cm 13.2kg · Max 2배 폭', ratio: '1:1', size: 'h170 × w120 × d45 · 13.2kg', models: '여성B + 남성A (함께)', scale: 'an extra-large bean bag sofa as long as an adult is tall (170cm) and nearly twice the width of a single-person bean bag; two adults can lie or sit side by side', refs: DOUBLE_REFS, colors: [
-    { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, rep: true, cuts: [] },
-    { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3', el: true, rep: true, cuts: [] },
-    { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, rep: true, cuts: [] },
+    { key: 'olive', name: '올리브그린', hex: '#668B01', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_double_olive_bma_p1.png?v=4`, spec: '여성B(172) + 남성A(180) 2인 · Double 포즈1(눕혀 나란히 기대기·double_01 on/off 각도락) · 그레이티+데님쇼츠(B_W_C_01) / 화이트티+블랙슬랙스(A_M_C_02) · 올리브그린 #668B01 · 170×120×45 실측비례 · 이전 버전(v2) 채택 · 1회생성(미검수) · #f2f2f4 · v4 얼굴/헤어만 여성B·남성A로 재교체(생성본 베이스 포토에딧·2샘플 중 a)' },
+      { url: `${FTP}/cand_double_olive_bma_p2.png?v=1`, spec: '여성B(172) + 남성A(180) 2인 · Double 포즈2(눕혀 나란히 환호·double_02 on/off 각도락) · 그레이티+데님쇼츠(B_W_C_01) / 화이트티+블랙슬랙스(A_M_C_02) · 올리브그린 #668B01 · 170×120×45 실측비례 · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_double_olive_bma_p3.png?v=3`, spec: '여성B(172) + 남성A(180) 2인 · Double 포즈3(세워 소파형·나란히 착석·double_03 on/off 각도락) · 그레이티+데님쇼츠(B_W_C_01) / 화이트티+블랙슬랙스(A_M_C_02) · 올리브그린 #668B01 · v4(크기 유지 + 남성A 헤어 고정) · 1회생성(미검수) · #f2f2f4' },
+    ] },
+    { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3', el: true, rep: true, cuts: [
+      // 숨김(2026-08-23 검수 · 얼굴 변형): { url: `${FTP}/cand_double_lightgrey_kids_p2.png?v=2`, spec: '아동A+아동B · Double 포즈2(눕혀 환호) · 라이트그레이 v2' },
+      // 숨김(2026-08-23 검수 · 소파 이음새/크기 미표현 → 여성A+D로 교체): { url: `${FTP}/cand_double_lightgrey_kids_p3.png?v=1`, spec: '아동A(6~7세·120cm) + 아동B(10~12세·150cm) 2인 · Double 포즈3(세워 소파형·나란히 앉아 인형 놀이·double_03 on/off 각도락) · KID_A_01 / KID_B_01 고정의상 · 라이트그레이 #E5DED3 · 170×120×45 고정크기(아이들 작게) · 얼굴 고정 강화 · 2샘플 중 선택 · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_double_lightgrey_fad_p3.png?v=3`, spec: '여성A(168) + 여성D(173) 2인 · Double 포즈3(등부분 세워 앉기·나란히 담소·double_03 on/off 각도락) · 브라운티+그레이스웻(A_W_C_01) / 그레이티+라이트배기진(D_W_C_01) · 라이트그레이 #E5DED3 · 170×120×45(Max 2개 합친 빈백) · v2 소파 구조 금지·Max 질감 레퍼 앵커로 푹신한 빈백 덩어리 표현 · 2샘플 중 선택 · 1회생성(미검수) · #f2f2f4 · v3 올리브 B+남성A p3 컷(앵글 확정) 베이스 포토에딧 → 라이트그레이 리컬러+여성A/D 교체(2샘플 중 b)' },
+      { url: `${FTP}/cand_double_lightgrey_bc_p1.png?v=1`, spec: '여성B(172) + 여성C(169) 2인 · Double 포즈1(눕혀 나란히 기대기·double_01 각도) · 올리브 B+남성A p1 컷 베이스 포토에딧 → 라이트그레이 리컬러 + 남성→여성C(C_W_C_01 화이트티+네이비 슬랙스) 교체·B 유지(B_W_C_01) · 라이트그레이 #E5DED3 · 170×120×45 · 2샘플 중 a · 1회생성(미검수) · #f2f2f4' },
+    ] },
+    { key: 'darkgrey', name: '다크그레이', hex: '#353B3E', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_double_darkgrey_duo_p2.png?v=1`, spec: '남성A(180cm) + 여성A(168cm) 2인 · Double 포즈2(바닥에 눕힌 더블 위에 나란히 누워 환호·double_02 on/off 각도락) · 화이트티+블랙슬랙스(A_M_C_02) / 브라운티+그레이스웻(A_W_C_01) · 다크그레이 #353B3E · 170×120×45 실측비례 · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_double_darkgrey_duo_p3.png?v=1`, spec: '남성A(180cm) + 여성A(168cm) 2인 · Double 포즈3(세워 소파형·나란히 앉아 기대기·double_03 on/off 각도락) · 화이트티+블랙슬랙스(A_M_C_02) / 브라운티+그레이스웻(A_W_C_01) · 다크그레이 #353B3E · 1회생성(미검수) · #f2f2f4' },
+    ] },
   ] },
   { product: 'Support', emoji: '🌙', spec: 'U형 등받이 쿠션 · 94×76×30cm 1.7kg', ratio: '1:1', size: 'h94 × w76 × d30 · 1.7kg', models: '여성B · 남성A', scale: 'a U-shaped armrest cushion that wraps around an adult lower back, armrests about hip-height when seated', refs: SUPPORT_REFS, colors: [
-    { key: 'navy', name: '네이비블루', hex: '#1D395D', el: true, rep: true, cuts: [] },
-    { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3', el: true, rep: true, cuts: [] },
-    { key: 'sweetorange', name: '스위트오렌지', hex: '#EE780C', el: true, rep: true, cuts: [] },
+    { key: 'navy', name: '네이비블루', hex: '#1D395D', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_support_navy_b_p1_max.png?v=5`, spec: 'B(172cm) · Support 포즈1(support_01 레퍼 구도: 정면·낮은 앵글·Support 화면 중심 + 모델 포함·태블릿) · 그레이티+데님쇼츠(B_W_C_01) · Support 네이비블루 #1D395D + 하단 Yogibo Max 라이트그레이 #E5DED3 · 94×76×30 · v4 타이트 크롭(정사각 1:1·1840px) · 1회생성(미검수) · #f2f2f4 · v5 더 타이트한 정사각 크롭(빈백 일부 잘림)' },
+      // 숨김(2026-08-22 검수): { url: `${FTP}/cand_support_navy_p2_only.png?v=1`, spec: '제품 단독 · Support 포즈2 · 네이비 + Max 라이트그레이' },
+      // 숨김(2026-08-22 검수): { url: `${FTP}/cand_support_navy_b_p2.png?v=1`, spec: 'B · Support 포즈2(모델 포함·폰) · 네이비 + Max 라이트그레이' },
+      { url: `${FTP}/cand_support_navy_b_ref1.png?v=1`, spec: 'B(172cm) · yogibo.kr 레퍼 재현(측면 근접·무릎 안고 웃음·Support 등 감싸기) — 얼굴/헤어만 모델B로 교체, 의상은 레퍼 유지(네이비 탱크+블랙 쇼츠) · Support 네이비블루 #1D395D + 하단 Max 라이트그레이 · 2샘플 중 선택 · 1회생성(미검수) · #f2f2f4' },
+      { url: `${FTP}/cand_support_navy_b_jp1.png?v=1`, spec: 'B(172cm) · yogibo.jp 레퍼 원본 그대로(구도·네이비 Support·블루 빈백·화이트티+청바지·팔 머리 뒤 포즈·방 배경 유지) + 얼굴/헤어만 모델B 교체(포토 에딧) · 2샘플 중 시선 일치 안 선택 · 1회생성(미검수)' },
+      { url: `${FTP}/cand_support_navy_ma_jp3.png?v=1`, spec: '남성A(180cm) · yogibo.jp 레퍼 원본 그대로(침대·우드 헤드보드·블루 Support에 기대 앉기·화이트 헨리티+그레이 스웻·방 배경 유지) + 얼굴/헤어만 남성A 교체(포토 에딧) · 2샘플 중 선택 · 1회생성(미검수)' },
+      // 숨김(2026-08-22 검수 · 구도 재작업): { url: `${FTP}/cand_support_navy_b_p1.png?v=1`, spec: 'B(172cm) · Support 포즈1(빈백 위 기대 + Support 등 감싸기·태블릿) · Support 네이비블루(하단 빈백 베이지) · v1' },
+      { url: `${FTP}/cand_support_navy_b_jp2.png?v=1`, spec: 'B(172cm) · yogibo.jp 레퍼(jp2) 코랄 B 컷(크림 오버셔츠+와이드) 베이스 → Support 컬러만 네이비블루로 자연 리컬러(포토 에딧) · 네이비블루 #1D395D · 2샘플 중 b · 1회생성(미검수)' },
+    ] },
+    { key: 'lightgrey', name: '라이트그레이', hex: '#E5DED3', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_support_lightgrey_b_ref2.png?v=2`, spec: 'B(172cm) · yogibo.kr 레퍼 원본 그대로(구도·Support 크기·의상·방 배경 유지) + 얼굴/헤어만 모델B로 교체(포토 에딧) · Support 라이트그레이(레퍼 톤) · v2 · 1회생성(미검수)' },
+      { url: `${FTP}/cand_support_lightgrey_ma_ref2.png?v=1`, spec: '남성A(180cm) · yogibo.kr 레퍼 원본 그대로(구도·Support 크기·방 배경·눈 감은 릴랙스 포즈 유지) + 인물을 남성A로 교체 + 상의만 흰 반팔티(청바지 유지)(포토 에딧) · Support 라이트그레이(레퍼 톤) · 2샘플 중 선택 · 1회생성(미검수)' },
+      // 숨김(2026-08-22 검수): { url: `${FTP}/cand_support_lightgrey_b_ref3.png?v=1`, spec: 'B · 레퍼3 얼굴 교체 + Support 라이트그레이 리컬러' },
+      { url: `${FTP}/cand_support_lightgrey_b_jp2.png?v=1`, spec: 'B(172cm) · yogibo.jp 레퍼(jp2) 코랄 B 컷(크림 오버셔츠+와이드) 베이스 → Support 컬러만 라이트그레이로 자연 리컬러(포토 에딧) · 라이트그레이 #E5DED3 · 2샘플 중 b · 1회생성(미검수)' },
+    ] },
+    { key: 'livingcoral', name: '리빙코랄', hex: '#EA3D19', el: true, rep: true, cuts: [
+      // 숨김(2026-08-23 사용자 지시): { url: `${FTP}/cand_support_coral_b_jp2_floral.png?v=1`, spec: 'B(172cm) · yogibo.jp 레퍼 원본 그대로(측면 프로필·턱 괴기·코랄 Support·그레이 빈백·플로럴 톱·방 배경 유지) + 얼굴/헤어만 모델B 교체(포토 에딧) · 리빙코랄 · 원본 의상 버전' },
+      { url: `${FTP}/cand_support_sweetorange_b_jp2.png?v=2`, spec: 'B(172cm) · yogibo.jp 레퍼 원본 그대로(측면 프로필·턱 괴기·코랄 Support·그레이 빈백·플로럴 톱·방 배경 유지) + 얼굴/헤어만 모델B 교체(포토 에딧) · 컬러명 코랄로 등록 · 2샘플 중 선택 · 1회생성(미검수) · v2 의상 크림 오버셔츠+와이드(B_W_C_02)로 교체(포토 에딧)' },
+      { url: `${FTP}/cand_support_coral_ma_jp2.png?v=1`, spec: '남성A(180cm) · yogibo.jp 레퍼 원본 그대로(측면 프로필·턱 괴기·코랄 Support·그레이 빈백·방 배경 유지) + 인물을 남성A로 교체 + 흰 반팔티·청바지(포토 에딧) · 2샘플 중 선택 · 1회생성(미검수)' },
+    ] },
+    { key: 'sweetorange', name: '스위트오렌지', hex: '#EE780C', el: true, rep: true, cuts: [
+      { url: `${FTP}/cand_support_sweetorange_b_ref3.png?v=2`, spec: 'B(172cm) · yogibo.kr 레퍼3 원본 그대로(구도·Support 크기·틸 롱슬리브+청바지·네이비 빈백·태블릿 포즈 유지) + 얼굴/헤어만 모델B 교체 + Support만 스위트오렌지 #EE780C 자연 리컬러(원본 음영·주름 유지, v2) + Premium+ 텍스트·태그 제거 · 1회생성(미검수)' },
+      { url: `${FTP}/cand_support_orange_b_jp2.png?v=1`, spec: 'B(172cm) · yogibo.jp 레퍼(jp2) 코랄 B 컷(크림 오버셔츠+와이드) 베이스 → Support 컬러만 스위트오렌지로 자연 리컬러(포토 에딧) · 스위트오렌지 #EE780C · 2샘플 중 a · 1회생성(미검수)' },
+    ] },
   ] },
 ];
 

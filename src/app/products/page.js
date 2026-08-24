@@ -95,7 +95,7 @@ function ViewsPreview({ views }) {
   const cell = { width: 74, textAlign: 'center', flex: '0 0 auto' };
   const img = { width: 74, height: 74, objectFit: 'contain', background: '#fff', borderRadius: 8, border: '1px solid var(--border)', display: 'block' };
   return (
-    <div style={{ display: 'flex', gap: 6, flex: '0 0 auto', flexWrap: 'wrap', maxWidth: 336 }}>
+    <div style={{ display: 'flex', gap: 6, flex: '0 0 auto', flexWrap: 'wrap', maxWidth: 'min(336px, 100%)' }}>
       {keys.map(([k, label]) => (
         <a key={k} href={views[k]} target="_blank" rel="noreferrer" style={cell} title={`${label} — 생성 참조용 (클릭: 원본)`}>
           <img src={views[k]} alt={label} style={img} loading="lazy" />
@@ -370,7 +370,7 @@ export default function ProductsPage() {
                 <div key={ci} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: '10px 0', borderTop: '1px solid var(--border)' }}>
                   <Sprite360Preview url={c.sprite360} />
                   <ViewsPreview views={c.views} />
-                  <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '190px 120px 1fr', gap: 8 }}>
+                  <div style={{ flex: 1, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 8 }}>
                     <div>
                       <span style={lbl}>색상 (컬러칩 선택)</span>
                       <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
@@ -433,7 +433,7 @@ export default function ProductsPage() {
               </button>
 
               {/* 스펙 + 프롬프트 */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 110px) 1fr', gap: 8, borderTop: '1px solid var(--border)', paddingTop: 10 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))', gap: 8, borderTop: '1px solid var(--border)', paddingTop: 10 }}>
                 {[['w', '가로(cm)'], ['h', '높이(cm)'], ['d', '깊이(cm)'], ['weight', '무게(kg)']].map(([k, label]) => (
                   <div key={k}>
                     <span style={lbl}>{label}</span>

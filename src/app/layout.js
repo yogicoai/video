@@ -1,5 +1,7 @@
 import './globals.css';
 
+export const viewport = { width: 'device-width', initialScale: 1 };
+
 export const metadata = {
   title: 'VideoGen — 영상 프롬프트 스튜디오',
   description: '이미지·스토리보드 기반 Veo 3 영상 프롬프트 생성·관리',

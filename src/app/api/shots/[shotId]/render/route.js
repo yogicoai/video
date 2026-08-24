@@ -64,6 +64,8 @@ export async function POST(req, { params }) {
   const aspectRatio = project?.aspectRatio === '9:16' ? '9:16' : '16:9';
 
   const asset = await getRefAsset(shot);
+  // Higgsfield 모션: UI 선택값 → 없으면 Claude 추천(recommendedMotionId) 폴백
+  const motionId = body.motionId || shot.recommendedMotionId || null;
   const subpath = `${shot.projectId}/renders`;
   const fileName = `${shotId}-${Date.now()}.jpg`; // cafe24 우회용 .jpg 위장
   const tmpDir = path.join(os.tmpdir(), 'videogen');
@@ -72,7 +74,7 @@ export async function POST(req, { params }) {
   const now = new Date();
   const meta =
     engine === 'higgsfield'
-      ? { model: HF_MODEL, motionId: body.motionId || null }
+      ? { model: HF_MODEL, motionId }
       : { model: VEO_MODEL, estimate: estimateCost(DEFAULT_DURATION) };
   const { insertedId: jobId } = await jobs.insertOne({
     projectId: shot.projectId,
@@ -89,9 +91,9 @@ export async function POST(req, { params }) {
       // Higgsfield: 공개 이미지 URL 필요(image-to-video)
       if (!asset?.url) throw new Error('Higgsfield는 샷에 연결된 이미지가 필요합니다. 스토리보드에서 이미지를 연결하세요.');
       const { videoUrl: hfUrl } = await renderHiggsfield({
-        prompt: shot.veoPrompt,
+        prompt: shot.higgsfieldPrompt || shot.veoPrompt, // 전용 프롬프트(카메라 무빙 제외) 우선
         imageUrl: asset.url,
-        motionId: body.motionId,
+        motionId,
         strength: body.strength,
       });
       // 결과 영상을 받아 cafe24에 .jpg로 재호스팅

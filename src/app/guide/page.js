@@ -75,7 +75,7 @@ export default function GuidePage() {
         광고는 <strong>모든 컷에 같은 사람</strong>이 나와야 한 편으로 보여요. 그래서 먼저 힉스필드로 모델 후보 3명을 만들고 <b>A</b>를 골랐습니다.
         고른 얼굴은 <strong>"캐릭터 토큰(Element)"</strong>으로 저장해서, 이후 모든 장면 생성에 그 토큰을 넣어 <strong>얼굴이 안 바뀌게</strong> 고정했어요.
       </p>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 8 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12, marginBottom: 8 }}>
         {MODELS.map((m) => (
           <div key={m.k}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -112,7 +112,7 @@ export default function GuidePage() {
         영상 생성은 비싸서(크레딧), <strong>① 먼저 정지 이미지(스틸)</strong>를 만들어 구도·인물·옷을 확인하고 → <strong>② OK면 그 이미지를 움직이는 영상으로</strong> 바꿨어요.
         스틸을 만들 땐 <strong>레퍼런스 장면을 편집 + 캐릭터 토큰</strong>을 같이 넣어, 얼굴·톤은 유지하고 필요한 것만 바꿨습니다. 아래가 실제로 만든 컷 스틸들이에요.
       </p>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10, marginBottom: 10 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 10, marginBottom: 10 }}>
         {STILLS.map((s) => (
           <div key={s.t}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -131,7 +131,7 @@ export default function GuidePage() {
         초보자가 가장 궁금한 부분이에요 — <strong>틀린 데만 콕 집어 다시 시킬 수 있어요.</strong> 예를 들어 CUT2는 다리가 어색하게 올라가 있었는데,
         "<i>구도·얼굴·옷은 그대로 두고 다리만 자연스럽게</i>"라고 시켜서 고쳤습니다. (아래 전 / 후)
       </p>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12, marginBottom: 10, maxWidth: 520 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12, marginBottom: 10, maxWidth: 520 }}>
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={`${CDN}/hf_20260630_035327_5770dbda-29f4-47ff-bf89-e5dcbd79d30f.png`} alt="before" style={port} />

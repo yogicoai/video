@@ -41,6 +41,7 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [tab, setTab] = useState('seedance'); // 엔진 탭 — Seedance 우선 노출
+  const [dbError, setDbError] = useState(''); // DB 미설정/연결 실패 안내
 
   async function load() {
     setLoading(true);
@@ -48,8 +49,10 @@ export default function HomePage() {
       const res = await fetch('/api/projects');
       const data = await res.json();
       setProjects(data.projects || []);
+      setDbError(data.error || '');
     } catch {
       setProjects([]);
+      setDbError('프로젝트 목록을 불러오지 못했습니다 (서버/DB 연결 확인).');
     } finally {
       setLoading(false);
     }
@@ -92,6 +95,13 @@ export default function HomePage() {
           + 새 프로젝트
         </a>
       </div>
+
+      {dbError && (
+        <div className="note" style={{ marginBottom: 16, borderColor: '#5a3a3a', background: 'rgba(255,107,107,0.06)' }}>
+          ⚠️ <strong>DB 연결 안 됨</strong> — {dbError}
+          <div style={{ marginTop: 4, fontSize: 12.5 }}>프로젝트 생성·샷 생성·렌더는 MongoDB가 필요합니다. 스토리보드/가이드/제품 데이터 페이지는 DB 없이도 열립니다.</div>
+        </div>
+      )}
 
       {/* 엔진 탭 — Seedance 작업물 우선 노출 */}
       <div style={{ display: 'flex', gap: 8, marginBottom: 18, borderBottom: '1px solid var(--border)' }}>

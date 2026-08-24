@@ -134,7 +134,7 @@ export default function Storyboard18() {
       <h3 style={{ fontSize: 15, margin: '18px 0 8px', color: '#ddd' }}>필요 에셋</h3>
       <div style={{ display: 'grid', gap: 6 }}>
         {STORY.assets.map(([a, st], i) => (
-          <div key={i} style={{ display: 'grid', gridTemplateColumns: '190px 1fr', gap: 10, fontSize: 12.5, padding: '8px 10px', background: '#161616', borderRadius: 8 }}>
+          <div key={i} style={{ display: 'grid', gridTemplateColumns: 'minmax(120px, 190px) minmax(0, 1fr)', gap: 10, fontSize: 12.5, padding: '8px 10px', background: '#161616', borderRadius: 8 }}>
             <b>{a}</b><span style={{ color: '#aaa' }}>{st}</span>
           </div>
         ))}
@@ -285,7 +285,7 @@ export default function Storyboard18() {
       <h2 style={{ fontSize: 19, margin: '30px 0 10px', borderLeft: '3px solid #FF7043', paddingLeft: 10 }}>파이프라인 상태</h2>
       <div style={{ display: 'grid', gap: 6 }}>
         {GATES.map((g) => (
-          <div key={g.stage} style={{ display: 'grid', gridTemplateColumns: '150px 66px 1fr', gap: 10, alignItems: 'center', fontSize: 13, padding: '8px 10px', background: '#161616', borderRadius: 8 }}>
+          <div key={g.stage} style={{ display: 'grid', gridTemplateColumns: 'minmax(100px, 150px) 66px minmax(0, 1fr)', gap: 10, alignItems: 'center', fontSize: 13, padding: '8px 10px', background: '#161616', borderRadius: 8 }}>
             <b>{g.stage}</b><span>{g.s}</span><span style={{ color: '#aaa' }}>{g.note}</span>
           </div>
         ))}
@@ -301,7 +301,7 @@ export default function Storyboard18() {
               <span style={{ fontSize: 12.5, color: '#e6c86a' }}>비용: {a.cost}</span>
             </div>
             <p style={{ color: '#bbb', fontSize: 13, lineHeight: 1.6, margin: '8px 0' }}>{a.how}</p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginTop: 6 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12, marginTop: 6 }}>
               <div>
                 <div style={{ fontSize: 12, color: '#66BB6A', marginBottom: 4 }}>장점</div>
                 <ul style={{ margin: 0, paddingLeft: 16, color: '#aaa', fontSize: 12.5, lineHeight: 1.6 }}>{a.pros.map((p, i) => <li key={i}>{p}</li>)}</ul>
@@ -319,7 +319,7 @@ export default function Storyboard18() {
       <h2 style={{ fontSize: 19, margin: '30px 0 10px', borderLeft: '3px solid #e6c86a', paddingLeft: 10 }}>컨펌 대기 (크레딧 쓰기 전)</h2>
       <div style={{ display: 'grid', gap: 6 }}>
         {QUESTIONS.map(([q, note], i) => (
-          <div key={i} style={{ display: 'grid', gridTemplateColumns: '150px 1fr', gap: 10, fontSize: 13, padding: '8px 10px', background: '#1f1c14', border: '1px solid #3a3320', borderRadius: 8 }}>
+          <div key={i} style={{ display: 'grid', gridTemplateColumns: 'minmax(110px, 150px) minmax(0, 1fr)', gap: 10, fontSize: 13, padding: '8px 10px', background: '#1f1c14', border: '1px solid #3a3320', borderRadius: 8 }}>
             <b style={{ color: '#e6c86a' }}>{q}</b><span style={{ color: '#bbb' }}>{note}</span>
           </div>
         ))}

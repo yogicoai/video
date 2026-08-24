@@ -10,9 +10,15 @@ export const maxDuration = 120;
 
 // GET /api/ideas — 저장된 아이디어 목록 (최신순)
 export async function GET() {
-  const col = await collection(COLLECTIONS.ideas);
-  const ideas = await col.find({}).sort({ createdAt: -1 }).limit(60).toArray();
-  return NextResponse.json({ ideas });
+  try {
+    const col = await collection(COLLECTIONS.ideas);
+    const ideas = await col.find({}).sort({ createdAt: -1 }).limit(60).toArray();
+    return NextResponse.json({ ideas });
+  } catch (err) {
+    // DB 미설정/연결 실패 — 빈 목록 + 안내 (화면에서 json 파싱 오류 방지)
+    console.error('[ideas] DB 오류:', err.message);
+    return NextResponse.json({ ideas: [], error: err.message }, { status: 503 });
+  }
 }
 
 // POST /api/ideas — 브랜드+트렌드 기반 쇼츠 아이디어 생성·저장. body: { count, season, vibe, focus }
